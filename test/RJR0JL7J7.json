@@ -1,0 +1,31 @@
+{
+   "_links" : {
+      "self" : {
+         "href" : "/reisdocumenten/RJR0JL7J7"
+      },
+      "ingeschrevenPersoon" : {
+         "href" : "https://www.haalcentraal.nl/haalcentraal/api/brp/ingeschrevenpersonen/999991036"
+      }
+   },
+   "reisdocumentnummer" : "RJR0JL7J7",
+   "soortReisdocument" : {
+      "code" : "PV",
+      "omschrijving" : "Reisdocument voor vluchtelingen"
+   },
+   "datumUitgifte" : {
+      "datum" : "2011-11-21",
+      "jaar" : 2011,
+      "maand" : 11,
+      "dag" : 21
+   },
+   "autoriteitAfgifte" : {
+      "code" : "B0518",
+      "omschrijving" : "Burgemeester van 's-Gravenhage"
+   },
+   "datumEindeGeldigheid" : {
+     "datum" : "2021-11-21",
+     "jaar" : 2021,
+     "maand" : 11,
+     "dag" : 21
+   }
+}
