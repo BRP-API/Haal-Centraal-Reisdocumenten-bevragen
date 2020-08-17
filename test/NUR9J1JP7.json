@@ -1,0 +1,31 @@
+{
+   "_links" : {
+      "self" : {
+         "href" : "/reisdocumenten/NUR9J1JP7"
+      },
+      "ingeschrevenPersoon" : {
+         "href" : "https://www.haalcentraal.nl/haalcentraal/api/brp/ingeschrevenpersonen/999993847"
+      }
+   },
+   "reisdocumentnummer" : "NUR9J1JP7",
+   "soortReisdocument" : {
+      "code" : "PN",
+      "omschrijving" : "Nationaal paspoort"
+   },
+   "datumUitgifte" : {
+      "datum" : "2016-12-05",
+      "jaar" : 2016,
+      "maand" : 12,
+      "dag" : 5
+   },
+   "autoriteitAfgifte" : {
+      "code" : "GN5107",
+      "omschrijving" : "Gouverneur van Curaçao"
+   },
+   "datumEindeGeldigheid" : {
+      "datum" : "2021-12-05",
+      "jaar" : 2021,
+      "maand" : 12,
+      "dag" : 5
+   }
+}

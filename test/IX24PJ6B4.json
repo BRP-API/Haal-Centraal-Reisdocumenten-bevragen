@@ -1,0 +1,32 @@
+{
+   "_links" : {
+      "self" : {
+         "href" : "/reisdocumenten/IX24PJ6B4"
+      },
+      "ingeschrevenPersoon" : {
+         "href" : "https://www.haalcentraal.nl/haalcentraal/api/brp/ingeschrevenpersonen/999993483"
+      }
+   },
+   "geheimhoudingPersoonsgegevens" : true,
+   "reisdocumentnummer" : "IX24PJ6B4",
+   "soortReisdocument" : {
+      "code" : "NI",
+      "omschrijving" : "Nederlandse identiteitskaart"
+   },
+   "datumUitgifte" : {
+      "datum" : "2018-01-05",
+      "jaar" : 2018,
+      "maand" : 1,
+      "dag" : 5
+   },
+   "autoriteitAfgifte" : {
+      "code" : "B0518",
+      "omschrijving" : "Burgemeester van 's-Gravenhage"
+   },
+   "datumEindeGeldigheid" : {
+      "datum" : "2023-01-05",
+      "jaar" : 2023,
+      "maand" : 1,
+      "dag" : 5
+   }
+}

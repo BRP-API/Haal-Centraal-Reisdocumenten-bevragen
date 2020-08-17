@@ -1,0 +1,38 @@
+{
+   "_links" : {
+      "self" : {
+         "href" : "/reisdocumenten/BD8P7H2C7"
+      },
+      "ingeschrevenPersoon" : {
+         "href" : "https://www.haalcentraal.nl/haalcentraal/api/brp/ingeschrevenpersonen/999993872"
+      }
+   },
+   "reisdocumentnummer" : "BD8P7H2C7",
+   "aanduidingInhoudingOfVermissing" : "vermist",
+   "soortReisdocument" : {
+      "code" : "ZN",
+      "omschrijving" : "Nationaal paspoort (zakenpaspoort)"
+   },
+   "datumUitgifte" : {
+      "datum" : "2012-01-12",
+      "jaar" : 2012,
+      "maand" : 1,
+      "dag" : 12
+   },
+   "autoriteitAfgifte" : {
+      "code" : "B0518",
+      "omschrijving" : "Burgemeester van 's-Gravenhage"
+   },
+   "datumEindeGeldigheid" : {
+      "datum" : "2017-01-12",
+      "jaar" : 2017,
+      "maand" : 1,
+      "dag" : 12
+   },
+   "datumInhoudingOfVermissing" : {
+      "datum" : "2012-01-15",
+      "jaar" : 2012,
+      "maand" : 1,
+      "dag" : 15
+   }
+}

@@ -1,0 +1,31 @@
+{
+   "_links" : {
+      "self" : {
+         "href" : "/reisdocumenten/HPB1234HG"
+      },
+      "ingeschrevenPersoon" : {
+         "href" : "https://www.haalcentraal.nl/haalcentraal/api/brp/ingeschrevenpersonen/999992119"
+      }
+   },
+   "reisdocumentnummer" : "HPB1234HG",
+   "soortReisdocument" : {
+      "code" : "ID",
+      "omschrijving" : "Gemeentelijke Identiteitskaart"
+   },
+   "datumUitgifte" : {
+      "datum" : "2013-02-02",
+      "jaar" : 2013,
+      "maand" : 2,
+      "dag" : 2
+   },
+   "autoriteitAfgifte" : {
+      "code" : "B0518",
+      "omschrijving" : "Burgemeester van 's-Gravenhage"
+   },
+   "datumEindeGeldigheid" : {
+      "datum" : "2018-02-02",
+      "jaar" : 2018,
+      "maand" : 2,
+      "dag" : 2
+   }
+}

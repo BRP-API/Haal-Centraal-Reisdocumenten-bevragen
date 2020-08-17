@@ -1,0 +1,31 @@
+{
+   "_links" : {
+      "self" : {
+         "href" : "/reisdocumenten/BT6F58F32"
+      },
+      "ingeschrevenPersoon" : {
+         "href" : "https://www.haalcentraal.nl/haalcentraal/api/brp/ingeschrevenpersonen/999995108"
+      }
+   },
+   "reisdocumentnummer" : "BT6F58F32",
+   "soortReisdocument" : {
+      "code" : "ZN",
+      "omschrijving" : "Nationaal paspoort (zakenpaspoort)"
+   },
+   "datumUitgifte" : {
+      "datum" : "2019-11-29",
+      "jaar" : 2019,
+      "maand" : 11,
+      "dag" : 29
+   },
+   "autoriteitAfgifte" : {
+      "code" : "C5024",
+      "omschrijving" : "Consulaire post in Ghana"
+   },
+   "datumEindeGeldigheid" : {
+      "datum" : "2024-11-29",
+      "jaar" : 2024,
+      "maand" : 11,
+      "dag" : 29
+   }
+}
