@@ -22,8 +22,6 @@ paths:
       summary: Raadpleeg een reisdocument
       description: |
                     Raadpleeg een Reisdocument.
-                    Gebruik de fields parameter als je alleen specifieke velden in het antwoord wil zien, [zie functionele specificaties fields-parameter](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/v1.0.0/features/fields_extensie.feature).
-
       parameters:
         - in: path
           name: reisdocumentnummer
@@ -31,7 +29,6 @@ paths:
           schema:
             type: string
             maxLength: 9
-        - $ref: "https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-common/v1.2.0/api-specificatie/common.yaml#/components/parameters/fields"
       responses:
         '200':
           description: "Zoekactie geslaagd"
@@ -56,8 +53,6 @@ paths:
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-common/v1.2.0/api-specificatie/common.yaml#/components/responses/406"
         '500':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-common/v1.2.0/api-specificatie/common.yaml#/components/responses/500"
-        '501':
-          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-common/v1.2.0/api-specificatie/common.yaml#/components/responses/501"
         '503':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-common/v1.2.0/api-specificatie/common.yaml#/components/responses/503"
         'default':
@@ -123,7 +118,7 @@ components:
                     * `ingehouden_of_ingeleverd` - I
                     * `vermist` - V
                     * `rechtswege` - R
-                    * `niet_in_bezit_van` - N"
+                    * `niet_in_bezit_van` - N
       enum:
       - "ingehouden_of_ingeleverd"
       - "vermist"
@@ -132,7 +127,7 @@ components:
     ReisdocumentInOnderzoek:
       type: "object"
       description:  |
-                      Geeft aan welke gegevens over de naam in onderzoek zijn. Zie de [functionele specificaties](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/v1.0.0/features/in_onderzoek.feature)
+                      Geeft aan welke gegevens in onderzoek zijn. Zie de [functionele specificaties](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/v1.0.0/features/in_onderzoek.feature)
       properties:
         aanduidingInhoudingOfVermissing:
           type: "boolean"

@@ -14,7 +14,7 @@ Functionaliteit: in onderzoek
   Een attribuut dat niet in onderzoek is, wordt niet in het antwoord in inOnderzoek opgenomen, ook niet met de waarde false of null.
 
   Scenario: hele categorie reisdocument in onderzoek
-    Gegeven het te raadplegen reisdocument heeft het hele reisdocument in onderzoek (35.83.10=010000)
+    Gegeven het te raadplegen reisdocument heeft het hele reisdocument in onderzoek (12.83.10=120000)
     En geen enkele andere categorie, groep of attribuut is in onderzoek
     Als het reisdocument wordt geraadpleegd
     Dan is in het antwoord inOnderzoek.aanduidingInhoudingOfVermissing=true
@@ -27,7 +27,7 @@ Functionaliteit: in onderzoek
     En heeft in het antwoord inOnderzoek.datumIngangOnderzoek een waarde
 
   Scenario: Een attribuut is in inOnderzoek
-    Gegeven het te raadplegen reisdocument heeft attribuut autoriteitAfgifte in onderzoek
+    Gegeven het te raadplegen reisdocument heeft attribuut autoriteitAfgifte in onderzoek (12.83.10=123540)
     Als het reisdocument wordt geraadpleegd
     Dan is in het antwoord inOnderzoek.autoriteitAfgifte=true
     En heeft in het antwoord inOnderzoek.datumIngangOnderzoek een waarde
@@ -39,6 +39,6 @@ Functionaliteit: in onderzoek
     En is in het antwoord inOnderzoek.soortReisdocument niet aanwezig
 
   Scenario: Het onderzoek is beëindigd
-    Gegeven het te raadplegen reisdocument heeft in onderzoek gevuld (010000), met datum einde in onderzoek ook gevuld
+    Gegeven het te raadplegen reisdocument heeft in onderzoek gevuld (12.83.10=120000), met datum einde in onderzoek (12.83.30) ook gevuld
     Als het reisdocument wordt geraadpleegd
     Dan is in het antwoord inOnderzoek niet aanwezig
