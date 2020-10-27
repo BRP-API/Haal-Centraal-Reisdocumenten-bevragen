@@ -1,0 +1,35 @@
+{
+  "name": "Haal-Centraal-Reisdocumenten-bevragen",
+  "version": "1.0.0",
+  "description": "Reisdocumenten bevragen is een Haal Centraal API voor het raadplegen van de reisdocumenten van ingeschreven natuurlijke personen voor alle binnengemeentelijke afnemers in NL.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "oas:lint": "spectral lint ./specificatie/openapi.yaml",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run oas:lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/issues"
+  },
+  "homepage": "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@stoplight/spectral": "^5.6.0",
+    "husky": "^4.3.0"
+  }
+}
