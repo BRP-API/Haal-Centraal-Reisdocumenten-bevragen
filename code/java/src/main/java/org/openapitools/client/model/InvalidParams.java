@@ -29,7 +29,7 @@ import java.net.URI;
  * Details over fouten in opgegeven parameters
  */
 @ApiModel(description = "Details over fouten in opgegeven parameters")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-27T08:15:23.756Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-27T08:38:09.241Z[Etc/UTC]")
 public class InvalidParams {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
