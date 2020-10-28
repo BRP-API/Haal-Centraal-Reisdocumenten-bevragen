@@ -34,7 +34,7 @@ import org.openapitools.client.model.Waardetabel;
 /**
  * ReisdocumentHal
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-27T08:15:23.756Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-27T08:38:09.241Z[Etc/UTC]")
 public class ReisdocumentHal {
   public static final String SERIALIZED_NAME_AANDUIDING_INHOUDING_OF_VERMISSING = "aanduidingInhoudingOfVermissing";
   @SerializedName(SERIALIZED_NAME_AANDUIDING_INHOUDING_OF_VERMISSING)

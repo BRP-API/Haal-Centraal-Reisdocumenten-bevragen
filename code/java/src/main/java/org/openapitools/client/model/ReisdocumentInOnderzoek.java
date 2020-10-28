@@ -29,7 +29,7 @@ import org.openapitools.client.model.DatumOnvolledig;
  * Een groep van booleans om aan te geven welke gegevens van het reisdocument in onderzoek zijn. Als de hele categorie in onderzoek is worden alle rubrieken binnen die categorie op _true_ gezet. Zie de [functionele specificaties](https://github.com/VNG-Realisatie/Bevragingen-ingeschreven-personen/blob/master/features/in_onderzoek.feature) .
  */
 @ApiModel(description = "Een groep van booleans om aan te geven welke gegevens van het reisdocument in onderzoek zijn. Als de hele categorie in onderzoek is worden alle rubrieken binnen die categorie op _true_ gezet. Zie de [functionele specificaties](https://github.com/VNG-Realisatie/Bevragingen-ingeschreven-personen/blob/master/features/in_onderzoek.feature) .")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-27T08:15:23.756Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-27T08:38:09.241Z[Etc/UTC]")
 public class ReisdocumentInOnderzoek {
   public static final String SERIALIZED_NAME_AANDUIDING_INHOUDING_OF_VERMISSING = "aanduidingInhoudingOfVermissing";
   @SerializedName(SERIALIZED_NAME_AANDUIDING_INHOUDING_OF_VERMISSING)
