@@ -8,6 +8,8 @@ Om te beginnen met ontwikkelen van de API is de [getting started](./docs/getting
 ## Documentatie
 * [Technische specificaties](./specificatie) (Open API Specificaties en JSON schema) en in [Swagger-formaat](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/openapi.yaml)
 
+* De stand van zaken op de "Develop"-branch is ][hier te bekijken in Swagger-formaat](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/develop/specificatie/openapi.yaml)
+
 * Lees hoe je kan [bijdragen](https://github.com/VNG-Realisatie/API-Kennisbank/blob/master/CONTRIBUTING.md) en de [Omgangsvormen](https://github.com/VNG-Realisatie/API-Kennisbank/blob/master/CODE_OF_CONDUCT.md) voor dit project.
 
 Deze API is in eerste instantie ontwikkeld op https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen. Veel informatie, inclusief de user stories die tot deze API hebben geleid kun je daar vinden.
