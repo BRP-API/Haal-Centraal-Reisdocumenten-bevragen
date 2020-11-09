@@ -6,8 +6,8 @@ servers:
 info:
   title: Reisdocumenten
   description: |
-                API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI.
-  version: "0.0.1 (develop)"
+                API voor het raadplegen van reisdocumenten uit de GBA en RNI.
+  version: "1.0.0"
   contact:
     url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
   license:
@@ -64,13 +64,13 @@ components:
     Reisdocument:
       type: "object"
       description: |
-                    Een document dat vereist is voor reizen naar het buitenland
-                    * **datumEindeGeldigheid** : De datum waarop een Nederlands reisdocument, dat aan de ingeschrevene is verstrekt of waarin de ingeschrevene is bijgeschreven, zijn geldigheid verliest.
-                    * **datumInhoudingOfVermissing**: De datum waarop een Nederlands reisdocument is vermist, ingehouden, ingeleverd, dan wel van rechtswege is vervallen.
-                    * **datumUitgifte** : De datum waarop het Nederlands reisdocument is uitgegeven of de datum van bijschrijving van de ingeschrevene in een Nederlands reisdocument.
-                    * **autoriteitAfgifte** : Tabel Autoriteit van afgifte Nederlands reisdocument, die aangeeft welke autoriteit het Nederlands reisdocument heeft verstrekt of de bijschrijving heeft verricht.
-                    * **aanduidingInhoudingOfVermissing** : Een aanduiding dat een Nederlands reisdocument is vermist, ingehouden, ingeleverd, dan wel van rechtswege is vervallen.
-                    * **soortReisdocument** : Tabel Nederlands reisdocument, die aangeeft welk Nederlandse reisdocument is verstrekt of in welk reisdocument de ingeschrevene is bijgeschreven.
+                    Een document dat nodig is voor reizen naar het buitenland.
+                    * **datumEindeGeldigheid** : de datum waarop het reisdocument niet meer geldig is.
+                    * **datumInhoudingOfVermissing**: de datum waarop het reisdocument is vermist, ingehouden, ingeleverd, of van rechtswege is vervallen.
+                    * **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.
+                    * **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt.
+                    * **aanduidingInhoudingOfVermissing** : geeft aan dat het reisdocument is vermist, ingehouden, ingeleverd, dan wel van rechtswege is vervallen.
+                    * **soortReisdocument** : geeft aan welk Nederlandse reisdocument is verstrekt.
       properties:
         aanduidingInhoudingOfVermissing:
           $ref: "#/components/schemas/AanduidingInhoudingVermissingReisdocumentEnum"
@@ -78,7 +78,7 @@ components:
           type: "string"
           title: "Reisdocumentnummer"
           description: |
-                        Het nummer van het verstrekte Nederlandse reisdocument.
+                        Het nummer van het Nederlandse reisdocument.
           maxLength: 9
           example: "546376728"
         autoriteitAfgifte:
@@ -114,7 +114,7 @@ components:
     AanduidingInhoudingVermissingReisdocumentEnum:
       type: "string"
       description: |
-                    De mogelijke waarden van de aanduiding van inhouding of vermissing van een Nederlands reisdocument. Zie logisch ontwerp BRP bij de stamtabellen:
+                    Waarden voor de aanduiding inhouding of vermissing van een Nederlands reisdocument zijn:
                     * `ingehouden_of_ingeleverd` - I
                     * `vermist` - V
                     * `rechtswege` - R
