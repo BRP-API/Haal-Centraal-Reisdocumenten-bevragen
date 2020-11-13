@@ -1,0 +1,460 @@
+{
+    "item": [
+        {
+            "id": "e98e01ed-b941-43cc-8e65-4ece940eef51",
+            "name": "reisdocumenten Reisdocumentnummer",
+            "request": {
+                "name": "reisdocumenten Reisdocumentnummer",
+                "description": {
+                    "content": "Het ophalen van de gegevens van een REISDOCUMENT op basis van het reisdocumentnummer.",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "reisdocumenten",
+                        ":reisdocumentnummer"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [],
+                    "variable": [
+                        {
+                            "description": "(Required) Het nummer van het verstrekte Nederlandse reisdocument.",
+                            "type": "any",
+                            "value": "<string>",
+                            "key": "reisdocumentnummer"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "auth": null
+            },
+            "response": [
+                {
+                    "id": "83fb1260-7914-4bc3-a635-9433efbf73eb",
+                    "name": "Zoekactie geslaagd",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "description": "",
+                            "key": "warning",
+                            "value": "299 https://service.../api/.../v1 \"Deze versie van de API is verouderd en zal uit dienst worden genomen op 2018-02-01. Raadpleeg voor meer informatie hier de documentatie: https://omgevingswet.../api/.../v1\"."
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/hal+json"
+                        }
+                    ],
+                    "body": "{\n \"aanduidingInhoudingOfVermissing\": \"niet_in_bezit_van\",\n \"reisdocumentnummer\": \"546376728\",\n \"autoriteitAfgifte\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"datumEindeGeldigheid\": {\n  \"dag\": 3,\n  \"datum\": \"2016-01-29\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumInhoudingOfVermissing\": {\n  \"dag\": 3,\n  \"datum\": \"2002-07-11\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumUitgifte\": {\n  \"dag\": 3,\n  \"datum\": \"1999-01-25\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"soortReisdocument\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"geheimhoudingPersoonsgegevens\": true,\n \"inOnderzoek\": {\n  \"aanduidingInhoudingOfVermissing\": false,\n  \"autoriteitAfgifte\": false,\n  \"datumEindeGeldigheid\": false,\n  \"datumInhoudingOfVermissing\": true,\n  \"datumUitgifte\": false,\n  \"reisdocumentnummer\": false,\n  \"soortReisdocument\": false,\n  \"datumIngangOnderzoek\": {\n   \"dag\": 3,\n   \"datum\": \"1963-08-30\",\n   \"jaar\": 1989,\n   \"maand\": 5\n  }\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"nisi la\"\n  },\n  \"ingeschrevenPersoon\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"voluptate est non culpa\"\n  }\n }\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "8d6c44b3-17f8-4647-916d-7860c4d87d95",
+                    "name": "Bad Request",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Bad Request",
+                    "code": 400,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.1 400 Bad Request\",\n \"title\": \"Ten minste één parameter moet worden opgegeven.\",\n \"status\": 400,\n \"detail\": \"The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modification.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"paramsRequired\",\n \"invalidParams\": [\n  {\n   \"type\": \"https://www.vng.nl/realisatie/api/validaties/integer\",\n   \"name\": \"verblijfplaats__huisnummer\",\n   \"code\": \"integer\",\n   \"reason\": \"Waarde is geen geldige integer.\"\n  }\n ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "6e935150-ac78-4490-84b4-1c889232f0e0",
+                    "name": "Unauthorized",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.2 401 Unauthorized\",\n \"title\": \"Niet correct geauthenticeerd.\",\n \"status\": 401,\n \"detail\": \"The request requires user authentication. The response MUST include a WWW-Authenticate header field (section 14.47) containing a challenge applicable to the requested resource.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"authentication\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "d0d22de3-e6a1-4438-9d7f-ecf931b46bce",
+                    "name": "Forbidden",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Forbidden",
+                    "code": 403,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.4 403 Forbidden\",\n \"title\": \"U bent niet geautoriseerd voor deze operatie.\",\n \"status\": 403,\n \"detail\": \"The server understood the request, but is refusing to fulfill it.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"autorisation\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "698ce7a9-4a6d-4691-b497-b98c69b96a5a",
+                    "name": "Not Found",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Not Found",
+                    "code": 404,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.5 404 Not Found\",\n \"title\": \"Opgevraagde resource bestaat niet.\",\n \"status\": 404,\n \"detail\": \"The server has not found anything matching the Request-URI.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"notFound\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "497158eb-06cc-49de-b2e3-411bd3c71c49",
+                    "name": "Not Acceptable",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Not Acceptable",
+                    "code": 406,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.7 406 Not Acceptable\",\n \"title\": \"Gevraagde contenttype wordt niet ondersteund.\",\n \"status\": 406,\n \"detail\": \"The resource identified by the request is only capable of generating response entities which have content characteristics not acceptable according to thr accept headers sent in the request\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"notAcceptable\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "29cf9698-9be0-4b25-849b-5e7258094c12",
+                    "name": "Internal Server Error",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Internal Server Error",
+                    "code": 500,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.5.1 500 Internal server error\",\n \"title\": \"Interne server fout.\",\n \"status\": 500,\n \"detail\": \"The server encountered an unexpected condition which prevented it from fulfilling the request.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"serverError\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "1c3df983-e243-4f3c-80c3-84f4b07088bd",
+                    "name": "Not Implemented",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Not Implemented",
+                    "code": 501,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.5.2 501 Not Implemented\",\n \"title\": \"Not Implemented\",\n \"status\": 501,\n \"detail\": \"The server does not support the functionality required to fulfill the request.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"notImplemented\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "fa035347-634d-437f-8795-fbd885e50ada",
+                    "name": "Service Unavailable",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Service Unavailable",
+                    "code": 503,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.5.4 503 Service Unavailable\",\n \"title\": \"Bronservice {bron} is tijdelijk niet beschikbaar.\",\n \"status\": 503,\n \"detail\": \"The service is currently unable to handle the request due to a temporary overloading or maintenance of the server.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"notAvailable\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "be043f06-eff5-4eb0-b758-09460b796efa",
+                    "name": "Er is een onverwachte fout opgetreden",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Internal Server Error",
+                    "code": 500,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"http://ahRMNoHZhJBto.rcCBa82cNUWmitkOYj1kCgRtdp,38jZlwGXjlFGmWpqiKcNvBzKmdzEH5z\",\n \"title\": \"incididunt\",\n \"status\": 5087047,\n \"detail\": \"dolor proident laborum\",\n \"instance\": \"https://arYUlSjZjExmtT.twf-HoBg9YxwvCvlY4Mw2\",\n \"code\": \"aliqua\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                }
+            ],
+            "event": []
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "id": "baseUrl",
+            "type": "string",
+            "value": "https://virtserver.swaggerhub.com/VNGRealisatie/api/reisdocumenten"
+        }
+    ],
+    "info": {
+        "_postman_id": "14ea753d-d30a-49ff-ae80-3566ef8ec690",
+        "name": "Reisdocumenten",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI.",
+            "type": "text/plain"
+        }
+    }
+}
