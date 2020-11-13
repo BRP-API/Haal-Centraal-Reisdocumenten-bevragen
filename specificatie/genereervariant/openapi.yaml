@@ -217,7 +217,7 @@ components:
         * **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.
         * **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt.
         * **aanduidingInhoudingOfVermissing** : geeft aan dat het reisdocument is vermist, ingehouden, ingeleverd, dan wel van rechtswege is vervallen.
-        * **soortReisdocument** : geeft aan welk Nederlandse reisdocument is verstrekt.
+        * **soortReisdocument** : geeft aan welk Nederlands reisdocument is verstrekt.
     ReisdocumentHal:
       allOf:
       - $ref: '#/components/schemas/Reisdocument'
