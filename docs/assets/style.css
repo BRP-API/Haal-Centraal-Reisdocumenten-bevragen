@@ -113,6 +113,11 @@ em {
 }
 .header {
   color: #03A9F4;
+  margin-top: 0.3em;
+}
+
+.active {
+  font-weight: 500;
 }
 
 .vng-logo {
