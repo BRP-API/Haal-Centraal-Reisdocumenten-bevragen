@@ -28,4 +28,4 @@ API voor het bevragen van reisdocumenten van personen. Met deze API kun je een r
 ## Licentie
 
 Copyright &copy; VNG Realisatie 2020
-Licensed under the [EUPL](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/LICENCE.md)
+Licensed under the [EUPL](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/LICENCE.md){:target="_blank" rel="noopener"}
