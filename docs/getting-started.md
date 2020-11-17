@@ -1,11 +1,15 @@
+---
+layout: page-with-side-nav
+title: Getting Started
+---
 # Getting Started
 
 De 'Bevraging reisdocumenten' Web API is gespecificeerd met behulp van de [OpenAPI specifications (OAS)](https://swagger.io/specification/).
 
 ## Specificaties
-Een visuele representatie van de specificatie kan worden gegenereerd met [Swagger UI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/openapi.yaml).
+Een visuele representatie van de specificatie kan worden gegenereerd met [Swagger UI]({{ site.baseurl }}/swagger-ui).
 
-De (resolved) OAS3 is hier te downloaden: [openapi.yaml](../specificatie/genereervariant/openapi.yaml).
+De (resolved) OAS3 is hier te downloaden: [openapi.yaml](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/specificatie/genereervariant/openapi.yaml).
 
 
 ## Functionaliteit
