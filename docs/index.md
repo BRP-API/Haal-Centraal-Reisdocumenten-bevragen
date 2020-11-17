@@ -1,8 +1,8 @@
 ---
 layout: page-with-side-nav
-title: Haal Centraal BRP bevragen
+title: Haal Centraal Reisdocumenten bevragen
 ---
-# Haal Centraal BRP bevragen
+# Haal Centraal Reisdocumenten bevragen
 
 ![lint oas](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen/workflows/lint-oas/badge.svg)
 ![generate sdks](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen/workflows/generate-sdks/badge.svg)

@@ -1,3 +1,7 @@
+---
+layout: page-with-side-nav
+title: Getting Started
+---
 # Getting Started
 
 De 'Bevraging reisdocumenten' Web API is gespecificeerd met behulp van de [OpenAPI specifications (OAS)](https://swagger.io/specification/).
