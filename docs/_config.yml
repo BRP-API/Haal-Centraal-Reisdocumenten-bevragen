@@ -1,2 +1,3 @@
 baseurl: "/Haal-Centraal-Reisdocumenten-bevragen"
+apiname: "Reisdocumenten Bevragen"
 url: "http://localhost:4000"
