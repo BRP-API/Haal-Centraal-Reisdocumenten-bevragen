@@ -17,7 +17,7 @@ Met deze API kunnen de gegevens van een reisdocument worden opgehaald met het re
 
 Je kunt een visuele representatie van de specificatie bekijken met [Swagger UI]({{ site.baseurl }}/swagger-ui) of [Redoc]({{ site.baseurl }}/redoc).
 
-Je kunt de [functionele documentatie]({{ site.baseurl }}/features) lezen, met specificaties en voorbeelden.
+Je kunt de [functionele documentatie](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/features/reisdocumenten.feature) lezen, met specificaties en voorbeelden.
 
 ## Implementeer de API
 
