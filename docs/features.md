@@ -5,7 +5,7 @@ title: Features
 # Features
 De functionaliteit van de API is gespecificeerd en geillustreerd door middel van gerichte voorbeelden.
 
-- [Reisdocumenten](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/features/reisdocumenten.feature){:target="_blank" rel="noopener"}
+- [reisdocumenten](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/features/reisdocumenten.feature){:target="_blank" rel="noopener"}
 
 ## Algemene Haal Centraal features
 Naast de features die specifiek zijn voor BRP-bevragen, zijn voor de API ook enkele features relevant die zijn opgenomen in Haal Centraal common, omdat deze gelden voor alle Haal Centraal API's:
