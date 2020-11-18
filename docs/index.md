@@ -17,6 +17,14 @@ API voor het bevragen van reisdocumenten van personen. Met deze API kun je een r
 * Download de [technische specificaties](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/specificatie/genereervariant/openapi.yaml){:target="_blank" rel="noopener"}
 * Download [client code](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/tree/master/code){:target="_blank" rel="noopener"}
 
+## Heb je meer nodig? 
+Gebruik de Reisdocumenten bevragen API in combinatie met (een van de) andere BRP API’s:
+
+* [Actuele BRP-gegevens bevragen](https://vng-realisatie.github.io/Haal-Centraal-BRP-bevragen){:target="_blank" rel="noopener"}
+* [Historische BRP-gegevens bevragen](https://vng-realisatie.github.io/Haal-Centraal-BRP-historie-bevragen){:target="_blank" rel="noopener"}
+* [Bewoning en medebewoners bevragen](https://vng-realisatie.github.io/Haal-Centraal-BRP-bewoning){:target="_blank" rel="noopener"}
+* [Landelijke tabellen bevragen](https://vng-realisatie.github.io/Haal-Centraal-BRP-tabellen-bevragen){:target="_blank" rel="noopener"}
+
 ## Bronnen
 
 * [Productvisie Haal Centraal](https://vng-realisatie.github.io/Haal-Centraal){:target="_blank" rel="noopener"}
