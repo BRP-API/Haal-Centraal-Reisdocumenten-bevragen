@@ -94,6 +94,10 @@ a {
     color: #1a237e;
     text-decoration: underline;
 }
+nav a {
+  text-decoration: none;
+}
+
 strong {
     font-weight: 500;
 }
