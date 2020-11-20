@@ -25,7 +25,7 @@ Je kunt code genereren op basis van de [genereervariant van de specificaties](ht
 Voor enkele ontwikkelomgevingen is al [client code](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/tree/master/code){:target="_blank" rel="noopener"} gegenereerd.
 
 ## Probeer en test
-Je kunt de Haal Centraal niet proberen in de demo-omgeving (www.haalcentraal.nl/haalcentraal/api/) omdat de achterliggende bron (GBA-V) op basis van de autorisatie die we gebruiken (autorisatietabel 35) geen autorisaties voor reisdocumenten bevat. Voorbeeldberichten zijn wel beschikbaar.
+Je kunt de Haal Centraal niet proberen in de demo-omgeving (www.haalcentraal.nl/haalcentraal/api/) omdat de achterliggende bron (GBA-V obv autorisatietabel 35) geen autorisaties voor reisdocumenten bevat. Voorbeeldberichten zijn wel beschikbaar.
 
 ### Voorbeeldberichten
 Onderstaande tabel bevat enkele voorbeeld antwoordberichten.
