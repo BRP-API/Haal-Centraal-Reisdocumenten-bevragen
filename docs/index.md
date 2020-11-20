@@ -9,7 +9,7 @@ title: Haal Centraal Reisdocumenten bevragen
 ![generate sdks](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/workflows/generate-sdks/badge.svg)
 ![generate postman collection](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/workflows/generate-postman-collection/badge.svg)
 
-API voor het bevragen van reisdocumenten van personen. Met deze API kun je een reisdocument raadplegen op basis van het reisdocumentnummer.
+API voor het raadplegen van een reisdocument met een reisdocumentnummer.
 
 ## Direct aan de slag?
 * Bekijk de specificaties met [Swagger UI](./swagger-ui) of [Redoc](./redoc)
