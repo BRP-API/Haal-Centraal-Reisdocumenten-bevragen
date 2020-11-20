@@ -3,7 +3,7 @@ layout: page-with-side-nav
 title: Features
 ---
 # Features
-Concrete voorbeelden illustreren en specificeren zoveel mogelijk de functionaliteit van de API.
+Deze voorbeelden illustreren en specificeren zoveel mogelijk de functionaliteit van de API:
 
 - [reisdocumenten](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/features/reisdocumenten.feature){:target="_blank" rel="noopener"}
 
