@@ -11,16 +11,16 @@ nav:
     subnav:
       - title: Main
         path: /
-      - title: Getting started
-        path: /getting-started
-      - title: User stories
-        url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/issues?q=is%3Aissue+is%3Aopen+
-        path: /user-stories
-        target: blank
 #      - title: Goals canvas
 #        path: /goals-canvas
   - title: Specificaties v. 1.0 (IO)
     subnav:
+      - title: Getting started
+        path: /getting-started
+      - title: User stories
+        url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/issues?q=is%3Aissue
+        path: /user-stories
+        target: blank
       - title: Bevragen API (swagger-ui)
         path: /swagger-ui
       - title: Bevragen API (redoc)
