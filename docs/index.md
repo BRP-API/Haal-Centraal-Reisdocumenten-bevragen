@@ -11,7 +11,7 @@ title: Haal Centraal Reisdocumenten bevragen
 
 API voor het raadplegen van een reisdocument met een reisdocumentnummer.
 
-## Direct aan de slag?
+## Direct uitproberen?
 * Bekijk de specificaties met [Swagger UI](./swagger-ui) of [Redoc](./redoc)
 * Lees de [Getting started](./getting-started)
 * Download de [technische specificaties](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/blob/master/specificatie/genereervariant/openapi.yaml){:target="_blank" rel="noopener"}
@@ -32,6 +32,13 @@ Gebruik de Reisdocumenten bevragen API in combinatie met (een van de) andere BRP
 * [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/){:target="_blank" rel="noopener"}
 * [Landelijke API strategie voor de overheid](https://geonovum.github.io/KP-APIs/){:target="_blank" rel="noopener"}
 
+## Contact
+
+* Product Owner: Cathy Dingemanse, [cathy.dingemanse@denhaag.nl](mailto:cathy.dingemanse@denhaag.nl)
+* Designer: Johan Boer, [johan.boer@vng.nl](mailto:johan.boer@vng.nl)
+* Designer: Robert Melskens, [robert.melskens@vng.nl](mailto:robert.melskens@vng.nl)
+* Customer zero: Melvin Lee, [melvin.lee@iswish.nl](mailto:melvin.lee@iswish.nl)
+* Tester: Frank Samwel, [frank.samwel@denhaag.nl](mailto:frank.samwel@denhaag.nl)
 
 ## Licentie
 
