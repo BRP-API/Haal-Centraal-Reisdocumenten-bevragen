@@ -9,7 +9,7 @@ title: Haal Centraal Reisdocumenten bevragen
 ![generate sdks](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/workflows/generate-sdks/badge.svg)
 ![generate postman collection](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/workflows/generate-postman-collection/badge.svg)
 
-API voor het raadplegen van een reisdocument met een reisdocumentnummer.
+API voor het raadplegen van een reisdocument met een reisdocumentnummer. De API wordt nog niet door RvIG aangeboden. Om de migratie naar API’s te versnellen besluiten sommige gemeenten de API zelf aan te bieden.
 
 ## Direct uitproberen?
 * Bekijk de specificaties met [Swagger UI](./swagger-ui) of [Redoc](./redoc)
