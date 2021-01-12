@@ -5,9 +5,8 @@ servers:
     url: https://www.haalcentraal.nl/haalcentraal/api/brp
 info:
   title: Reisdocumenten
-  description: |
-                API voor het raadplegen van reisdocumenten uit de GBA en RNI.
-  version: "1.0.0"
+  description: "API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI."
+  version: "0.9.0"
   contact:
     url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
   license:
