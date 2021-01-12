@@ -1,7 +1,7 @@
 {
     "item": [
         {
-            "id": "9278450a-b604-4b19-887c-0be86987ac2e",
+            "id": "f51ceeb3-8a8b-4a4f-baab-17d2a9325b3d",
             "name": "Raadpleeg een reisdocument",
             "request": {
                 "name": "Raadpleeg een reisdocument",
@@ -32,7 +32,7 @@
             },
             "response": [
                 {
-                    "id": "c3f7da02-1f0a-48de-9ef4-f3a451998057",
+                    "id": "1d89225c-986d-4baf-82e5-a83e7c25a9e0",
                     "name": "Zoekactie geslaagd",
                     "originalRequest": {
                         "url": {
@@ -72,12 +72,12 @@
                             "value": "application/hal+json"
                         }
                     ],
-                    "body": "{\n \"aanduidingInhoudingOfVermissing\": \"vermist\",\n \"reisdocumentnummer\": \"546376728\",\n \"autoriteitAfgifte\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"datumEindeGeldigheid\": {\n  \"dag\": 3,\n  \"datum\": \"2003-11-12\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumInhoudingOfVermissing\": {\n  \"dag\": 3,\n  \"datum\": \"2017-02-10\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumUitgifte\": {\n  \"dag\": 3,\n  \"datum\": \"1955-09-05\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"soortReisdocument\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"geheimhoudingPersoonsgegevens\": false,\n \"inOnderzoek\": {\n  \"aanduidingInhoudingOfVermissing\": false,\n  \"autoriteitAfgifte\": false,\n  \"datumEindeGeldigheid\": false,\n  \"datumInhoudingOfVermissing\": false,\n  \"datumUitgifte\": true,\n  \"reisdocumentnummer\": true,\n  \"soortReisdocument\": false,\n  \"datumIngangOnderzoek\": {\n   \"dag\": 3,\n   \"datum\": \"2009-05-28\",\n   \"jaar\": 1989,\n   \"maand\": 5\n  }\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"in ipsum laboris ex\"\n  },\n  \"ingeschrevenPersoon\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"pariatur adipisicing cillum aute ea\"\n  }\n }\n}",
+                    "body": "{\n \"aanduidingInhoudingOfVermissing\": \"rechtswege\",\n \"reisdocumentnummer\": \"546376728\",\n \"autoriteitAfgifte\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"datumEindeGeldigheid\": {\n  \"dag\": 3,\n  \"datum\": \"2003-03-06\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumInhoudingOfVermissing\": {\n  \"dag\": 3,\n  \"datum\": \"1951-09-25\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumUitgifte\": {\n  \"dag\": 3,\n  \"datum\": \"1979-02-03\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"soortReisdocument\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"geheimhoudingPersoonsgegevens\": false,\n \"inOnderzoek\": {\n  \"aanduidingInhoudingOfVermissing\": true,\n  \"autoriteitAfgifte\": true,\n  \"datumEindeGeldigheid\": false,\n  \"datumInhoudingOfVermissing\": false,\n  \"datumUitgifte\": true,\n  \"reisdocumentnummer\": true,\n  \"soortReisdocument\": false,\n  \"datumIngangOnderzoek\": {\n   \"dag\": 3,\n   \"datum\": \"1975-06-07\",\n   \"jaar\": 1989,\n   \"maand\": 5\n  }\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"exercitation\"\n  },\n  \"ingeschrevenPersoon\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"tempor minim anim Excepteur Lorem\"\n  }\n }\n}",
                     "cookie": [],
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "e7bbbb1f-90c4-418a-bbdd-147e9084eb96",
+                    "id": "ce15dd0d-8fae-4a6a-a359-ae57af83a2a6",
                     "name": "Bad Request",
                     "originalRequest": {
                         "url": {
@@ -117,7 +117,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "baf87236-6c94-46ef-8257-2e2b4843b66b",
+                    "id": "0658beda-3b70-4a7e-b7e9-32edd764dd85",
                     "name": "Unauthorized",
                     "originalRequest": {
                         "url": {
@@ -157,7 +157,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "f8e72b51-4743-4f3c-9626-b01b87aa7bfc",
+                    "id": "72e9ac68-af85-47e9-ba17-3a25d850460a",
                     "name": "Forbidden",
                     "originalRequest": {
                         "url": {
@@ -197,7 +197,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "13922179-1736-4e28-b5d5-c2d6724709dc",
+                    "id": "bbe607c0-1b79-4dc2-8f55-459344345e08",
                     "name": "Not Found",
                     "originalRequest": {
                         "url": {
@@ -237,7 +237,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "db9b92c6-a053-484e-a882-3b2e23df5f4a",
+                    "id": "4365026a-fb81-454e-bfe6-473e31a7539f",
                     "name": "Not Acceptable",
                     "originalRequest": {
                         "url": {
@@ -277,7 +277,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "87962f4c-03b7-4bb2-8e1e-ffe34fe2f0b0",
+                    "id": "15865c02-04f5-480b-9860-341edeb2496e",
                     "name": "Internal Server Error",
                     "originalRequest": {
                         "url": {
@@ -317,7 +317,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "a7e14572-0ad3-4c85-8325-8a049cee7bfa",
+                    "id": "1aae41cb-fd95-4835-8b46-94e0b78eae72",
                     "name": "Service Unavailable",
                     "originalRequest": {
                         "url": {
@@ -357,7 +357,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "39ec0959-80ad-4fae-a335-019590ea770b",
+                    "id": "d69bee6e-9fda-4af6-abe6-631c8b973883",
                     "name": "Er is een onverwachte fout opgetreden",
                     "originalRequest": {
                         "url": {
@@ -392,7 +392,7 @@
                             "value": "application/problem+json"
                         }
                     ],
-                    "body": "{\n \"type\": \"https://VDYhxRvB.bmiSqEoOE0jutd9GptbCQAxtWm.v-oR6gK,BD,7\",\n \"title\": \"amet nostrud dolor\",\n \"status\": -34659105,\n \"detail\": \"incididunt \",\n \"instance\": \"http://sgzCVmvprfUvcZZdeNeH.veg2XgyTyW+sRlZv7HCwIWxVNJV5rxQm61Y2iwAPPrhjSaW6oA1j+UwJwr7waLYbTd3zBW\",\n \"code\": \"enim in commodo qui\"\n}",
+                    "body": "{\n \"type\": \"http://lIpCKzLJeTwWkciHphRPC.upuYCo5k5iFxpgsMMUoSI5QlUvReXO,Kf1OH5vhGdOineEIDRxvOdMfEX\",\n \"title\": \"est\",\n \"status\": -73184635,\n \"detail\": \"eu aliquip\",\n \"instance\": \"http://KsVzOcY.ooDEPWLIu4iU9cQBNDc8rlu\",\n \"code\": \"occaecat in Lor\"\n}",
                     "cookie": [],
                     "_postman_previewlanguage": "json"
                 }
@@ -409,7 +409,7 @@
         }
     ],
     "info": {
-        "_postman_id": "b46cc145-6e6c-48e1-8505-d257b8c8f8cc",
+        "_postman_id": "d26a60a6-5f49-429a-b1cb-822acf8a4941",
         "name": "Reisdocumenten",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": {
