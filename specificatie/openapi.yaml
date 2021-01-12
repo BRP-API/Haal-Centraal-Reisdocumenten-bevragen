@@ -5,7 +5,7 @@ servers:
 info:
   title: Reisdocumenten
   description: "API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI."
-  version: "1.0.0"
+  version: "0.9.0"
   contact:
     url: https://github.com/VNG-Realisatie/Bevragingen-ingeschreven-personen
   license:
