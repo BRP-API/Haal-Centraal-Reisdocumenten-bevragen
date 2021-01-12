@@ -10,7 +10,7 @@
       "name" : "European Union Public License, version 1.2 (EUPL-1.2)",
       "url" : "https://eupl.eu/1.2/nl/"
     },
-    "version" : "1.0.0"
+    "version" : "0.9.0"
   },
   "servers" : [ {
     "url" : "https://virtserver.swaggerhub.com/VNGRealisatie/api/reisdocumenten",
