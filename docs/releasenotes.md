@@ -18,7 +18,6 @@ Daarnaast bieden we een[postman-collectie](./test) t.b.v. testen aan.
 - Alle descriptions zijn omgezet naar markdown.
 - Bij property reisdocumentnummer is de maxLength weggehaald.
 - OperationId's zijn aangepast. (Breaking)
-- Fields-parameter is toegevoegd
 - Titles en descriptions bij de booleans van ReisdocumentInOnderzoek zijn verwijderd.
 - Enkele namen van schema-componenten zijn aangepast vanwege consistentie met andere Haal-Centraal API's
   - Hal-componenten die alleen _links bevatten zijn omgenoemd van xxxHal naar xxxHalBasis
