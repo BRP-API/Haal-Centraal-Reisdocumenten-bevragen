@@ -28,7 +28,7 @@ paths:
           required: true
           schema:
             type: string
-            maxlength: 9
+            maxLength: 9
       responses:
         '200':
           description: "Zoekactie geslaagd"
