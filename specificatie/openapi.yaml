@@ -40,7 +40,7 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ReisdocumentHalBasis'
+                $ref: '#/components/schemas/ReisdocumentHal'
         '400':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/Haal-Centraal-common/v1.2.0/api-specificatie/common.yaml#/components/responses/400"
         '401':
@@ -76,7 +76,6 @@ components:
           $ref: "#/components/schemas/AanduidingInhoudingVermissingReisdocumentEnum"
         reisdocumentnummer:
           type: "string"
-          title: "Reisdocumentnummer"
           description: |
                         Het nummer van het Nederlandse reisdocument.
           example: "546376728"
@@ -94,10 +93,10 @@ components:
           type: "boolean"
           title: "Indicatie geheim"
           description: |
-                        Een aanduiding die aangeeft dat gegevens wel of niet verstrektmogen worden. Indien true: op verzoek van deze persoon is het verstrekken van gegevens over deze persoon aan bepaalde derden niet toegestaan.
+                        Een aanduiding die aangeeft dat gegevens wel of niet verstrekt mogen worden. Indien true: op verzoek van deze persoon is het verstrekken van gegevens over deze persoon aan bepaalde derden niet toegestaan.
         inOnderzoek:
           $ref: "#/components/schemas/ReisdocumentInOnderzoek"
-    ReisdocumentHalBasis:
+    ReisdocumentHal:
       allOf:
         - $ref: '#/components/schemas/Reisdocument'
         - properties:
