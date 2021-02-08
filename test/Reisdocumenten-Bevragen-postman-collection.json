@@ -1,7 +1,7 @@
 {
     "item": [
         {
-            "id": "f51ceeb3-8a8b-4a4f-baab-17d2a9325b3d",
+            "id": "04586538-bbad-44be-a5cc-ab153f4c5eaa",
             "name": "Raadpleeg een reisdocument",
             "request": {
                 "name": "Raadpleeg een reisdocument",
@@ -32,7 +32,7 @@
             },
             "response": [
                 {
-                    "id": "1d89225c-986d-4baf-82e5-a83e7c25a9e0",
+                    "id": "dde838cb-1a55-4794-9fda-b00c6d983e97",
                     "name": "Zoekactie geslaagd",
                     "originalRequest": {
                         "url": {
@@ -72,12 +72,12 @@
                             "value": "application/hal+json"
                         }
                     ],
-                    "body": "{\n \"aanduidingInhoudingOfVermissing\": \"rechtswege\",\n \"reisdocumentnummer\": \"546376728\",\n \"autoriteitAfgifte\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"datumEindeGeldigheid\": {\n  \"dag\": 3,\n  \"datum\": \"2003-03-06\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumInhoudingOfVermissing\": {\n  \"dag\": 3,\n  \"datum\": \"1951-09-25\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumUitgifte\": {\n  \"dag\": 3,\n  \"datum\": \"1979-02-03\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"soortReisdocument\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"geheimhoudingPersoonsgegevens\": false,\n \"inOnderzoek\": {\n  \"aanduidingInhoudingOfVermissing\": true,\n  \"autoriteitAfgifte\": true,\n  \"datumEindeGeldigheid\": false,\n  \"datumInhoudingOfVermissing\": false,\n  \"datumUitgifte\": true,\n  \"reisdocumentnummer\": true,\n  \"soortReisdocument\": false,\n  \"datumIngangOnderzoek\": {\n   \"dag\": 3,\n   \"datum\": \"1975-06-07\",\n   \"jaar\": 1989,\n   \"maand\": 5\n  }\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"exercitation\"\n  },\n  \"ingeschrevenPersoon\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"tempor minim anim Excepteur Lorem\"\n  }\n }\n}",
+                    "body": "{\n \"aanduidingInhoudingOfVermissing\": \"vermist\",\n \"reisdocumentnummer\": \"546376728\",\n \"autoriteitAfgifte\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"datumEindeGeldigheid\": {\n  \"dag\": 3,\n  \"datum\": \"1986-06-19\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumInhoudingOfVermissing\": {\n  \"dag\": 3,\n  \"datum\": \"1962-02-09\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumUitgifte\": {\n  \"dag\": 3,\n  \"datum\": \"1955-03-07\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"soortReisdocument\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"geheimhoudingPersoonsgegevens\": true,\n \"inOnderzoek\": {\n  \"aanduidingInhoudingOfVermissing\": true,\n  \"autoriteitAfgifte\": true,\n  \"datumEindeGeldigheid\": true,\n  \"datumInhoudingOfVermissing\": false,\n  \"datumUitgifte\": true,\n  \"reisdocumentnummer\": true,\n  \"soortReisdocument\": false,\n  \"datumIngangOnderzoek\": {\n   \"dag\": 3,\n   \"datum\": \"1992-09-15\",\n   \"jaar\": 1989,\n   \"maand\": 5\n  }\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"nostrud ut occaecat reprehenderit et\"\n  },\n  \"ingeschrevenPersoon\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": true,\n   \"title\": \"occaecat non cillum tempor officia\"\n  }\n }\n}",
                     "cookie": [],
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "ce15dd0d-8fae-4a6a-a359-ae57af83a2a6",
+                    "id": "7994f6cd-dd6e-458e-a186-a1b4690b3ca4",
                     "name": "Bad Request",
                     "originalRequest": {
                         "url": {
@@ -117,7 +117,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "0658beda-3b70-4a7e-b7e9-32edd764dd85",
+                    "id": "cb0d12e5-3f01-469b-98d2-4466a747bc1e",
                     "name": "Unauthorized",
                     "originalRequest": {
                         "url": {
@@ -157,7 +157,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "72e9ac68-af85-47e9-ba17-3a25d850460a",
+                    "id": "878f4dc4-76e4-463c-a348-d44a86368ad3",
                     "name": "Forbidden",
                     "originalRequest": {
                         "url": {
@@ -197,7 +197,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "bbe607c0-1b79-4dc2-8f55-459344345e08",
+                    "id": "662e56f5-f2d8-48a3-88c8-0b94ae3c6bcf",
                     "name": "Not Found",
                     "originalRequest": {
                         "url": {
@@ -237,7 +237,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "4365026a-fb81-454e-bfe6-473e31a7539f",
+                    "id": "7271a612-0b9f-4605-b3ee-92e04f1b71ee",
                     "name": "Not Acceptable",
                     "originalRequest": {
                         "url": {
@@ -277,7 +277,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "15865c02-04f5-480b-9860-341edeb2496e",
+                    "id": "c2f0a033-610d-4295-9ba2-e5ed4e533c5f",
                     "name": "Internal Server Error",
                     "originalRequest": {
                         "url": {
@@ -317,7 +317,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "1aae41cb-fd95-4835-8b46-94e0b78eae72",
+                    "id": "f360e214-edfc-466b-802d-819ae89ca3dd",
                     "name": "Service Unavailable",
                     "originalRequest": {
                         "url": {
@@ -357,7 +357,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "d69bee6e-9fda-4af6-abe6-631c8b973883",
+                    "id": "1f3a5446-9f48-49d5-b981-38346bd58106",
                     "name": "Er is een onverwachte fout opgetreden",
                     "originalRequest": {
                         "url": {
@@ -392,7 +392,7 @@
                             "value": "application/problem+json"
                         }
                     ],
-                    "body": "{\n \"type\": \"http://lIpCKzLJeTwWkciHphRPC.upuYCo5k5iFxpgsMMUoSI5QlUvReXO,Kf1OH5vhGdOineEIDRxvOdMfEX\",\n \"title\": \"est\",\n \"status\": -73184635,\n \"detail\": \"eu aliquip\",\n \"instance\": \"http://KsVzOcY.ooDEPWLIu4iU9cQBNDc8rlu\",\n \"code\": \"occaecat in Lor\"\n}",
+                    "body": "{\n \"type\": \"https://woGIKFhQAqdeYZVRerAtXSar.kzGKnuVPhVLCpe-Vry2RpUZaEIzpP2dSS6ncx2C+qjrac\",\n \"title\": \"sit officia est mol\",\n \"status\": 45828482,\n \"detail\": \"eu ea\",\n \"instance\": \"http://KrMCecAFaFEDPfoQfticeM.ioBzXzl15j0zg9bDyTFS+RLd7BcPdthvUx2tYso3bakcTn\",\n \"code\": \"velit mollit ea\"\n}",
                     "cookie": [],
                     "_postman_previewlanguage": "json"
                 }
@@ -409,11 +409,11 @@
         }
     ],
     "info": {
-        "_postman_id": "d26a60a6-5f49-429a-b1cb-822acf8a4941",
+        "_postman_id": "6af27789-a44d-4218-9d6b-c1696cbebbc2",
         "name": "Reisdocumenten",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": {
-            "content": "API voor het raadplegen van reisdocumenten uit de GBA en RNI.\n",
+            "content": "API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI.\n",
             "type": "text/plain"
         }
     }
