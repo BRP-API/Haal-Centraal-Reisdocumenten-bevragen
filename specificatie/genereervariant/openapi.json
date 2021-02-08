@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Reisdocumenten",
-    "description" : "API voor het raadplegen van reisdocumenten uit de GBA en RNI.\n",
+    "description" : "API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI.\n",
     "contact" : {
       "url" : "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen"
     },
@@ -10,7 +10,7 @@
       "name" : "European Union Public License, version 1.2 (EUPL-1.2)",
       "url" : "https://eupl.eu/1.2/nl/"
     },
-    "version" : "0.9.0"
+    "version" : "1.0.0"
   },
   "servers" : [ {
     "url" : "https://www.haalcentraal.nl/haalcentraal/api/brp",
@@ -251,8 +251,6 @@
             "$ref" : "#/components/schemas/AanduidingInhoudingVermissingReisdocumentEnum"
           },
           "reisdocumentnummer" : {
-            "title" : "Reisdocumentnummer",
-            "maxLength" : 9,
             "type" : "string",
             "description" : "Het nummer van het Nederlandse reisdocument.\n",
             "example" : "546376728"
@@ -275,13 +273,13 @@
           "geheimhoudingPersoonsgegevens" : {
             "title" : "Indicatie geheim",
             "type" : "boolean",
-            "description" : "Een aanduiding die aangeeft dat gegevens wel of niet verstrektmogen worden. Indien true: op verzoek van deze persoon is het verstrekken van gegevens over deze persoon aan bepaalde derden niet toegestaan.\n"
+            "description" : "Een aanduiding die aangeeft dat gegevens wel of niet verstrekt mogen worden. Indien true: op verzoek van deze persoon is het verstrekken van gegevens over deze persoon aan bepaalde derden niet toegestaan.\n"
           },
           "inOnderzoek" : {
             "$ref" : "#/components/schemas/ReisdocumentInOnderzoek"
           }
         },
-        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n* **datumEindeGeldigheid** : de datum waarop het reisdocument niet meer geldig is.\n* **datumInhoudingOfVermissing**: de datum waarop het reisdocument is vermist, ingehouden, ingeleverd, of van rechtswege is vervallen.\n* **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.\n* **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt.\n* **aanduidingInhoudingOfVermissing** : geeft aan dat het reisdocument is vermist, ingehouden, ingeleverd, dan wel van rechtswege is vervallen.\n* **soortReisdocument** : geeft aan welk Nederlandse reisdocument is verstrekt.\n"
+        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n* **datumEindeGeldigheid** : de datum waarop het reisdocument niet meer geldig is.\n* **datumInhoudingOfVermissing**: de datum waarop het reisdocument is vermist, ingehouden, ingeleverd, of van rechtswege is vervallen.\n* **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.\n* **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt.\n* **aanduidingInhoudingOfVermissing** : geeft aan dat het reisdocument is vermist, ingehouden, ingeleverd, dan wel van rechtswege is vervallen.\n* **soortReisdocument** : geeft aan welk Nederlands reisdocument is verstrekt.\n"
       },
       "ReisdocumentHal" : {
         "allOf" : [ {

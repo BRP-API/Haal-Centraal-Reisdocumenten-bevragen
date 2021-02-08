@@ -2,13 +2,13 @@ openapi: 3.0.0
 info:
   title: Reisdocumenten
   description: |
-    API voor het raadplegen van reisdocumenten uit de GBA en RNI.
+    API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI.
   contact:
     url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
   license:
     name: European Union Public License, version 1.2 (EUPL-1.2)
     url: https://eupl.eu/1.2/nl/
-  version: 0.9.0
+  version: 1.0.0
 servers:
 - url: https://www.haalcentraal.nl/haalcentraal/api/brp
   description: |
@@ -187,8 +187,6 @@ components:
         aanduidingInhoudingOfVermissing:
           $ref: '#/components/schemas/AanduidingInhoudingVermissingReisdocumentEnum'
         reisdocumentnummer:
-          title: Reisdocumentnummer
-          maxLength: 9
           type: string
           description: |
             Het nummer van het Nederlandse reisdocument.
@@ -207,7 +205,7 @@ components:
           title: Indicatie geheim
           type: boolean
           description: |
-            Een aanduiding die aangeeft dat gegevens wel of niet verstrektmogen worden. Indien true: op verzoek van deze persoon is het verstrekken van gegevens over deze persoon aan bepaalde derden niet toegestaan.
+            Een aanduiding die aangeeft dat gegevens wel of niet verstrekt mogen worden. Indien true: op verzoek van deze persoon is het verstrekken van gegevens over deze persoon aan bepaalde derden niet toegestaan.
         inOnderzoek:
           $ref: '#/components/schemas/ReisdocumentInOnderzoek'
       description: |
