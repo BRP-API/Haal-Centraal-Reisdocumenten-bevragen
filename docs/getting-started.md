@@ -30,7 +30,7 @@ Deze repo bevat scripts waarmee met behulp van [OpenAPI Generator](https://opena
 
 Een lijst met andere ondersteunde generator opties is te vinden in de [Generators List](https://openapi-generator.tech/docs/generators){:target="_blank" rel="noopener"} van OpenAPI Generator.
 
-Note. De prerequisite OpenAPI Generator is JAVA. Een JAVA runtime moet worden geïnstalleerd voordat OpenAPI Generator kan worden gebruikt.
+Note. De prerequisite van OpenAPI Generator is JAVA. Een JAVA runtime moet worden geïnstalleerd voordat OpenAPI Generator kan worden gebruikt.
 
 ## Probeer en test de API
 Je kunt deze Haal Centraal API niet proberen in de demo-omgeving (www.haalcentraal.nl/haalcentraal/api/) omdat de achterliggende bron (GBA-V obv autorisatietabel 35) geen autorisaties voor reisdocumenten bevat. Voorbeeldberichten zijn wel beschikbaar.
