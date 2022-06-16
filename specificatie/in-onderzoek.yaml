@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: In onderzoek definities
+  version: 2.0.0
+  contact: {}
+paths: {}
+components:
+  schemas:
+    InOnderzoek:
+      type: object
+      properties:
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+    GbaInOnderzoek:
+      type: object
+      required:
+        - aanduidingGegevensInOnderzoek
+        - datumIngangOnderzoek
+      properties:
+        aanduidingGegevensInOnderzoek:
+          type: string
+          pattern: ^[0-9]{6}$
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'

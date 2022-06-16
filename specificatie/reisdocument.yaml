@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: Reisdocument definities
+  version: 2.0.0
+  contact: {}
+paths: {}
+components:
+  schemas:
+    Reisdocumentnummer:
+      type: string
+      pattern: ^[a-zA-Z0-9]{9}$
+    Burgerservicenummer:
+      type: string
+      pattern: ^[0-9]{9}$
+      example: "555555021"
+    AanduidingInhoudingVermissing:
+      type: string
+      description: |
+                    Waarden voor de aanduiding inhouding of vermissing van een Nederlands reisdocument zijn:
+                    * `ingehouden_of_ingeleverd` - I
+                    * `vermist` - V
+                    * `rechtswege` - R
+                    * `niet_in_bezit_van` - N
+      enum:
+      - "ingehouden_of_ingeleverd"
+      - "vermist"
+      - "rechtswege"
+      - "niet_in_bezit_van"
