@@ -1,12 +1,12 @@
 {
     "item": [
         {
-            "id": "04586538-bbad-44be-a5cc-ab153f4c5eaa",
+            "id": "33236a1e-6b62-4089-b239-5ea5544016ca",
             "name": "Raadpleeg een reisdocument",
             "request": {
                 "name": "Raadpleeg een reisdocument",
                 "description": {
-                    "content": "Raadpleeg een Reisdocument.\n",
+                    "content": "Raadpleeg een Reisdocument met het reisdocumentnummer.\n",
                     "type": "text/plain"
                 },
                 "url": {
@@ -32,8 +32,8 @@
             },
             "response": [
                 {
-                    "id": "dde838cb-1a55-4794-9fda-b00c6d983e97",
-                    "name": "Zoekactie geslaagd",
+                    "id": "83033075-49b5-46f9-835d-e8f5a201cfe3",
+                    "name": "Zoekactie geslaagd\n",
                     "originalRequest": {
                         "url": {
                             "path": [
@@ -68,16 +68,31 @@
                             "value": "299 https://service.../api/.../v1 \"Deze versie van de API is verouderd en zal uit dienst worden genomen op 2018-02-01. Raadpleeg voor meer informatie hier de documentatie: https://omgevingswet.../api/.../v1\"."
                         },
                         {
+                            "description": "",
+                            "key": "X-Rate-Limit-Limit",
+                            "value": "27784610"
+                        },
+                        {
+                            "description": "",
+                            "key": "X-Rate-Limit-Remaining",
+                            "value": "27784610"
+                        },
+                        {
+                            "description": "",
+                            "key": "X-Rate-Limit-Reset",
+                            "value": "27784610"
+                        },
+                        {
                             "key": "Content-Type",
-                            "value": "application/hal+json"
+                            "value": "application/json"
                         }
                     ],
-                    "body": "{\n \"aanduidingInhoudingOfVermissing\": \"vermist\",\n \"reisdocumentnummer\": \"546376728\",\n \"autoriteitAfgifte\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"datumEindeGeldigheid\": {\n  \"dag\": 3,\n  \"datum\": \"1986-06-19\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumInhoudingOfVermissing\": {\n  \"dag\": 3,\n  \"datum\": \"1962-02-09\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"datumUitgifte\": {\n  \"dag\": 3,\n  \"datum\": \"1955-03-07\",\n  \"jaar\": 1989,\n  \"maand\": 5\n },\n \"soortReisdocument\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"geheimhoudingPersoonsgegevens\": true,\n \"inOnderzoek\": {\n  \"aanduidingInhoudingOfVermissing\": true,\n  \"autoriteitAfgifte\": true,\n  \"datumEindeGeldigheid\": true,\n  \"datumInhoudingOfVermissing\": false,\n  \"datumUitgifte\": true,\n  \"reisdocumentnummer\": true,\n  \"soortReisdocument\": false,\n  \"datumIngangOnderzoek\": {\n   \"dag\": 3,\n   \"datum\": \"1992-09-15\",\n   \"jaar\": 1989,\n   \"maand\": 5\n  }\n },\n \"_links\": {\n  \"self\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": false,\n   \"title\": \"nostrud ut occaecat reprehenderit et\"\n  },\n  \"ingeschrevenPersoon\": {\n   \"href\": \"https://datapunt.voorbeeldgemeente.nl/api/v{major-versie}/resourcename/{resource-identificatie}\",\n   \"templated\": true,\n   \"title\": \"occaecat non cillum tempor officia\"\n  }\n }\n}",
+                    "body": "{\n \"reisdocumentnummer\": \"<string>\",\n \"soortReisdocument\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"autoriteitAfgifte\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"datumUitgifte\": {\n  \"type\": \"non mollit qui\",\n  \"langFormaat\": \"rnqvt3nb\"\n },\n \"datumEindeGeldigheid\": {\n  \"type\": \"mollit\",\n  \"langFormaat\": \"75gmruk2lkezekf\"\n },\n \"datumInhoudingOfVermissing\": {\n  \"type\": \"occaecat Lorem in\",\n  \"langFormaat\": \"ykijwgp\"\n },\n \"aanduidingInhoudingOfVermissing\": {\n  \"code\": \"6030\",\n  \"omschrijving\": \"Nederland\"\n },\n \"burgerservicenummer\": \"555555021\",\n \"inOnderzoek\": {\n  \"datumIngangOnderzoek\": {\n   \"type\": \"cillum ve\",\n   \"langFormaat\": \"itb3w6zevx5fao9nm\"\n  },\n  \"reisdocumentnummer\": false,\n  \"soortReisdocument\": true,\n  \"autoriteitAfgifte\": true,\n  \"datumUitgifte\": true,\n  \"datumEindeGeldigheid\": true,\n  \"datumInhoudingOfVermissing\": true,\n  \"aanduidingInhoudingOfVermissing\": true,\n  \"burgerservicenummer\": false\n }\n}",
                     "cookie": [],
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "7994f6cd-dd6e-458e-a186-a1b4690b3ca4",
+                    "id": "dcec7913-eae5-4b71-9d9a-4d9cebcc537f",
                     "name": "Bad Request",
                     "originalRequest": {
                         "url": {
@@ -117,7 +132,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "cb0d12e5-3f01-469b-98d2-4466a747bc1e",
+                    "id": "0e30f605-10a2-43bb-95c6-7533c046b917",
                     "name": "Unauthorized",
                     "originalRequest": {
                         "url": {
@@ -157,7 +172,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "878f4dc4-76e4-463c-a348-d44a86368ad3",
+                    "id": "c41fa9fe-abe5-4134-878d-81ca5a3449ca",
                     "name": "Forbidden",
                     "originalRequest": {
                         "url": {
@@ -197,7 +212,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "662e56f5-f2d8-48a3-88c8-0b94ae3c6bcf",
+                    "id": "48f2e68e-f310-4526-8bd1-36c6f6f27787",
                     "name": "Not Found",
                     "originalRequest": {
                         "url": {
@@ -237,7 +252,7 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "7271a612-0b9f-4605-b3ee-92e04f1b71ee",
+                    "id": "c1a909ed-d411-4429-b2c3-8661287cc5cf",
                     "name": "Not Acceptable",
                     "originalRequest": {
                         "url": {
@@ -277,7 +292,47 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "c2f0a033-610d-4295-9ba2-e5ed4e533c5f",
+                    "id": "15aba480-3ff5-4d50-a9c0-d6d41a666a08",
+                    "name": "Too Many Requests",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Too Many Requests",
+                    "code": 429,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html\",\n \"title\": \"Too many request\",\n \"status\": 429,\n \"detail\": \"The user has sent too many requests in a given amount of time (rate limiting).\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"tooManyRequests\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "eeacda68-066b-4212-9bb3-3da004ded2f1",
                     "name": "Internal Server Error",
                     "originalRequest": {
                         "url": {
@@ -317,7 +372,47 @@
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "f360e214-edfc-466b-802d-819ae89ca3dd",
+                    "id": "5d2bad68-04b3-4c51-bcd7-12a8654d1d4a",
+                    "name": "Not Implemented",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "reisdocumenten",
+                                ":reisdocumentnummer"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [],
+                            "variable": [
+                                {
+                                    "type": "any",
+                                    "key": "reisdocumentnummer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Not Implemented",
+                    "code": 501,
+                    "header": [
+                        {
+                            "description": "",
+                            "key": "api-version",
+                            "value": "1.0.0"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/problem+json"
+                        }
+                    ],
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2\",\n \"title\": \"Not Implemented\",\n \"status\": 501,\n \"detail\": \"The server does not support the functionality required to fulfill the request.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"notImplemented\"\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "21b7df0e-bbdc-4f43-9663-16ae7f3aadd2",
                     "name": "Service Unavailable",
                     "originalRequest": {
                         "url": {
@@ -352,12 +447,12 @@
                             "value": "application/problem+json"
                         }
                     ],
-                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.4\",\n \"title\": \"Bronservice {bron} is tijdelijk niet beschikbaar.\",\n \"status\": 503,\n \"detail\": \"The service is currently unable to handle the request due to a temporary overloading or maintenance of the server.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"notAvailable\"\n}",
+                    "body": "{\n \"type\": \"https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.4\",\n \"title\": \"Bronservice BRP is tijdelijk niet beschikbaar.\",\n \"status\": 503,\n \"detail\": \"The service is currently unable to handle the request due to a temporary overloading or maintenance of the server.\",\n \"instance\": \"https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde\",\n \"code\": \"notAvailable\"\n}",
                     "cookie": [],
                     "_postman_previewlanguage": "json"
                 },
                 {
-                    "id": "1f3a5446-9f48-49d5-b981-38346bd58106",
+                    "id": "eebc1700-f470-4a8c-8ac3-4d6c02f9ece6",
                     "name": "Er is een onverwachte fout opgetreden",
                     "originalRequest": {
                         "url": {
@@ -392,7 +487,7 @@
                             "value": "application/problem+json"
                         }
                     ],
-                    "body": "{\n \"type\": \"https://woGIKFhQAqdeYZVRerAtXSar.kzGKnuVPhVLCpe-Vry2RpUZaEIzpP2dSS6ncx2C+qjrac\",\n \"title\": \"sit officia est mol\",\n \"status\": 45828482,\n \"detail\": \"eu ea\",\n \"instance\": \"http://KrMCecAFaFEDPfoQfticeM.ioBzXzl15j0zg9bDyTFS+RLd7BcPdthvUx2tYso3bakcTn\",\n \"code\": \"velit mollit ea\"\n}",
+                    "body": "{\n \"type\": \"http://qpEgGscPHKC.owyTnrAVkFKfz3V,N3g2AXXVOc8nrXVeWFSePEbje-CJ6.H\",\n \"title\": \"ÈfFŕbÿKqĎũBþĕÕ6ÛmÝõĻŎĹÖwŨĒřësôDıGĂĿŜÃŞĳ\",\n \"status\": 288,\n \"detail\": \"ŧøõÖŒŦŘĆaĤŤÿFXÀœvěÏČÞŸpÈžÜ\",\n \"instance\": \"http://oizxbJvYGGtKhDjCWybrXBZFihkpih.jpoR+MS8fNhIEcTuPffcy,HGxefLdGV9FQa\",\n \"code\": \"SAWEomXqA9ExVF5\"\n}",
                     "cookie": [],
                     "_postman_previewlanguage": "json"
                 }
@@ -405,15 +500,15 @@
         {
             "id": "baseUrl",
             "type": "string",
-            "value": "https://www.haalcentraal.nl/haalcentraal/api/brp"
+            "value": "/"
         }
     ],
     "info": {
-        "_postman_id": "6af27789-a44d-4218-9d6b-c1696cbebbc2",
+        "_postman_id": "9fd96c04-4635-4536-9045-bf6899fb60fe",
         "name": "Reisdocumenten",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": {
-            "content": "API voor het ontsluiten van gegevens van reisdocumenten uit de GBA en RNI.\n",
+            "content": "API voor het ontsluiten van gegevens van reisdocumenten.\n",
             "type": "text/plain"
         }
     }
