@@ -71,8 +71,8 @@ components:
       type: object
       description: |
                     Een document dat nodig is voor reizen naar het buitenland.
-                    * **soortReisdocument** : geeft aan welk Nederlands reisdocument is verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Reisdocument' (landelijke tabel 48) uit de Haal-Centraal-BRP-tabellen-bevragen API.
-                    * **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Autoriteit_Afgifte_Reisdocument' (landelijke tabel 49) uit de Haal-Centraal-BRP-tabellen-bevragen API.
+                    * **soortReisdocument** : geeft aan welk Nederlands reisdocument is verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' (landelijke tabel 48) uit de Haal-Centraal-BRP-tabellen-bevragen API.
+                    * **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Autoriteit_Afgifte_Reisdocument' (landelijke tabel 49) uit de Haal-Centraal-BRP-tabellen-bevragen API, waarbij indien van toepassing een gemeentecode (tabel Gemeente) of landcode (tabel Landen) is ingevuld.
                     * **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.
                     * **datumEindeGeldigheid** : de datum waarop het reisdocument niet meer geldig is.
                     * **datumInhoudingOfVermissing**: de datum waarop het reisdocument is vermist, ingehouden, ingeleverd, of van rechtswege is vervallen.
