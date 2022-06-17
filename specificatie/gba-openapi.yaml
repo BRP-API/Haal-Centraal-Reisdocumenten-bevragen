@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: Reisdocumenten
+  description: |
+                API voor het ontsluiten van gegevens van reisdocumenten.
+  version: '2.0.0'
+  contact:
+    url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
+  license:
+    name: European Union Public License, version 1.2 (EUPL-1.2)
+    url: https://eupl.eu/1.2/nl/
+tags:
+  - name: Reisdocumenten
+paths:
+  /reisdocumenten/{reisdocumentnummer}:
+    get:
+      operationId: Reisdocument
+      summary: Raadpleeg een reisdocument
+      description: |
+                    Raadpleeg een Reisdocument met het reisdocumentnummer.
+      parameters:
+        - in: path
+          name: reisdocumentnummer
+          required: true
+          schema:
+            $ref: '#/components/schemas/Reisdocumentnummer'
+      responses:
+        '200':
+          description: |
+                        Zoekactie geslaagd
+          headers:
+            api-version:
+              $ref: 'common.yaml#/components/headers/api_version'
+            warning:
+              $ref: 'common.yaml#/components/headers/warning'
+            X-Rate-Limit-Limit:
+              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Limit'
+            X-Rate-Limit-Remaining:
+              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Remaining'
+            X-Rate-Limit-Reset:
+              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GbaReisdocument'
+        '400':
+          $ref: 'common.yaml#/components/responses/400'
+        '401':
+          $ref: 'common.yaml#/components/responses/401'
+        '403':
+          $ref: 'common.yaml#/components/responses/403'
+        '404':
+          $ref: 'common.yaml#/components/responses/404'
+        '406':
+          $ref: 'common.yaml#/components/responses/406'
+        '429':
+          $ref: 'common.yaml#/components/responses/429'
+        '500':
+          $ref: 'common.yaml#/components/responses/500'
+        '501':
+          $ref: 'common.yaml#/components/responses/501'
+        '503':
+          $ref: 'common.yaml#/components/responses/503'
+        'default':
+          $ref: 'common.yaml#/components/responses/default'
+      tags:
+      - Reisdocumenten
+components:
+  schemas:
+    GbaReisdocument:
+      type: object
+      description: |
+                    Een document dat nodig is voor reizen naar het buitenland.
+                    * **soortReisdocument** : geeft aan welk Nederlands reisdocument is verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Reisdocument' (landelijke tabel 48) uit de Haal-Centraal-BRP-tabellen-bevragen API.
+                    * **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Autoriteit_Afgifte_Reisdocument' (landelijke tabel 49) uit de Haal-Centraal-BRP-tabellen-bevragen API.
+                    * **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.
+                    * **datumEindeGeldigheid** : de datum waarop het reisdocument niet meer geldig is.
+                    * **datumInhoudingOfVermissing**: de datum waarop het reisdocument is vermist, ingehouden, ingeleverd, of van rechtswege is vervallen.
+                    * **aanduidingInhoudingOfVermissing** : Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Inhouding_Vermissing_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+      properties:
+        reisdocumentnummer:
+          $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
+        soortReisdocument:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        autoriteitAfgifte: 
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        datumUitgifte:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        datumEindeGeldigheid:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        datumInhoudingOfVermissing:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        aanduidingInhoudingOfVermissing:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        burgerservicenummer:
+          $ref: 'reisdocument.yaml#/components/schemas/Burgerservicenummer'
+        inOnderzoek:
+          $ref: 'in-onderzoek.yaml#/components/schemas/GbaInOnderzoek'
