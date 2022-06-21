@@ -23,7 +23,7 @@ paths:
           name: reisdocumentnummer
           required: true
           schema:
-            $ref: '#/components/schemas/Reisdocumentnummer'
+            $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
       responses:
         '200':
           description: |
