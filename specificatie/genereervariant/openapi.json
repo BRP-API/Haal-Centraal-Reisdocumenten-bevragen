@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Reisdocumenten",
-    "description" : "API voor het ontsluiten van gegevens van reisdocumenten.\n",
+    "description" : "API voor het ontsluiten van de geldigheid en/of houder van reisdocumenten.\n",
     "contact" : {
       "url" : "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen"
     },
@@ -23,7 +23,7 @@
       "get" : {
         "tags" : [ "Reisdocumenten" ],
         "summary" : "Raadpleeg een reisdocument",
-        "description" : "Raadpleeg een Reisdocument met het reisdocumentnummer.\n",
+        "description" : "Raadpleeg de geldigheid van een reisdocument met het reisdocumentnummer.\n",
         "operationId" : "Reisdocument",
         "parameters" : [ {
           "name" : "reisdocumentnummer",
@@ -297,76 +297,27 @@
   },
   "components" : {
     "schemas" : {
-      "Reisdocument" : {
-        "type" : "object",
-        "properties" : {
-          "reisdocumentnummer" : {
-            "$ref" : "#/components/schemas/Reisdocumentnummer"
-          },
-          "soortReisdocument" : {
-            "$ref" : "#/components/schemas/Waardetabel"
-          },
-          "autoriteitAfgifte" : {
-            "$ref" : "#/components/schemas/Waardetabel"
-          },
-          "datumUitgifte" : {
-            "$ref" : "#/components/schemas/AbstractDatum"
-          },
-          "datumEindeGeldigheid" : {
-            "$ref" : "#/components/schemas/AbstractDatum"
-          },
-          "datumInhoudingOfVermissing" : {
-            "$ref" : "#/components/schemas/AbstractDatum"
-          },
-          "aanduidingInhoudingOfVermissing" : {
-            "$ref" : "#/components/schemas/Waardetabel"
-          },
-          "burgerservicenummer" : {
-            "$ref" : "#/components/schemas/Burgerservicenummer"
-          },
-          "inOnderzoek" : {
-            "$ref" : "#/components/schemas/ReisdocumentInOnderzoek"
-          }
-        },
-        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n* **soortReisdocument** : geeft aan welk Nederlands reisdocument is verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' (landelijke tabel 48) uit de Haal-Centraal-BRP-tabellen-bevragen API.\n* **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Autoriteit_Afgifte_Reisdocument' (landelijke tabel 49) uit de Haal-Centraal-BRP-tabellen-bevragen API, waarbij indien van toepassing een gemeentecode (tabel Gemeente) of landcode (tabel Landen) is ingevuld.\n* **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.\n* **datumEindeGeldigheid** : de datum waarop het reisdocument niet meer geldig is.\n* **datumInhoudingOfVermissing**: de datum waarop het reisdocument is vermist, ingehouden, ingeleverd, of van rechtswege is vervallen.\n* **aanduidingInhoudingOfVermissing** : Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Inhouding_Vermissing_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
-      },
-      "ReisdocumentInOnderzoek" : {
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/InOnderzoek"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "reisdocumentnummer" : {
-              "type" : "boolean"
-            },
-            "soortReisdocument" : {
-              "type" : "boolean"
-            },
-            "autoriteitAfgifte" : {
-              "type" : "boolean"
-            },
-            "datumUitgifte" : {
-              "type" : "boolean"
-            },
-            "datumEindeGeldigheid" : {
-              "type" : "boolean"
-            },
-            "datumInhoudingOfVermissing" : {
-              "type" : "boolean"
-            },
-            "aanduidingInhoudingOfVermissing" : {
-              "type" : "boolean"
-            },
-            "burgerservicenummer" : {
-              "type" : "boolean"
-            }
-          },
-          "description" : "Geeft aan welke gegevens in onderzoek zijn.\n"
-        } ]
-      },
       "Reisdocumentnummer" : {
         "pattern" : "^[a-zA-Z0-9]{9}$",
         "type" : "string"
+      },
+      "Reisdocument" : {
+        "type" : "object",
+        "properties" : {
+          "indicatieGeldig" : {
+            "type" : "boolean",
+            "description" : "Geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is."
+          },
+          "burgerservicenummer" : {
+            "$ref" : "#/components/schemas/Burgerservicenummer"
+          }
+        },
+        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n"
+      },
+      "Burgerservicenummer" : {
+        "pattern" : "^[0-9]{9}$",
+        "type" : "string",
+        "example" : "555555021"
       },
       "BadRequestFoutbericht" : {
         "allOf" : [ {
@@ -451,158 +402,6 @@
           }
         },
         "description" : "Details over fouten in opgegeven parameters"
-      },
-      "Waardetabel" : {
-        "type" : "object",
-        "properties" : {
-          "code" : {
-            "pattern" : "^[a-zA-Z0-9 \\.]+$",
-            "type" : "string",
-            "example" : "6030"
-          },
-          "omschrijving" : {
-            "pattern" : "^[a-zA-Z0-9À-ž \\'\\,\\(\\)\\.\\-]{1,200}$",
-            "type" : "string",
-            "example" : "Nederland"
-          }
-        }
-      },
-      "AbstractDatum" : {
-        "required" : [ "type" ],
-        "type" : "object",
-        "properties" : {
-          "type" : {
-            "type" : "string"
-          },
-          "langFormaat" : {
-            "pattern" : "^[a-z0-9 ]{1,17}$",
-            "type" : "string"
-          }
-        },
-        "discriminator" : {
-          "propertyName" : "type",
-          "mapping" : {
-            "Datum" : "#/components/schemas/VolledigeDatum",
-            "DatumOnbekend" : "#/components/schemas/DatumOnbekend",
-            "JaarDatum" : "#/components/schemas/JaarDatum",
-            "JaarMaandDatum" : "#/components/schemas/JaarMaandDatum"
-          }
-        }
-      },
-      "VolledigeDatum" : {
-        "required" : [ "datum" ],
-        "description" : "Datum conform iso8601",
-        "example" : {
-          "value" : {
-            "type" : "Datum",
-            "datum" : "2018-07-01",
-            "langFormaat" : "1 juli 2018"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "datum" : {
-              "type" : "string",
-              "format" : "date"
-            }
-          }
-        } ]
-      },
-      "DatumOnbekend" : {
-        "required" : [ "onbekend" ],
-        "description" : "representatie voor een volledig onbekend datum",
-        "example" : {
-          "value" : {
-            "type" : "DatumOnbekend",
-            "onbekend" : true,
-            "langFormaat" : "onbekend"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "onbekend" : {
-              "type" : "boolean",
-              "default" : true
-            }
-          }
-        } ]
-      },
-      "JaarDatum" : {
-        "required" : [ "jaar" ],
-        "description" : "representatie voor een datum waarvan maand en dag onbekend zijn",
-        "example" : {
-          "value" : {
-            "type" : "JaarDatum",
-            "jaar" : 2018,
-            "langFormaat" : 2018
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "jaar" : {
-              "$ref" : "#/components/schemas/Jaar"
-            }
-          }
-        } ]
-      },
-      "Jaar" : {
-        "maximum" : 9999,
-        "minimum" : 1,
-        "type" : "integer",
-        "format" : "int32"
-      },
-      "JaarMaandDatum" : {
-        "required" : [ "jaar", "maand" ],
-        "description" : "representatie voor een datum waarvan de dag onbekend is",
-        "example" : {
-          "value" : {
-            "type" : "JaarMaandDatum",
-            "jaar" : 2018,
-            "maand" : 7,
-            "langFormaat" : "juli 2018"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "jaar" : {
-              "$ref" : "#/components/schemas/Jaar"
-            },
-            "maand" : {
-              "$ref" : "#/components/schemas/Maand"
-            }
-          }
-        } ]
-      },
-      "Maand" : {
-        "maximum" : 12,
-        "minimum" : 1,
-        "type" : "integer",
-        "format" : "int32"
-      },
-      "Burgerservicenummer" : {
-        "pattern" : "^[0-9]{9}$",
-        "type" : "string",
-        "example" : "555555021"
-      },
-      "InOnderzoek" : {
-        "type" : "object",
-        "properties" : {
-          "datumIngangOnderzoek" : {
-            "$ref" : "#/components/schemas/AbstractDatum"
-          }
-        }
       }
     },
     "headers" : {
