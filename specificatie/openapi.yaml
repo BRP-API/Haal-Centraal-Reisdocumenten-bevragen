@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Reisdocumenten
   description: |
-                API voor het ontsluiten van gegevens van reisdocumenten.
+                API voor het ontsluiten van de geldigheid en/of houder van reisdocumenten.
   version: '2.0.0'
   contact:
     url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
@@ -17,7 +17,7 @@ paths:
       operationId: Reisdocument
       summary: Raadpleeg een reisdocument
       description: |
-                    Raadpleeg een Reisdocument met het reisdocumentnummer.
+                    Raadpleeg de geldigheid van een reisdocument met het reisdocumentnummer.
       parameters:
         - in: path
           name: reisdocumentnummer
@@ -42,7 +42,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Reisdocument'
+                $ref: 'reisdocument.yaml#/components/schemas/Reisdocument'
         '400':
           $ref: 'common.yaml#/components/responses/400'
         '401':
@@ -65,57 +65,3 @@ paths:
           $ref: 'common.yaml#/components/responses/default'
       tags:
       - Reisdocumenten
-components:
-  schemas:
-    Reisdocument:
-      type: object
-      description: |
-                    Een document dat nodig is voor reizen naar het buitenland.
-                    * **soortReisdocument** : geeft aan welk Nederlands reisdocument is verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' (landelijke tabel 48) uit de Haal-Centraal-BRP-tabellen-bevragen API.
-                    * **autoriteitAfgifte** : geeft aan welke autoriteit het reisdocument heeft verstrekt. Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Autoriteit_Afgifte_Reisdocument' (landelijke tabel 49) uit de Haal-Centraal-BRP-tabellen-bevragen API, waarbij indien van toepassing een gemeentecode (tabel Gemeente) of landcode (tabel Landen) is ingevuld.
-                    * **datumUitgifte** : de datum waarop het reisdocument is uitgegeven.
-                    * **datumEindeGeldigheid** : de datum waarop het reisdocument niet meer geldig is.
-                    * **datumInhoudingOfVermissing**: de datum waarop het reisdocument is vermist, ingehouden, ingeleverd, of van rechtswege is vervallen.
-                    * **aanduidingInhoudingOfVermissing** : Omschrijving wordt gevuld op basis van de waarden die voorkomen in de tabel 'Inhouding_Vermissing_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
-      properties:
-        reisdocumentnummer:
-          $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
-        soortReisdocument:
-          $ref: 'common.yaml#/components/schemas/Waardetabel'
-        autoriteitAfgifte: 
-          $ref: 'common.yaml#/components/schemas/Waardetabel'
-        datumUitgifte:
-          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
-        datumEindeGeldigheid:
-          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
-        datumInhoudingOfVermissing:
-          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
-        aanduidingInhoudingOfVermissing:
-          $ref: 'common.yaml#/components/schemas/Waardetabel'
-        burgerservicenummer:
-          $ref: 'reisdocument.yaml#/components/schemas/Burgerservicenummer'
-        inOnderzoek:
-          $ref: '#/components/schemas/ReisdocumentInOnderzoek'
-    ReisdocumentInOnderzoek:
-      allOf:
-        - $ref: 'in-onderzoek.yaml#/components/schemas/InOnderzoek'
-        - type: object
-          description:  |
-                          Geeft aan welke gegevens in onderzoek zijn.
-          properties:
-            reisdocumentnummer:
-              type: boolean
-            soortReisdocument:
-              type: boolean
-            autoriteitAfgifte:
-              type: boolean
-            datumUitgifte:
-              type: boolean
-            datumEindeGeldigheid:
-              type: boolean
-            datumInhoudingOfVermissing:
-              type: boolean
-            aanduidingInhoudingOfVermissing:
-              type: boolean
-            burgerservicenummer:
-              type: boolean

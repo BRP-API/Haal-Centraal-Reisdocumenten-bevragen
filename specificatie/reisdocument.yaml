@@ -13,16 +13,38 @@ components:
       type: string
       pattern: ^[0-9]{9}$
       example: "555555021"
-    AanduidingInhoudingVermissing:
+    AanduidingInhoudingOfVermissing:
       type: string
+      pattern: ^(I|R|V|\.)$
+    GbaOverlijden:
+      type: object
+      properties:
+        datum:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+    Reisdocument:
+      type: object
       description: |
-                    Waarden voor de aanduiding inhouding of vermissing van een Nederlands reisdocument zijn:
-                    * `ingehouden_of_ingeleverd` - I
-                    * `vermist` - V
-                    * `rechtswege` - R
-                    * `niet_in_bezit_van` - N
-      enum:
-      - "ingehouden_of_ingeleverd"
-      - "vermist"
-      - "rechtswege"
-      - "niet_in_bezit_van"
+                    Een document dat nodig is voor reizen naar het buitenland.
+      properties:
+        indicatieGeldig:
+          type: boolean
+          description: Geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is.
+        burgerservicenummer:
+          $ref: 'reisdocument.yaml#/components/schemas/Burgerservicenummer' 
+    GbaReisdocument:
+      type: object
+      description: |
+          Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.
+      properties:
+        datumEindeGeldigheid:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        datumInhoudingOfVermissing:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        aanduidingInhoudingOfVermissing:
+          $ref: '#/components/schemas/AanduidingInhoudingOfVermissing'
+        burgerservicenummer:
+          $ref: '#/components/schemas/Burgerservicenummer'
+        overlijden:
+          $ref: '#/components/schemas/GbaOverlijden'
+        
+
