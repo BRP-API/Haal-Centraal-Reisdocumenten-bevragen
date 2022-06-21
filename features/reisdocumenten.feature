@@ -1,51 +1,92 @@
 # language: nl
 
-Functionaliteit: Het reisdocument van een ingeschreven persoon kan worden geraadpleegd op basis van het reisdocumentnummer
+Functionaliteit: Raadplegen van reisdocumenten op basis van een reisdocumentnummer
   Met het reisdocumentnummer als sleutel kan een reisdocument van een ingeschreven persoon worden geraadpleegd.
 
-  In de resource ingeschrevenpersonen wordt een link opgenomen naar alle geldige reisdocumenten.
+  In de resource ingeschrevenpersonen wordt een lijst van alle geldige reisdocumentnummers opgenomen.
 
-  Scenario: Een reisdocument raadplegen
-    Gegeven het reisdocument is een nog geldige identiteitskaart
-    Als het reisdocument geraadpleegd met reisdocumentnummer 627947117
-    Dan is in het antwoord reisdocumentnummer=627947117
-    En is in het antwoord aanduidingInhouding_vermissing niet aanwezig of null
-    En is in het antwoord soortReisdocument.nederlandsReisdocument=NI
-    En is in het antwoord soortReisdocument.reisdocumentomschrijving=Nederlandse identiteitskaart
-    En is in het antwoord datumUitgifte.datum=2017-11-02
-    En is in het antwoord autoriteitAfgifte.autoriteitVanAfgifte=BI0518
-    En is in het antwoord autoriteitAfgifte.omschrijvingAutoriteit=Minister van Binnenlandse Zaken
-    En is in het antwoord geldigTotEnMet.datum=2027-11-01
-    En is in het antwoord datumInhoudingOfVermissing.jaar niet aanwezig of null
-    En wordt een ingeschrevenpersonen link gevonden naar /ingeschrevenpersonen/999999011
+  Scenario: gezochte reisdocument is geldig
+    Gegeven het systeem heeft een reisdocument met de volgende gegevens
+    | naam                           | waarde                          |
+    | reisdocumentnummer             | 627947117                       |
+    | soortReisdocument.code         | NI                              |
+    | soortReisdocument.omschrijving | Nederlandse identiteitskaart    |
+    | datumUitgifte                  | 20171102                        |
+    | autoriteitAfgifte.code         | BI0518                          |
+    | autoriteitAfgifte.omschrijving | Minister van Binnenlandse Zaken |
+    | datumEindeGeldigheid           | 20271101                        |
+    | burgerservicenummer            | 999999011                       |
+    Als reisdocumenten wordt gezocht met de volgende parameters
+    | naam               | waarde    |
+    | reisdocumentnummer | 627947117 |
+    Dan heeft de response een reisdocument met de volgende gegevens
+    | naam                             | waarde                          |
+    | reisdocumentnummer               | 627947117                       |
+    | soortReisdocument.code           | NI                              |
+    | soortReisdocument.omschrijving   | Nederlandse identiteitskaart    |
+    | autoriteitAfgifte.code           | BI0518                          |
+    | autoriteitAfgifte.omschrijving   | Minister van Binnenlandse Zaken |
+    | datumUitgifte.type               | Datum                           |
+    | datumUitgifte.datum              | 2017-11-02                      |
+    | datumUitgifte.langFormaat        | 2 november 2017                 |
+    | datumEindeGeldigheid.type        | Datum                           |
+    | datumEindeGeldigheid.datum       | 2027-11-01                      |
+    | datumEindeGeldigheid.langFormaat | 1 november 2027                 |
+    | burgerservicenummer              | 999999011                       |
 
+  Scenario: gezochte reisdocument is vermist
+    Gegeven het systeem heeft een reisdocument met de volgende gegevens
+    | naam                                 | waarde    |
+    | reisdocumentnummer                   | 882936846 |
+    | datumInhoudingOfVermissing           | 20110405  |
+    | aanduidingInhoudingOfVermissing.code | V         |
+    Als reisdocumenten wordt gezocht met de volgende parameters
+    | naam               | waarde    |
+    | reisdocumentnummer | 882936846 |
+    Dan heeft de response een reisdocument met de volgende gegevens
+    | naam                                   | waarde       |
+    | reisdocumentnummer                     | 882936846    |
+    | datumInhoudingOfVermissing.type        | Datum        |
+    | datumInhoudingOfVermissing.datum       | 2011-04-05   |
+    | datumInhoudingOfVermissing.langFormaat | 5 april 2011 |
+    | aanduidingInhoudingOfVermissing.code   | V            |
 
-  Scenario: Een vermist reisdocument raadplegen
-    Gegeven het reisdocument is vermist gemeld op 5 april 2011
-    Als het reisdocument geraadpleegd met reisdocumentnummer 882936846
-    Dan is in het antwoord aanduidingInhouding_vermissing=V
-    En is in het antwoord datumInhoudingOfVermissing.datum=2011-04-05
+  @fout-case
+  Scenario: zoek met leeg reisdocumentnummer
+    Als reisdocumenten wordt gezocht met de volgende parameters
+    | naam               | waarde |
+    | reisdocumentnummer |        |
+    Dan heeft de response een object met de volgende gegevens
+    | naam     | waarde                                                      |
+    | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
+    | title    | Minimale combinatie van parameters moet worden opgegeven.   |
+    | status   | 400                                                         |
+    | detail   | De foutieve parameter(s) zijn: reisdocumentnummer.          |
+    | code     | paramsCombination                                           |
+    | instance | /reisdocumenten                                             |
+    En heeft het object de volgende 'invalidParams' gegevens
+    | code     | name               | reason                  |
+    | required | reisdocumentnummer | Parameter is verplicht. |
 
-  Scenario: Reisdocument ophalen vanuit links van de ingeschreven persoon
-    Gegeven de te raadplegen persoon heeft één reisdocument met reisdocumentnummer 286822017
-    Als de ingeschreven persoon met burgerservicenummer 999999023 wordt geraadpleegd
-    En de link reisdocumenten wordt gevolgd
-    Dan is in het antwoord reisdocumentnummer=286822017
-    En is in het antwoord soortReisdocument.reisdocumentomschrijving=Nationaal paspoort
-    En is in het antwoord autoriteitAfgifte.autoriteitVanAfgifte=B0503
-    En is in het antwoord autoriteitAfgifte.omschrijvingAutoriteit=Burgemeester van gecodeerd genoemde gemeente
-    En is in het antwoord datumUitgifte.datum=2018-09-11
-    En is in het antwoord geldigTotEnMet.datum=2028-09-10
-    Als de link ingeschrevenpersonen wordt gevolgd
-    Dan is in het antwoord burgerservicenummer=999999023
-    En is het aantal links naar reisdocumenten gelijk aan 1
-    En wordt een reisdocumenten link gevonden naar 286822017
+  @fout-case
+  Abstract Scenario: zoek met invalide reisdocumentnummer
+    Als reisdocumenten wordt gezocht met de volgende parameters
+    | naam               | waarde               |
+    | reisdocumentnummer | <reisdocumentnummer> |
+    Dan heeft de response een object met de volgende gegevens
+    | naam     | waarde                                                      |
+    | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
+    | title    | Een of meerdere parameters zijn niet correct.               |
+    | status   | 400                                                         |
+    | detail   | De foutieve parameter(s) zijn: reisdocumentnummer.          |
+    | code     | paramsCombination                                           |
+    | instance | /reisdocumenten                                             |
+    En heeft het object de volgende 'invalidParams' gegevens
+    | code    | name               | reason                                            |
+    | pattern | reisdocumentnummer | Waarde voldoet niet aan patroon ^[a-zA-Z0-9]{9}$. |
 
-  Scenario: Bij een ingeschreven persoon worden alleen geldige reisdocumenten getoond
-    Gegeven de te raadplegen persoon heeft twee actuele reisducmenten (928847402 en 627947117)
-    En de te raadplegen persoon heeft een vermist reisdocument (882936846)
-    En de te raadplegen persoon heeft een reisdocument dat niet meer geldig is (862838263)
-    Als de ingeschreven persoon met burgerservicenummer 999999011 wordt geraadpleegd
-    Dan is het aantal links naar reisdocumenten gelijk aan 2
-    En wordt een reisdocumenten link gevonden naar 928847402
-    En wordt een reisdocumenten link gevonden naar 627947117
+    Voorbeelden:
+    | reisdocumentnummer           | toelichting                                       |
+    | <script>hello world</script> | reisdocumentnummer bevat ongeldige karakters      |
+    | abc123AB                     | reisdocumentnummer is minder dan 9 karakters lang |
+    | abcd1234AB                   | reisdocumentnummer is meer dan 9 karakters lang   |
