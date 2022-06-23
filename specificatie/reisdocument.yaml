@@ -16,16 +16,16 @@ components:
     AanduidingInhoudingOfVermissing:
       type: string
       pattern: ^(I|R|V|\.)$
-    GbaOverlijden:
-      type: object
-      properties:
-        datum:
-          $ref: 'datum.yaml#/components/schemas/GbaDatum'
     SoortReisdocument:
       type: string
       description: |
             Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
       pattern: ^[A-Z]{2}$
+    OpschortingBijhouding:
+      type: object
+      properties:
+        reden:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
     Reisdocument:
       type: object
       description: |
@@ -64,8 +64,8 @@ components:
           $ref: '#/components/schemas/AanduidingInhoudingOfVermissing'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        overlijden:
-          $ref: '#/components/schemas/GbaOverlijden'
+        opschortingBijhouding:
+          $ref: '#/components/schemas/OpschortingBijhouding'
     ReisdocumentenQuery:
       type: object
       required:
