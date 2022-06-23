@@ -70,12 +70,9 @@ components:
       type: object
       required:
         - burgerservicenummer
-        - soortReisdocument
       properties:
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        soortReisdocument:
-          $ref: '#/components/schemas/SoortReisdocument'
     ReisdocumentenResponse:
       type: object
       properties:

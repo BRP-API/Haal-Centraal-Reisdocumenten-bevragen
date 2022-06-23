@@ -70,7 +70,7 @@ paths:
       operationId: Reisdocumenten
       summary: Zoek geldige reisdocumenten
       description: |
-                    Zoek de geldige reisdocumenten van een persoon van een bepaald soort.
+                    Zoek de geldige reisdocumenten van een persoon.
       requestBody:
         content:
           application/json:
