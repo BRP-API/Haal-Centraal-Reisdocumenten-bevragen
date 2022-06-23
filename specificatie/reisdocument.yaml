@@ -21,21 +21,41 @@ components:
       properties:
         datum:
           $ref: 'datum.yaml#/components/schemas/GbaDatum'
+    SoortReisdocument:
+      type: string
+      description: |
+            Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Soort_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+      pattern: ^[A-Z]{2}$
     Reisdocument:
       type: object
       description: |
                     Een document dat nodig is voor reizen naar het buitenland.
       properties:
+        reisdocumentnummer:
+          $ref: '#/components/schemas/Reisdocumentnummer' 
         indicatieGeldig:
           type: boolean
           description: Geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is.
         burgerservicenummer:
-          $ref: 'reisdocument.yaml#/components/schemas/Burgerservicenummer' 
+          $ref: '#/components/schemas/Burgerservicenummer'
+    ReisdocumentUitgebreid:
+      allOf:
+        - $ref: '#/components/schemas/Reisdocument'
+        - type: object
+          properties:
+            soortReisdocument:
+              $ref: 'common.yaml#/components/schemas/Waardetabel'
+            datumEindeGeldigheid:
+              $ref: 'datum.yaml#/components/schemas/AbstractDatum'
     GbaReisdocument:
       type: object
       description: |
           Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.
       properties:
+        reisdocumentnummer:
+          $ref: '#/components/schemas/Reisdocumentnummer'
+        soortReisdocument:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
         datumEindeGeldigheid:
           $ref: 'datum.yaml#/components/schemas/GbaDatum'
         datumInhoudingOfVermissing:
@@ -46,5 +66,21 @@ components:
           $ref: '#/components/schemas/Burgerservicenummer'
         overlijden:
           $ref: '#/components/schemas/GbaOverlijden'
-        
+    ReisdocumentenQuery:
+      type: object
+      required:
+        - burgerservicenummer
+        - soortReisdocument
+      properties:
+        burgerservicenummer:
+          $ref: '#/components/schemas/Burgerservicenummer'
+        soortReisdocument:
+          $ref: '#/components/schemas/SoortReisdocument'
+    ReisdocumentenResponse:
+      type: object
+      properties:
+        reisdocumenten:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReisdocumentUitgebreid'
 
