@@ -518,7 +518,7 @@ components:
       pattern: ^[A-Z]{2}$
       type: string
       description: |
-        Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Soort_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+        Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
     ReisdocumentenResponse:
       type: object
       properties:
