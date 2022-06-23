@@ -223,7 +223,7 @@ paths:
       - Reisdocumenten
       summary: Zoek geldige reisdocumenten
       description: |
-        Zoek de geldige reisdocumenten van een persoon van een bepaald soort.
+        Zoek de geldige reisdocumenten van een persoon.
       operationId: Reisdocumenten
       requestBody:
         content:
@@ -428,13 +428,13 @@ components:
         reisdocumentnummer:
           $ref: '#/components/schemas/Reisdocumentnummer'
         indicatieGeldig:
-          type: boolean
-          description: Geeft aan of het reisdocument op dit moment nog geldig en in
-            het bezit van de persoon is.
+          $ref: '#/components/schemas/Waardetabel'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
       description: |
         Een document dat nodig is voor reizen naar het buitenland.
+
+        indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
     Burgerservicenummer:
       pattern: ^[0-9]{9}$
       type: string
@@ -507,18 +507,10 @@ components:
     ReisdocumentenQuery:
       required:
       - burgerservicenummer
-      - soortReisdocument
       type: object
       properties:
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        soortReisdocument:
-          $ref: '#/components/schemas/SoortReisdocument'
-    SoortReisdocument:
-      pattern: ^[A-Z]{2}$
-      type: string
-      description: |
-        Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
     ReisdocumentenResponse:
       type: object
       properties:

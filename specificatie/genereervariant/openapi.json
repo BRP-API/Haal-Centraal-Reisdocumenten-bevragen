@@ -298,7 +298,7 @@
       "post" : {
         "tags" : [ "Reisdocumenten" ],
         "summary" : "Zoek geldige reisdocumenten",
-        "description" : "Zoek de geldige reisdocumenten van een persoon van een bepaald soort.\n",
+        "description" : "Zoek de geldige reisdocumenten van een persoon.\n",
         "operationId" : "Reisdocumenten",
         "requestBody" : {
           "content" : {
@@ -582,14 +582,13 @@
             "$ref" : "#/components/schemas/Reisdocumentnummer"
           },
           "indicatieGeldig" : {
-            "type" : "boolean",
-            "description" : "Geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is."
+            "$ref" : "#/components/schemas/Waardetabel"
           },
           "burgerservicenummer" : {
             "$ref" : "#/components/schemas/Burgerservicenummer"
           }
         },
-        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n"
+        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
       },
       "Burgerservicenummer" : {
         "pattern" : "^[0-9]{9}$",
@@ -681,21 +680,13 @@
         "description" : "Details over fouten in opgegeven parameters"
       },
       "ReisdocumentenQuery" : {
-        "required" : [ "burgerservicenummer", "soortReisdocument" ],
+        "required" : [ "burgerservicenummer" ],
         "type" : "object",
         "properties" : {
           "burgerservicenummer" : {
             "$ref" : "#/components/schemas/Burgerservicenummer"
-          },
-          "soortReisdocument" : {
-            "$ref" : "#/components/schemas/SoortReisdocument"
           }
         }
-      },
-      "SoortReisdocument" : {
-        "pattern" : "^[A-Z]{2}$",
-        "type" : "string",
-        "description" : "Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
       },
       "ReisdocumentenResponse" : {
         "type" : "object",

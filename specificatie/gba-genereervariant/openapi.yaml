@@ -223,7 +223,7 @@ paths:
       - Reisdocumenten
       summary: Zoek geldige reisdocumenten
       description: |
-        Zoek de geldige reisdocumenten van een persoon van een bepaald soort.
+        Zoek de geldige reisdocumenten van een persoon.
       operationId: Reisdocumenten
       requestBody:
         content:
@@ -437,8 +437,8 @@ components:
           $ref: '#/components/schemas/AanduidingInhoudingOfVermissing'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        overlijden:
-          $ref: '#/components/schemas/GbaOverlijden'
+        opschortingBijhouding:
+          $ref: '#/components/schemas/OpschortingBijhouding'
       description: |
         Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.
     AanduidingInhoudingOfVermissing:
@@ -448,11 +448,11 @@ components:
       pattern: ^[0-9]{9}$
       type: string
       example: "555555021"
-    GbaOverlijden:
+    OpschortingBijhouding:
       type: object
       properties:
-        datum:
-          $ref: '#/components/schemas/GbaDatum'
+        reden:
+          $ref: '#/components/schemas/Waardetabel'
     BadRequestFoutbericht:
       allOf:
       - $ref: '#/components/schemas/Foutbericht'
@@ -521,18 +521,10 @@ components:
     ReisdocumentenQuery:
       required:
       - burgerservicenummer
-      - soortReisdocument
       type: object
       properties:
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        soortReisdocument:
-          $ref: '#/components/schemas/SoortReisdocument'
-    SoortReisdocument:
-      pattern: ^[A-Z]{2}$
-      type: string
-      description: |
-        Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
     Waardetabel:
       type: object
       properties:
