@@ -185,3 +185,52 @@ Functionaliteit: Raadplegen van reisdocumenten op basis van een reisdocumentnumm
       | R              | van rechtswege vervallen |
       | V              | vermist                  |
       | .              | onbekend                 |
+
+    Scenario: persoon heeft alleen verlopen reisdocument
+      Gegeven het systeem heeft een persoon met de volgende gegevens
+      | naam                | waarde    |
+      | burgerservicenummer | 555550002 |
+      En de persoon heeft een 'reisdocument' met de volgende gegevens
+      | naam                                                   | waarde    |
+      | Soort Nederlands reisdocument (35.10)                  | NI        |
+      | Nummer Nederlands reisdocument (35.20)                 | NiK26q9aH |
+      | Datum uitgifte Nederlands reisdocument (35.30)         | 20190314  |
+      | Autoriteit van afgifte Nederlands reisdocument (35.40) | B0518     |
+      | Datum einde geldigheid Nederlands reisdocument (35.50) | 20220314  |
+      Als personen wordt gezocht met de volgende parameters
+      | naam                | waarde                                  |
+      | type                | RaadpleegMetBurgerservicenummer         |
+      | burgerservicenummer | 555550002                               |
+      | fields              | burgerservicenummer,reisdocumentnummers |
+      Dan heeft de response een persoon met alleen de volgende gegevens
+      | naam                | waarde    |
+      | burgerservicenummer | 555550002 |
+      En heeft de response een persoon met 'reisdocumentnummers' met een lege array
+
+      # "personen": [ { "burgerservicenummer": "555550002", "reisdocumentnummers": [] } ]
+
+  Rule: een veld wordt niet opgenomen wanneer het de standaardwaarde bevat
+    Het gaat om de volgende properties en standaardwaardes van de persoon:
+    | property                                         | standaardwaarde  |
+    | ------------------------------------------------ | ---------------- |
+    | reisdocumentnummers                              | .........        |
+  
+    Scenario: onbekend waarde voor reisdocumentnummer
+      Gegeven het systeem heeft een persoon met de volgende gegevens
+      | naam                | waarde    |
+      | burgerservicenummer | 999992934 |
+      En de persoon heeft de volgende 'reisdocumentnummers'
+      | reisdocumentnummer |
+      | .........          |
+      | Pk5Q8cA31          |
+      Als personen wordt gezocht met de volgende parameters
+      | naam                | waarde                                  |
+      | type                | RaadpleegMetBurgerservicenummer         |
+      | burgerservicenummer | 999992934                               |
+      | fields              | burgerservicenummer,reisdocumentnummers |
+      Dan heeft de response een persoon met alleen de volgende gegevens
+      | naam                | waarde    |
+      | burgerservicenummer | 999992934 |
+      En heeft de persoon alleen de volgende 'reisdocumentnummers'
+      | reisdocumentnummers |
+      | Pk5Q8cA31           |
