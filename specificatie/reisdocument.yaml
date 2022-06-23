@@ -30,12 +30,13 @@ components:
       type: object
       description: |
                     Een document dat nodig is voor reizen naar het buitenland.
+
+                    indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
       properties:
         reisdocumentnummer:
           $ref: '#/components/schemas/Reisdocumentnummer' 
         indicatieGeldig:
-          type: boolean
-          description: Geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is.
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
     ReisdocumentUitgebreid:
