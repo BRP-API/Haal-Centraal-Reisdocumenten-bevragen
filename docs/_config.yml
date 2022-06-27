@@ -26,6 +26,12 @@ nav:
         path: /redoc
       - title: Features
         path: /features
+  - title: Specificaties v. 2.0 (IO)
+    subnav:
+      - title: Bevragen API (redoc)
+        path: /redoc-io
+      - title: Bevragen API (redoc), GBA variant
+        path: /redoc-gba-io
 plugins:
   - jekyll-redirect-from
   - jekyll-remote-theme
