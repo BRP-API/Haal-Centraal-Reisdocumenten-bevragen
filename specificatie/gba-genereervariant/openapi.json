@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Reisdocumenten",
-    "description" : "API voor het ontsluiten van de geldigheid en/of houder van reisdocumenten.\n",
+    "description" : "API voor het ontsluiten van gegevens van reisdocumenten.\n",
     "contact" : {
       "url" : "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen"
     },
@@ -23,7 +23,7 @@
       "get" : {
         "tags" : [ "Reisdocumenten" ],
         "summary" : "Raadpleeg een reisdocument",
-        "description" : "Raadpleeg de geldigheid van een reisdocument met het reisdocumentnummer.\n",
+        "description" : "Raadpleeg een Reisdocument met het reisdocumentnummer.\n",
         "operationId" : "Reisdocument",
         "parameters" : [ {
           "name" : "reisdocumentnummer",
@@ -58,7 +58,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/Reisdocument"
+                  "$ref" : "#/components/schemas/GbaReisdocument"
                 }
               }
             }
@@ -332,7 +332,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/ReisdocumentenResponse"
+                  "$ref" : "#/components/schemas/GbaReisdocument"
                 }
               }
             }
@@ -575,25 +575,49 @@
         "pattern" : "^[a-zA-Z0-9]{9}$",
         "type" : "string"
       },
-      "Reisdocument" : {
+      "GbaReisdocument" : {
         "type" : "object",
         "properties" : {
           "reisdocumentnummer" : {
             "$ref" : "#/components/schemas/Reisdocumentnummer"
           },
-          "indicatieGeldig" : {
+          "soortReisdocument" : {
             "$ref" : "#/components/schemas/Waardetabel"
+          },
+          "datumEindeGeldigheid" : {
+            "$ref" : "#/components/schemas/GbaDatum"
+          },
+          "datumInhoudingOfVermissing" : {
+            "$ref" : "#/components/schemas/GbaDatum"
+          },
+          "aanduidingInhoudingOfVermissing" : {
+            "$ref" : "#/components/schemas/AanduidingInhoudingOfVermissing"
           },
           "burgerservicenummer" : {
             "$ref" : "#/components/schemas/Burgerservicenummer"
+          },
+          "opschortingBijhouding" : {
+            "$ref" : "#/components/schemas/OpschortingBijhouding"
           }
         },
-        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
+        "description" : "Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.\n"
+      },
+      "AanduidingInhoudingOfVermissing" : {
+        "pattern" : "^(I|R|V|\\.)$",
+        "type" : "string"
       },
       "Burgerservicenummer" : {
         "pattern" : "^[0-9]{9}$",
         "type" : "string",
         "example" : "555555021"
+      },
+      "OpschortingBijhouding" : {
+        "type" : "object",
+        "properties" : {
+          "reden" : {
+            "$ref" : "#/components/schemas/Waardetabel"
+          }
+        }
       },
       "BadRequestFoutbericht" : {
         "allOf" : [ {
@@ -688,33 +712,6 @@
           }
         }
       },
-      "ReisdocumentenResponse" : {
-        "type" : "object",
-        "properties" : {
-          "reisdocumenten" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/ReisdocumentUitgebreid"
-            }
-          }
-        }
-      },
-      "ReisdocumentUitgebreid" : {
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/Reisdocument"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "soortReisdocument" : {
-              "$ref" : "#/components/schemas/Waardetabel"
-            },
-            "datumEindeGeldigheid" : {
-              "$ref" : "#/components/schemas/AbstractDatum"
-            }
-          },
-          "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\n- indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n- soortReisdocument wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
-        } ]
-      },
       "Waardetabel" : {
         "type" : "object",
         "properties" : {
@@ -730,129 +727,10 @@
           }
         }
       },
-      "AbstractDatum" : {
-        "required" : [ "type" ],
-        "type" : "object",
-        "properties" : {
-          "type" : {
-            "type" : "string"
-          },
-          "langFormaat" : {
-            "pattern" : "^[a-z0-9 ]{1,17}$",
-            "type" : "string"
-          }
-        },
-        "discriminator" : {
-          "propertyName" : "type",
-          "mapping" : {
-            "Datum" : "#/components/schemas/VolledigeDatum",
-            "DatumOnbekend" : "#/components/schemas/DatumOnbekend",
-            "JaarDatum" : "#/components/schemas/JaarDatum",
-            "JaarMaandDatum" : "#/components/schemas/JaarMaandDatum"
-          }
-        }
-      },
-      "VolledigeDatum" : {
-        "required" : [ "datum" ],
-        "description" : "Datum conform iso8601",
-        "example" : {
-          "value" : {
-            "type" : "Datum",
-            "datum" : "2018-07-01",
-            "langFormaat" : "1 juli 2018"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "datum" : {
-              "type" : "string",
-              "format" : "date"
-            }
-          }
-        } ]
-      },
-      "DatumOnbekend" : {
-        "required" : [ "onbekend" ],
-        "description" : "representatie voor een volledig onbekend datum",
-        "example" : {
-          "value" : {
-            "type" : "DatumOnbekend",
-            "onbekend" : true,
-            "langFormaat" : "onbekend"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "onbekend" : {
-              "type" : "boolean",
-              "default" : true
-            }
-          }
-        } ]
-      },
-      "JaarDatum" : {
-        "required" : [ "jaar" ],
-        "description" : "representatie voor een datum waarvan maand en dag onbekend zijn",
-        "example" : {
-          "value" : {
-            "type" : "JaarDatum",
-            "jaar" : 2018,
-            "langFormaat" : 2018
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "jaar" : {
-              "$ref" : "#/components/schemas/Jaar"
-            }
-          }
-        } ]
-      },
-      "Jaar" : {
-        "maximum" : 9999,
-        "minimum" : 1,
-        "type" : "integer",
-        "format" : "int32"
-      },
-      "JaarMaandDatum" : {
-        "required" : [ "jaar", "maand" ],
-        "description" : "representatie voor een datum waarvan de dag onbekend is",
-        "example" : {
-          "value" : {
-            "type" : "JaarMaandDatum",
-            "jaar" : 2018,
-            "maand" : 7,
-            "langFormaat" : "juli 2018"
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/AbstractDatum"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "jaar" : {
-              "$ref" : "#/components/schemas/Jaar"
-            },
-            "maand" : {
-              "$ref" : "#/components/schemas/Maand"
-            }
-          }
-        } ]
-      },
-      "Maand" : {
-        "maximum" : 12,
-        "minimum" : 1,
-        "type" : "integer",
-        "format" : "int32"
+      "GbaDatum" : {
+        "pattern" : "^[0-9]{8}$",
+        "type" : "string",
+        "example" : "20180700"
       }
     },
     "headers" : {
