@@ -1,7 +1,7 @@
 # language: nl
 
 Functionaliteit: Raadplegen van reisdocumenten op basis van een reisdocumentnummer
-  Met het reisdocumentnummer als sleutel kan een reisdocument van een ingeschreven persoon worden geraadpleegd.
+  Met het reisdocumentnummer kan worden gecontroleerd of het document in omloop is, en als identificatiemiddel kan worden gebruikt.
 
   In de resource ingeschrevenpersonen wordt een lijst van alle geldige reisdocumentnummers opgenomen.
 
