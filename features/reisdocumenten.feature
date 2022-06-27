@@ -1,6 +1,6 @@
 # language: nl
 
-Functionaliteit: Raadplegen van reisdocumenten op basis van een reisdocumentnummer
+Functionaliteit: Reisdocument controleren op geldigheid
   Met het reisdocumentnummer kan worden gecontroleerd of het document in omloop is, en als identificatiemiddel kan worden gebruikt.
 
   In de resource ingeschrevenpersonen wordt een lijst van alle geldige reisdocumentnummers opgenomen.
