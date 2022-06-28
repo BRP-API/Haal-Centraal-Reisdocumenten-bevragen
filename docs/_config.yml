@@ -18,7 +18,7 @@ nav:
       - title: Getting started
         path: /getting-started
       - title: User stories
-        path: /user-stories-prod
+        path: /user-stories
       - title: Bevragen API (swagger-ui)
         path: /swagger-ui
       - title: Bevragen API (redoc)
