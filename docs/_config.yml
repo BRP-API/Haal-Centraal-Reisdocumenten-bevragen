@@ -28,6 +28,8 @@ nav:
         path: /features
   - title: Specificaties v. 2.0 (IO)
     subnav:
+      - title: User stories
+        path: /user-stories-dev
       - title: Bevragen API (redoc)
         path: /redoc-io
       - title: Bevragen API (redoc), GBA variant
