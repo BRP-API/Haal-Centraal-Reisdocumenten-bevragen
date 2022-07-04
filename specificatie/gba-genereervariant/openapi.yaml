@@ -248,7 +248,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GbaReisdocument'
+                $ref: '#/components/schemas/GbaReisdocumentenResponse'
         "400":
           description: Bad Request
           headers:
@@ -525,6 +525,13 @@ components:
       properties:
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
+    GbaReisdocumentenResponse:
+      type: object
+      properties:
+        reisdocumenten:
+          type: array
+          items:
+            $ref: '#/components/schemas/GbaReisdocument'
     Waardetabel:
       type: object
       properties:
