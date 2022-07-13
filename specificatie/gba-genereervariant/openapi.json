@@ -332,7 +332,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/GbaReisdocument"
+                  "$ref" : "#/components/schemas/GbaReisdocumentenResponse"
                 }
               }
             }
@@ -709,6 +709,17 @@
         "properties" : {
           "burgerservicenummer" : {
             "$ref" : "#/components/schemas/Burgerservicenummer"
+          }
+        }
+      },
+      "GbaReisdocumentenResponse" : {
+        "type" : "object",
+        "properties" : {
+          "reisdocumenten" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/GbaReisdocument"
+            }
           }
         }
       },

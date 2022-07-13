@@ -86,4 +86,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ReisdocumentUitgebreid'
-
+    GbaReisdocumentenResponse:
+      type: object
+      properties:
+        reisdocumenten:
+          type: array
+          items:
+            $ref: '#/components/schemas/GbaReisdocument'
