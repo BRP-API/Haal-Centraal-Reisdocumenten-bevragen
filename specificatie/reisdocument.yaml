@@ -16,6 +16,12 @@ components:
     AanduidingInhoudingOfVermissing:
       type: string
       pattern: ^(I|R|V|\.)$
+    GbaGeheimhoudingPersoonsgegevens:
+      type: integer
+    GeheimhoudingPersoonsgegevens:
+      description: |
+        Gegevens mogen niet worden verstrekt aan derden / maatschappelijke instellingen.
+      type: boolean
     SoortReisdocument:
       type: string
       description: |
@@ -33,8 +39,10 @@ components:
 
                     indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
       properties:
+        geheimhoudingPersoongegevens:
+          $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
         reisdocumentnummer:
-          $ref: '#/components/schemas/Reisdocumentnummer' 
+          $ref: '#/components/schemas/Reisdocumentnummer'
         indicatieGeldig:
           $ref: 'common.yaml#/components/schemas/Waardetabel'
         burgerservicenummer:
@@ -53,11 +61,15 @@ components:
               $ref: 'common.yaml#/components/schemas/Waardetabel'
             datumEindeGeldigheid:
               $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+            inOnderzoek:
+              $ref: '#/components/schemas/ReisdocumentInOnderzoek'
     GbaReisdocument:
       type: object
       description: |
           Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.
       properties:
+        geheimhoudingPersoongegevens:
+          $ref: '#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
         reisdocumentnummer:
           $ref: '#/components/schemas/Reisdocumentnummer'
         soortReisdocument:
@@ -72,6 +84,8 @@ components:
           $ref: '#/components/schemas/Burgerservicenummer'
         opschortingBijhouding:
           $ref: '#/components/schemas/OpschortingBijhouding'
+        inOnderzoek:
+          $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
     ReisdocumentenQuery:
       type: object
       required:
@@ -93,3 +107,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GbaReisdocument'
+        inOnderzoek:
+          $ref: '#/components/schemas/VerblijfstitelInOnderzoek'
+    ReisdocumentInOnderzoek:
+      description: |
+        Geeft aan welke gegevens over het reisdocument in onderzoek zijn.
+      allOf:
+        - $ref: '#/components/schemas/InOnderzoek'
+        - type: object
+          properties:
+            datumEindeGeldigheid:
+              type: boolean
+            datumUitgifte:
+              type: boolean
+            reisdocumentnummer:
+              type: boolean
+            soortReisdocument:
+              type: boolean
+    InOnderzoek:
+      type: object
+      properties:
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
