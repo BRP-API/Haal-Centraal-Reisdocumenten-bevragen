@@ -578,6 +578,9 @@
       "GbaReisdocument" : {
         "type" : "object",
         "properties" : {
+          "geheimhoudingPersoongegevens" : {
+            "$ref" : "#/components/schemas/GbaGeheimhoudingPersoonsgegevens"
+          },
           "reisdocumentnummer" : {
             "$ref" : "#/components/schemas/Reisdocumentnummer"
           },
@@ -598,9 +601,15 @@
           },
           "opschortingBijhouding" : {
             "$ref" : "#/components/schemas/OpschortingBijhouding"
+          },
+          "inOnderzoek" : {
+            "$ref" : "#/components/schemas/GbaInOnderzoek"
           }
         },
         "description" : "Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.\n"
+      },
+      "GbaGeheimhoudingPersoonsgegevens" : {
+        "type" : "integer"
       },
       "AanduidingInhoudingOfVermissing" : {
         "pattern" : "^(I|R|V|\\.)$",
@@ -742,6 +751,19 @@
         "pattern" : "^[0-9]{8}$",
         "type" : "string",
         "example" : "20180700"
+      },
+      "GbaInOnderzoek" : {
+        "required" : [ "aanduidingGegevensInOnderzoek", "datumIngangOnderzoek" ],
+        "type" : "object",
+        "properties" : {
+          "aanduidingGegevensInOnderzoek" : {
+            "pattern" : "^[0-9]{6}$",
+            "type" : "string"
+          },
+          "datumIngangOnderzoek" : {
+            "$ref" : "#/components/schemas/GbaDatum"
+          }
+        }
       }
     },
     "headers" : {

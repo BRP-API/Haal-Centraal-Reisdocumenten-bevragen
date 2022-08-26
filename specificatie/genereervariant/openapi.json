@@ -578,6 +578,9 @@
       "Reisdocument" : {
         "type" : "object",
         "properties" : {
+          "geheimhoudingPersoongegevens" : {
+            "$ref" : "#/components/schemas/GeheimhoudingPersoonsgegevens"
+          },
           "reisdocumentnummer" : {
             "$ref" : "#/components/schemas/Reisdocumentnummer"
           },
@@ -589,6 +592,10 @@
           }
         },
         "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
+      },
+      "GeheimhoudingPersoonsgegevens" : {
+        "type" : "boolean",
+        "description" : "Gegevens mogen niet worden verstrekt aan derden / maatschappelijke instellingen.\n"
       },
       "Burgerservicenummer" : {
         "pattern" : "^[0-9]{9}$",
@@ -710,10 +717,43 @@
             },
             "datumEindeGeldigheid" : {
               "$ref" : "#/components/schemas/AbstractDatum"
+            },
+            "inOnderzoek" : {
+              "$ref" : "#/components/schemas/ReisdocumentInOnderzoek"
             }
           },
           "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\n- indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n- soortReisdocument wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
         } ]
+      },
+      "ReisdocumentInOnderzoek" : {
+        "description" : "Geeft aan welke gegevens over het reisdocument in onderzoek zijn.\n",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/InOnderzoek"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "datumEindeGeldigheid" : {
+              "type" : "boolean"
+            },
+            "datumUitgifte" : {
+              "type" : "boolean"
+            },
+            "reisdocumentnummer" : {
+              "type" : "boolean"
+            },
+            "soortReisdocument" : {
+              "type" : "boolean"
+            }
+          }
+        } ]
+      },
+      "InOnderzoek" : {
+        "type" : "object",
+        "properties" : {
+          "datumIngangOnderzoek" : {
+            "$ref" : "#/components/schemas/AbstractDatum"
+          }
+        }
       },
       "Waardetabel" : {
         "type" : "object",
