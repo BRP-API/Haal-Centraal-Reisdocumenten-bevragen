@@ -107,8 +107,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GbaReisdocument'
-        inOnderzoek:
-          $ref: '#/components/schemas/VerblijfstitelInOnderzoek'
     ReisdocumentInOnderzoek:
       description: |
         Geeft aan welke gegevens over het reisdocument in onderzoek zijn.
