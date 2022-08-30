@@ -26,6 +26,37 @@ components:
       properties:
         reden:
           $ref: 'common.yaml#/components/schemas/Waardetabel'
+    OmschrijvingVerdrag:
+      type: string
+      description: |
+        Omschrijving van het verdrag op basis waarvan een zusterorganisatie in het buitenland de gegevens bij de RNI-deelnemer heeft aangeleverd.
+      pattern: ^[a-zA-Z0-9À-ž \.\-\']{1,50}$
+    OmschrijvingVerificatie:
+      type: string
+      description: |
+        Omschrijving van de verificatie van de rni-gegevens
+      pattern: ^[a-zA-Z0-9À-ž \.\-\']{1,50}$
+    GbaVerificatie:
+      type: object
+      properties:
+        datum:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        omschrijving:
+          $ref: '#/components/schemas/OmschrijvingVerificatie'
+    Verificatie:
+      type: object
+      properties:
+        datum:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+        omschrijving:
+          $ref: '#/components/schemas/OmschrijvingVerificatie'
+    RniDeelnemer:
+      type: object
+      properties:
+        deelnemer:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        omschrijvingVerdrag:
+          $ref: '#/components/schemas/OmschrijvingVerdrag'
     Reisdocument:
       type: object
       description: |
@@ -39,6 +70,10 @@ components:
           $ref: 'common.yaml#/components/schemas/Waardetabel'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
+        verificatie:
+          $ref: '#/components/schemas/Verificatie'
+        rni:
+          $ref: '#/components/schemas/RniDeelnemer'
     ReisdocumentUitgebreid:
       allOf:
         - $ref: '#/components/schemas/Reisdocument'
@@ -72,6 +107,10 @@ components:
           $ref: '#/components/schemas/Burgerservicenummer'
         opschortingBijhouding:
           $ref: '#/components/schemas/OpschortingBijhouding'
+        verificatie:
+          $ref: '#/components/schemas/GbaVerificatie'
+        rni:
+          $ref: '#/components/schemas/RniDeelnemer'
     ReisdocumentenQuery:
       type: object
       required:
