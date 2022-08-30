@@ -431,6 +431,10 @@ components:
           $ref: '#/components/schemas/Waardetabel'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
+        verificatie:
+          $ref: '#/components/schemas/Verificatie'
+        rni:
+          $ref: '#/components/schemas/RniDeelnemer'
       description: |
         Een document dat nodig is voor reizen naar het buitenland.
 
@@ -439,6 +443,30 @@ components:
       pattern: ^[0-9]{9}$
       type: string
       example: "555555021"
+    Verificatie:
+      type: object
+      properties:
+        datum:
+          $ref: '#/components/schemas/AbstractDatum'
+        omschrijving:
+          $ref: '#/components/schemas/OmschrijvingVerificatie'
+    OmschrijvingVerificatie:
+      pattern: ^[a-zA-Z0-9À-ž \.\-\']{1,50}$
+      type: string
+      description: |
+        Omschrijving van de verificatie van de rni-gegevens
+    RniDeelnemer:
+      type: object
+      properties:
+        deelnemer:
+          $ref: '#/components/schemas/Waardetabel'
+        omschrijvingVerdrag:
+          $ref: '#/components/schemas/OmschrijvingVerdrag'
+    OmschrijvingVerdrag:
+      pattern: ^[a-zA-Z0-9À-ž \.\-\']{1,50}$
+      type: string
+      description: |
+        Omschrijving van het verdrag op basis waarvan een zusterorganisatie in het buitenland de gegevens bij de RNI-deelnemer heeft aangeleverd.
     BadRequestFoutbericht:
       allOf:
       - $ref: '#/components/schemas/Foutbericht'
