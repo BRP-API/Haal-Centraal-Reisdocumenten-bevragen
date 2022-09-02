@@ -49,6 +49,8 @@ components:
           $ref: 'common.yaml#/components/schemas/Waardetabel'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
+        inOnderzoek:
+          $ref: '#/components/schemas/ReisdocumentInOnderzoek'
     ReisdocumentUitgebreid:
       allOf:
         - $ref: '#/components/schemas/Reisdocument'
@@ -64,7 +66,7 @@ components:
             datumEindeGeldigheid:
               $ref: 'datum.yaml#/components/schemas/AbstractDatum'
             inOnderzoek:
-              $ref: '#/components/schemas/ReisdocumentInOnderzoek'
+              $ref: '#/components/schemas/ReisdocumentUitgebreidInOnderzoek'
     GbaReisdocument:
       type: object
       description: |
@@ -86,7 +88,9 @@ components:
           $ref: '#/components/schemas/Burgerservicenummer'
         opschortingBijhouding:
           $ref: '#/components/schemas/OpschortingBijhouding'
-        inOnderzoek:
+        persoonInOnderzoek:
+          $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
+        reisdocumentInOnderzoek:
           $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
     ReisdocumentenQuery:
       type: object
@@ -116,13 +120,22 @@ components:
         - $ref: '#/components/schemas/InOnderzoek'
         - type: object
           properties:
-            datumEindeGeldigheid:
-              type: boolean
-            datumUitgifte:
+            burgerservicenummer:
               type: boolean
             reisdocumentnummer:
               type: boolean
+            indicatieGeldig:
+              type: boolean
+    ReisdocumentUitgebreidInOnderzoek:
+      description: |
+        Geeft aan welke gegevens over het reisdocument in onderzoek zijn.
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumentInOnderzoek'
+        - type: object
+          properties:
             soortReisdocument:
+              type: boolean
+            datumEindeGeldigheid:
               type: boolean
     InOnderzoek:
       type: object
