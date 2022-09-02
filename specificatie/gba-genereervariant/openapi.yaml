@@ -441,7 +441,9 @@ components:
           $ref: '#/components/schemas/Burgerservicenummer'
         opschortingBijhouding:
           $ref: '#/components/schemas/OpschortingBijhouding'
-        inOnderzoek:
+        persoonInOnderzoek:
+          $ref: '#/components/schemas/GbaInOnderzoek'
+        reisdocumentInOnderzoek:
           $ref: '#/components/schemas/GbaInOnderzoek'
       description: |
         Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.

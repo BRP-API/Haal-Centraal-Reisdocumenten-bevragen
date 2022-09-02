@@ -602,7 +602,10 @@
           "opschortingBijhouding" : {
             "$ref" : "#/components/schemas/OpschortingBijhouding"
           },
-          "inOnderzoek" : {
+          "persoonInOnderzoek" : {
+            "$ref" : "#/components/schemas/GbaInOnderzoek"
+          },
+          "reisdocumentInOnderzoek" : {
             "$ref" : "#/components/schemas/GbaInOnderzoek"
           }
         },
