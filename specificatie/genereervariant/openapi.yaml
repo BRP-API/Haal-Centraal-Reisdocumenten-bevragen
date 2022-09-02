@@ -427,6 +427,8 @@ components:
       properties:
         geheimhoudingPersoongegevens:
           $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
+        opschortingBijhouding:
+          $ref: '#/components/schemas/OpschortingBijhouding'
         reisdocumentnummer:
           $ref: '#/components/schemas/Reisdocumentnummer'
         indicatieGeldig:
@@ -441,6 +443,11 @@ components:
       type: boolean
       description: |
         Gegevens mogen niet worden verstrekt aan derden / maatschappelijke instellingen.
+    OpschortingBijhouding:
+      type: object
+      properties:
+        reden:
+          $ref: '#/components/schemas/Waardetabel'
     Burgerservicenummer:
       pattern: ^[0-9]{9}$
       type: string

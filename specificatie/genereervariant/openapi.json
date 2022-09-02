@@ -581,6 +581,9 @@
           "geheimhoudingPersoongegevens" : {
             "$ref" : "#/components/schemas/GeheimhoudingPersoonsgegevens"
           },
+          "opschortingBijhouding" : {
+            "$ref" : "#/components/schemas/OpschortingBijhouding"
+          },
           "reisdocumentnummer" : {
             "$ref" : "#/components/schemas/Reisdocumentnummer"
           },
@@ -596,6 +599,14 @@
       "GeheimhoudingPersoonsgegevens" : {
         "type" : "boolean",
         "description" : "Gegevens mogen niet worden verstrekt aan derden / maatschappelijke instellingen.\n"
+      },
+      "OpschortingBijhouding" : {
+        "type" : "object",
+        "properties" : {
+          "reden" : {
+            "$ref" : "#/components/schemas/Waardetabel"
+          }
+        }
       },
       "Burgerservicenummer" : {
         "pattern" : "^[0-9]{9}$",
