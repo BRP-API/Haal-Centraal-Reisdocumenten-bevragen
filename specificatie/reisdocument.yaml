@@ -41,6 +41,8 @@ components:
       properties:
         geheimhoudingPersoongegevens:
           $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
+        opschortingBijhouding:
+          $ref: '#/components/schemas/OpschortingBijhouding'
         reisdocumentnummer:
           $ref: '#/components/schemas/Reisdocumentnummer'
         indicatieGeldig:
