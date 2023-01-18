@@ -39,7 +39,7 @@ plugins:
 
 remote_theme: VNG-Realisatie/jekyll-theme-haal-centraal
 
-github: VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
+github: BRP-API/Haal-Centraal-Reisdocumenten-bevragen
 
 theme: jekyll-theme-time-machine
 
