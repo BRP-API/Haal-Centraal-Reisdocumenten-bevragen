@@ -31,15 +31,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen.git"
+    "url": "git+https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/issues"
+    "url": "https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/issues"
   },
-  "homepage": "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen#readme",
+  "homepage": "https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen#readme",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.1",
     "@stoplight/spectral-cli": "^6.4.1",
