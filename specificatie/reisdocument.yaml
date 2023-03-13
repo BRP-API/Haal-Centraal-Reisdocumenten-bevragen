@@ -21,12 +21,7 @@ components:
       description: |
             Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
       pattern: ^[A-Z]{2}$
-    OpschortingBijhouding:
-      type: object
-      properties:
-        reden:
-          $ref: 'common.yaml#/components/schemas/Waardetabel'
-    Reisdocument:
+    ReisdocumentBasis:
       type: object
       description: |
                     Een document dat nodig is voor reizen naar het buitenland.
@@ -39,9 +34,24 @@ components:
           $ref: 'common.yaml#/components/schemas/Waardetabel'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
+        geheimhoudingPersoongegevens:
+          $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
+        opschortingBijhouding:
+          $ref: 'opschortingBijhouding.yaml#/components/schemas/OpschortingBijhouding'
+    Reisdocument:
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumentBasis'
+        - type: object
+          description: |
+                    Een document dat nodig is voor reizen naar het buitenland.
+
+                    indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+          properties:
+            inOnderzoek:
+              $ref: '#/components/schemas/ReisdocumentInOnderzoek'
     ReisdocumentUitgebreid:
       allOf:
-        - $ref: '#/components/schemas/Reisdocument'
+        - $ref: '#/components/schemas/ReisdocumentBasis'
         - type: object
           description: |
                         Een document dat nodig is voor reizen naar het buitenland.
@@ -53,6 +63,8 @@ components:
               $ref: 'common.yaml#/components/schemas/Waardetabel'
             datumEindeGeldigheid:
               $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+            inOnderzoek:
+              $ref: '#/components/schemas/ReisdocumentUitgebreidInOnderzoek'
     GbaReisdocument:
       type: object
       description: |
@@ -70,8 +82,14 @@ components:
           $ref: '#/components/schemas/AanduidingInhoudingOfVermissing'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
+        geheimhoudingPersoongegevens:
+          $ref: '#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
-          $ref: '#/components/schemas/OpschortingBijhouding'
+          $ref: 'opschortingBijhouding.yaml#/components/schemas/GbaOpschortingBijhouding'
+        persoonInOnderzoek:
+          $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
+        reisdocumentInOnderzoek:
+          $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
     ReisdocumentenQuery:
       type: object
       required:
@@ -93,3 +111,38 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GbaReisdocument'
+    InOnderzoek:
+      type: object
+      properties:
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+    ReisdocumentInOnderzoek:
+      description: |
+        Geeft aan welke gegevens over het reisdocument in onderzoek zijn.
+      allOf:
+        - $ref: '#/components/schemas/InOnderzoek'
+        - type: object
+          properties:
+            burgerservicenummer:
+              type: boolean
+            reisdocumentnummer:
+              type: boolean
+            indicatieGeldig:
+              type: boolean
+    ReisdocumentUitgebreidInOnderzoek:
+      description: |
+        Geeft aan welke gegevens over het reisdocument in onderzoek zijn.
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumentInOnderzoek'
+        - type: object
+          properties:
+            soortReisdocument:
+              type: boolean
+            datumEindeGeldigheid:
+              type: boolean
+    GbaGeheimhoudingPersoonsgegevens:
+      type: integer
+    GeheimhoudingPersoonsgegevens:
+      description: |
+        Gegevens mogen niet worden verstrekt aan derden / maatschappelijke instellingen.
+      type: boolean
