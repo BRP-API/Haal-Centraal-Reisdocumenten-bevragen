@@ -4,7 +4,7 @@
     "title" : "Reisdocumenten",
     "description" : "API voor het ontsluiten van de geldigheid en/of houder van reisdocumenten.\n",
     "contact" : {
-      "url" : "https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen"
+      "url" : "https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen"
     },
     "license" : {
       "name" : "European Union Public License, version 1.2 (EUPL-1.2)",
@@ -576,6 +576,19 @@
         "type" : "string"
       },
       "Reisdocument" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/ReisdocumentBasis"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "inOnderzoek" : {
+              "$ref" : "#/components/schemas/ReisdocumentInOnderzoek"
+            }
+          },
+          "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
+        } ]
+      },
+      "ReisdocumentBasis" : {
         "type" : "object",
         "properties" : {
           "reisdocumentnummer" : {
@@ -586,6 +599,12 @@
           },
           "burgerservicenummer" : {
             "$ref" : "#/components/schemas/Burgerservicenummer"
+          },
+          "geheimhoudingPersoongegevens" : {
+            "$ref" : "#/components/schemas/GeheimhoudingPersoonsgegevens"
+          },
+          "opschortingBijhouding" : {
+            "$ref" : "#/components/schemas/OpschortingBijhouding"
           }
         },
         "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
@@ -594,6 +613,37 @@
         "pattern" : "^[0-9]{9}$",
         "type" : "string",
         "example" : "555555021"
+      },
+      "GeheimhoudingPersoonsgegevens" : {
+        "type" : "boolean",
+        "description" : "Gegevens mogen niet worden verstrekt aan derden / maatschappelijke instellingen.\n"
+      },
+      "ReisdocumentInOnderzoek" : {
+        "description" : "Geeft aan welke gegevens over het reisdocument in onderzoek zijn.\n",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/InOnderzoek"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "burgerservicenummer" : {
+              "type" : "boolean"
+            },
+            "reisdocumentnummer" : {
+              "type" : "boolean"
+            },
+            "indicatieGeldig" : {
+              "type" : "boolean"
+            }
+          }
+        } ]
+      },
+      "InOnderzoek" : {
+        "type" : "object",
+        "properties" : {
+          "datumIngangOnderzoek" : {
+            "$ref" : "#/components/schemas/AbstractDatum"
+          }
+        }
       },
       "BadRequestFoutbericht" : {
         "allOf" : [ {
@@ -701,7 +751,7 @@
       },
       "ReisdocumentUitgebreid" : {
         "allOf" : [ {
-          "$ref" : "#/components/schemas/Reisdocument"
+          "$ref" : "#/components/schemas/ReisdocumentBasis"
         }, {
           "type" : "object",
           "properties" : {
@@ -710,9 +760,28 @@
             },
             "datumEindeGeldigheid" : {
               "$ref" : "#/components/schemas/AbstractDatum"
+            },
+            "inOnderzoek" : {
+              "$ref" : "#/components/schemas/ReisdocumentUitgebreidInOnderzoek"
             }
           },
           "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\n- indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n- soortReisdocument wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
+        } ]
+      },
+      "ReisdocumentUitgebreidInOnderzoek" : {
+        "description" : "Geeft aan welke gegevens over het reisdocument in onderzoek zijn.\n",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/ReisdocumentInOnderzoek"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "soortReisdocument" : {
+              "type" : "boolean"
+            },
+            "datumEindeGeldigheid" : {
+              "type" : "boolean"
+            }
+          }
         } ]
       },
       "Waardetabel" : {
@@ -729,6 +798,28 @@
             "example" : "Nederland"
           }
         }
+      },
+      "OpschortingBijhouding" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/OpschortingBijhoudingBasis"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "datum" : {
+              "$ref" : "#/components/schemas/AbstractDatum"
+            }
+          },
+          "description" : "* **datum**: de datum waarop de bijhouding van de persoonsgegevens is gestaakt.\n"
+        } ]
+      },
+      "OpschortingBijhoudingBasis" : {
+        "type" : "object",
+        "properties" : {
+          "reden" : {
+            "$ref" : "#/components/schemas/Waardetabel"
+          }
+        },
+        "description" : "* **reden** - wordt gevuld met waarden uit de tabel 'redenopschortingbijhouding' (zie Haal-Centraal-BRP-tabellen-bevragen API).\n"
       },
       "AbstractDatum" : {
         "required" : [ "type" ],

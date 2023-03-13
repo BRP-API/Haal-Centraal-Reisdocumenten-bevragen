@@ -4,7 +4,7 @@ info:
   description: |
     API voor het ontsluiten van gegevens van reisdocumenten.
   contact:
-    url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
+    url: https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen
   license:
     name: European Union Public License, version 1.2 (EUPL-1.2)
     url: https://eupl.eu/1.2/nl/
@@ -437,8 +437,14 @@ components:
           $ref: '#/components/schemas/AanduidingInhoudingOfVermissing'
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
+        geheimhoudingPersoongegevens:
+          $ref: '#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
-          $ref: '#/components/schemas/OpschortingBijhouding'
+          $ref: '#/components/schemas/GbaOpschortingBijhouding'
+        persoonInOnderzoek:
+          $ref: '#/components/schemas/GbaInOnderzoek'
+        reisdocumentInOnderzoek:
+          $ref: '#/components/schemas/GbaInOnderzoek'
       description: |
         Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.
     AanduidingInhoudingOfVermissing:
@@ -448,11 +454,8 @@ components:
       pattern: ^[0-9]{9}$
       type: string
       example: "555555021"
-    OpschortingBijhouding:
-      type: object
-      properties:
-        reden:
-          $ref: '#/components/schemas/Waardetabel'
+    GbaGeheimhoudingPersoonsgegevens:
+      type: integer
     BadRequestFoutbericht:
       allOf:
       - $ref: '#/components/schemas/Foutbericht'
@@ -547,6 +550,33 @@ components:
       pattern: ^[0-9]{8}$
       type: string
       example: "20180700"
+    GbaOpschortingBijhouding:
+      allOf:
+      - $ref: '#/components/schemas/OpschortingBijhoudingBasis'
+      - type: object
+        properties:
+          datum:
+            $ref: '#/components/schemas/GbaDatum'
+        description: |
+          * **datum**: de datum waarop de bijhouding van de persoonsgegevens is gestaakt.
+    OpschortingBijhoudingBasis:
+      type: object
+      properties:
+        reden:
+          $ref: '#/components/schemas/Waardetabel'
+      description: |
+        * **reden** - wordt gevuld met waarden uit de tabel 'redenopschortingbijhouding' (zie Haal-Centraal-BRP-tabellen-bevragen API).
+    GbaInOnderzoek:
+      required:
+      - aanduidingGegevensInOnderzoek
+      - datumIngangOnderzoek
+      type: object
+      properties:
+        aanduidingGegevensInOnderzoek:
+          pattern: ^[0-9]{6}$
+          type: string
+        datumIngangOnderzoek:
+          $ref: '#/components/schemas/GbaDatum'
   headers:
     api_version:
       schema:
