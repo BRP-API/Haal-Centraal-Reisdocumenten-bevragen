@@ -37,7 +37,7 @@ components:
         geheimhoudingPersoongegevens:
           $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
-          $ref: 'opschortingBijhouding.yaml#/components/schemas/OpschortingBijhouding'
+          $ref: 'opschortingbijhouding.yaml#/components/schemas/OpschortingBijhouding'
     Reisdocument:
       allOf:
         - $ref: '#/components/schemas/ReisdocumentBasis'
@@ -85,7 +85,7 @@ components:
         geheimhoudingPersoongegevens:
           $ref: '#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
-          $ref: 'opschortingBijhouding.yaml#/components/schemas/GbaOpschortingBijhouding'
+          $ref: 'opschortingbijhouding.yaml#/components/schemas/GbaOpschortingBijhouding'
         persoonInOnderzoek:
           $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
         reisdocumentInOnderzoek:
