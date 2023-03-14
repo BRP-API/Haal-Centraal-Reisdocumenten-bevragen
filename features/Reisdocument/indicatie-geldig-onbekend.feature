@@ -124,6 +124,8 @@ Rule: Bij een datum einde geldigheid van een reisdocument waarvan alleen het jaa
       | einddatum geldigheid    | indicatieGeldig | indicatieGeldig omschrijving               |
       | deze maand              | O               | De status van het reisdocument is onbekend |
       | volgende maand          | G               | Reisdocument is geldig                     |
+      | deze maand + 1 jaar     | G               | Reisdocument is geldig                     |
       | vorige maand            | N               | Reisdocument is niet geldig                |
+      | deze maand - 1 jaar     | N               | Reisdocument is niet geldig                |
       | volgende maand - 1 jaar | N               | Reisdocument is niet geldig                |
       | vorige maand + 1 jaar   | G               | Reisdocument is geldig                     |
