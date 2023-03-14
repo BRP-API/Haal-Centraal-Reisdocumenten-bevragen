@@ -14,7 +14,7 @@ Functionaliteit: leveren van de geldigheid van een reisdocument
       | Autoriteit van afgifte Nederlands reisdocument (12.35.40) | B0599                  |
       | Datum einde geldigheid Nederlands reisdocument (12.35.50) | <einddatum geldigheid> |
       Als het reisdocument met nummer 'BD8P7H2C7' wordt geraadpleegd
-      Dan heeft de response een persoon met de volgende gegevens
+      Dan heeft de response de volgende gegevens
       | naam                         | waarde                      |
       | reisdocumentnummer           | BD8P7H2C7                   |
       | burgerservicenummer          | 000000024                   |
@@ -36,7 +36,7 @@ Functionaliteit: leveren van de geldigheid van een reisdocument
       | Autoriteit van afgifte Nederlands reisdocument (12.35.40) | B0599                  |
       | Datum einde geldigheid Nederlands reisdocument (12.35.50) | <einddatum geldigheid> |
       Als het reisdocument met nummer 'BD8P7H2C7' wordt geraadpleegd
-      Dan heeft de response een persoon met de volgende gegevens
+      Dan heeft de response de volgende gegevens
       | naam                         | waarde                 |
       | reisdocumentnummer           | BD8P7H2C7              |
       | burgerservicenummer          | 000000024              |
@@ -61,7 +61,7 @@ Functionaliteit: leveren van de geldigheid van een reisdocument
       | Datum inhouding dan wel vermissing Nederlands reisdocument (12.35.60)      | 20230310                              |
       | Aanduiding inhouding dan wel vermissing Nederlands reisdocument (12.35.70) | <aanduiding inhoudhouding/vermissing> |
       Als het reisdocument met nummer 'BD8P7H2C7' wordt geraadpleegd
-      Dan heeft de response een persoon met de volgende gegevens
+      Dan heeft de response de volgende gegevens
       | naam                         | waarde                      |
       | reisdocumentnummer           | BD8P7H2C7                   |
       | burgerservicenummer          | 000000024                   |
@@ -90,17 +90,17 @@ Functionaliteit: leveren van de geldigheid van een reisdocument
       | Autoriteit van afgifte Nederlands reisdocument (12.35.40) | B0599     |
       | Datum einde geldigheid Nederlands reisdocument (12.35.50) | 20320316  |
       Als het reisdocument met nummer 'BD8P7H2C7' wordt geraadpleegd
-      Dan heeft de response een persoon met de volgende gegevens
-      | naam                         | waarde                      |
-      | reisdocumentnummer           | BD8P7H2C7                   |
-      | burgerservicenummer          | 000000024                   |
-      | indicatieGeldig.code         | N                           |
-      | indicatieGeldig.omschrijving | Reisdocument is niet geldig |
-      En heeft de persoon de volgende 'opschortingBijhouding' gegevens
-      | naam               | waarde     |
-      | reden.code         | O          |
-      | reden.omschrijving | overlijden |
-      | datum              | 20230207   |
+      Dan heeft de response de volgende gegevens
+      | naam                                     | waarde                      |
+      | reisdocumentnummer                       | BD8P7H2C7                   |
+      | burgerservicenummer                      | 000000024                   |
+      | indicatieGeldig.code                     | N                           |
+      | indicatieGeldig.omschrijving             | Reisdocument is niet geldig |
+      | opschortingBijhouding.reden.code         | O                           |
+      | opschortingBijhouding.reden.omschrijving | overlijden                  |
+      | opschortingBijhouding.datum.type         | Datum                       |
+      | opschortingBijhouding.datum.datum        | 2023-02-07                  |
+      | opschortingBijhouding.datum.langFormaat  | 7 februari 2023             |
 
     Abstract Scenario: de persoonslijst is opgeschort met reden <reden omschrijving>
       Gegeven de persoon met burgerservicenummer '000000024' heeft de volgende 'inschrijving' gegevens
@@ -114,17 +114,17 @@ Functionaliteit: leveren van de geldigheid van een reisdocument
       | Autoriteit van afgifte Nederlands reisdocument (12.35.40) | B0599     |
       | Datum einde geldigheid Nederlands reisdocument (12.35.50) | 20320316  |
       Als het reisdocument met nummer 'BD8P7H2C7' wordt geraadpleegd
-      Dan heeft de response een persoon met de volgende gegevens
-      | naam                         | waarde                 |
-      | reisdocumentnummer           | BD8P7H2C7              |
-      | burgerservicenummer          | 000000024              |
-      | indicatieGeldig.code         | G                      |
-      | indicatieGeldig.omschrijving | Reisdocument is geldig |
-      En heeft de persoon de volgende 'opschortingBijhouding' gegevens
-      | naam               | waarde               |
-      | reden.code         | <opschorting reden>  |
-      | reden.omschrijving | <reden omschrijving> |
-      | datum              | 20230207             |
+      Dan heeft de response de volgende gegevens
+      | naam                                     | waarde                 |
+      | reisdocumentnummer                       | BD8P7H2C7              |
+      | burgerservicenummer                      | 000000024              |
+      | indicatieGeldig.code                     | G                      |
+      | indicatieGeldig.omschrijving             | Reisdocument is geldig |
+      | opschortingBijhouding.reden.code         | <opschorting reden>    |
+      | opschortingBijhouding.reden.omschrijving | <reden omschrijving>   |
+      | opschortingBijhouding.datum.type         | Datum                  |
+      | opschortingBijhouding.datum.datum        | 2023-02-07             |
+      | opschortingBijhouding.datum.langFormaat  | 7 februari 2023        |
 
       Voorbeelden:
       | opschorting reden | reden omschrijving        |
@@ -148,14 +148,14 @@ Functionaliteit: leveren van de geldigheid van een reisdocument
       | Autoriteit van afgifte Nederlands reisdocument (12.35.40) | B0599     |
       | Datum einde geldigheid Nederlands reisdocument (12.35.50) | 20320316  |
       Als het reisdocument met nummer 'BD8P7H2C7' wordt geraadpleegd
-      Dan heeft de response een persoon met de volgende gegevens
-      | naam                         | waarde                      |
-      | reisdocumentnummer           | BD8P7H2C7                   |
-      | burgerservicenummer          | 000000024                   |
-      | indicatieGeldig.code         | N                           |
-      | indicatieGeldig.omschrijving | Reisdocument is niet geldig |
-      En heeft de persoon de volgende 'opschortingBijhouding' gegevens
-      | naam               | waarde   |
-      | reden.code         | F        |
-      | reden.omschrijving | fout     |
-      | datum              | 20230207 |
+      Dan heeft de response de volgende gegevens
+      | naam                                     | waarde                      |
+      | reisdocumentnummer                       | BD8P7H2C7                   |
+      | burgerservicenummer                      | 000000024                   |
+      | indicatieGeldig.code                     | N                           |
+      | indicatieGeldig.omschrijving             | Reisdocument is niet geldig |
+      | opschortingBijhouding.reden.code         | F                           |
+      | opschortingBijhouding.reden.omschrijving | fout                        |
+      | opschortingBijhouding.datum.type         | Datum                       |
+      | opschortingBijhouding.datum.datum        | 2023-02-07                  |
+      | opschortingBijhouding.datum.langFormaat  | 7 februari 2023             |
