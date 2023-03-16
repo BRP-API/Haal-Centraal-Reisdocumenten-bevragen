@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run oas:lint && npm run oas:resolve && npm run oas:lint-genereervariant && npm run unstage-generated

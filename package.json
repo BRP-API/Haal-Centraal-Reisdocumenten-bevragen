@@ -1,5 +1,5 @@
 {
-  "name": "Haal-Centraal-Reisdocumenten-bevragen",
+  "name": "haal-centraal-reisdocumenten-bevragen",
   "version": "1.0.0",
   "description": "Reisdocumenten bevragen is een Haal Centraal API voor het raadplegen van de reisdocumenten van ingeschreven natuurlijke personen voor alle binnengemeentelijke afnemers in NL.",
   "main": "index.js",
@@ -21,13 +21,8 @@
     "oas:resolve": "java -jar swagger-codegen-cli.jar generate -i ./specificatie/openapi.yaml -l openapi-yaml -o ./specificatie/genereervariant && java -jar swagger-codegen-cli.jar generate -i ./specificatie/openapi.yaml -l openapi -o ./specificatie/genereervariant",
     "postoas:resolve": "rm swagger-codegen-cli.jar",
     "unstage-generated": "git reset HEAD ./specificatie/genereervariant/openapi.* ./test/Reisdocumenten-Bevragen-postman-collection.json ./code/**",
-    "rollback-generated": "git checkout ./specificatie/genereervariant/openapi.* ./test/Reisdocumenten-Bevragen-postman-collection.json ./code/**"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run oas:lint && npm run oas:resolve && npm run oas:lint-genereervariant && npm run unstage-generated",
-      "post-commit": "npm run rollback-generated"
-    }
+    "rollback-generated": "git checkout ./specificatie/genereervariant/openapi.* ./test/Reisdocumenten-Bevragen-postman-collection.json ./code/**",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -41,11 +36,16 @@
   },
   "homepage": "https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen#readme",
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.5.1",
-    "@stoplight/spectral-cli": "^6.4.1",
-    "husky": "^4.3.8",
-    "mkdirp": "^1.0.4",
+    "@cucumber/cucumber": "^9.0.1",
+    "@openapitools/openapi-generator-cli": "^2.5.2",
+    "@stoplight/spectral-cli": "^6.6.0",
+    "axios": "^1.3.4",
+    "chai": "^4.3.7",
+    "cucumber-html-reporter": "^6.0.0",
+    "deep-equal-in-any-order": "^2.0.5",
+    "husky": "^8.0.3",
     "mvn-dl": "^6.0.0",
-    "openapi-to-postmanv2": "^3.2.0"
+    "nswag": "^13.18.2",
+    "pg": "^8.10.0"
   }
 }
