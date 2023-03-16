@@ -585,7 +585,7 @@
               "$ref" : "#/components/schemas/ReisdocumentInOnderzoek"
             }
           },
-          "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
+          "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld met waarden voor 'Geldig_Reisdocument' in 'tabelwaarden.csv'.\n"
         } ]
       },
       "ReisdocumentBasis" : {
@@ -607,7 +607,7 @@
             "$ref" : "#/components/schemas/OpschortingBijhouding"
           }
         },
-        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
+        "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\nindicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld met waarden voor 'Geldig_Reisdocument' in 'tabelwaarden.csv'.\n"
       },
       "Burgerservicenummer" : {
         "pattern" : "^[0-9]{9}$",
@@ -765,7 +765,7 @@
               "$ref" : "#/components/schemas/ReisdocumentUitgebreidInOnderzoek"
             }
           },
-          "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\n- indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n- soortReisdocument wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.\n"
+          "description" : "Een document dat nodig is voor reizen naar het buitenland.\n\n- indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld met waarden voor 'Geldig_Reisdocument' in 'tabelwaarden.csv'.\n- soortReisdocument wordt gevuld met waarden uit de landelijke tabel 'Nederlands Reisdocument'.\n"
         } ]
       },
       "ReisdocumentUitgebreidInOnderzoek" : {
@@ -819,7 +819,7 @@
             "$ref" : "#/components/schemas/Waardetabel"
           }
         },
-        "description" : "* **reden** - wordt gevuld met waarden uit de tabel 'redenopschortingbijhouding' (zie Haal-Centraal-BRP-tabellen-bevragen API).\n"
+        "description" : "* **reden** - wordt gevuld met waarden voor 'Reden_Opschorting_Bijhouding' in 'tabelwaarden.csv'.\n"
       },
       "AbstractDatum" : {
         "required" : [ "type" ],

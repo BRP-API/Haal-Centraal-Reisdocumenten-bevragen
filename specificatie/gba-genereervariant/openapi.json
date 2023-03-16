@@ -767,7 +767,7 @@
             "$ref" : "#/components/schemas/Waardetabel"
           }
         },
-        "description" : "* **reden** - wordt gevuld met waarden uit de tabel 'redenopschortingbijhouding' (zie Haal-Centraal-BRP-tabellen-bevragen API).\n"
+        "description" : "* **reden** - wordt gevuld met waarden voor 'Reden_Opschorting_Bijhouding' in 'tabelwaarden.csv'.\n"
       },
       "GbaInOnderzoek" : {
         "required" : [ "aanduidingGegevensInOnderzoek", "datumIngangOnderzoek" ],
