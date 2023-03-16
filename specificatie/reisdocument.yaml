@@ -19,14 +19,14 @@ components:
     SoortReisdocument:
       type: string
       description: |
-            Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+            Een code voor het soort reisdocument. Wordt gevuld met waarden uit de landelijke tabel 'Nederlands Reisdocument'.
       pattern: ^[A-Z]{2}$
     ReisdocumentBasis:
       type: object
       description: |
                     Een document dat nodig is voor reizen naar het buitenland.
 
-                    indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+                    indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld met waarden voor 'Geldig_Reisdocument' in 'tabelwaarden.csv'.
       properties:
         reisdocumentnummer:
           $ref: '#/components/schemas/Reisdocumentnummer' 
@@ -45,7 +45,7 @@ components:
           description: |
                     Een document dat nodig is voor reizen naar het buitenland.
 
-                    indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+                    indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld met waarden voor 'Geldig_Reisdocument' in 'tabelwaarden.csv'.
           properties:
             inOnderzoek:
               $ref: '#/components/schemas/ReisdocumentInOnderzoek'
@@ -56,8 +56,8 @@ components:
           description: |
                         Een document dat nodig is voor reizen naar het buitenland.
 
-                        - indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
-                        - soortReisdocument wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
+                        - indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld met waarden voor 'Geldig_Reisdocument' in 'tabelwaarden.csv'.
+                        - soortReisdocument wordt gevuld met waarden uit de landelijke tabel 'Nederlands Reisdocument'.
           properties:
             soortReisdocument:
               $ref: 'common.yaml#/components/schemas/Waardetabel'

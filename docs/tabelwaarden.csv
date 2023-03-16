@@ -1,0 +1,10 @@
+tabelidentificatie,code,omschrijving
+Reden_Opschorting_Bijhouding,O,overlijden
+Reden_Opschorting_Bijhouding,E,emigratie
+Reden_Opschorting_Bijhouding,M,ministerieel besluit
+Reden_Opschorting_Bijhouding,R,pl is aangelegd in de rni
+Reden_Opschorting_Bijhouding,F,fout
+Reden_Opschorting_Bijhouding,.,onbekend
+Geldig_Reisdocument,G,Reisdocument is geldig
+Geldig_Reisdocument,N,Reisdocument is niet geldig
+Geldig_Reisdocument,O,De status van het reisdocument is onbekend
