@@ -3,6 +3,9 @@ servers:
   - description: |
       Proef omgeving
     url: https://proefomgeving.haalcentraal.nl/haalcentraal/api/reisdocumenten
+  - description: |
+      Lokaal
+    url: http://localhost:5001/haalcentraal/api/reisdocumenten
 info:
   title: Haal Centraal Reisdocumenten bevragen
   description: |
