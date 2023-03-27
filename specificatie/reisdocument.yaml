@@ -6,90 +6,102 @@ info:
 paths: {}
 components:
   schemas:
-    Reisdocumentnummer:
-      type: string
-      pattern: ^[a-zA-Z0-9]{9}$
-    Burgerservicenummer:
-      type: string
-      pattern: ^[0-9]{9}$
-      example: "555555021"
-    AanduidingInhoudingOfVermissing:
-      type: string
-      pattern: ^(I|R|V|\.)$
-    SoortReisdocument:
-      type: string
-      description: |
-            Een code voor het soort reisdocument. Wordt gevuld met een code die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
-      pattern: ^[A-Z]{2}$
-    OpschortingBijhouding:
+    GbaInhoudingOfVermissing:
       type: object
       properties:
-        reden:
-          $ref: 'common.yaml#/components/schemas/Waardetabel'
-    Reisdocument:
-      type: object
-      description: |
-                    Een document dat nodig is voor reizen naar het buitenland.
-
-                    indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
-      properties:
-        reisdocumentnummer:
-          $ref: '#/components/schemas/Reisdocumentnummer' 
-        indicatieGeldig:
-          $ref: 'common.yaml#/components/schemas/Waardetabel'
-        burgerservicenummer:
-          $ref: '#/components/schemas/Burgerservicenummer'
-    ReisdocumentUitgebreid:
-      allOf:
-        - $ref: '#/components/schemas/Reisdocument'
-        - type: object
-          description: |
-                        Een document dat nodig is voor reizen naar het buitenland.
-
-                        - indicatieGeldig geeft aan of het reisdocument op dit moment nog geldig en in het bezit van de persoon is. Wordt gevuld op basis van de waarden die voorkomen in de tabel 'Geldig_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
-                        - soortReisdocument wordt gevuld op basis van de waarden die voorkomen in de tabel 'Nederlands_Reisdocument' uit de Haal-Centraal-BRP-tabellen-bevragen API.
-          properties:
-            soortReisdocument:
-              $ref: 'common.yaml#/components/schemas/Waardetabel'
-            datumEindeGeldigheid:
-              $ref: 'datum.yaml#/components/schemas/AbstractDatum'
-    GbaReisdocument:
-      type: object
-      description: |
-          Gegevens van een reisdocument die nodig zijn om te bepalen of het reisdocument nog geldig en in het bezit van de houder is, plus de identificatie van de houder.
-      properties:
-        reisdocumentnummer:
-          $ref: '#/components/schemas/Reisdocumentnummer'
-        soortReisdocument:
-          $ref: 'common.yaml#/components/schemas/Waardetabel'
-        datumEindeGeldigheid:
-          $ref: 'datum.yaml#/components/schemas/GbaDatum'
         datumInhoudingOfVermissing:
           $ref: 'datum.yaml#/components/schemas/GbaDatum'
         aanduidingInhoudingOfVermissing:
-          $ref: '#/components/schemas/AanduidingInhoudingOfVermissing'
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+    InhoudingOfVermissing:
+      type: object
+      properties:
+        datumInhoudingOfVermissing:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+        aanduidingInhoudingOfVermissing:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        inOnderzoek:
+          $ref: '#/components/schemas/InhoudingOfVermissingInOnderzoek'
+    InhoudingOfVermissingInOnderzoek:
+      type: object
+      properties:
+        datumInhoudingOfVermissing:
+          type: boolean
+        aanduidingInhoudingOfVermissing:
+          type: boolean
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+    ReisdocumenthouderBasis:
+      type: object
+      properties:
         burgerservicenummer:
-          $ref: '#/components/schemas/Burgerservicenummer'
+          $ref: 'persoon.yaml#/components/schemas/Burgerservicenummer'
+        geheimhoudingPersoonsgegevens:
+          $ref: 'persoon.yaml#/components/schemas/GeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
-          $ref: '#/components/schemas/OpschortingBijhouding'
-    ReisdocumentenQuery:
+          $ref: 'opschortingBijhouding.yaml#/components/schemas/OpschortingBijhouding'
+    GbaReisdocumenthouder:
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumenthouderBasis'
+        - type: object
+          properties:
+            inOnderzoek:
+              $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
+    Reisdocumenthouder:
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumenthouderBasis'
+        - type: object
+          properties:
+            inOnderzoek:
+              $ref: '#/components/schemas/ReisdocumenthouderInOnderzoek'
+    ReisdocumenthouderInOnderzoek:
       type: object
-      required:
-        - burgerservicenummer
       properties:
         burgerservicenummer:
-          $ref: '#/components/schemas/Burgerservicenummer'
-    ReisdocumentenResponse:
+          type: boolean
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+    Reisdocumentnummer:
+      type: string
+      pattern: ^[0-9]{10}$
+    GbaReisdocument:
       type: object
       properties:
-        reisdocumenten:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReisdocumentUitgebreid'
-    GbaReisdocumentenResponse:
+        reisdocumentnummer:
+          $ref: '#/components/schemas/Reisdocumentnummer'
+        soort:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        datumEindeGeldigheid:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        inhoudingOfVermissing:
+          $ref: '#/components/schemas/GbaInhoudingOfVermissing'
+        houder:
+          $ref: '#/components/schemas/GbaReisdocumenthouder'
+        inOnderzoek:
+          $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
+    Reisdocument:
       type: object
       properties:
-        reisdocumenten:
-          type: array
-          items:
-            $ref: '#/components/schemas/GbaReisdocument'
+        reisdocumentnummer:
+          $ref: '#/components/schemas/Reisdocumentnummer'
+        soort:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        datumEindeGeldigheid:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+        inhoudingOfVermissing:
+          $ref: '#/components/schemas/InhoudingOfVermissing'
+        houder:
+          $ref: '#/components/schemas/Reisdocumenthouder'
+        inOnderzoek:
+          $ref: '#/components/schemas/ReisdocumentInOnderzoek'
+    ReisdocumentInOnderzoek:
+      type: object
+      properties:
+        reisdocumentnummer:
+          type: boolean
+        soort:
+          type: boolean
+        datumEindeGeldigheid:
+          type: boolean
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'

@@ -1,0 +1,125 @@
+openapi: 3.0.3
+info:
+  title: Zoek Reisdocumenten endpoint definitie
+  version: 2.0.0
+  contact: {}
+paths:
+  /reisdocumenten:
+    post:
+      operationId: Reisdocumenten
+      description: |
+        Zoek reisdocumenten met één van de onderstaande verplichte combinaties van parameters
+
+        1. Raadpleeg met reisdocumentnummer
+        2. Zoek met burgerservicenummer
+      
+      requestBody:
+        content:
+          'application/json; charset=utf-8':
+            schema:
+              $ref: '#/components/schemas/ReisdocumentenQuery'
+      responses:
+        '200':
+          description: |
+            Zoekactie geslaagd
+          headers:
+            api-version:
+              $ref: 'common.yaml#/components/headers/api_version'
+            warning:
+              $ref: 'common.yaml#/components/headers/warning'
+            X-Rate-Limit-Limit:
+              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Limit'
+            X-Rate-Limit-Remaining:
+              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Remaining'
+            X-Rate-Limit-Reset:
+              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Reset'
+          content:
+            'application/json; charset=utf-8':
+              schema:
+                $ref: '#/components/schemas/ReisdocumentenQueryResponse'
+        '400':
+          $ref: 'common.yaml#/components/responses/400'
+        '401':
+          $ref: 'common.yaml#/components/responses/401'
+        '403':
+          $ref: 'common.yaml#/components/responses/403'
+        '406':
+          $ref: 'common.yaml#/components/responses/406'
+        '415':
+          $ref: 'common.yaml#/components/responses/415'
+        '429':
+          $ref: 'common.yaml#/components/responses/429'
+        '500':
+          $ref: 'common.yaml#/components/responses/500'
+        '501':
+          $ref: 'common.yaml#/components/responses/501'
+        '503':
+          $ref: 'common.yaml#/components/responses/503'
+        'default':
+          $ref: 'common.yaml#/components/responses/default'
+      tags:
+        - Reisdocumenten
+components:
+  schemas:
+    ReisdocumentenQuery:
+      type: object
+      required:
+        - type
+        - fields
+      discriminator:
+        propertyName: type
+        mapping:
+          RaadpleegMetReisdocumentnummer: '#/components/schemas/RaadpleegMetReisdocumentnummer'
+          ZoekMetBurgerservicenummer: '#/components/schemas/ZoekMetBurgerservicenummer'
+      properties:
+        type:
+          type: string
+        fields:
+          type: array
+          maxItems: 130
+          minItems: 1
+          items:
+            $ref: 'filter.yaml#/components/schemas/Field'
+    RaadpleegMetReisdocumentnummer:
+      required:
+        - reisdocumentnummer
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumentenQuery'
+        - type: object
+          properties:
+            reisdocumentnummer:
+              $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
+    ZoekMetBurgerservicenummer:
+      required:
+        - burgerservicenummer
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumentenQuery'
+        - type: object
+          properties:
+            burgerservicenummer:
+              $ref: 'persoon.yaml#/components/schemas/Burgerservicenummer'
+    ReisdocumentenQueryResponse:
+      type: object
+      required:
+        - type
+      discriminator:
+        propertyName: type
+        mapping:
+          RaadpleegMetReisdocumentnummer: '#/components/schemas/RaadpleegMetReisdocumentnummerResponse'
+          ZoekMetBurgerservicenummer: '#/components/schemas/ZoekMetBurgerservicenummerResponse'
+      properties:
+        type:
+          type: string
+    RaadpleegMetReisdocumentnummerResponse:
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumentenQueryResponse'
+        - $ref: 'reisdocument.yaml#/components/schemas/GbaReisdocument'
+    ZoekMetBurgerservicenummerResponse:
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumentenQueryResponse'
+        - type: object
+          properties:
+            reisdocumenten:
+              type: array
+              items:
+                $ref: 'reisdocument.yaml#/components/schemas/GbaReisdocument'
