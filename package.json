@@ -14,8 +14,6 @@
     "oas:generate-netcore-client": "npm run oas:generate-client -- -o ./code/netcore -g csharp-netcore --additional-properties=optionalProjectFile=false,optionalAssemblyInfo=false",
     "oas:generate-net-client": "npm run oas:generate-client -- -o ./code/net -g csharp --additional-properties=optionalProjectFile=false,optionalAssemblyInfo=false",
     "oas:generate-python-client": "npm run oas:generate-client -- -o ./code/python -g python --additional-properties=optionalProjectFile=false,optionalAssemblyInfo=false",
-    "preoas:generate-postman-collection": "mkdirp ./test",
-    "oas:generate-postman-collection": "openapi2postmanv2 -s ./specificatie/genereervariant/openapi.yaml -o ./test/Reisdocumenten-Bevragen-postman-collection.json --pretty",
     "oas:lint": "bash scripts/lint-oas.sh",
     "oas:lint-genereervariant": "bash scripts/lint-oas-genereervariant.sh",
     "preoas:resolve": "mvn-dl io.swagger.codegen.v3:swagger-codegen-cli:3.0.41 -f swagger-codegen-cli.jar",
@@ -25,6 +23,7 @@
     "rollback-generated": "git checkout ./specificatie/genereervariant/openapi.* ./specificatie/gba-genereervariant/openapi.*",
     "specs:report": "node scripts/generate-cucumber-report.js",
     "specs:verify": "bash scripts/specs-verify.sh",
+    "pre-commit": "npm run oas:lint && npm run oas:resolve && npm run oas:lint-genereervariant && npm run unstage-generated",
     "prepare": "husky install"
   },
   "repository": {
