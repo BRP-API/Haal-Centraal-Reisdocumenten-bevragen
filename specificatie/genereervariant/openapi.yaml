@@ -393,6 +393,8 @@ components:
       - $ref: '#/components/schemas/ReisdocumenthouderBasis'
       - type: object
         properties:
+          geheimhoudingPersoonsgegevens:
+            $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
           inOnderzoek:
             $ref: '#/components/schemas/ReisdocumenthouderInOnderzoek'
     ReisdocumenthouderBasis:
@@ -400,8 +402,6 @@ components:
       properties:
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        geheimhoudingPersoonsgegevens:
-          $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
           $ref: '#/components/schemas/OpschortingBijhouding'
     ReisdocumenthouderInOnderzoek:

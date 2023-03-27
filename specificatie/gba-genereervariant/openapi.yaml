@@ -379,6 +379,8 @@ components:
       - $ref: '#/components/schemas/ReisdocumenthouderBasis'
       - type: object
         properties:
+          geheimhoudingPersoonsgegevens:
+            $ref: '#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
           inOnderzoek:
             $ref: '#/components/schemas/GbaInOnderzoek'
     ReisdocumenthouderBasis:
@@ -386,8 +388,6 @@ components:
       properties:
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        geheimhoudingPersoonsgegevens:
-          $ref: '#/components/schemas/GeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
           $ref: '#/components/schemas/OpschortingBijhouding'
     Field:
@@ -425,10 +425,8 @@ components:
           type: string
         datumIngangOnderzoek:
           $ref: '#/components/schemas/GbaDatum'
-    GeheimhoudingPersoonsgegevens:
-      type: boolean
-      description: |
-        Gegevens mogen niet worden verstrekt aan derden / maatschappelijke instellingen.
+    GbaGeheimhoudingPersoonsgegevens:
+      type: integer
     OpschortingBijhouding:
       allOf:
       - $ref: '#/components/schemas/OpschortingBijhoudingBasis'

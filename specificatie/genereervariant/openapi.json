@@ -532,6 +532,9 @@
         }, {
           "type" : "object",
           "properties" : {
+            "geheimhoudingPersoonsgegevens" : {
+              "$ref" : "#/components/schemas/GeheimhoudingPersoonsgegevens"
+            },
             "inOnderzoek" : {
               "$ref" : "#/components/schemas/ReisdocumenthouderInOnderzoek"
             }
@@ -543,9 +546,6 @@
         "properties" : {
           "burgerservicenummer" : {
             "$ref" : "#/components/schemas/Burgerservicenummer"
-          },
-          "geheimhoudingPersoonsgegevens" : {
-            "$ref" : "#/components/schemas/GeheimhoudingPersoonsgegevens"
           },
           "opschortingBijhouding" : {
             "$ref" : "#/components/schemas/OpschortingBijhouding"
