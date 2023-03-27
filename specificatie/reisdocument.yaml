@@ -9,25 +9,25 @@ components:
     GbaInhoudingOfVermissing:
       type: object
       properties:
-        datumInhoudingOfVermissing:
+        datum:
           $ref: 'datum.yaml#/components/schemas/GbaDatum'
-        aanduidingInhoudingOfVermissing:
+        aanduiding:
           $ref: 'common.yaml#/components/schemas/Waardetabel'
     InhoudingOfVermissing:
       type: object
       properties:
-        datumInhoudingOfVermissing:
+        datum:
           $ref: 'datum.yaml#/components/schemas/AbstractDatum'
-        aanduidingInhoudingOfVermissing:
+        aanduiding:
           $ref: 'common.yaml#/components/schemas/Waardetabel'
         inOnderzoek:
           $ref: '#/components/schemas/InhoudingOfVermissingInOnderzoek'
     InhoudingOfVermissingInOnderzoek:
       type: object
       properties:
-        datumInhoudingOfVermissing:
+        datum:
           type: boolean
-        aanduidingInhoudingOfVermissing:
+        aanduiding:
           type: boolean
         datumIngangOnderzoek:
           $ref: 'datum.yaml#/components/schemas/AbstractDatum'
@@ -39,7 +39,7 @@ components:
         geheimhoudingPersoonsgegevens:
           $ref: 'persoon.yaml#/components/schemas/GeheimhoudingPersoonsgegevens'
         opschortingBijhouding:
-          $ref: 'opschortingBijhouding.yaml#/components/schemas/OpschortingBijhouding'
+          $ref: 'opschorting-bijhouding.yaml#/components/schemas/OpschortingBijhouding'
     GbaReisdocumenthouder:
       allOf:
         - $ref: '#/components/schemas/ReisdocumenthouderBasis'
