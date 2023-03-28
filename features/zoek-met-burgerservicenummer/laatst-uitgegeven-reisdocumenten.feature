@@ -2,7 +2,7 @@
 
 Functionaliteit: zoeken van de laatst uitgegeven reisdocumenten van een persoon
 
-  Rule: bij zoeken van reisdocumenten met burgerservicenummer wordt van elk type reisdocument alleen het laatst uitgegeven reisdocument geleverd
+  Rule: bij zoeken van reisdocumenten met burgerservicenummer wordt van elke soort reisdocument alleen het laatst uitgegeven reisdocument geleverd
 
     Scenario: de persoon heeft meerdere reisdocumenten van verschillende soorten
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
