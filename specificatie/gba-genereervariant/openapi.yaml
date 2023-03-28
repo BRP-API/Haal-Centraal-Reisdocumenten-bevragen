@@ -36,8 +36,6 @@ paths:
           description: |
             Zoekactie geslaagd
           headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
             warning:
               $ref: '#/components/headers/warning'
             X-Rate-Limit-Limit:
@@ -52,9 +50,6 @@ paths:
                 $ref: '#/components/schemas/ReisdocumentenQueryResponse'
         "400":
           description: Bad Request
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -69,14 +64,11 @@ paths:
                 code: paramsRequired
                 invalidParams:
                 - type: https://www.vng.nl/realisatie/api/validaties/integer
-                  name: verblijfplaats__huisnummer
+                  name: huisnummer
                   code: integer
-                  reason: Waarde is geen geldige integer.
+                  reason: Waarde is geen geldig getal.
         "401":
           description: Unauthorized
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -92,9 +84,6 @@ paths:
                 code: authentication
         "403":
           description: Forbidden
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -109,9 +98,6 @@ paths:
                 code: autorisation
         "406":
           description: Not Acceptable
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -127,9 +113,6 @@ paths:
                 code: notAcceptable
         "415":
           description: Unsupported Media Type
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -145,9 +128,6 @@ paths:
                 code: unsupported
         "429":
           description: Too Many Requests
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -162,9 +142,6 @@ paths:
                 code: tooManyRequests
         "500":
           description: Internal Server Error
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -177,28 +154,8 @@ paths:
                   it from fulfilling the request.
                 instance: https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde
                 code: serverError
-        "501":
-          description: Not Implemented
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
-          content:
-            application/problem+json:
-              schema:
-                $ref: '#/components/schemas/Foutbericht'
-              example:
-                type: https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2
-                title: Not Implemented
-                status: 501
-                detail: The server does not support the functionality required to
-                  fulfill the request.
-                instance: https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde
-                code: notImplemented
         "503":
           description: Service Unavailable
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -213,9 +170,6 @@ paths:
                 code: notAvailable
         default:
           description: Er is een onverwachte fout opgetreden
-          headers:
-            api-version:
-              $ref: '#/components/headers/api_version'
           content:
             application/problem+json:
               schema:
@@ -336,7 +290,7 @@ components:
           pattern: "^[a-zA-Z0-9\\.,_]{1,30}$"
           type: string
           description: Naam van de parameter
-          example: verblijfplaats__huisnummer
+          example: huisnummer
         code:
           minLength: 1
           pattern: "^[a-zA-Z0-9\\.,_]{1,25}$"
@@ -347,7 +301,7 @@ components:
           pattern: "^[a-zA-Z0-9\\.,_ ]{1,80}$"
           type: string
           description: Beschrijving van de fout op de parameterwaarde
-          example: Waarde is geen geldige integer.
+          example: Waarde is geen geldig getal.
       description: Details over fouten in opgegeven parameters
     GbaReisdocument:
       type: object
@@ -539,9 +493,6 @@ components:
   responses:
     "400":
       description: Bad Request
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -556,14 +507,11 @@ components:
             code: paramsRequired
             invalidParams:
             - type: https://www.vng.nl/realisatie/api/validaties/integer
-              name: verblijfplaats__huisnummer
+              name: huisnummer
               code: integer
-              reason: Waarde is geen geldige integer.
+              reason: Waarde is geen geldig getal.
     "401":
       description: Unauthorized
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -579,9 +527,6 @@ components:
             code: authentication
     "403":
       description: Forbidden
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -596,9 +541,6 @@ components:
             code: autorisation
     "406":
       description: Not Acceptable
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -614,9 +556,6 @@ components:
             code: notAcceptable
     "415":
       description: Unsupported Media Type
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -632,9 +571,6 @@ components:
             code: unsupported
     "429":
       description: Too Many Requests
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -649,9 +585,6 @@ components:
             code: tooManyRequests
     "500":
       description: Internal Server Error
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -664,28 +597,8 @@ components:
               it from fulfilling the request.
             instance: https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde
             code: serverError
-    "501":
-      description: Not Implemented
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
-      content:
-        application/problem+json:
-          schema:
-            $ref: '#/components/schemas/Foutbericht'
-          example:
-            type: https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2
-            title: Not Implemented
-            status: 501
-            detail: The server does not support the functionality required to fulfill
-              the request.
-            instance: https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde
-            code: notImplemented
     "503":
       description: Service Unavailable
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
@@ -700,21 +613,11 @@ components:
             code: notAvailable
     default:
       description: Er is een onverwachte fout opgetreden
-      headers:
-        api-version:
-          $ref: '#/components/headers/api_version'
       content:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/Foutbericht'
   headers:
-    api_version:
-      schema:
-        pattern: "^[1-9][0-9]{0,2}.[0-9]{1,3}.[0-9]{1,3}$"
-        type: string
-        description: Geeft een specifieke API-versie aan in de context van een specifieke
-          aanroep.
-        example: 1.0.0
     warning:
       schema:
         maxLength: 500

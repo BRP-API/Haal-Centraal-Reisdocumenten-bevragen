@@ -38,9 +38,6 @@
           "200" : {
             "description" : "Zoekactie geslaagd\n",
             "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              },
               "warning" : {
                 "$ref" : "#/components/headers/warning"
               },
@@ -64,11 +61,6 @@
           },
           "400" : {
             "description" : "Bad Request",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -83,9 +75,9 @@
                   "code" : "paramsRequired",
                   "invalidParams" : [ {
                     "type" : "https://www.vng.nl/realisatie/api/validaties/integer",
-                    "name" : "verblijfplaats__huisnummer",
+                    "name" : "huisnummer",
                     "code" : "integer",
-                    "reason" : "Waarde is geen geldige integer."
+                    "reason" : "Waarde is geen geldig getal."
                   } ]
                 }
               }
@@ -93,11 +85,6 @@
           },
           "401" : {
             "description" : "Unauthorized",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -116,11 +103,6 @@
           },
           "403" : {
             "description" : "Forbidden",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -139,11 +121,6 @@
           },
           "406" : {
             "description" : "Not Acceptable",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -162,11 +139,6 @@
           },
           "415" : {
             "description" : "Unsupported Media Type",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -185,11 +157,6 @@
           },
           "429" : {
             "description" : "Too Many Requests",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -208,11 +175,6 @@
           },
           "500" : {
             "description" : "Internal Server Error",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -229,36 +191,8 @@
               }
             }
           },
-          "501" : {
-            "description" : "Not Implemented",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
-            "content" : {
-              "application/problem+json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Foutbericht"
-                },
-                "example" : {
-                  "type" : "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2",
-                  "title" : "Not Implemented",
-                  "status" : 501,
-                  "detail" : "The server does not support the functionality required to fulfill the request.",
-                  "instance" : "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde",
-                  "code" : "notImplemented"
-                }
-              }
-            }
-          },
           "503" : {
             "description" : "Service Unavailable",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -277,11 +211,6 @@
           },
           "default" : {
             "description" : "Er is een onverwachte fout opgetreden",
-            "headers" : {
-              "api-version" : {
-                "$ref" : "#/components/headers/api_version"
-              }
-            },
             "content" : {
               "application/problem+json" : {
                 "schema" : {
@@ -450,7 +379,7 @@
             "pattern" : "^[a-zA-Z0-9\\.,_]{1,30}$",
             "type" : "string",
             "description" : "Naam van de parameter",
-            "example" : "verblijfplaats__huisnummer"
+            "example" : "huisnummer"
           },
           "code" : {
             "minLength" : 1,
@@ -463,7 +392,7 @@
             "pattern" : "^[a-zA-Z0-9\\.,_ ]{1,80}$",
             "type" : "string",
             "description" : "Beschrijving van de fout op de parameterwaarde",
-            "example" : "Waarde is geen geldige integer."
+            "example" : "Waarde is geen geldig getal."
           }
         },
         "description" : "Details over fouten in opgegeven parameters"
@@ -728,11 +657,6 @@
     "responses" : {
       "400" : {
         "description" : "Bad Request",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -747,9 +671,9 @@
               "code" : "paramsRequired",
               "invalidParams" : [ {
                 "type" : "https://www.vng.nl/realisatie/api/validaties/integer",
-                "name" : "verblijfplaats__huisnummer",
+                "name" : "huisnummer",
                 "code" : "integer",
-                "reason" : "Waarde is geen geldige integer."
+                "reason" : "Waarde is geen geldig getal."
               } ]
             }
           }
@@ -757,11 +681,6 @@
       },
       "401" : {
         "description" : "Unauthorized",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -780,11 +699,6 @@
       },
       "403" : {
         "description" : "Forbidden",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -803,11 +717,6 @@
       },
       "406" : {
         "description" : "Not Acceptable",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -826,11 +735,6 @@
       },
       "415" : {
         "description" : "Unsupported Media Type",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -849,11 +753,6 @@
       },
       "429" : {
         "description" : "Too Many Requests",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -872,11 +771,6 @@
       },
       "500" : {
         "description" : "Internal Server Error",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -893,36 +787,8 @@
           }
         }
       },
-      "501" : {
-        "description" : "Not Implemented",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
-        "content" : {
-          "application/problem+json" : {
-            "schema" : {
-              "$ref" : "#/components/schemas/Foutbericht"
-            },
-            "example" : {
-              "type" : "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2",
-              "title" : "Not Implemented",
-              "status" : 501,
-              "detail" : "The server does not support the functionality required to fulfill the request.",
-              "instance" : "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde",
-              "code" : "notImplemented"
-            }
-          }
-        }
-      },
       "503" : {
         "description" : "Service Unavailable",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -941,11 +807,6 @@
       },
       "default" : {
         "description" : "Er is een onverwachte fout opgetreden",
-        "headers" : {
-          "api-version" : {
-            "$ref" : "#/components/headers/api_version"
-          }
-        },
         "content" : {
           "application/problem+json" : {
             "schema" : {
@@ -956,14 +817,6 @@
       }
     },
     "headers" : {
-      "api_version" : {
-        "schema" : {
-          "pattern" : "^[1-9][0-9]{0,2}.[0-9]{1,3}.[0-9]{1,3}$",
-          "type" : "string",
-          "description" : "Geeft een specifieke API-versie aan in de context van een specifieke aanroep.",
-          "example" : "1.0.0"
-        }
-      },
       "warning" : {
         "schema" : {
           "maxLength" : 500,
