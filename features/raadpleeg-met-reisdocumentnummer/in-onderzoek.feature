@@ -138,15 +138,15 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | 123550                  | datum einde geldigheid Nederlands reisdocument  | niet gevraagd veld van reisdocument resource |
 
   Abstract Scenario: '<type>' is in onderzoek en de houder velden wordt gevraagd
-    Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
+    Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende gegevens 
+    | naam                            | waarde                            |
+    | aanduiding in onderzoek (83.10) | <aanduiding persoon in onderzoek> |
+    | datum ingang onderzoek (83.20)  | 20230201                          |
+    En de persoon heeft een 'reisdocument' met de volgende gegevens
     | naam                                        | waarde    |
     | soort reisdocument (35.10)                  | PN        |
     | nummer reisdocument (35.20)                 | NE3663258 |
     | datum einde geldigheid reisdocument (35.50) | 20240506  |
-    En het 'reisdocument' heeft de volgende 'houder' gegevens
-    | naam                            | waarde                            |
-    | aanduiding in onderzoek (83.10) | <aanduiding persoon in onderzoek> |
-    | datum ingang onderzoek (83.20)  | 20230201                          |
     Als reisdocumenten wordt gezocht met de volgende parameters
     | naam               | waarde                         |
     | type               | RaadpleegMetReisdocumentnummer |
@@ -167,15 +167,15 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | 010120                  | burgerservicenummer    |
 
   Abstract Scenario: '<type>' is in onderzoek en de houder velden wordt gevraagd
-    Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
+    Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende gegevens
+    | naam                            | waarde                    |
+    | aanduiding in onderzoek (83.10) | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)  | 20230201                  |
+    En de persoon heeft een 'reisdocument' met de volgende gegevens
     | naam                                        | waarde    |
     | soort reisdocument (35.10)                  | PN        |
     | nummer reisdocument (35.20)                 | NE3663258 |
     | datum einde geldigheid reisdocument (35.50) | 20240506  |
-    En het 'reisdocument' heeft de volgende 'houder' gegevens
-    | naam                            | waarde                    |
-    | aanduiding in onderzoek (83.10) | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)  | 20230201                  |
     Als reisdocumenten wordt gezocht met de volgende parameters
     | naam               | waarde                         |
     | type               | RaadpleegMetReisdocumentnummer |

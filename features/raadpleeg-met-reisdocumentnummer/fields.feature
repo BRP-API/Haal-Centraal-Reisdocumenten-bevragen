@@ -27,7 +27,7 @@ Functionaliteit: Reisdocument velden vragen met fields
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | <field>                        |
-    Dan heeft de response een reisdocument met de volgende gegevens
+    Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam               | waarde             |
     | soort.code         | PN                 |
     | soort.omschrijving | Nationaal paspoort |
