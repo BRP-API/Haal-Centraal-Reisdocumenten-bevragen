@@ -210,7 +210,7 @@ components:
         type:
           type: string
         fields:
-          maxItems: 130
+          maxItems: 25
           minItems: 1
           type: array
           items:
