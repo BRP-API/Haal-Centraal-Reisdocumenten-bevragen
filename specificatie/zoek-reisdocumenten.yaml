@@ -88,7 +88,11 @@ components:
         - type: object
           properties:
             reisdocumentnummer:
-              $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
+              type: array
+              items:
+                $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
+              minItems: 1
+              maxItems: 1
     ZoekMetBurgerservicenummer:
       required:
         - burgerservicenummer
@@ -113,7 +117,12 @@ components:
     RaadpleegMetReisdocumentnummerResponse:
       allOf:
         - $ref: '#/components/schemas/ReisdocumentenQueryResponse'
-        - $ref: 'reisdocument.yaml#/components/schemas/Reisdocument'
+        - type: object
+          properties:
+            reisdocumenten:
+              type: array
+              items:
+                $ref: 'reisdocument.yaml#/components/schemas/Reisdocument'
     ZoekMetBurgerservicenummerResponse:
       allOf:
         - $ref: '#/components/schemas/ReisdocumentenQueryResponse'
