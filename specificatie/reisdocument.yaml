@@ -65,7 +65,7 @@ components:
           $ref: 'datum.yaml#/components/schemas/AbstractDatum'
     Reisdocumentnummer:
       type: string
-      pattern: ^[0-9]{10}$
+      pattern: ^[A-Z0-9]{9}$
     GbaReisdocument:
       type: object
       properties:
