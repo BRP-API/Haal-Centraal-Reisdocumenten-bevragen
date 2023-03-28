@@ -77,4 +77,3 @@ Rule: als een gevraagde veld in onderzoek is, dan wordt het bijbehorend inOnderz
     | naam               | waarde    |
     | reisdocumentnummer | NE3663258 |
 
-https://www.darkreading.com/application-security/application-security-requires-more-investment-in-developer-education
