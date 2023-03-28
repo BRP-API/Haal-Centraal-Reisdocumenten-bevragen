@@ -2,7 +2,7 @@
 
 Functionaliteit: Raadpleeg met reisdocumentnummer
 
-Rule: voor het raadplegen van een reisdocument moet zijn reisdocumentnummer worden opgegeven
+Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer worden opgegeven
 
   Scenario: Raadpleeg een reisdocument
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
@@ -76,3 +76,5 @@ Rule: als een gevraagde veld in onderzoek is, dan wordt het bijbehorend inOnderz
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam               | waarde    |
     | reisdocumentnummer | NE3663258 |
+
+https://www.darkreading.com/application-security/application-security-requires-more-investment-in-developer-education
