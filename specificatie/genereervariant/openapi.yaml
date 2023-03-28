@@ -240,7 +240,12 @@ components:
     RaadpleegMetReisdocumentnummerResponse:
       allOf:
       - $ref: '#/components/schemas/ReisdocumentenQueryResponse'
-      - $ref: '#/components/schemas/Reisdocument'
+      - type: object
+        properties:
+          reisdocumenten:
+            type: array
+            items:
+              $ref: '#/components/schemas/Reisdocument'
     ZoekMetBurgerservicenummerResponse:
       allOf:
       - $ref: '#/components/schemas/ReisdocumentenQueryResponse'
@@ -277,7 +282,11 @@ components:
       - type: object
         properties:
           reisdocumentnummer:
-            $ref: '#/components/schemas/Reisdocumentnummer'
+            maxItems: 1
+            minItems: 1
+            type: array
+            items:
+              $ref: '#/components/schemas/Reisdocumentnummer'
     ZoekMetBurgerservicenummer:
       required:
       - burgerservicenummer
@@ -368,7 +377,7 @@ components:
         inOnderzoek:
           $ref: '#/components/schemas/ReisdocumentInOnderzoek'
     Reisdocumentnummer:
-      pattern: "^[0-9]{10}$"
+      pattern: "^[A-Z0-9]{9}$"
       type: string
     InhoudingOfVermissing:
       type: object

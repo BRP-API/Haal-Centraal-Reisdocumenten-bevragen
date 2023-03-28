@@ -492,7 +492,7 @@
         }
       },
       "Reisdocumentnummer" : {
-        "pattern" : "^[0-9]{10}$",
+        "pattern" : "^[A-Z0-9]{9}$",
         "type" : "string"
       },
       "GbaInhoudingOfVermissing" : {

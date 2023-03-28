@@ -319,7 +319,15 @@
         "allOf" : [ {
           "$ref" : "#/components/schemas/ReisdocumentenQueryResponse"
         }, {
-          "$ref" : "#/components/schemas/Reisdocument"
+          "type" : "object",
+          "properties" : {
+            "reisdocumenten" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Reisdocument"
+              }
+            }
+          }
         } ]
       },
       "ZoekMetBurgerservicenummerResponse" : {
@@ -369,7 +377,12 @@
           "type" : "object",
           "properties" : {
             "reisdocumentnummer" : {
-              "$ref" : "#/components/schemas/Reisdocumentnummer"
+              "maxItems" : 1,
+              "minItems" : 1,
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Reisdocumentnummer"
+              }
             }
           }
         } ]
@@ -495,7 +508,7 @@
         }
       },
       "Reisdocumentnummer" : {
-        "pattern" : "^[0-9]{10}$",
+        "pattern" : "^[A-Z0-9]{9}$",
         "type" : "string"
       },
       "InhoudingOfVermissing" : {
