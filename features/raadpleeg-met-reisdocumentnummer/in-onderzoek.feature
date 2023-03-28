@@ -88,13 +88,13 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | fields             | inhoudingOfVermissing          |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
     | naam                                         | waarde                               |
-    | datumInhoudingOfVermissing.type              | Datum                                |
-    | datumInhoudingOfVermissing.datum             | 2023-04-05                           |
-    | datumInhoudingOfVermissing.langFormaat       | 5 april 2023                         |
-    | soort.code                                   | I                                    |
-    | soort.omschrijving                           | ingehouden of ingeleverd             |
-    | inOnderzoek.datumInhoudingOfVermissing       | <datum inhouding/vermissing io>      |
-    | inOnderzoek.aanduidingInhoudingOfVermissing  | <aanduiding inhouding/vermissing io> |
+    | datum.type                                   | Datum                                |
+    | datum.datum                                  | 2023-04-05                           |
+    | datum.langFormaat                            | 5 april 2023                         |
+    | aanduiding.code                              | I                                    |
+    | aanduiding.omschrijving                      | ingehouden of ingeleverd             |
+    | inOnderzoek.datum                            | <datum inhouding/vermissing io>      |
+    | inOnderzoek.aanduiding                       | <aanduiding inhouding/vermissing io> |
     | inOnderzoek.datumIngangOnderzoek.type        | Datum                                |
     | inOnderzoek.datumIngangOnderzoek.datum       | 2023-05-06                           |
     | inOnderzoek.datumIngangOnderzoek.langFormaat | 6 mei 2023                           |
@@ -122,12 +122,12 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | reisdocumentnummer | NE3663258                      |
     | fields             | inhoudingOfVermissing          |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
-    | naam                                   | waarde                   |
-    | datumInhoudingOfVermissing.type        | Datum                    |
-    | datumInhoudingOfVermissing.datum       | 2023-04-05               |
-    | datumInhoudingOfVermissing.langFormaat | 5 april 2023             |
-    | soort.code                             | I                        |
-    | soort.omschrijving                     | ingehouden of ingeleverd |
+    | naam                    | waarde                   |
+    | datum.type              | Datum                    |
+    | datum.datum             | 2023-04-05               |
+    | datum.langFormaat       | 5 april 2023             |
+    | aanduiding.code         | I                        |
+    | aanduiding.omschrijving | ingehouden of ingeleverd |
 
     Voorbeelden:
     | aanduiding in onderzoek | type                                            | opmerking                                    |

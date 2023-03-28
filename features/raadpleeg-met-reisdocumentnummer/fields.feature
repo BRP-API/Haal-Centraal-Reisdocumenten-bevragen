@@ -67,20 +67,20 @@ Functionaliteit: Reisdocument velden vragen met fields
     | reisdocumentnummer | NE3663258                      |
     | fields             | inhoudingOfVermissing.<field>  |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
-    | naam                                   | waarde       |
-    | datumInhoudingOfVermissing.type        | Datum        |
-    | datumInhoudingOfVermissing.datum       | 2023-04-05   |
-    | datumInhoudingOfVermissing.langFormaat | 5 april 2023 |
+    | naam              | waarde       |
+    | datum.type        | Datum        |
+    | datum.datum       | 2023-04-05   |
+    | datum.langFormaat | 5 april 2023 |
 
     Voorbeelden:
-    | field                                  |
-    | datumInhoudingOfVermissing             |
-    | datumInhoudingOfVermissing.type        |
-    | datumInhoudingOfVermissing.datum       |
-    | datumInhoudingOfVermissing.jaar        |
-    | datumInhoudingOfVermissing.maand       |
-    | datumInhoudingOfVermissing.onbekend    |
-    | datumInhoudingOfVermissing.langFormaat |
+    | field             |
+    | datum             |
+    | datum.type        |
+    | datum.datum       |
+    | datum.jaar        |
+    | datum.maand       |
+    | datum.onbekend    |
+    | datum.langFormaat |
 
   Abstract Scenario: 'aanduiding inhouding/vermissing reisdocument (35.70)' wordt gevraagd met field pad 'inhoudingOfVermissing.<field>'
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -94,10 +94,10 @@ Functionaliteit: Reisdocument velden vragen met fields
     | soort.omschrijving | ingehouden of ingeleverd |
 
     Voorbeelden:
-    | field                                        |
-    | aanduidingInhoudingOfVermissing              |
-    | aanduidingInhoudingOfVermissing.code         |
-    | aanduidingInhoudingOfVermissing.omschrijving |
+    | field                   |
+    | aanduiding              |
+    | aanduiding.code         |
+    | aanduiding.omschrijving |
 
   Scenario: 'burgerservicenummer' van houder wordt gevraagd met field pad 'houder.burgerservicenummer'
     Als reisdocumenten wordt gezocht met de volgende parameters
