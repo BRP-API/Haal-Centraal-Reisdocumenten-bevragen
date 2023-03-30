@@ -2,7 +2,7 @@
   "openapi" : "3.0.3",
   "info" : {
     "title" : "Haal Centraal Reisdocumenten bevragen",
-    "description" : "API voor het bevragen van gegevens van reisdocumenten uit de basisregistratie personen (BRP).\n",
+    "description" : "API voor het bevragen van gegevens van reisdocumenten.\n",
     "contact" : {
       "url" : "https://brp-api.github.io/Haal-Centraal-Reisdocumenten-bevragen"
     },
