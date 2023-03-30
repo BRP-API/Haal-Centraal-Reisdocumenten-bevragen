@@ -84,7 +84,11 @@ components:
         - type: object
           properties:
             reisdocumentnummer:
-              $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
+              type: array
+              items:
+                $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
+              minItems: 1
+              maxItems: 1
     ZoekMetBurgerservicenummer:
       required:
         - burgerservicenummer
