@@ -6,7 +6,7 @@ servers:
 info:
   title: Haal Centraal Reisdocumenten bevragen
   description: |
-    API voor het bevragen van gegevens van reisdocumenten uit de basisregistratie personen (BRP).
+    API voor het bevragen van gegevens van reisdocumenten.
   version: 2.0.0
   contact:
     url: https://brp-api.github.io/Haal-Centraal-Reisdocumenten-bevragen
