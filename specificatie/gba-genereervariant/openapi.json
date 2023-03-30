@@ -13,8 +13,11 @@
     "version" : "2.0.0"
   },
   "servers" : [ {
-    "url" : "https://proefomgeving.haalcentraal.nl/haalcentraal/api/reisdocumenten",
+    "url" : "https://proefomgeving.haalcentraal.nl/haalcentraal/api",
     "description" : "Proef omgeving\n"
+  }, {
+    "url" : "http://localhost:5010/haalcentraal/api",
+    "description" : "Lokaal\n"
   } ],
   "tags" : [ {
     "name" : "Reisdocumenten"
@@ -295,7 +298,12 @@
           "type" : "object",
           "properties" : {
             "reisdocumentnummer" : {
-              "$ref" : "#/components/schemas/Reisdocumentnummer"
+              "maxItems" : 1,
+              "minItems" : 1,
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Reisdocumentnummer"
+              }
             }
           }
         } ]

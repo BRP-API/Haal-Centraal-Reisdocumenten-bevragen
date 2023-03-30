@@ -10,10 +10,10 @@ info:
     url: https://eupl.eu/1.2/nl/
   version: 2.0.0
 servers:
-- url: https://proefomgeving.haalcentraal.nl/haalcentraal/api/reisdocumenten
+- url: https://proefomgeving.haalcentraal.nl/haalcentraal/api
   description: |
     Proef omgeving
-- url: http://localhost:5001/haalcentraal/api/reisdocumenten
+- url: http://localhost:5001/haalcentraal/api
   description: |
     Lokaal
 tags:
