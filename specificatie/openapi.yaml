@@ -2,10 +2,10 @@ openapi: 3.0.3
 servers:
   - description: |
       Proef omgeving
-    url: https://proefomgeving.haalcentraal.nl/haalcentraal/api/reisdocumenten
+    url: https://proefomgeving.haalcentraal.nl/haalcentraal/api
   - description: |
       Lokaal
-    url: http://localhost:5001/haalcentraal/api/reisdocumenten
+    url: http://localhost:5001/haalcentraal/api
 info:
   title: Haal Centraal Reisdocumenten bevragen
   description: |
