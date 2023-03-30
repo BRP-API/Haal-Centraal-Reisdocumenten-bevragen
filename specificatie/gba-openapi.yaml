@@ -1,119 +1,20 @@
-openapi: 3.0.0
+openapi: 3.0.3
+servers:
+  - description: |
+      Proef omgeving
+    url: https://proefomgeving.haalcentraal.nl/haalcentraal/api/reisdocumenten
 info:
-  title: Reisdocumenten
+  title: Haal Centraal Reisdocumenten bevragen
   description: |
-                API voor het ontsluiten van gegevens van reisdocumenten.
-  version: '2.0.0'
+    API voor het bevragen van gegevens van reisdocumenten.
+  version: 2.0.0
   contact:
-    url: https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen
+    url: https://brp-api.github.io/Haal-Centraal-Reisdocumenten-bevragen
   license:
     name: European Union Public License, version 1.2 (EUPL-1.2)
     url: https://eupl.eu/1.2/nl/
 tags:
   - name: Reisdocumenten
 paths:
-  /reisdocumenten/{reisdocumentnummer}:
-    get:
-      operationId: Reisdocument
-      summary: Raadpleeg een reisdocument
-      description: |
-                    Raadpleeg een Reisdocument met het reisdocumentnummer.
-      parameters:
-        - in: path
-          name: reisdocumentnummer
-          required: true
-          schema:
-            $ref: 'reisdocument.yaml#/components/schemas/Reisdocumentnummer'
-      responses:
-        '200':
-          description: |
-                        Zoekactie geslaagd
-          headers:
-            api-version:
-              $ref: 'common.yaml#/components/headers/api_version'
-            warning:
-              $ref: 'common.yaml#/components/headers/warning'
-            X-Rate-Limit-Limit:
-              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Limit'
-            X-Rate-Limit-Remaining:
-              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Remaining'
-            X-Rate-Limit-Reset:
-              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Reset'
-          content:
-            application/json:
-              schema:
-                $ref: 'reisdocument.yaml#/components/schemas/GbaReisdocument'
-        '400':
-          $ref: 'common.yaml#/components/responses/400'
-        '401':
-          $ref: 'common.yaml#/components/responses/401'
-        '403':
-          $ref: 'common.yaml#/components/responses/403'
-        '404':
-          $ref: 'common.yaml#/components/responses/404'
-        '406':
-          $ref: 'common.yaml#/components/responses/406'
-        '429':
-          $ref: 'common.yaml#/components/responses/429'
-        '500':
-          $ref: 'common.yaml#/components/responses/500'
-        '501':
-          $ref: 'common.yaml#/components/responses/501'
-        '503':
-          $ref: 'common.yaml#/components/responses/503'
-        'default':
-          $ref: 'common.yaml#/components/responses/default'
-      tags:
-      - Reisdocumenten
   /reisdocumenten:
-    post:
-      operationId: Reisdocumenten
-      summary: Zoek geldige reisdocumenten
-      description: |
-                    Zoek de geldige reisdocumenten van een persoon.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: 'reisdocument.yaml#/components/schemas/ReisdocumentenQuery'
-      responses:
-        '200':
-          description: |
-                        Zoekactie geslaagd
-          headers:
-            api-version:
-              $ref: 'common.yaml#/components/headers/api_version'
-            warning:
-              $ref: 'common.yaml#/components/headers/warning'
-            X-Rate-Limit-Limit:
-              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Limit'
-            X-Rate-Limit-Remaining:
-              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Remaining'
-            X-Rate-Limit-Reset:
-              $ref: 'common.yaml#/components/headers/X_Rate_Limit_Reset'
-          content:
-            application/json:
-              schema:
-                $ref: 'reisdocument.yaml#/components/schemas/GbaReisdocumentenResponse'
-        '400':
-          $ref: 'common.yaml#/components/responses/400'
-        '401':
-          $ref: 'common.yaml#/components/responses/401'
-        '403':
-          $ref: 'common.yaml#/components/responses/403'
-        '404':
-          $ref: 'common.yaml#/components/responses/404'
-        '406':
-          $ref: 'common.yaml#/components/responses/406'
-        '429':
-          $ref: 'common.yaml#/components/responses/429'
-        '500':
-          $ref: 'common.yaml#/components/responses/500'
-        '501':
-          $ref: 'common.yaml#/components/responses/501'
-        '503':
-          $ref: 'common.yaml#/components/responses/503'
-        'default':
-          $ref: 'common.yaml#/components/responses/default'
-      tags:
-      - Reisdocumenten
+    $ref: 'zoek-gba-reisdocumenten.yaml#/paths/~1reisdocumenten'
