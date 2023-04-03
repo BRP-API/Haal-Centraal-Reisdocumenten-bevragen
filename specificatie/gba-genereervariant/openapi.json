@@ -248,7 +248,15 @@
         "allOf" : [ {
           "$ref" : "#/components/schemas/ReisdocumentenQueryResponse"
         }, {
-          "$ref" : "#/components/schemas/GbaReisdocument"
+          "type" : "object",
+          "properties" : {
+            "reisdocumenten" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/GbaReisdocument"
+              }
+            }
+          }
         } ]
       },
       "ZoekMetBurgerservicenummerResponse" : {
