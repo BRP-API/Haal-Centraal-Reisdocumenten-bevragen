@@ -347,6 +347,8 @@ components:
         properties:
           geheimhoudingPersoonsgegevens:
             $ref: '#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
+          opschortingBijhouding:
+            $ref: '#/components/schemas/GbaOpschortingBijhouding'
           inOnderzoek:
             $ref: '#/components/schemas/GbaInOnderzoek'
     ReisdocumenthouderBasis:
@@ -354,8 +356,6 @@ components:
       properties:
         burgerservicenummer:
           $ref: '#/components/schemas/Burgerservicenummer'
-        opschortingBijhouding:
-          $ref: '#/components/schemas/OpschortingBijhouding'
     Field:
       pattern: "^[a-zA-Z0-9\\._]{1,200}$"
       type: string
@@ -393,13 +393,13 @@ components:
           $ref: '#/components/schemas/GbaDatum'
     GbaGeheimhoudingPersoonsgegevens:
       type: integer
-    OpschortingBijhouding:
+    GbaOpschortingBijhouding:
       allOf:
       - $ref: '#/components/schemas/OpschortingBijhoudingBasis'
       - type: object
         properties:
           datum:
-            $ref: '#/components/schemas/AbstractDatum'
+            $ref: '#/components/schemas/GbaDatum'
         description: |
           * **datum**: de datum waarop de bijhouding van de persoonsgegevens is gestaakt.
     OpschortingBijhoudingBasis:
@@ -409,99 +409,6 @@ components:
           $ref: '#/components/schemas/Waardetabel'
       description: |
         * **reden** - wordt gevuld met waarden voor 'Reden_Opschorting_Bijhouding' in 'tabelwaarden.csv'.
-    AbstractDatum:
-      required:
-      - type
-      type: object
-      properties:
-        type:
-          type: string
-        langFormaat:
-          pattern: "^[a-z0-9 ]{1,17}$"
-          type: string
-      discriminator:
-        propertyName: type
-        mapping:
-          Datum: '#/components/schemas/VolledigeDatum'
-          DatumOnbekend: '#/components/schemas/DatumOnbekend'
-          JaarDatum: '#/components/schemas/JaarDatum'
-          JaarMaandDatum: '#/components/schemas/JaarMaandDatum'
-    VolledigeDatum:
-      required:
-      - datum
-      description: Datum conform iso8601
-      example:
-        value:
-          type: Datum
-          datum: 2018-07-01
-          langFormaat: 1 juli 2018
-      allOf:
-      - $ref: '#/components/schemas/AbstractDatum'
-      - type: object
-        properties:
-          datum:
-            type: string
-            format: date
-    DatumOnbekend:
-      required:
-      - onbekend
-      description: representatie voor een volledig onbekend datum
-      example:
-        value:
-          type: DatumOnbekend
-          onbekend: true
-          langFormaat: onbekend
-      allOf:
-      - $ref: '#/components/schemas/AbstractDatum'
-      - type: object
-        properties:
-          onbekend:
-            type: boolean
-            default: true
-    JaarDatum:
-      required:
-      - jaar
-      description: representatie voor een datum waarvan maand en dag onbekend zijn
-      example:
-        value:
-          type: JaarDatum
-          jaar: 2018
-          langFormaat: 2018
-      allOf:
-      - $ref: '#/components/schemas/AbstractDatum'
-      - type: object
-        properties:
-          jaar:
-            $ref: '#/components/schemas/Jaar'
-    Jaar:
-      maximum: 9999
-      minimum: 1
-      type: integer
-      format: int32
-    JaarMaandDatum:
-      required:
-      - jaar
-      - maand
-      description: representatie voor een datum waarvan de dag onbekend is
-      example:
-        value:
-          type: JaarMaandDatum
-          jaar: 2018
-          maand: 7
-          langFormaat: juli 2018
-      allOf:
-      - $ref: '#/components/schemas/AbstractDatum'
-      - type: object
-        properties:
-          jaar:
-            $ref: '#/components/schemas/Jaar'
-          maand:
-            $ref: '#/components/schemas/Maand'
-    Maand:
-      maximum: 12
-      minimum: 1
-      type: integer
-      format: int32
   responses:
     "400":
       description: Bad Request
