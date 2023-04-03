@@ -36,8 +36,6 @@ components:
       properties:
         burgerservicenummer:
           $ref: 'persoon.yaml#/components/schemas/Burgerservicenummer'
-        opschortingBijhouding:
-          $ref: 'opschorting-bijhouding.yaml#/components/schemas/OpschortingBijhouding'
     GbaReisdocumenthouder:
       allOf:
         - $ref: '#/components/schemas/ReisdocumenthouderBasis'
@@ -45,6 +43,8 @@ components:
           properties:
             geheimhoudingPersoonsgegevens:
               $ref: 'persoon.yaml#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
+            opschortingBijhouding:
+              $ref: 'opschorting-bijhouding.yaml#/components/schemas/GbaOpschortingBijhouding'
             inOnderzoek:
               $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
     Reisdocumenthouder:
@@ -54,6 +54,8 @@ components:
           properties:
             geheimhoudingPersoonsgegevens:
               $ref: 'persoon.yaml#/components/schemas/GeheimhoudingPersoonsgegevens'
+            opschortingBijhouding:
+              $ref: 'opschorting-bijhouding.yaml#/components/schemas/OpschortingBijhouding'
             inOnderzoek:
               $ref: '#/components/schemas/ReisdocumenthouderInOnderzoek'
     ReisdocumenthouderInOnderzoek:
