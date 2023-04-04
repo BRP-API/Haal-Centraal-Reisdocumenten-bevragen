@@ -161,10 +161,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | inOnderzoek.datumIngangOnderzoek.langFormaat | 1 februari 2023 |
 
     Voorbeelden:
-    | aanduiding in onderzoek | type                   |
-    | 010000                  | hele categorie persoon |
-    | 010100                  | hele groep persoon     |
-    | 010120                  | burgerservicenummer    |
+    | aanduiding in onderzoek | type                            |
+    | 010000                  | hele categorie persoon          |
+    | 010100                  | hele groep identificatienummers |
+    | 010120                  | burgerservicenummer             |
 
   Abstract Scenario: '<type>' is in onderzoek en de houder velden wordt gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende gegevens

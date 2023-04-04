@@ -90,8 +90,8 @@ Functionaliteit: Reisdocument velden vragen met fields
     | fields             | inhoudingOfVermissing.<field>  |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
     | naam               | waarde                   |
-    | soort.code         | I                        |
-    | soort.omschrijving | ingehouden of ingeleverd |
+    | aanduiding.code         | I                        |
+    | aanduiding.omschrijving | ingehouden of ingeleverd |
 
     Voorbeelden:
     | field                   |
