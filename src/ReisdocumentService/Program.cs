@@ -24,11 +24,18 @@ builder.Host.UseSerilog((context, config) =>
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+                .ConfigureInvalidModelStateHandling()
+                .AddNewtonsoftJson();
+builder.Services.AddFluentValidationAutoValidation(options => options.DisableDataAnnotationsValidation = true)
+                .AddValidatorsFromAssemblyContaining<RaadpleegMetReisdocumentnummerValidator>();
+
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 
 app.MapControllers();
 
