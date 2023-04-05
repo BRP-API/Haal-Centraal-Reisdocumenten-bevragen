@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    paths:
+      - src/**
+    branches:
+      - develop
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+            dotnet-version: 6.0.x
+      - name: Restore dependencies
+        run: dotnet restore Reisdocument.sln
+      - name: Build
+        run: dotnet build Reisdocument.sln --no-restore
+      - name: Test
+        run: dotnet test Reisdocument.sln --no-build --verbosity normal
+  containerize:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build container images
+        run: docker compose build
+      - name: Start containers
+        run: docker compose up -d
+      - name: Test functional specs
+        run: npm run specs:verify
+      - name: Stop containers
+        run: docker compose down
