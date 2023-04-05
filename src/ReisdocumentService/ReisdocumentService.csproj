@@ -9,6 +9,7 @@
     <DockerfileContext>..\..</DockerfileContext>
     <AssemblyName>HaalCentraal.ReisdocumentService</AssemblyName>
     <RootNamespace>HaalCentraal.ReisdocumentService</RootNamespace>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>

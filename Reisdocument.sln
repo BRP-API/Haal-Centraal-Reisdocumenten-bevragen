@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReisdocumentService", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReisdocumentProxy", "src\ReisdocumentProxy\ReisdocumentProxy.csproj", "{31054D26-1970-4C80-8283-DF519D0F561D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reisdocument.Validatie", "src\Reisdocument.Validatie\Reisdocument.Validatie.csproj", "{4BB40785-89AF-440D-ADDD-825DB6A5C7DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reisdocument.Validatie", "src\Reisdocument.Validatie\Reisdocument.Validatie.csproj", "{4BB40785-89AF-440D-ADDD-825DB6A5C7DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reisdocument.Validatie.Tests", "src\Reisdocument.Validatie.Tests\Reisdocument.Validatie.Tests.csproj", "{9C36889C-6851-4F0E-A37C-B772B8AFE598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reisdocument.Validatie.Tests", "src\Reisdocument.Validatie.Tests\Reisdocument.Validatie.Tests.csproj", "{9C36889C-6851-4F0E-A37C-B772B8AFE598}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4EBE9F10-3135-4F31-A8D7-BA79751684D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{9C36889C-6851-4F0E-A37C-B772B8AFE598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C36889C-6851-4F0E-A37C-B772B8AFE598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C36889C-6851-4F0E-A37C-B772B8AFE598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EBE9F10-3135-4F31-A8D7-BA79751684D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EBE9F10-3135-4F31-A8D7-BA79751684D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EBE9F10-3135-4F31-A8D7-BA79751684D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EBE9F10-3135-4F31-A8D7-BA79751684D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
