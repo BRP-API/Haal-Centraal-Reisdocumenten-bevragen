@@ -35,6 +35,11 @@ jobs:
           node-version: '16'
       - name: Install dependencies
         run: npm ci
+      - name: Cache container images
+        uses: actions/cache@v2.1.8
+        with:
+          path: /var/lib/docker/
+          key: local-docker-directory
       - name: Build container images
         run: docker compose build
       - name: Start containers
