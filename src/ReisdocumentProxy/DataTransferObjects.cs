@@ -275,6 +275,9 @@ namespace HaalCentraal.ReisdocumentProxy.Generated
         [Newtonsoft.Json.JsonProperty("geheimhoudingPersoonsgegevens", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool GeheimhoudingPersoonsgegevens { get; set; }
 
+        [Newtonsoft.Json.JsonProperty("opschortingBijhouding", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public OpschortingBijhouding OpschortingBijhouding { get; set; }
+
         [Newtonsoft.Json.JsonProperty("inOnderzoek", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public ReisdocumenthouderInOnderzoek InOnderzoek { get; set; }
 
@@ -285,9 +288,6 @@ namespace HaalCentraal.ReisdocumentProxy.Generated
     {
         [Newtonsoft.Json.JsonProperty("burgerservicenummer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Burgerservicenummer { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("opschortingBijhouding", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public OpschortingBijhouding OpschortingBijhouding { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 

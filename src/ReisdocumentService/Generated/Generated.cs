@@ -55,23 +55,8 @@ namespace HaalCentraal.ReisdocumentService.Generated
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class RaadpleegMetReisdocumentnummerResponse : ReisdocumentenQueryResponse
     {
-        [Newtonsoft.Json.JsonProperty("reisdocumentnummer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Reisdocumentnummer { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("soort", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public Waardetabel Soort { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("datumEindeGeldigheid", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string DatumEindeGeldigheid { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("inhoudingOfVermissing", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public GbaInhoudingOfVermissing InhoudingOfVermissing { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("houder", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public GbaReisdocumenthouder Houder { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("inOnderzoek", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public GbaInOnderzoek InOnderzoek { get; set; }
+        [Newtonsoft.Json.JsonProperty("reisdocumenten", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.List<GbaReisdocument> Reisdocumenten { get; set; }
 
     }
 
@@ -279,6 +264,9 @@ namespace HaalCentraal.ReisdocumentService.Generated
         [Newtonsoft.Json.JsonProperty("geheimhoudingPersoonsgegevens", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int GeheimhoudingPersoonsgegevens { get; set; }
 
+        [Newtonsoft.Json.JsonProperty("opschortingBijhouding", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public GbaOpschortingBijhouding OpschortingBijhouding { get; set; }
+
         [Newtonsoft.Json.JsonProperty("inOnderzoek", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public GbaInOnderzoek InOnderzoek { get; set; }
 
@@ -289,9 +277,6 @@ namespace HaalCentraal.ReisdocumentService.Generated
     {
         [Newtonsoft.Json.JsonProperty("burgerservicenummer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Burgerservicenummer { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("opschortingBijhouding", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public OpschortingBijhouding OpschortingBijhouding { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
@@ -349,10 +334,10 @@ namespace HaalCentraal.ReisdocumentService.Generated
     /// <br/>
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class OpschortingBijhouding : OpschortingBijhoudingBasis
+    public partial class GbaOpschortingBijhouding : OpschortingBijhoudingBasis
     {
         [Newtonsoft.Json.JsonProperty("datum", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public AbstractDatum Datum { get; set; }
+        public string Datum { get; set; }
 
     }
 
@@ -374,76 +359,6 @@ namespace HaalCentraal.ReisdocumentService.Generated
             get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
         }
-
-    }
-
-    [Newtonsoft.Json.JsonConverter(typeof(JsonInheritanceConverter), "type")]
-    [JsonInheritanceAttribute("Datum", typeof(VolledigeDatum))]
-    [JsonInheritanceAttribute("DatumOnbekend", typeof(DatumOnbekend))]
-    [JsonInheritanceAttribute("JaarDatum", typeof(JaarDatum))]
-    [JsonInheritanceAttribute("JaarMaandDatum", typeof(JaarMaandDatum))]
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class AbstractDatum
-    {
-        [Newtonsoft.Json.JsonProperty("langFormaat", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string LangFormaat { get; set; }
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
-
-    /// <summary>
-    /// Datum conform iso8601
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class VolledigeDatum : AbstractDatum
-    {
-        [Newtonsoft.Json.JsonProperty("datum", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        [Newtonsoft.Json.JsonConverter(typeof(DateFormatConverter))]
-        public System.DateTimeOffset? Datum { get; set; }
-
-    }
-
-    /// <summary>
-    /// representatie voor een volledig onbekend datum
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class DatumOnbekend : AbstractDatum
-    {
-        [Newtonsoft.Json.JsonProperty("onbekend", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public bool? Onbekend { get; set; } = true;
-
-    }
-
-    /// <summary>
-    /// representatie voor een datum waarvan maand en dag onbekend zijn
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class JaarDatum : AbstractDatum
-    {
-        [Newtonsoft.Json.JsonProperty("jaar", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int Jaar { get; set; }
-
-    }
-
-    /// <summary>
-    /// representatie voor een datum waarvan de dag onbekend is
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class JaarMaandDatum : AbstractDatum
-    {
-        [Newtonsoft.Json.JsonProperty("jaar", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int Jaar { get; set; }
-
-        [Newtonsoft.Json.JsonProperty("maand", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public int Maand { get; set; }
 
     }
 
@@ -581,15 +496,6 @@ namespace HaalCentraal.ReisdocumentService.Generated
             }
 
             return objectType.Name;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    internal class DateFormatConverter : Newtonsoft.Json.Converters.IsoDateTimeConverter
-    {
-        public DateFormatConverter()
-        {
-            DateTimeFormat = "yyyy-MM-dd";
         }
     }
 
