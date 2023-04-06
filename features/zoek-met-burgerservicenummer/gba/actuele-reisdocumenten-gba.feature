@@ -52,3 +52,21 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon
       En heeft de response een 'reisdocument' met de volgende gegevens
       | naam               | waarde    |
       | reisdocumentnummer | NWE45TN71 |
+
+  Rule: een verwijderd reisdocument wordt niet geleverd
+
+    Scenario: de persoon heeft een reisdocument dat is verwijderd via de signalering opname op Register paspoortsignaleringen
+      Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
+      | naam                                                                                   | waarde           |
+      | Signalering met betrekking tot het verstrekken van een Nederlands reisdocument (36.10) | 1                |
+      | gemeente document (82.10)                                                              | 0518             |
+      | datum document (82.20)                                                                 | 20040105         |
+      | beschrijving document (82.30)                                                          | D27894-2004-A782 |
+      | ingangsdatum geldigheid (85.10)                                                        | 20031107         |
+      | datum van opneming (86.10)                                                             | 20040112         |
+      Als gba reisdocumenten wordt gezocht met de volgende parameters
+      | naam                | waarde                     |
+      | type                | ZoekMetBurgerservicenummer |
+      | burgerservicenummer | 000000152                  |
+      | fields              | reisdocumentnummer         |
+      Dan heeft de response 0 reisdocumenten
