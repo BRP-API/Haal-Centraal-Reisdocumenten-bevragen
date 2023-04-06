@@ -1,0 +1,4789 @@
+[
+  {
+    "houder": {
+      "burgerservicenummer": "999993653"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990639"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993872"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991723"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IX34JH673",
+    "datumEindeGeldigheid": "20220526"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992740"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NTLBCL731",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IR7LK4HB7",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NV7968PR6",
+    "datumEindeGeldigheid": "20300306",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IKCRH28L9",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM0RPJD72",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20200306",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999333"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993793"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVJ197009",
+    "datumEindeGeldigheid": "20160128"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994542"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID7154749",
+    "datumEindeGeldigheid": "20160110"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995078"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NT77B2FL7",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IMC32JB94",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NX02192D9",
+    "datumEindeGeldigheid": "20300306",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ITK4K94D7",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NX02192D9",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20200306",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991930"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991413"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993409"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NYGH5GH52",
+    "datumEindeGeldigheid": "20160117"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992806"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992806"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994335"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990263"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR912347",
+    "datumEindeGeldigheid": "20240930"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992326"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993811"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990858"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NP5709588",
+    "datumEindeGeldigheid": "20160502"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993112"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID9298142",
+    "datumEindeGeldigheid": "20160110"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993112"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993112"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991292"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991565"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IK877DDB1",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IXRD8KLC0",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990032"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994268"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992843"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991802"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IU12285C6",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IKK24C800",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994426"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009878"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990998"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IKDHB6D66",
+    "datumEindeGeldigheid": "20201203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ISF5883H4",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995017"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993240"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NW21K79D5",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NMF3JHFJ9",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NMFKDFH05",
+    "datumEindeGeldigheid": "20300306",
+    "inhoudingOfVermissing": {
+      "datum": "20200228",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992181"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IMC32JB94",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ISFKK2P86",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992934"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992715"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20250909"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "NA1260787",
+    "datumEindeGeldigheid": "20250909"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991309"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IGD28C531",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IGFKJ0DP2",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990287"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991632"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994980"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990421"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995121"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993239"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992788"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993938"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991255"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR912347",
+    "datumEindeGeldigheid": "20160127"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993914"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992247"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994049"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID5083641",
+    "datumEindeGeldigheid": "20151231"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992223"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990469"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID7809214",
+    "datumEindeGeldigheid": "20151231"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994293"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990202"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVK193307",
+    "datumEindeGeldigheid": "20151230"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009933"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991814"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993471"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995091"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991243"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IS40L73B8",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992442"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993781"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NX55HFF06",
+    "datumEindeGeldigheid": "20270629"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ITKF88CD2",
+    "datumEindeGeldigheid": "20160117",
+    "inhoudingOfVermissing": {
+      "datum": "20170629",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992831"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992752"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991966"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991978"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009970"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994256"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID7615824",
+    "datumEindeGeldigheid": "20151231"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993483"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990408"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993690"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992879"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA4602407",
+    "datumEindeGeldigheid": "20160502"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994062"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992557"
+    },
+    "soort": {
+      "code": "R1"
+    },
+    "reisdocumentnummer": "NF4287160",
+    "datumEindeGeldigheid": "20150915"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992144"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990457"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990457"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991711"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990536"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVJ801762",
+    "datumEindeGeldigheid": "20160202"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991644"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995200"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992636"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993860"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993100"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993422"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990883"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVJ892799",
+    "datumEindeGeldigheid": "20151203"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993343"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993896"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992569"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994608"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993082"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991760"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994311"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991188"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993057"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990809"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993859"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991772"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991103"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990482"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990482"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990275"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991346"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009866"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990068"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NYHJ5JK76",
+    "datumEindeGeldigheid": "20160117"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990561"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991358"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993835"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVJ101019",
+    "datumEindeGeldigheid": "20151231"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991887"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990718"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990974"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993008"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991553"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM7836542",
+    "datumEindeGeldigheid": "20160502"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991553"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IVR783659",
+    "datumEindeGeldigheid": "20141229"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991553"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990159"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990019"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991279"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IU4942814",
+    "datumEindeGeldigheid": "20160107"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990925"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990299"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994554"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993069"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IV3066653",
+    "datumEindeGeldigheid": "20160107"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993276"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992491"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992995"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990147"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994086"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994013"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990135"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994669"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994669"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994669"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992193"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991863"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992387"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997610"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990706"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990172"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991425"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990755"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991139"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990329"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991164"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992077"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992478"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993306"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992521"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IVR2JLH49",
+    "datumEindeGeldigheid": "20160502"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991437"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993410"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991231"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992909"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR894647",
+    "datumEindeGeldigheid": "20120528"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992909"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995236"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992739"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991462"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991462"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994451"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992302"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993707"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993252"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993148"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA3951281",
+    "datumEindeGeldigheid": "20151230"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993197"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995182"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992867"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991176"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994074"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991826"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR113737",
+    "datumEindeGeldigheid": "20160225"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "010082426"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NL8148591",
+    "datumEindeGeldigheid": "20201019"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "010008579"
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA7653269",
+    "datumEindeGeldigheid": "20191010",
+    "inhoudingOfVermissing": {
+      "datum": "20151005",
+      "aanduiding": {
+        "code": "V"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993926"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994220"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993136"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990445"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990615"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IU3066650",
+    "datumEindeGeldigheid": "20160107"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991607"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990810"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991504"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993550"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990676"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991395"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990688"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992661"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IU3068675",
+    "datumEindeGeldigheid": "20160121"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991796"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995054"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994499"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992429"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994190"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994815"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991693"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995030"
+    },
+    "soort": {
+      "code": "ZN"
+    },
+    "reisdocumentnummer": "ZL1412545",
+    "datumEindeGeldigheid": "20251020"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA1412542",
+    "datumEindeGeldigheid": "20181101"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994517"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992363"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995029"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993689"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990950"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993215"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994281"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990317"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994001"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991425"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993380"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990603"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992016"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993768"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993823"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992338"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990743"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993070"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009994"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991486"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994505"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991334"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993720"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994207"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993963"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991310"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990081"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994827"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991784"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993203"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR196909",
+    "datumEindeGeldigheid": "20160128"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995157"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009921"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID3762913",
+    "datumEindeGeldigheid": "20160128"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992028"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994165"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991991"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992107"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993677"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992119"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991206"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994992"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID3462585",
+    "datumEindeGeldigheid": "20151231"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993446"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992090"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994438"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994931"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990378"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990627"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993124"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992466"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992788"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992697"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990160"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991954"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994736"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994761"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NKIH76H67",
+    "datumEindeGeldigheid": "20160322"
+  },
+  {
+    "soort": {
+      "code": "TN"
+    },
+    "reisdocumentnummer": "NGY67FRT7",
+    "datumEindeGeldigheid": "20180102"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991747"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993264"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991929"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995108"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994529"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995170"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID3066675",
+    "datumEindeGeldigheid": "20160107"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995261"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993161"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994566"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992417"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993331"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995169"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992570"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992855"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992703"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NVC6529F3",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992120"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994384"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR303097",
+    "datumEindeGeldigheid": "20160128"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994384"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994384"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991280"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID9807311",
+    "datumEindeGeldigheid": "20160108"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IV9807315",
+    "datumEindeGeldigheid": "20150507"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991838"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991516"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991668"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992648"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992260"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993185"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992624"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVK570623",
+    "datumEindeGeldigheid": "20151231"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992685"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993641"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVJ758097",
+    "datumEindeGeldigheid": "20150525"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993045"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990986"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991942"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991851"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990780"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991115"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995145"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994402"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990871"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991619"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992727"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVJ193903",
+    "datumEindeGeldigheid": "20160128"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993343"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990512"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994414"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994414"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992922"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NMPRP0CC6",
+    "datumEindeGeldigheid": "20150630"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994712"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IVR768519",
+    "datumEindeGeldigheid": "20150730"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993227"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994773"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990792"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993756"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990573"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993975"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993458"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994906"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991449"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994670"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990664"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990664"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992454"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993628"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994372"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991097"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993999"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990779"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993987"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994347"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995248"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990500"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994748"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994748"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991590"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994797"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR438786",
+    "datumEindeGeldigheid": "20160216"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990238"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994025"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990585"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993501"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991024"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993094"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993033"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993537"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009842"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NYDR3JT52",
+    "datumEindeGeldigheid": "20290902"
+  },
+  {
+    "soort": {
+      "code": "PV"
+    },
+    "reisdocumentnummer": "RYDF6GT63",
+    "datumEindeGeldigheid": "20210117",
+    "inhoudingOfVermissing": {
+      "datum": "20190815",
+      "aanduiding": {
+        "code": "R"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992545"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NW3J93L42",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NUHK6JJ37",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IXBLH1RJ1",
+    "datumEindeGeldigheid": "20220525"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990391"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997622"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994396"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992259"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993616"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID9500465",
+    "datumEindeGeldigheid": "20160311"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993173"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID9123453",
+    "datumEindeGeldigheid": "20251019"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IR2346585",
+    "datumEindeGeldigheid": "20241010",
+    "inhoudingOfVermissing": {
+      "datum": "20151005",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991073"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994979"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID7165798",
+    "datumEindeGeldigheid": "20160110"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994463"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994840"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992399"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993719"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994724"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991322"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992132"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992041"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA1516192",
+    "datumEindeGeldigheid": "20241019",
+    "inhoudingOfVermissing": {
+      "datum": "20151019",
+      "aanduiding": {
+        "code": "V"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IV3927066",
+    "datumEindeGeldigheid": "20181215"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990652"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IK6PH0927",
+    "datumEindeGeldigheid": "20310526"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID8470303",
+    "datumEindeGeldigheid": "20151231",
+    "inhoudingOfVermissing": {
+      "datum": "20210526",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993495"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990548"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992533"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993392"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990093"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994153"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993665"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994876"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990305"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990305"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992880"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990834"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991875"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID1928058",
+    "datumEindeGeldigheid": "20240930"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990901"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NL1412545",
+    "datumEindeGeldigheid": "20160502"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991401"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991589"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992351"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009945"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID9123453",
+    "datumEindeGeldigheid": "20160202"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990962"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992971"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993847"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995066"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990949"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009891"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992235"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994888"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994700"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992600"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994724"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991036"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992156"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NG2263815",
+    "datumEindeGeldigheid": "20251019"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992296"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992612"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992612"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993355"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990524"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992594"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994475"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990937"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994967"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995224"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993586"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992764"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IR4F96083",
+    "datumEindeGeldigheid": "20310525"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NMDJK20P0",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992764"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NMF3JHFJ9",
+    "datumEindeGeldigheid": "20300306",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NY9038P88",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20200306",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990123"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991267"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995133"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IVR409029",
+    "datumEindeGeldigheid": "20160218"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992089"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990111"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990913"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997609"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "IU3058633",
+    "datumEindeGeldigheid": "20160110"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009908"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993604"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993367"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992818"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995212"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992168"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994839"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994189"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991048"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994116"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID4171752",
+    "datumEindeGeldigheid": "20150810"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990020"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IML3F1BD6",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IY28C0316",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993434"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994098"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NB3275215",
+    "datumEindeGeldigheid": "20150613"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990366"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994682"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992211"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990640"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991577"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994128"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992065"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IVPR9DJL9",
+    "datumEindeGeldigheid": "20251203"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IKD8B0406",
+    "datumEindeGeldigheid": "20300212",
+    "inhoudingOfVermissing": {
+      "datum": "20201204",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992892"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992272"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992983"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993525"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA2870819",
+    "datumEindeGeldigheid": "20141214"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993318"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992375"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992375"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991061"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994943"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA7397618",
+    "datumEindeGeldigheid": "20191031",
+    "inhoudingOfVermissing": {
+      "datum": "20151020",
+      "aanduiding": {
+        "code": "V"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA7397621",
+    "datumEindeGeldigheid": "20251020"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IV7963218",
+    "datumEindeGeldigheid": "20251001",
+    "inhoudingOfVermissing": {
+      "datum": "20151015",
+      "aanduiding": {
+        "code": "V"
+      }
+    }
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IV2344567",
+    "datumEindeGeldigheid": "20251020"
+  },
+  {
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IX8793453",
+    "datumEindeGeldigheid": "20151115"
+  },
+  {
+    "soort": {
+      "code": "PD"
+    },
+    "reisdocumentnummer": "NL1516172",
+    "datumEindeGeldigheid": "20250707"
+  },
+  {
+    "soort": {
+      "code": "TN"
+    },
+    "reisdocumentnummer": "T03276591",
+    "datumEindeGeldigheid": "20161010"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990822"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991905"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990184"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NR195J0L3",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NYBCH0J57",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993884"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990044"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NRFB8R063",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NS7964638",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994050"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993562"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991759"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NNPR8RC38",
+    "datumEindeGeldigheid": "20300228"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994785"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991000"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990196"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994359"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992004"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991474"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "ID5697488",
+    "datumEindeGeldigheid": "20160202"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993598"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991085"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994657"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992958"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NWKB3H893",
+    "datumEindeGeldigheid": "20301203"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NY60CKHR5",
+    "datumEindeGeldigheid": "20300228",
+    "inhoudingOfVermissing": {
+      "datum": "20201203",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994104"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990226"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009969"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA8165151",
+    "datumEindeGeldigheid": "20130228"
+  },
+  {
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NA1816515",
+    "datumEindeGeldigheid": "20090310",
+    "inhoudingOfVermissing": {
+      "datum": "20080229",
+      "aanduiding": {
+        "code": "V"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994918"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991140"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993951"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991917"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM2165819",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991383"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992430"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009830"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991498"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993021"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993902"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995042"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992582"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992508"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "000009957"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991127"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995133"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994323"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994141"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NL8148591",
+    "datumEindeGeldigheid": "20160502"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991450"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991450"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990470"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NM1260784",
+    "datumEindeGeldigheid": "20160503"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994864"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999991656"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999992910"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999993288"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990895"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994177"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994177"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994037"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995789"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IVDRD92C9",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995820"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995704"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IRPFPJRR1",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995790"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IHBRR86B1",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995716"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IRDB89P18",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995753"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IM90529R2",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995819"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IGJ9R17B0",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995765"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IH59RBRH7",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995777"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IH7KHKPD9",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995728"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IX8HRJDF8",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995741"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IXD839FJ4",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995352"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995327"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995340"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995364"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995339"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995303"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995285"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995297"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995273"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995315"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995418"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995406"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NB1119457",
+    "datumEindeGeldigheid": "20171031"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995455"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "INC621873",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995443"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IG5JD6KF2",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995509"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995509"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995492"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IHC80LF69",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995479"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995376"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995467"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995388"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995431"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IKK4F29L7",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995480"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995662"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995534"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IVJ9CRB85",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995625"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995510"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IW97HPF30",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995686"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995571"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IG9PLK797",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995637"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995650"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995674"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995649"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995583"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IRL9FC202",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995698"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995595"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990767"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995613"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995522"
+    },
+    "soort": {
+      "code": "NI"
+    },
+    "reisdocumentnummer": "IW9L76212",
+    "datumEindeGeldigheid": "20310223"
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995832"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995807"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995911"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995601"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995844"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995856"
+    },
+    "soort": {
+      "code": "PN"
+    },
+    "reisdocumentnummer": "NUB3LH867",
+    "datumEindeGeldigheid": "20160301",
+    "inhoudingOfVermissing": {
+      "datum": "20160301",
+      "aanduiding": {
+        "code": "I"
+      }
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995868"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995881"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995893"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995923"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999990"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996423"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996411"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996411"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996411"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996393"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996393"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996393"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996393"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996435"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996447"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996459"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996460"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996472"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996484"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996496"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996502"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996502"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996691"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996708"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996514"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996721"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996757"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996526"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996769"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996265"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996320"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996277"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996289"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996289"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996290"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996290"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996381"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995947"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995935"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995923"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995959"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995959"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995996"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995984"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995984"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996551"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996599"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996587"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996113"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996605"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996125"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996137"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996149"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996150"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996186"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996186"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996174"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996162"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996162"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996162"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996538"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996538"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996630"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996629"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996629"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996629"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996629"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995972"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995960"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995960"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999995960"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996344"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996356"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996034"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996046"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996058"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996216"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996241"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997440"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997567"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997452"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996733"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996745"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997464"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997476"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996770"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996782"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996794"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996800"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996812"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996824"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996848"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996861"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996873"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996885"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996897"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996903"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996915"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996927"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996939"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996940"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996952"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996964"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997002"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996976"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996988"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997014"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997026"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997038"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997051"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997063"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997075"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997087"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997099"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997105"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997117"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997129"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997130"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997166"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997208"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997221"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997233"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997245"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997257"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997269"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997270"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997282"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997294"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997300"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997324"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997336"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997348"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997361"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997373"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997385"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997397"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997403"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997415"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997427"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997439"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994487"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997580"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997580"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999990342"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999994955"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997592"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997634"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997646"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997658"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997671"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997683"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997695"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997701"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997713"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997713"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997725"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997737"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997749"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997750"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997762"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997774"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997786"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997816"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997828"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997798"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997804"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997841"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997853"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997865"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997877"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997889"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997890"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997890"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997890"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997890"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997890"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997907"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997919"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997919"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997920"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997932"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997944"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997956"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997968"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997981"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999997993"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999998006"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999998286"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "010245741"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "010755561"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999998298"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999998304"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996307"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999996253"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999998328"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999998341"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999998353"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999345"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999357"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999357"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999369"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999370"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999382"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999394"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999400"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999412"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999424"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "999999436"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "900194054"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "900194030"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "900194042"
+    }
+  },
+  {
+    "houder": {
+      "burgerservicenummer": "900194042"
+    }
+  }
+]
