@@ -1,6 +1,7 @@
 #language: nl
 
-Functionaliteit: zoeken van de laatst uitgegeven reisdocumenten van een persoon
+@gba
+Functionaliteit: zoeken van de actuele reisdocumenten van een persoon
 
   Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdocumenten geleverd die volgens de registratie nog in het bezit zijn van de persoon
 
@@ -13,7 +14,7 @@ Functionaliteit: zoeken van de laatst uitgegeven reisdocumenten van een persoon
       | datum einde geldigheid reisdocument (35.50)                             | 20371106     |
       | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
       | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.60) | <aanduiding> |
-      Als reisdocumenten wordt gezocht met de volgende parameters
+      Als gba reisdocumenten wordt gezocht met de volgende parameters
       | naam                | waarde                     |
       | type                | ZoekMetBurgerservicenummer |
       | burgerservicenummer | 000000152                  |
@@ -42,7 +43,7 @@ Functionaliteit: zoeken van de laatst uitgegeven reisdocumenten van een persoon
       | nummer reisdocument (35.20)                    | NWE45TN71 |
       | datum uitgifte Nederlands reisdocument (35.30) | 20080317  |
       | datum einde geldigheid reisdocument (35.50)    | 20230317  |
-      Als reisdocumenten wordt gezocht met de volgende parameters
+      Als gba reisdocumenten wordt gezocht met de volgende parameters
       | naam                | waarde                     |
       | type                | ZoekMetBurgerservicenummer |
       | burgerservicenummer | 000000152                  |
