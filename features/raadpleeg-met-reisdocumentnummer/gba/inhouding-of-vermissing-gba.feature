@@ -10,14 +10,14 @@ Functionaliteit: Aanduiding inhouding/vermissing van reisdocument vragen geeft o
       | nummer reisdocument (35.20)                          | NE3663258    |
       | aanduiding inhouding/vermissing reisdocument (35.70) | <aanduiding> |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam               | waarde                         |
-      | type               | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer | NE3663258                      |
-      | fields             | inhoudingOfVermissing          |
+      | naam               | waarde                           |
+      | type               | RaadpleegMetReisdocumentnummer   |
+      | reisdocumentnummer | NE3663258                        |
+      | fields             | inhoudingOfVermissing.aanduiding |
       Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
-      | naam               | waarde         |
-      | soort.code         | <aanduiding>   |
-      | soort.omschrijving | <omschrijving> |
+      | naam                    | waarde         |
+      | aanduiding.code         | <aanduiding>   |
+      | aanduiding.omschrijving | <omschrijving> |
 
       Voorbeelden:
       | aanduiding | omschrijving             |
