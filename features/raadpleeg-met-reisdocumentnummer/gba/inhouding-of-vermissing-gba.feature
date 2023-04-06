@@ -1,0 +1,27 @@
+#language: nl
+
+@gba
+Functionaliteit: Aanduiding inhouding/vermissing van reisdocument vragen geeft ook de omschrijving van de aanduiding
+
+    Abstract Scenario: 'aanduiding inhouding/vermissing reisdocument (35.70)' wordt gevraagd en heeft waarde '<aanduiding>'
+      Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
+      | naam                                                 | waarde       |
+      | soort reisdocument (35.10)                           | PN           |
+      | nummer reisdocument (35.20)                          | NE3663258    |
+      | aanduiding inhouding/vermissing reisdocument (35.70) | <aanduiding> |
+      Als gba reisdocumenten wordt gezocht met de volgende parameters
+      | naam               | waarde                         |
+      | type               | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer | NE3663258                      |
+      | fields             | inhoudingOfVermissing          |
+      Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
+      | naam               | waarde         |
+      | soort.code         | <aanduiding>   |
+      | soort.omschrijving | <omschrijving> |
+
+      Voorbeelden:
+      | aanduiding | omschrijving             |
+      | I          | ingehouden, ingeleverd   |
+      | R          | van rechtswege vervallen |
+      | V          | vermist                  |
+      | .          | onbekend                 |
