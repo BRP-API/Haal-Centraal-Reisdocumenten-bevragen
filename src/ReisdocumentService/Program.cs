@@ -1,6 +1,7 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using HaalCentraal.ReisdocumentService.Extensions;
+using HaalCentraal.ReisdocumentService.Repositories;
 using HaalCentraal.ReisdocumentService.Validators;
 using Serilog;
 using Serilog.Enrichers.Span;
@@ -30,6 +31,7 @@ builder.Services.AddControllers()
 builder.Services.AddFluentValidationAutoValidation(options => options.DisableDataAnnotationsValidation = true)
                 .AddValidatorsFromAssemblyContaining<RaadpleegMetReisdocumentnummerValidator>();
 
+builder.Services.AddScoped<ReisdocumentRepository>();
 
 var app = builder.Build();
 

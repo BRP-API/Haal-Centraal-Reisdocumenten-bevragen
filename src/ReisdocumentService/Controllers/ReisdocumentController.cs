@@ -1,4 +1,5 @@
 ﻿using HaalCentraal.ReisdocumentService.Generated;
+using HaalCentraal.ReisdocumentService.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaalCentraal.ReisdocumentService.Controllers;
@@ -7,10 +8,12 @@ namespace HaalCentraal.ReisdocumentService.Controllers;
 public class ReisdocumentController : Generated.ControllerBase
 {
     private readonly ILogger<ReisdocumentController> _logger;
+    private readonly ReisdocumentRepository _repository;
 
-    public ReisdocumentController(ILogger<ReisdocumentController> logger)
+    public ReisdocumentController(ILogger<ReisdocumentController> logger, ReisdocumentRepository repository)
     {
         _logger = logger;
+        _repository = repository;
     }
 
     public override async Task<ActionResult<ReisdocumentenQueryResponse>> Reisdocumenten([FromBody] ReisdocumentenQuery body)
@@ -20,11 +23,19 @@ public class ReisdocumentController : Generated.ControllerBase
 
         var retval = body switch
         {
+            RaadpleegMetReisdocumentnummer q => await Handle(q),
             _ => new ReisdocumentenQueryResponse()
         };
 
         _logger.LogDebug("Response body: {@responsebody}", retval);
 
         return Ok(retval);
+    }
+
+    private async Task<ReisdocumentenQueryResponse> Handle(RaadpleegMetReisdocumentnummer query)
+    {
+        var retval = await _repository.Zoek<RaadpleegMetReisdocumentnummer>(query);
+
+        return retval;
     }
 }
