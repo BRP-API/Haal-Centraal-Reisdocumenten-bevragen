@@ -21,7 +21,7 @@ Functionaliteit: Aanduiding inhouding/vermissing van reisdocument vragen geeft o
 
       Voorbeelden:
       | aanduiding | omschrijving             |
-      | I          | ingehouden, ingeleverd   |
+      | I          | ingehouden of ingeleverd |
       | R          | van rechtswege vervallen |
       | V          | vermist                  |
       | .          | onbekend                 |
