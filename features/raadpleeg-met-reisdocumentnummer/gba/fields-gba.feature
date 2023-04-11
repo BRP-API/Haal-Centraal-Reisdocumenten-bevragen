@@ -11,6 +11,9 @@ Functionaliteit: Reisdocument velden vragen met fields
     | datum einde geldigheid reisdocument (35.50)          | 20240506  |
     | datum inhouding/vermissing reisdocument (35.60)      | 20230405  |
     | aanduiding inhouding/vermissing reisdocument (35.70) | I         |
+    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    | gemeente van inschrijving (09.10) |
+    | 0800                              |
 
   Scenario: 'nummer reisdocument (35.20)' wordt gevraagd met field pad 'reisdocumentnummer'
     Als gba reisdocumenten wordt gezocht met de volgende parameters
@@ -24,10 +27,11 @@ Functionaliteit: Reisdocument velden vragen met fields
 
   Abstract Scenario: 'soort reisdocument (35.10)' wordt gevraagd met field pad '<field>'
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | NE3663258                      |
-    | fields             | <field>                        |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | NE3663258                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | <field>                        |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam               | waarde             |
     | soort.code         | PN                 |
@@ -41,10 +45,11 @@ Functionaliteit: Reisdocument velden vragen met fields
 
   Abstract Scenario: 'datum einde geldigheid reisdocument (35.50)' wordt gevraagd met field pad '<field>'
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | NE3663258                      |
-    | fields             | <field>                        |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | NE3663258                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | <field>                        |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam                 | waarde   |
     | datumEindeGeldigheid | 20240506 |
@@ -61,10 +66,11 @@ Functionaliteit: Reisdocument velden vragen met fields
 
   Abstract Scenario: 'datum inhouding/vermissing reisdocument (35.60)' wordt gevraagd met field pad 'inhoudingOfVermissing.<field>'
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | NE3663258                      |
-    | fields             | inhoudingOfVermissing.<field>  |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | NE3663258                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | inhoudingOfVermissing.<field>  |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
     | naam  | waarde   |
     | datum | 20230405 |
@@ -81,10 +87,11 @@ Functionaliteit: Reisdocument velden vragen met fields
 
   Abstract Scenario: 'aanduiding inhouding/vermissing reisdocument (35.70)' wordt gevraagd met field pad 'inhoudingOfVermissing.<field>'
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | NE3663258                      |
-    | fields             | inhoudingOfVermissing.<field>  |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | NE3663258                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | inhoudingOfVermissing.<field>  |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
     | naam                    | waarde                   |
     | aanduiding.code         | I                        |
@@ -98,10 +105,11 @@ Functionaliteit: Reisdocument velden vragen met fields
 
   Scenario: 'burgerservicenummer' van houder wordt gevraagd met field pad 'houder.burgerservicenummer'
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | NE3663258                      |
-    | fields             | houder.burgerservicenummer     |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | NE3663258                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | houder.burgerservicenummer     |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |

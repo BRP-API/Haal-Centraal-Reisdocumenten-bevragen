@@ -7,9 +7,10 @@ Rule: De reisdocumentnummer parameter is een verplichte parameter
   @fout-case
   Scenario: De reisdocumentnummer parameter is niet opgegeven
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam   | waarde                         |
-    | type   | RaadpleegMetReisdocumentnummer |
-    | fields | reisdocumentnummer             |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | reisdocumentnummer             |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -27,10 +28,11 @@ Rule: De reisdocumentnummer parameter bevat een lijst met minimaal één reisdoc
   @fout-case
   Abstract Scenario: De reisdocumentnummer parameter bevat een lege lijst
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer |                                |
-    | fields             | reisdocumentnummer             |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      |                                |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | reisdocumentnummer             |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -48,10 +50,11 @@ Rule: Een reisdocumentnummer is een string bestaande uit exact 9 cijfers en hoof
   @fout-case
   Abstract Scenario: <titel>
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | <reisdocumentnummers>          |
-    | fields             | reisdocumentnummer             |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | <reisdocumentnummers>          |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | reisdocumentnummer             |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -76,10 +79,11 @@ Rule: De reisdocumentnummer parameter bevat een lijst van maximaal 1 reisdocumen
   @fout-case
   Scenario: De reisdocumentnummer parameter bevat meer dan 1 reisdocumentnummer
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | AB1234567,BC8901234            |
-    | fields             | reisdocumentnummer             |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | AB1234567,BC8901234            |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | reisdocumentnummer             |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |

@@ -13,11 +13,15 @@ Functionaliteit: RaadpleegMetReisdocumentnummer van persoonslijst met opschortin
       | naam                        | waarde    |
       | soort reisdocument (35.10)  | PN        |
       | nummer reisdocument (35.20) | NE3663258 |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam               | waarde                         |
-      | type               | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer | NE3663258                      |
-      | fields             | <fields>                       |
+      | naam                    | waarde                         |
+      | type                    | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer      | NE3663258                      |
+      | gemeenteVanInschrijving | 0800                           |
+      | fields                  | <fields>                       |
       Dan heeft de response 0 reisdocumenten
 
       Voorbeelden:
@@ -38,11 +42,15 @@ Functionaliteit: RaadpleegMetReisdocumentnummer van persoonslijst met opschortin
       | naam                        | waarde    |
       | soort reisdocument (35.10)  | PN        |
       | nummer reisdocument (35.20) | NE3663258 |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam               | waarde                         |
-      | type               | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer | NE3663258                      |
-      | fields             | houder.burgerservicenummer     |
+      | naam                    | waarde                         |
+      | type                    | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer      | NE3663258                      |
+      | gemeenteVanInschrijving | 0800                           |
+      | fields                  | houder.burgerservicenummer     |
       Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
       | naam                | waarde    |
       | burgerservicenummer | 000000048 |
@@ -58,11 +66,15 @@ Rule: opschortingBijhouding wordt automatisch geleverd indien van toepassing
       | naam                        | waarde    |
       | soort reisdocument (35.10)  | PN        |
       | nummer reisdocument (35.20) | NE3663258 |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam               | waarde                         |
-      | type               | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer | NE3663258                      |
-      | fields             | houder.burgerservicenummer     |
+      | naam                    | waarde                         |
+      | type                    | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer      | NE3663258                      |
+      | gemeenteVanInschrijving | 0800                           |
+      | fields                  | houder.burgerservicenummer     |
       Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
       | naam                                     | waarde         |
       | burgerservicenummer                      | 000000048      |
@@ -90,11 +102,15 @@ Rule: opschortingBijhouding wordt automatisch geleverd indien van toepassing
       | datum einde geldigheid reisdocument (35.50)          | 20240506  |
       | datum inhouding/vermissing reisdocument (35.60)      | 20230305  |
       | aanduiding inhouding/vermissing reisdocument (35.70) | I         |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam               | waarde                         |
-      | type               | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer | NE3663258                      |
-      | fields             | <fields>                       |
+      | naam                    | waarde                         |
+      | type                    | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer      | NE3663258                      |
+      | gemeenteVanInschrijving | 0800                           |
+      | fields                  | <fields>                       |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam     | waarde     |
       | <veld 1> | <waarde 1> |
