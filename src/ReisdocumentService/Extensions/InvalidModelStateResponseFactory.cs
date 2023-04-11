@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Reisdocument.Validatie;
+using Reisdocument.Infrastructure.Http;
 
 namespace HaalCentraal.ReisdocumentService.Extensions;
 
