@@ -32,21 +32,21 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon
       | V          | vermist reisdocument                                        |
       | .          | vermist of ingehouden reisdocument met onbekende aanduiding |
 
-    Scenario: de persoon heeft een reisdocument ingeleverd en heeft een ouder reisdocument van dezelfde soort nog in bezit
+    Scenario: de persoon heeft een reisdocument ingeleverd en heeft een ander reisdocument van dezelfde soort nog in bezit
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
       | naam                                                                    | waarde       |
       | soort reisdocument (35.10)                                              | PN           |
       | nummer reisdocument (35.20)                                             | NE3663258    |
-      | datum uitgifte Nederlands reisdocument (35.30)                          | 20221106     |
-      | datum einde geldigheid reisdocument (35.50)                             | 20371106     |
+      | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106     |
+      | datum einde geldigheid reisdocument (35.50)                             | 20231106     |
       | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
       | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.60) | I            |
       En de persoon heeft een 'reisdocument' met de volgende gegevens
       | naam                                           | waarde    |
       | soort reisdocument (35.10)                     | PN        |
       | nummer reisdocument (35.20)                    | NWE45TN71 |
-      | datum uitgifte Nederlands reisdocument (35.30) | 20080317  |
-      | datum einde geldigheid reisdocument (35.50)    | 20230317  |
+      | datum uitgifte Nederlands reisdocument (35.30) | 20230317  |
+      | datum einde geldigheid reisdocument (35.50)    | 20330317  |
       En de persoon heeft de volgende 'verblijfplaats' gegevens
       | gemeente van inschrijving (09.10) |
       | 0800                              |
