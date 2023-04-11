@@ -1,7 +1,10 @@
 #language: nl
 
 @gba
-Functionaliteit: zoeken van de actuele reisdocumenten van een persoon
+Functionaliteit: zoeken van de actuele reisdocumenten van een persoon met behulp van zijn burgerservicenummer
+  Als afnemer
+  Wil ik de reisdocumenten kunnen bevragen van een persoon
+  Zodat ik kan zien welke reisdocumenten hij volgens de registratie in zijn bezit heeft
 
   Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdocumenten geleverd die volgens de registratie nog in het bezit zijn van de persoon
 
