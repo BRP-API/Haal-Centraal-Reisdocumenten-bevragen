@@ -86,9 +86,9 @@ Functionaliteit: Reisdocument velden vragen met fields
     | reisdocumentnummer | NE3663258                      |
     | fields             | inhoudingOfVermissing.<field>  |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
-    | naam               | waarde                   |
-    | soort.code         | I                        |
-    | soort.omschrijving | ingehouden of ingeleverd |
+    | naam                    | waarde                   |
+    | aanduiding.code         | I                        |
+    | aanduiding.omschrijving | ingehouden of ingeleverd |
 
     Voorbeelden:
     | field                   |
