@@ -14,11 +14,15 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon
       | datum einde geldigheid reisdocument (35.50)                             | 20371106     |
       | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
       | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.60) | <aanduiding> |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                | waarde                     |
-      | type                | ZoekMetBurgerservicenummer |
-      | burgerservicenummer | 000000152                  |
-      | fields              | reisdocumentnummer         |
+      | naam                    | waarde                     |
+      | type                    | ZoekMetBurgerservicenummer |
+      | burgerservicenummer     | 000000152                  |
+      | gemeenteVanInschrijving | 0800                       |
+      | fields                  | reisdocumentnummer         |
       Dan heeft de response 0 reisdocumenten
 
       Voorbeelden:
@@ -43,11 +47,15 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon
       | nummer reisdocument (35.20)                    | NWE45TN71 |
       | datum uitgifte Nederlands reisdocument (35.30) | 20080317  |
       | datum einde geldigheid reisdocument (35.50)    | 20230317  |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                | waarde                     |
-      | type                | ZoekMetBurgerservicenummer |
-      | burgerservicenummer | 000000152                  |
-      | fields              | reisdocumentnummer         |
+      | naam                    | waarde                     |
+      | type                    | ZoekMetBurgerservicenummer |
+      | burgerservicenummer     | 000000152                  |
+      | gemeenteVanInschrijving | 0800                       |
+      | fields                  | reisdocumentnummer         |
       Dan heeft de response 1 reisdocumenten
       En heeft de response een 'reisdocument' met de volgende gegevens
       | naam               | waarde    |
@@ -64,9 +72,13 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon
       | beschrijving document (82.30)                                                          | D27894-2004-A782 |
       | ingangsdatum geldigheid (85.10)                                                        | 20031107         |
       | datum van opneming (86.10)                                                             | 20040112         |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                | waarde                     |
-      | type                | ZoekMetBurgerservicenummer |
-      | burgerservicenummer | 000000152                  |
-      | fields              | reisdocumentnummer         |
+      | naam                    | waarde                     |
+      | type                    | ZoekMetBurgerservicenummer |
+      | burgerservicenummer     | 000000152                  |
+      | gemeenteVanInschrijving | 0800                       |
+      | fields                  | reisdocumentnummer         |
       Dan heeft de response 0 reisdocumenten
