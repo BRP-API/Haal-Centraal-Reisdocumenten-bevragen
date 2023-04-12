@@ -84,12 +84,12 @@ Rule: opschortingBijhouding wordt automatisch geleverd indien van toepassing
       | datum opschorting bijhouding (67.10) | reden opschorting bijhouding (67.20) |
       | 20230402                             | O                                    |
       En de persoon heeft een 'reisdocument' met de volgende gegevens
-      | naam                                                 | waarde    |
-      | soort reisdocument (35.10)                           | PN        |
-      | nummer reisdocument (35.20)                          | NE3663258 |
-      | datum einde geldigheid reisdocument (35.50)          | 20240506  |
-      | datum inhouding/vermissing reisdocument (35.60)      | 20230305  |
-      | aanduiding inhouding/vermissing reisdocument (35.70) | I         |
+      | naam                                                                    | waarde    |
+      | soort reisdocument (35.10)                                              | PN        |
+      | nummer reisdocument (35.20)                                             | NE3663258 |
+      | datum einde geldigheid reisdocument (35.50)                             | 20240506  |
+      | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230305  |
+      | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I         |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
       | naam               | waarde                         |
       | type               | RaadpleegMetReisdocumentnummer |

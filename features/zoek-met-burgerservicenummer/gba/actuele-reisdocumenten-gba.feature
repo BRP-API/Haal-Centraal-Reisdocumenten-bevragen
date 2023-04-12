@@ -16,7 +16,7 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon met behulp
       | datum uitgifte Nederlands reisdocument (35.30)                          | 20221106     |
       | datum einde geldigheid reisdocument (35.50)                             | 20371106     |
       | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
-      | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.60) | <aanduiding> |
+      | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | <aanduiding> |
       En de persoon heeft de volgende 'verblijfplaats' gegevens
       | gemeente van inschrijving (09.10) |
       | 0800                              |
@@ -43,7 +43,7 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon met behulp
       | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106     |
       | datum einde geldigheid reisdocument (35.50)                             | 20231106     |
       | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
-      | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.60) | I            |
+      | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I            |
       En de persoon heeft een 'reisdocument' met de volgende gegevens
       | naam                                           | waarde    |
       | soort reisdocument (35.10)                     | PN        |
@@ -69,7 +69,7 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon met behulp
     Scenario: de persoon heeft een reisdocument dat is verwijderd via de signalering opname op Register paspoortsignaleringen
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
       | naam                                                                                   | waarde           |
-      | Signalering met betrekking tot het verstrekken van een Nederlands reisdocument (36.10) | 1                |
+      | signalering met betrekking tot het verstrekken van een Nederlands reisdocument (36.10) | 1                |
       | gemeente document (82.10)                                                              | 0518             |
       | datum document (82.20)                                                                 | 20040105         |
       | beschrijving document (82.30)                                                          | D27894-2004-A782 |
