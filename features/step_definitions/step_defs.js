@@ -32,6 +32,43 @@ Given(/^de persoon met burgerservicenummer '(\d*)' heeft de volgende gegevens$/,
     ];
 });
 
+function createPersoonMetGegevensgroep(burgerservicenummer, gegevensgroep, dataTable) {
+    if(this.context.sqlData === undefined) {
+        this.context.sqlData = [];
+    }
+    this.context.sqlData.push({});
+
+    let sqlData = this.context.sqlData.at(-1);
+
+    sqlData["persoon"] = [
+        createCollectieDataFromArray("persoon", [
+            ['burger_service_nr', burgerservicenummer]
+        ])
+    ];
+    if(gegevensgroep !== 'inschrijving') {
+        if(gegevensgroep === 'kiesrecht') {
+            sqlData["inschrijving"] = [
+                [
+                    [ 'geheim_ind', '0' ]
+                ].concat(createArrayFrom(dataTable, columnNameMap))
+            ];
+        }
+        else {
+            sqlData["inschrijving"] = [[[ 'geheim_ind', '0' ]]];
+            sqlData[gegevensgroep] = [
+                [
+                    [ 'volg_nr', '0']
+                ].concat(createArrayFrom(dataTable, columnNameMap))
+            ];
+        }
+    }
+    else {
+        sqlData[gegevensgroep] = [ createArrayFrom(dataTable, columnNameMap) ];
+    }
+}
+
+Given(/^de persoon met burgerservicenummer '(\d*)' heeft de volgende '(\w*)' gegevens$/, createPersoonMetGegevensgroep);
+
 Given(/^de persoon met burgerservicenummer '(\d*)' heeft een '(\w*)' met de volgende gegevens$/, function (burgerservicenummer, relatie, dataTable) {
     if(this.context.sqlData === undefined) {
         this.context.sqlData = [];
@@ -60,8 +97,12 @@ Given(/^de persoon heeft een '(\w*)' met de volgende gegevens$/, function(relati
     let sqlData = this.context.sqlData.at(-1);
 
     const stapelNr = getNextStapelNr(sqlData, relatie);
+    const collectieData = relatie === 'reisdocument'
+        ? createCollectieDataZonderVolgNrFromArray(createArrayFrom(dataTable, columnNameMap), stapelNr)
+        : createCollectieDataFromArray(relatie, createArrayFrom(dataTable, columnNameMap), stapelNr);
+
     sqlData[`${relatie}-${stapelNr}`] = [
-        createCollectieDataFromArray(relatie, createArrayFrom(dataTable, columnNameMap), stapelNr)
+        collectieData
     ];
 });
 
