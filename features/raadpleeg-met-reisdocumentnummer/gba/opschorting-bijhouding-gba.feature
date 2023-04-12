@@ -82,7 +82,7 @@ Rule: opschortingBijhouding wordt automatisch geleverd indien van toepassing
     Abstract Scenario: Opschorting bijhouding wordt geleverd wanneer met fields is gevraagd om '<fields>'
       Gegeven de persoon met burgerservicenummer '000000024' heeft de volgende 'inschrijving' gegevens
       | datum opschorting bijhouding (67.10) | reden opschorting bijhouding (67.20) |
-      | 20230402                             | O                        |
+      | 20230402                             | O                                    |
       En de persoon heeft een 'reisdocument' met de volgende gegevens
       | naam                                                 | waarde    |
       | soort reisdocument (35.10)                           | PN        |
