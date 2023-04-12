@@ -1,10 +1,23 @@
 const { toDateOrString } = require('./calcDate');
 
+const tableNameMap = new Map([
+    ['autorisatie', 'lo3_autorisatie'],
+    ['inschrijving', 'lo3_pl'],
+    ['persoon', 'lo3_pl_persoon' ],
+    ['reisdocument', 'lo3_pl_reis_doc' ],
+    ['verblijfplaats', 'lo3_pl_verblijfplaats'],
+]);
+
 const columnNameMap = new Map([
+
+    ['gemeente van inschrijving (09.10)', 'inschrijving_gemeente_code'],
 
     ['soort reisdocument (35.10)', 'nl_reis_doc_soort'],
     ['nummer reisdocument (35.20)', 'nl_reis_doc_nr'],
-    ['datum einde geldigheid reisdocument (35.50)', 'nl_reis_doc_geldig_eind_datum']
+    ['datum uitgifte Nederlands reisdocument (35.30)', 'nl_reis_doc_uitgifte_datum'],
+    ['datum einde geldigheid reisdocument (35.50)', 'nl_reis_doc_geldig_eind_datum'],
+    ['datum inhouding dan wel vermissing Nederlands reisdocument (35.60)', 'nl_reis_doc_weg_datum'],
+    ['aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.60)', 'nl_reis_doc_weg_ind']
 
 ]);
 
@@ -61,4 +74,4 @@ function createRequestBody(dataTable) {
     return requestBody;
 }
 
-module.exports = { columnNameMap, createAutorisatieSettingsFor, createRequestBody }
+module.exports = { tableNameMap, columnNameMap, createAutorisatieSettingsFor, createRequestBody }
