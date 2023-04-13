@@ -32,6 +32,12 @@ function createCollectieDataFromArray(persoonType, data, stapelNr=0) {
           ].concat(data);
 }
 
+function createCollectieDataZonderVolgNrFromArray(data, stapelNr=0) {
+    return [
+        [ 'stapel_nr', stapelNr+'']
+      ].concat(data);
+}
+
 function createArrayFrom(dataTable, columnNameMap) {
     let retval = [];
 
@@ -61,4 +67,10 @@ function fromHash(hash, columnNameMap) {
     return retval;
 }
 
-module.exports = { createCollectieDataFromArray, createArrayFrom }
+function createVoorkomenDataFromArray(data) {
+    return [
+        [ 'volg_nr', '0']
+    ].concat(data);
+}
+
+module.exports = { createCollectieDataZonderVolgNrFromArray, createCollectieDataFromArray, createArrayFrom, createVoorkomenDataFromArray }

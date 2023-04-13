@@ -1,15 +1,19 @@
 const { World } = require('./world');
-const { createCollectieDataFromArray, createArrayFrom } = require('./dataTable2Array.js');
+const { createCollectieDataZonderVolgNrFromArray, createCollectieDataFromArray, createArrayFrom, createVoorkomenDataFromArray } = require('./dataTable2Array.js');
 const { createObjectFrom } = require('./dataTable2Object.js');
 const { stringifyValues } = require('./stringify.js');
 const { postBevragenRequestWithBasicAuth, handleOAuthRequest } = require('./handleRequest.js');
-const { Given, When, Then, setWorldConstructor, After } = require('@cucumber/cucumber');
+const { Pool } = require('pg');
+const { executeSqlStatements, rollbackSqlStatements } = require('./postgressHelpers.js');
+const { Given, When, Then, setWorldConstructor, Before, After } = require('@cucumber/cucumber');
 const deepEqualInAnyOrder = require('deep-equal-in-any-order');
 const should = require('chai').use(deepEqualInAnyOrder).should();
-const { columnNameMap, createAutorisatieSettingsFor } = require('./gba.js');
+const { tableNameMap, columnNameMap, createAutorisatieSettingsFor } = require('./gba.js');
 
 setWorldConstructor(World);
 
+let pool = undefined;
+let logSqlStatements = false;
 let accessToken = undefined;
 
 Given(/^de persoon met burgerservicenummer '(\d*)' heeft de volgende gegevens$/, function(burgerservicenummer, dataTable) {
@@ -28,6 +32,43 @@ Given(/^de persoon met burgerservicenummer '(\d*)' heeft de volgende gegevens$/,
     ];
 });
 
+function createPersoonMetGegevensgroep(burgerservicenummer, gegevensgroep, dataTable) {
+    if(this.context.sqlData === undefined) {
+        this.context.sqlData = [];
+    }
+    this.context.sqlData.push({});
+
+    let sqlData = this.context.sqlData.at(-1);
+
+    sqlData["persoon"] = [
+        createCollectieDataFromArray("persoon", [
+            ['burger_service_nr', burgerservicenummer]
+        ])
+    ];
+    if(gegevensgroep !== 'inschrijving') {
+        if(gegevensgroep === 'kiesrecht') {
+            sqlData["inschrijving"] = [
+                [
+                    [ 'geheim_ind', '0' ]
+                ].concat(createArrayFrom(dataTable, columnNameMap))
+            ];
+        }
+        else {
+            sqlData["inschrijving"] = [[[ 'geheim_ind', '0' ]]];
+            sqlData[gegevensgroep] = [
+                [
+                    [ 'volg_nr', '0']
+                ].concat(createArrayFrom(dataTable, columnNameMap))
+            ];
+        }
+    }
+    else {
+        sqlData[gegevensgroep] = [ createArrayFrom(dataTable, columnNameMap) ];
+    }
+}
+
+Given(/^de persoon met burgerservicenummer '(\d*)' heeft de volgende '(\w*)' gegevens$/, createPersoonMetGegevensgroep);
+
 Given(/^de persoon met burgerservicenummer '(\d*)' heeft een '(\w*)' met de volgende gegevens$/, function (burgerservicenummer, relatie, dataTable) {
     if(this.context.sqlData === undefined) {
         this.context.sqlData = [];
@@ -42,16 +83,37 @@ Given(/^de persoon met burgerservicenummer '(\d*)' heeft een '(\w*)' met de volg
             ['burger_service_nr', burgerservicenummer]
         ])
     ];
+
+    const collectieData = relatie === 'reisdocument'
+        ? createCollectieDataZonderVolgNrFromArray(createArrayFrom(dataTable, columnNameMap))
+        : createCollectieDataFromArray(relatie, createArrayFrom(dataTable, columnNameMap));
+
     sqlData[`${relatie}-${getNextStapelNr(sqlData, relatie)}`] = [
-        createCollectieDataFromArray(relatie, createArrayFrom(dataTable, columnNameMap))
+        collectieData
     ];
 });
 
 Given(/^de persoon heeft een '(\w*)' met de volgende gegevens$/, function(relatie, dataTable) {
     let sqlData = this.context.sqlData.at(-1);
 
-    sqlData[`${relatie}-${getNextStapelNr(sqlData, relatie)}`] = [
-        createCollectieDataFromArray(relatie, createArrayFrom(dataTable, columnNameMap), stapelNr)
+    const stapelNr = getNextStapelNr(sqlData, relatie);
+    const collectieData = relatie === 'reisdocument'
+        ? createCollectieDataZonderVolgNrFromArray(createArrayFrom(dataTable, columnNameMap), stapelNr)
+        : createCollectieDataFromArray(relatie, createArrayFrom(dataTable, columnNameMap), stapelNr);
+
+    sqlData[`${relatie}-${stapelNr}`] = [
+        collectieData
+    ];
+});
+
+Given(/^de persoon heeft de volgende '(\w*)' gegevens$/, async function (gegevensgroep, dataTable) {
+    let sqlData = this.context.sqlData.at(-1);
+
+    sqlData[gegevensgroep] = [
+        gegevensgroep === 'inschrijving'
+            ? createArrayFrom(dataTable, columnNameMap)
+            : createVoorkomenDataFromArray(createArrayFrom(dataTable, columnNameMap)) 
+
     ];
 });
 
@@ -69,11 +131,15 @@ When(/^reisdocumenten wordt gezocht met de volgende parameters$/, async function
             sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
         }
 
+        await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
+
         const result = await handleOAuthRequest(accessToken, this.context.oAuth, this.context.afnemerID, this.context.proxyUrl, dataTable);
         this.context.response = result.response;
         accessToken = result.accessToken;
     }
     else {
+        await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
+
         this.context.response = await postBevragenRequestWithBasicAuth(this.context.proxyUrl, this.context.extraHeaders, dataTable);
     }
 });
@@ -92,11 +158,15 @@ When(/^gba reisdocumenten wordt gezocht met de volgende parameters$/, async func
             sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
         }
 
+        await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
+
         const result = await handleOAuthRequest(accessToken, this.context.oAuth, this.context.afnemerID, this.context.apiUrl, dataTable);
         this.context.response = result.response;
         accessToken = result.accessToken;
     }
     else {
+        await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
+
         this.context.response = await postBevragenRequestWithBasicAuth(this.context.apiUrl, this.context.extraHeaders, dataTable);
     }
 });
@@ -177,6 +247,23 @@ After({tags: '@fout-case'}, async function() {
     const expected = this.context.expected;
 
     actual.should.deep.equalInAnyOrder(expected, `actual: ${JSON.stringify(actual, null, '\t')}\nexpected: ${JSON.stringify(expected, null, '\t')}`);
+});
+
+Before(function() {
+    if(this.context.sql.useDb && pool === undefined) {
+        pool = new Pool(this.context.sql.poolConfig);
+        logSqlStatements = this.context.sql.logStatements;
+    }
+});
+
+After(async function() {
+    if(pool === undefined ||
+        !this.context.sql.cleanup ||
+        this.context.sqlData === undefined) {
+        return;
+    }
+
+    await rollbackSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
 });
 
 function getNextStapelNr(sqlData, relatie) {

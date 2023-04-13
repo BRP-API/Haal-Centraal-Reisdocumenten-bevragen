@@ -1,6 +1,7 @@
-﻿using System.IO.Compression;
+﻿using Microsoft.AspNetCore.Http;
+using System.IO.Compression;
 
-namespace HaalCentraal.ReisdocumentService.Extensions;
+namespace Reisdocument.Infrastructure.Http;
 
 public static class HttpRequestExtensions
 {
@@ -35,7 +36,7 @@ public static class HttpRequestExtensions
         {
             request.Body.Seek(0, SeekOrigin.Begin);
 
-            var gzipStream = new GZipStream(request.Body, CompressionMode.Decompress);
+            GZipStream gzipStream = new(request.Body, CompressionMode.Decompress);
             StreamReader streamReader = new(gzipStream, leaveOpen: true);
 
             return await streamReader.ReadToEndAsync();

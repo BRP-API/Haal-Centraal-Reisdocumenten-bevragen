@@ -1,14 +1,27 @@
 class World {
     constructor(parameters) {
         this.context = parameters;
-        this.context.proxyUrl = "http://localhost:5010/haalcentraal/api";
-        this.context.apiUrl = "";
+        this.context.proxyUrl = "http://localhost:5010/haalcentraal/api/reisdocumenten";
+        this.context.apiUrl = "http://localhost:8001/haalcentraal/api/reisdocumenten";
         this.context.extraHeaders = [
             { "naam": "Authorization", "waarde": "" }
         ];
+        this.context.sql = {
+            useDb: true,
+            logStatements: true,
+            cleanup: true,
+            poolConfig: {
+                user: "",
+                host: "localhost",
+                database: "rvig_haalcentraal_testdata",
+                password: "",
+                port: 5432,
+                allowExitOnIdle: true
+            }
+        };
         this.context.oAuth = {
-            enable: false,
-            accessTokenUrl: "",
+            enable: true,
+            accessTokenUrl: "https://login.dev.idsecure.nl/nidp/oauth/nam/token",
             clients:[
                 {
                     afnemerID: "000008",

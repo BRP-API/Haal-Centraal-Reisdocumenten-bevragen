@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Reisdocument.Infrastructure\Reisdocument.Infrastructure.csproj" />
     <ProjectReference Include="..\Reisdocument.Validatie\Reisdocument.Validatie.csproj" />
   </ItemGroup>
 
