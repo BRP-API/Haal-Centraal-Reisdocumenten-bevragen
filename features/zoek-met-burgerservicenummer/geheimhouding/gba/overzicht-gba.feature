@@ -3,7 +3,7 @@
 @gba
 Functionaliteit: gba geheimhouding leveren bij ZoekMetBurgerservicenummer
 
-  Wanneer een consumer van de BRP API gegevens bevraagt van een persoon die geen toestemming heeft gegeven voor het verstrekken van zijn gegevens aan derden
+  Wanneer een consumer van de Reisdocumenten API gegevens bevraagt van een persoon die geen toestemming heeft gegeven voor het verstrekken van zijn gegevens aan derden
   Dan wil de consumer hiervan worden geattendeerd middels een indicatie bij de gevraagde gegevens
 
   Achtergrond:
