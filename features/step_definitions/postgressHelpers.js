@@ -1,34 +1,40 @@
+function noSqlData(sqlData) {
+    return sqlData === undefined ||
+           (sqlData.length === 1 && Object.keys(sqlData[0]).length === 0);
+}
 async function executeSqlStatements(sqlData, pool, tableNameMap, logSqlStatements) {
-    if (sqlData !== undefined && pool !== undefined) {
-        const client = await pool.connect();
-        try {
-            await client.query('BEGIN');
+    if (pool === undefined || noSqlData(sqlData)) {
+            return;
+        }
 
-            let adres_id;
-            for(const sqlDataElement of sqlData) {
-                if(adres_id !== undefined && sqlDataElement['adres'] === undefined) {
-                    sqlDataElement.ids = {
-                        adres_id: adres_id
-                    }
-                }
+    const client = await pool.connect();
+    try {
+        await client.query('BEGIN');
 
-                await executeSql(client, sqlDataElement, tableNameMap, logSqlStatements);
-
-                if(sqlDataElement.ids.adres_id !== undefined){
-                    adres_id = sqlDataElement.ids.adres_id;
+        let adres_id;
+        for(const sqlDataElement of sqlData) {
+            if(adres_id !== undefined && sqlDataElement['adres'] === undefined) {
+                sqlDataElement.ids = {
+                    adres_id: adres_id
                 }
             }
 
-            await client.query('COMMIT');
-        }
-        catch(ex) {
-            console.log(ex);
-            await client.query('ROLLBACK');
-        }
-        finally {
-            if(client !== undefined){
-                client.release();
+            await executeSql(client, sqlDataElement, tableNameMap, logSqlStatements);
+
+            if(sqlDataElement.ids.adres_id !== undefined){
+                adres_id = sqlDataElement.ids.adres_id;
             }
+        }
+
+        await client.query('COMMIT');
+    }
+    catch(ex) {
+        console.log(ex);
+        await client.query('ROLLBACK');
+    }
+    finally {
+        if(client !== undefined){
+            client.release();
         }
     }
 }
@@ -310,4 +316,4 @@ async function deleteAutorisatieRecords(client, tableNameMap, logSqlStatements) 
     await client.query(statement);
 }
 
-module.exports = { executeSqlStatements, rollbackSqlStatements }
+module.exports = { noSqlData, executeSqlStatements, rollbackSqlStatements }
