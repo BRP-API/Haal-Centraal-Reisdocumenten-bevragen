@@ -4,14 +4,14 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
 
   Abstract Scenario: '<type>' is in onderzoek en de velden reisdocumentnummer, soort en datumEindeGeldigheid worden gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-    | naam                                                 | waarde                    |
-    | soort reisdocument (35.10)                           | PN                        |
-    | nummer reisdocument (35.20)                          | NE3663258                 |
-    | datum einde geldigheid reisdocument (35.50)          | 20240506                  |
-    | datum inhouding/vermissing reisdocument (35.60)      | 20230405                  |
-    | aanduiding inhouding/vermissing reisdocument (35.70) | I                         |
-    | aanduiding in onderzoek (83.10)                      | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)                       | 20230506                  |
+    | naam                                                                    | waarde                    |
+    | soort reisdocument (35.10)                                              | PN                        |
+    | nummer reisdocument (35.20)                                             | NE3663258                 |
+    | datum einde geldigheid reisdocument (35.50)                             | 20240506                  |
+    | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405                  |
+    | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
+    | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)                                          | 20230506                  |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
@@ -46,14 +46,14 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
 
   Abstract Scenario: '<type>' is in onderzoek en de velden reisdocumentnummer, soort en datumEindeGeldigheid worden gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-    | naam                                                 | waarde                    |
-    | soort reisdocument (35.10)                           | PN                        |
-    | nummer reisdocument (35.20)                          | NE3663258                 |
-    | datum einde geldigheid reisdocument (35.50)          | 20240506                  |
-    | datum inhouding/vermissing reisdocument (35.60)      | 20230405                  |
-    | aanduiding inhouding/vermissing reisdocument (35.70) | I                         |
-    | aanduiding in onderzoek (83.10)                      | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)                       | 20230506                  |
+    | naam                                                                    | waarde                    |
+    | soort reisdocument (35.10)                                              | PN                        |
+    | nummer reisdocument (35.20)                                             | NE3663258                 |
+    | datum einde geldigheid reisdocument (35.50)                             | 20240506                  |
+    | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405                  |
+    | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
+    | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)                                          | 20230506                  |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
@@ -81,14 +81,14 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
 
   Abstract Scenario: '<type>' is in onderzoek en de inhouding/vermissing velden wordt gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-    | naam                                                 | waarde                    |
-    | soort reisdocument (35.10)                           | PN                        |
-    | nummer reisdocument (35.20)                          | NE3663258                 |
-    | datum einde geldigheid reisdocument (35.50)          | 20240506                  |
-    | datum inhouding/vermissing reisdocument (35.60)      | 20230405                  |
-    | aanduiding inhouding/vermissing reisdocument (35.70) | I                         |
-    | aanduiding in onderzoek (83.10)                      | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)                       | 20230506                  |
+    | naam                                                                    | waarde                    |
+    | soort reisdocument (35.10)                                              | PN                        |
+    | nummer reisdocument (35.20)                                             | NE3663258                 |
+    | datum einde geldigheid reisdocument (35.50)                             | 20240506                  |
+    | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405                  |
+    | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
+    | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)                                          | 20230506                  |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
@@ -120,14 +120,14 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
 
   Abstract Scenario: '<type>' is in onderzoek en de inhouding/vermissing velden wordt gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-    | naam                                                 | waarde                    |
-    | soort reisdocument (35.10)                           | PN                        |
-    | nummer reisdocument (35.20)                          | NE3663258                 |
-    | datum einde geldigheid reisdocument (35.50)          | 20240506                  |
-    | datum inhouding/vermissing reisdocument (35.60)      | 20230405                  |
-    | aanduiding inhouding/vermissing reisdocument (35.70) | I                         |
-    | aanduiding in onderzoek (83.10)                      | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)                       | 20230506                  |
+    | naam                                                                    | waarde                    |
+    | soort reisdocument (35.10)                                              | PN                        |
+    | nummer reisdocument (35.20)                                             | NE3663258                 |
+    | datum einde geldigheid reisdocument (35.50)                             | 20240506                  |
+    | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405                  |
+    | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
+    | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)                                          | 20230506                  |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |

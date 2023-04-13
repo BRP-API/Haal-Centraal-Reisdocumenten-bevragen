@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reisdocument.Validatie.Test
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4EBE9F10-3135-4F31-A8D7-BA79751684D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reisdocument.Infrastructure", "src\Reisdocument.Infrastructure\Reisdocument.Infrastructure.csproj", "{9DD1E5CE-7E1F-4A71-A52F-AC856B6B8152}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{4EBE9F10-3135-4F31-A8D7-BA79751684D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EBE9F10-3135-4F31-A8D7-BA79751684D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EBE9F10-3135-4F31-A8D7-BA79751684D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD1E5CE-7E1F-4A71-A52F-AC856B6B8152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD1E5CE-7E1F-4A71-A52F-AC856B6B8152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD1E5CE-7E1F-4A71-A52F-AC856B6B8152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD1E5CE-7E1F-4A71-A52F-AC856B6B8152}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{31054D26-1970-4C80-8283-DF519D0F561D} = {9D8947B1-20AC-460A-BBFB-5B4E9C91C9F5}
 		{4BB40785-89AF-440D-ADDD-825DB6A5C7DE} = {9D8947B1-20AC-460A-BBFB-5B4E9C91C9F5}
 		{9C36889C-6851-4F0E-A37C-B772B8AFE598} = {9D8947B1-20AC-460A-BBFB-5B4E9C91C9F5}
+		{9DD1E5CE-7E1F-4A71-A52F-AC856B6B8152} = {9D8947B1-20AC-460A-BBFB-5B4E9C91C9F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA083D48-9A4A-49AE-8EB5-5090DEC8ECAA}
