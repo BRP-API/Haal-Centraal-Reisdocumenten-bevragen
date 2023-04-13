@@ -18,7 +18,7 @@ Rule: De reisdocumentnummer parameter is een verplichte parameter
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: reisdocumentnummer.          |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code     | name               | reason                  |
     | required | reisdocumentnummer | Parameter is verplicht. |
@@ -40,7 +40,7 @@ Rule: De reisdocumentnummer parameter bevat een lijst met minimaal één reisdoc
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: reisdocumentnummer.          |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code     | name               | reason                          |
     | minItems | reisdocumentnummer | Array bevat minder dan 1 items. |
@@ -62,7 +62,7 @@ Rule: Een reisdocumentnummer is een string bestaande uit exact 9 cijfers en hoof
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: reisdocumentnummer[0].       |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code    | name                  | reason                                         |
     | pattern | reisdocumentnummer[0] | Waarde voldoet niet aan patroon ^[A-Z0-9]{9}$. |
@@ -91,7 +91,7 @@ Rule: De reisdocumentnummer parameter bevat een lijst van maximaal 1 reisdocumen
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: reisdocumentnummer.          |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code     | name               | reason                        |
     | maxItems | reisdocumentnummer | Array bevat meer dan 1 items. |
@@ -112,7 +112,7 @@ Rule: De gemeenteVanInschrijving parameter is een verplichte parameter
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: gemeenteVanInschrijving.     |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code     | name                    | reason                  |
     | required | gemeenteVanInschrijving | Parameter is verplicht. |
@@ -134,7 +134,7 @@ Rule: Een gemeenteVanInschrijving is een string bestaande uit exact 4 cijfers
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: gemeenteVanInschrijving.     |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code    | name                    | reason                                      |
     | pattern | gemeenteVanInschrijving | Waarde voldoet niet aan patroon ^[0-9]{4}$. |
