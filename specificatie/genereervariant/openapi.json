@@ -13,10 +13,10 @@
     "version" : "2.0.0"
   },
   "servers" : [ {
-    "url" : "https://proefomgeving.haalcentraal.nl/haalcentraal/api",
+    "url" : "https://proefomgeving.haalcentraal.nl/haalcentraal/api/reisdocumenten",
     "description" : "Proef omgeving\n"
   }, {
-    "url" : "http://localhost:5001/haalcentraal/api",
+    "url" : "http://localhost:5001/haalcentraal/api/reisdocumenten",
     "description" : "Lokaal\n"
   } ],
   "tags" : [ {
