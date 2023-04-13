@@ -11,9 +11,9 @@ Functionaliteit: autorisatie voor het gebruik van de API RaadpleegMetReisdocumen
   Voorlopig wordt de reisdocumenten bevragen API alleen aangeboden aan gemeenten voor het raadplegen van reisdocumenten van eigen inwoners.
   Gebruikers zijn daarom verplicht om de parameter gemeenteVanInschrijving te gebruiken en mogen dan alleen de gemeentecode van de eigen gemeente gebruiken.
 
-  Autorisatie wordt verkregen met behulp van een Oauth 2 token. 
+  Autorisatie wordt verkregen met behulp van een OAuth 2 token. 
   In het verkregen token is de afnemerindicatie opgenomen die de afnemer uniek identificeert. Op basis van de afnemerindicatie kan de autorisatie worden opgezocht.
-  Wanneer de afnemer een gemeente is, is er ook een gemeentecode opgenomen in de Oauth token.
+  Wanneer de afnemer een gemeente is, is er ook een gemeentecode opgenomen in de OAuth token.
 
   Voor één afnemer kunnen er meerdere rijen zijn in de autorisatietabel, maar daarvan kan er maar één actueel zijn. Alleen de actuele mag worden gebruikt.
   Een autorisatie is actueel wanneer de Datum ingang (35.99.98) in het verleden ligt en Datum beëindiging tabelregel (35.99.99) leeg is of in de toekomst ligt.
@@ -42,7 +42,7 @@ Functionaliteit: autorisatie voor het gebruik van de API RaadpleegMetReisdocumen
     en die is gelijk aan de waarde van gemeenteCode in de 'claim', 
     dan wordt niet gekeken naar de autorisatie van de afnemer
 
-    Scenario: Gemeente is niet geautoriseerd voor reisdocumenten maar zoekt een reisdocument voor een eigen inwoner met parameter gemeenteVanInschrijving
+    Scenario: Gemeente zoekt reisdocumenten van een eigen inwoner door het opgeven van eigen gemeentecode als gemeenteVanInschrijving
       Gegeven de afnemer met indicatie '000008' heeft de volgende 'autorisatie' gegevens
       | Rubrieknummer ad hoc (35.95.60) | Medium ad hoc (35.95.67) | Datum ingang (35.99.98) |
       | 10120                           | N                        | 20201128                |
@@ -59,7 +59,7 @@ Functionaliteit: autorisatie voor het gebruik van de API RaadpleegMetReisdocumen
       Dan heeft de response 1 reisdocument
 
     @fout-case
-    Scenario: Gemeente is niet geautoriseerd voor reisdocumenten en zoekt een reisdocument voor een inwoner van een andere gemeente met parameter gemeenteVanInschrijving
+    Scenario: Gemeente zoekt een reisdocument voor een inwoner van een andere gemeente met parameter gemeenteVanInschrijving
       Gegeven de afnemer met indicatie '000008' heeft de volgende 'autorisatie' gegevens
       | Rubrieknummer ad hoc (35.95.60) | Medium ad hoc (35.95.67) | Datum ingang (35.99.98) |
       | 10120                           | N                        | 20201128                |
@@ -81,6 +81,29 @@ Functionaliteit: autorisatie voor het gebruik van de API RaadpleegMetReisdocumen
       | detail   | Uw autorisatie staat alleen toe dat u reisdocumenten van inwoners van uw gemeente raadpleegt. |
       | code     | unauthorized                                                                                  |
       | instance | /haalcentraal/api/reisdocumenten/reisdocumenten                                               |
+
+    Scenario: Gemeente zoekt een reisdocument voor een inwoner van een andere gemeente door het opgeven van eigen gemeentecode als gemeenteVanInschrijving
+      Gegeven de persoon met burgerservicenummer '000000024' heeft een 'reisdocument' met de volgende gegevens
+      | naam                        | waarde    |
+      | soort reisdocument (35.10)  | NI        |
+      | nummer reisdocument (35.20) | ID123NL45 |
+      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      | gemeente van inschrijving (09.10) |
+      | 0530                              |
+      En de afnemer met indicatie '000008' heeft de volgende 'autorisatie' gegevens
+      | Rubrieknummer ad hoc (35.95.60) | Medium ad hoc (35.95.67) | Datum ingang (35.99.98) |
+      | 10120                           | N                        | 20201128                |
+      En de geauthenticeerde consumer heeft de volgende 'claim' gegevens
+      | naam         | waarde |
+      | afnemerID    | 000008 |
+      | gemeenteCode | 0800   |
+      Als gba reisdocumenten wordt gezocht met de volgende parameters
+      | naam                    | waarde                         |
+      | type                    | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer      | ID123NL45                      |
+      | gemeenteVanInschrijving | 0800                           |
+      | fields                  | reisdocumentnummer             |
+      Dan heeft de response 0 reisdocumenten
 
     @fout-case
     Scenario: Gebruik van de parameter gemeenteVanInschrijving is verplicht
