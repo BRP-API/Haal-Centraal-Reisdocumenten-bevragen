@@ -19,8 +19,8 @@ public class RaadpleegMetReisdocumentnummerQueryValidatorTests
     [Fact]
     public void ReisdocumentnummerParameterMagNietNullZijn()
     {
-        List<string> list = null;
-        input.Setup(i => i.Reisdocumentnummer).Returns(list);
+        List<string>? list = null;
+        input.Setup(i => i.Reisdocumentnummer).Returns(list!);
 
         var result = sut.TestValidate(input.Object);
 
@@ -63,5 +63,33 @@ public class RaadpleegMetReisdocumentnummerQueryValidatorTests
 
         result.ShouldHaveValidationErrorFor(m => m.Reisdocumentnummer)
             .WithErrorMessage("pattern||Waarde voldoet niet aan patroon ^[A-Z0-9]{9}$.");
+    }
+
+    [Fact]
+    public void GemeenteVanInschrijvingMagNietNullZijn()
+    {
+        string? gemeenteVanInschrijving = null;
+        input.Setup(i => i.GemeenteVanInschrijving).Returns(gemeenteVanInschrijving!);
+
+        var result = sut.TestValidate(input.Object);
+
+        result.ShouldHaveValidationErrorFor(m => m.GemeenteVanInschrijving)
+            .WithErrorMessage("required||Parameter is verplicht.");
+    }
+
+    [InlineData("")]
+    [InlineData("0")]
+    [InlineData("01234")]
+    [InlineData("O518")]
+    [InlineData("05l8")]
+    [Theory]
+    public void GemeenteVanInschrijvingVoldoetNietAanPattern(string gemeenteVanInschrijving)
+    {
+        input.Setup(i => i.GemeenteVanInschrijving).Returns(gemeenteVanInschrijving!);
+
+        var result = sut.TestValidate(input.Object);
+
+        result.ShouldHaveValidationErrorFor(m => m.GemeenteVanInschrijving)
+            .WithErrorMessage("pattern||Waarde voldoet niet aan patroon ^[0-9]{4}$.");
     }
 }
