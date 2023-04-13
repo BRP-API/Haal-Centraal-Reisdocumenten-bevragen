@@ -113,7 +113,7 @@ Rule: De gemeenteVanInschrijving parameter is een verplichte parameter
     | code     | name                    | reason                  |
     | required | gemeenteVanInschrijving | Parameter is verplicht. |
 
-Rule: Een gemeenteVanInschrijving is een string bestaande uit exact 9 cijfers
+Rule: Een gemeenteVanInschrijving is een string bestaande uit exact 4 cijfers
 
   @fout-case
   Abstract Scenario: <titel>
@@ -136,8 +136,8 @@ Rule: Een gemeenteVanInschrijving is een string bestaande uit exact 9 cijfers
     | pattern | gemeenteVanInschrijving | Waarde voldoet niet aan patroon ^[0-9]{4}$. |
 
     Voorbeelden:
-    | gemeenteVanInschrijving | titel                                                                           |
-    | 123                     | De opgegeven gemeenteVanInschrijving is een string met minder dan negen cijfers |
-    | 12345                   | De opgegeven gemeenteVanInschrijving is een string met meer dan negen cijfers   |
-    | 123O                    | De opgegeven gemeenteVanInschrijving is een string met een letter               |
-    | 12.4                    | De opgegeven gemeenteVanInschrijving bevat niet-cijfer                          |
+    | gemeenteVanInschrijving | titel                                                                          |
+    | 123                     | De opgegeven gemeenteVanInschrijving is een string met minder dan vier cijfers |
+    | 12345                   | De opgegeven gemeenteVanInschrijving is een string met meer dan vier cijfers   |
+    | 123O                    | De opgegeven gemeenteVanInschrijving is een string met een letter              |
+    | 12.4                    | De opgegeven gemeenteVanInschrijving bevat niet-cijfer                         |
