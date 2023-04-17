@@ -77,7 +77,7 @@ Rule: opschortingBijhouding wordt automatisch geleverd indien van toepassing
       | fields                  | houder.burgerservicenummer     |
       Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
       | naam                                     | waarde         |
-      | burgerservicenummer                      | 000000048      |
+      | burgerservicenummer                      | 000000024      |
       | opschortingBijhouding.reden.code         | <opschorting>  |
       | opschortingBijhouding.reden.omschrijving | <omschrijving> |
       | opschortingBijhouding.datum              | 20220829       |
@@ -114,7 +114,7 @@ Rule: opschortingBijhouding wordt automatisch geleverd indien van toepassing
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam     | waarde     |
       | <veld 1> | <waarde 1> |
-      | >veld 2> | <waarde 2> |
+      | <veld 2> | <waarde 2> |
       En heeft het 'reisdocument' de volgende 'houder' gegevens
       | naam                                     | waarde     |
       | opschortingBijhouding.reden.code         | O          |

@@ -17,10 +17,11 @@ Functionaliteit: Reisdocument velden vragen met fields
 
   Scenario: 'nummer reisdocument (35.20)' wordt gevraagd met field pad 'reisdocumentnummer'
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam               | waarde                         |
-    | type               | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer | NE3663258                      |
-    | fields             | reisdocumentnummer             |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | NE3663258                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | reisdocumentnummer             |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam               | waarde    |
     | reisdocumentnummer | NE3663258 |
