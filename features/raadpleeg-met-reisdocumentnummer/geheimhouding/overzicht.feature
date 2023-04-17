@@ -78,7 +78,7 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | houder.geheimhoudingPersoonsgegevens | true       |
 
       Voorbeelden:
-      | fields                           | veld 1                     | waarde 1  | veld 2                     | waarde 2           | veld3                            | waarde3            |
+      | fields                           | veld 1                     | waarde 1  | veld 2                     | waarde 2           | veld 3                           | waarde 3           |
       | reisdocumentnummer               | reisdocumentnummer         | NE3663258 |                            |                    |                                  |                    |
       | soort                            | soort.code                 | PN        | soort.omschrijving         | Nationaal paspoort |                                  |                    |
       | reisdocumentnummer,soort         | reisdocumentnummer         | NE3663258 | soort.code                 | PN                 | soort.omschrijving               | Nationaal paspoort |
