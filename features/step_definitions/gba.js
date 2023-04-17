@@ -24,6 +24,8 @@ const columnNameMap = new Map([
     ['datum opschorting bijhouding (67.10)', 'bijhouding_opschort_datum' ],
     ['reden opschorting bijhouding (67.20)', 'bijhouding_opschort_reden'],
 
+    ['indicatie geheim (70.10)', 'geheim_ind'],
+
     ['aanduiding in onderzoek (83.10)', 'onderzoek_gegevens_aand' ],
     ['datum ingang onderzoek (83.20)', 'onderzoek_start_datum' ],
 

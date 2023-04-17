@@ -230,7 +230,9 @@ After({tags: 'not @fout-case'}, function() {
     const actual = this.context?.response?.data.reisdocumenten !== undefined
         ? this.context.response.data.reisdocumenten
         : [];
-    const expected = this.context.expected;
+    const expected = this.context.expected !== undefined
+        ? this.context.expected
+        : [];
 
     actual.should.deep.equalInAnyOrder(expected, `actual: ${JSON.stringify(actual, null, '\t')}\nexpected: ${JSON.stringify(expected, null, '\t')}`);
 });
