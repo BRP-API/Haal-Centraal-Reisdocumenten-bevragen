@@ -10,8 +10,6 @@ public class RaadpleegMetReisdocumentnummerQueryValidator : AbstractValidator<IR
     const string MaxItemsErrorMessage = "maxItems||Array bevat meer dan {0} items.";
     const string ReisdocumentnummerPattern = @"^[A-Z0-9]{9}$";
     const string ReisdocumentnummerPatternErrorMessage = $"pattern||Waarde voldoet niet aan patroon {ReisdocumentnummerPattern}.";
-    const string GemeenteVanInschrijvingPattern = @"^[0-9]{4}$";
-    const string GemeenteVanInschrijvingPatternErrorMessage = $"pattern||Waarde voldoet niet aan patroon {GemeenteVanInschrijvingPattern}.";
 
     public RaadpleegMetReisdocumentnummerQueryValidator()
     {
@@ -23,10 +21,5 @@ public class RaadpleegMetReisdocumentnummerQueryValidator : AbstractValidator<IR
 
         RuleForEach(x => x.Reisdocumentnummer)
             .Matches(ReisdocumentnummerPattern).WithMessage(ReisdocumentnummerPatternErrorMessage);
-
-        RuleFor(x => x.GemeenteVanInschrijving)
-            .Cascade(CascadeMode.Stop)
-            .NotNull().WithMessage(RequiredErrorMessage)
-            .Matches(GemeenteVanInschrijvingPattern).WithMessage(GemeenteVanInschrijvingPatternErrorMessage);
     }
 }
