@@ -108,7 +108,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | 010100                  | hele groep identificatienummers |
     | 010120                  | burgerservicenummer             |
 
-  Abstract Scenario: '<type>' is in onderzoek en de <fields> wordt gevraagd
+  Abstract Scenario: 'persoon' is in onderzoek en de <fields> wordt gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende gegevens 
     | naam                            | waarde   |
     | aanduiding in onderzoek (83.10) | 010000   |
