@@ -74,13 +74,13 @@ Functionaliteit: autorisatie voor het gebruik van de API ZoekMetBurgerservicenum
       | gemeenteVanInschrijving | 0599                                                                       |
       | fields                  | reisdocumentnummer,soort,datumEindeGeldigheid,inhoudingOfVermissing,houder |
       Dan heeft de response een object met de volgende gegevens
-      | naam     | waarde                                                                                        |
-      | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.3                                   |
-      | title    | U bent niet geautoriseerd voor deze vraag.                                                    |
-      | status   | 403                                                                                           |
-      | detail   | Uw autorisatie staat alleen toe dat u reisdocumenten van inwoners van uw gemeente raadpleegt. |
-      | code     | unauthorized                                                                                  |
-      | instance | /haalcentraal/api/reisdocumenten/reisdocumenten                                               |
+      | naam     | waarde                                                                      |
+      | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.3                 |
+      | title    | U bent niet geautoriseerd voor deze vraag.                                  |
+      | status   | 403                                                                         |
+      | detail   | Je mag alleen reisdocumenten van inwoners uit de eigen gemeente raadplegen. |
+      | code     | unauthorized                                                                |
+      | instance | /haalcentraal/api/reisdocumenten/reisdocumenten                             |
   
     Scenario: Gemeente zoekt reisdocumenten van een inwonder van een andere gemeente en geeft zijn eigen gemeentecode op als gemeenteVanInschrijving
       Gegeven de persoon met burgerservicenummer '000000024' heeft een 'reisdocument' met de volgende gegevens
