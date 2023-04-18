@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Reisdocument.Validatie;
+using Reisdocument.Infrastructure;
 
 namespace HaalCentraal.ReisdocumentService.Extensions;
 
