@@ -41,7 +41,7 @@ namespace HaalCentraal.ReisdocumentProxy.Generated
     public partial class RaadpleegMetReisdocumentnummerResponse : ReisdocumentenQueryResponse
     {
         [Newtonsoft.Json.JsonProperty("reisdocumenten", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<Reisdocument> Reisdocumenten { get; set; }
+        public System.Collections.Generic.List<Reisdocument> Reisdocumenten { get; set; }
 
     }
 
@@ -49,27 +49,7 @@ namespace HaalCentraal.ReisdocumentProxy.Generated
     public partial class ZoekMetBurgerservicenummerResponse : ReisdocumentenQueryResponse
     {
         [Newtonsoft.Json.JsonProperty("reisdocumenten", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<Reisdocument> Reisdocumenten { get; set; }
-
-    }
-
-    [Newtonsoft.Json.JsonConverter(typeof(JsonInheritanceConverter), "type")]
-    [JsonInheritanceAttribute("RaadpleegMetReisdocumentnummer", typeof(RaadpleegMetReisdocumentnummer))]
-    [JsonInheritanceAttribute("ZoekMetBurgerservicenummer", typeof(ZoekMetBurgerservicenummer))]
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.18.2.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class ReisdocumentenQuery
-    {
-        [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Always)]
-        public System.Collections.Generic.ICollection<string> Fields { get; set; } = new System.Collections.ObjectModel.Collection<string>();
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [Newtonsoft.Json.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
+        public System.Collections.Generic.List<Reisdocument> Reisdocumenten { get; set; }
 
     }
 
@@ -77,7 +57,7 @@ namespace HaalCentraal.ReisdocumentProxy.Generated
     public partial class RaadpleegMetReisdocumentnummer : ReisdocumentenQuery
     {
         [Newtonsoft.Json.JsonProperty("reisdocumentnummer", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<string> Reisdocumentnummer { get; set; }
+        public System.Collections.Generic.List<string> Reisdocumentnummer { get; set; }
 
     }
 
@@ -96,7 +76,7 @@ namespace HaalCentraal.ReisdocumentProxy.Generated
         /// Foutmelding per fout in een parameter. Alle gevonden fouten worden één keer teruggemeld.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidParams", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<InvalidParams> InvalidParams { get; set; }
+        public System.Collections.Generic.List<InvalidParams> InvalidParams { get; set; }
 
     }
 
