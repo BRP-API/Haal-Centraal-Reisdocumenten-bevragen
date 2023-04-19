@@ -26,8 +26,16 @@ const columnNameMap = new Map([
 
     ['indicatie geheim (70.10)', 'geheim_ind'],
 
+    ['gemeente document (82.10)', 'doc_gemeente_code' ],
+    ['datum document (82.20)', 'doc_datum' ],
+    ['beschrijving document (82.30)', 'doc_beschrijving' ],
+
     ['aanduiding in onderzoek (83.10)', 'onderzoek_gegevens_aand' ],
     ['datum ingang onderzoek (83.20)', 'onderzoek_start_datum' ],
+
+    ['ingangsdatum geldigheid (85.10)', 'geldigheid_start_datum' ],
+
+    ['datum van opneming (86.10)', 'opneming_datum' ],
 
 ]);
 
