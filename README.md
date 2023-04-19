@@ -28,9 +28,9 @@ Gebruik de Reisdocumenten bevragen API in combinatie met (een van de) andere BRP
 ## Contact
 
 * Bug Melden
-  [Maak een bug issue aan >>](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/issues/new?assignees=&labels=bug&template=bug_report.md&title=)
+  [Maak een bug issue aan >>](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/issues/new?assignees=&labels=bug&template=bug_report.md&title=)
 * Verbeteringen doorgeven
-  [Maak een verbeter issue aan >>](https://github.com/VNG-Realisatie/Haal-Centraal-Reisdocumenten-bevragen/issues/new?assignees=&labels=enhancement&template=enhancement.md&title=)
+  [Maak een verbeter issue aan >>](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/issues/new?assignees=&labels=enhancement&template=enhancement.md&title=)
 
 * Product Owner: Cathy Dingemanse, [c.dingemanse@comites.nl](mailto:c.dingemanse@comites.nl)
 * Designer: Johan Boer, [johan.boer@vng.nl](mailto:johan.boer@vng.nl)
