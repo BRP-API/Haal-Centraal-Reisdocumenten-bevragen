@@ -51,11 +51,11 @@ jobs:
           username: ${{ secrets.P5_CR_USER }}
           password: ${{ secrets.P5_CR_PWD }}
       - name: Start containers
-        run: docker compose -f .docker/db.yml -f .docker/reisdocument.yml -f docker-compose.yml up -d
+        run: docker compose -f .docker/db.yml -f .docker/reisdocumenten-api.yml -f docker-compose.yml up -d
       - name: Test functional specs
         run: sh ./scripts/specs-verify.sh '${{ secrets.TEST_SETTINGS }}'
       - name: Stop containers
-        run: docker compose -f .docker/db.yml -f .docker/reisdocument.yml -f docker-compose.yml down
+        run: docker compose -f .docker/db.yml -f .docker/reisdocumenten-api.yml -f docker-compose.yml down
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2.1.0
         with:
