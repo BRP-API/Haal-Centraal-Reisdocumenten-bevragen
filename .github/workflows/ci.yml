@@ -53,7 +53,7 @@ jobs:
       - name: Start containers
         run: docker compose up -d
       - name: Test functional specs
-        run: sh ./scripts/specs-verify.sh ${{ secrets.TEST_SETTINGS }}
+        run: sh ./scripts/specs-verify.sh '${{ secrets.TEST_SETTINGS }}'
       - name: Stop containers
         run: docker compose down
       - name: Login to GitHub Container Registry
