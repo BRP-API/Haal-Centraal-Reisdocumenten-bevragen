@@ -19,8 +19,8 @@ public class RaadpleegMetReisdocumentnummerQueryValidatorTests
     [Fact]
     public void ReisdocumentnummerParameterMagNietNullZijn()
     {
-        List<string> list = null;
-        input.Setup(i => i.Reisdocumentnummer).Returns(list);
+        List<string>? list = null;
+        input.Setup(i => i.Reisdocumentnummer).Returns(list!);
 
         var result = sut.TestValidate(input.Object);
 

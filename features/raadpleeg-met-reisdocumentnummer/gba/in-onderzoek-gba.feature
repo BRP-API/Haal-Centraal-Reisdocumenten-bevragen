@@ -63,12 +63,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeenteVanInschrijving | 0800                           |
     | fields                  | houder                         |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
-    | naam                                         | waarde                    |
-    | burgerservicenummer                          | 000000152                 |
-    | inOnderzoek.aanduidingGegevensInOnderzoek    | <aanduiding in onderzoek> |
-    | inOnderzoek.datumIngangOnderzoek.type        | Datum                     |
-    | inOnderzoek.datumIngangOnderzoek.datum       | 2023-02-01                |
-    | inOnderzoek.datumIngangOnderzoek.langFormaat | 1 februari 2023           |
+    | naam                                      | waarde                    |
+    | burgerservicenummer                       | 000000152                 |
+    | inOnderzoek.aanduidingGegevensInOnderzoek | <aanduiding in onderzoek> |
+    | inOnderzoek.datumIngangOnderzoek          | 20230201                  |
 
     Voorbeelden:
     | aanduiding in onderzoek | type                   |
@@ -98,12 +96,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeenteVanInschrijving | 0800                           |
     | fields                  | houder.burgerservicenummer     |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
-    | naam                                         | waarde                    |
-    | burgerservicenummer                          | 000000152                 |
-    | inOnderzoek.aanduidingGegevensInOnderzoek    | <aanduiding in onderzoek> |
-    | inOnderzoek.datumIngangOnderzoek.type        | Datum                     |
-    | inOnderzoek.datumIngangOnderzoek.datum       | 2023-02-01                |
-    | inOnderzoek.datumIngangOnderzoek.langFormaat | 1 februari 2023           |
+    | naam                                      | waarde                    |
+    | burgerservicenummer                       | 000000152                 |
+    | inOnderzoek.aanduidingGegevensInOnderzoek | <aanduiding in onderzoek> |
+    | inOnderzoek.datumIngangOnderzoek          | 20230201                  |
 
     Voorbeelden:
     | aanduiding in onderzoek | type                   |

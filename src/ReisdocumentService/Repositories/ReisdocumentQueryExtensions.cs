@@ -6,6 +6,8 @@ public static class ReisdocumentQueryExtensions
 {
     public static Specification<GbaReisdocument> ToSpecification(this RaadpleegMetReisdocumentnummer query)
     {
-        return new ReisdocumentnummerSpecification(query.Reisdocumentnummer);
+        return new ReisdocumentnummerSpecification(query.Reisdocumentnummer)
+            .And(new GemeenteVanInschrijvingSpecification(query.GemeenteVanInschrijving!))
+            ;
     }
 }

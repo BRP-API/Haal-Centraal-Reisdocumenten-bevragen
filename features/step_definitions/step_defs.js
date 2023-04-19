@@ -4,7 +4,7 @@ const { createObjectFrom } = require('./dataTable2Object.js');
 const { stringifyValues } = require('./stringify.js');
 const { postBevragenRequestWithBasicAuth, handleOAuthRequest } = require('./handleRequest.js');
 const { Pool } = require('pg');
-const { executeSqlStatements, rollbackSqlStatements } = require('./postgressHelpers.js');
+const { noSqlData, executeSqlStatements, rollbackSqlStatements } = require('./postgressHelpers.js');
 const { Given, When, Then, setWorldConstructor, Before, After } = require('@cucumber/cucumber');
 const deepEqualInAnyOrder = require('deep-equal-in-any-order');
 const should = require('chai').use(deepEqualInAnyOrder).should();
@@ -225,10 +225,14 @@ Then(/^heeft het object de volgende '(.*)' gegevens$/, function (gegevensgroep, 
 
 After({tags: 'not @fout-case'}, function() {
 
+    this.context.response.status.should.equal(200, `response body: ${JSON.stringify(this.context.response.data, null, '\t')}`);
+
     const actual = this.context?.response?.data.reisdocumenten !== undefined
-        ? this.context.response.data.reisdocumenten
+        ? stringifyValues(this.context.response.data.reisdocumenten)
         : [];
-    const expected = this.context.expected;
+    const expected = this.context.expected !== undefined
+        ? this.context.expected
+        : [];
 
     actual.should.deep.equalInAnyOrder(expected, `actual: ${JSON.stringify(actual, null, '\t')}\nexpected: ${JSON.stringify(expected, null, '\t')}`);
 });
@@ -257,9 +261,9 @@ Before(function() {
 });
 
 After(async function() {
-    if(pool === undefined ||
+    if (pool === undefined ||
         !this.context.sql.cleanup ||
-        this.context.sqlData === undefined) {
+        noSqlData(this.context.sqlData)) {
         return;
     }
 

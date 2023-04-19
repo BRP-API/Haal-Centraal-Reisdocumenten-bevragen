@@ -50,6 +50,7 @@ def convert_gba_v_testdata(fields_to_map, gba_v_testdata_file, gba_v_testdata_js
 
 fields_to_map = {
     '01.01.20': 'houder.burgerservicenummer',
+    '08.09.10': 'houder.gemeenteVanInschrijving.code',
     '12.35.10': 'soort.code',
     '12.35.20': 'reisdocumentnummer',
     '12.35.50': 'datumEindeGeldigheid',

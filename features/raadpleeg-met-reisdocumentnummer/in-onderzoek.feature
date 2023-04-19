@@ -155,9 +155,9 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
 
   Abstract Scenario: '<type>' is in onderzoek en de houder velden wordt gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende gegevens 
-    | naam                            | waarde                            |
-    | aanduiding in onderzoek (83.10) | <aanduiding persoon in onderzoek> |
-    | datum ingang onderzoek (83.20)  | 20230201                          |
+    | naam                            | waarde                    |
+    | aanduiding in onderzoek (83.10) | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)  | 20230201                  |
     En de persoon heeft een 'reisdocument' met de volgende gegevens
     | naam                                        | waarde    |
     | soort reisdocument (35.10)                  | PN        |
