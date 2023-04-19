@@ -50,12 +50,12 @@ jobs:
           registry: haalcentraal.azurecr.io
           username: ${{ secrets.P5_CR_USER }}
           password: ${{ secrets.P5_CR_PWD }}
-      # - name: Start containers
-      #   run: docker compose up -d
-      # - name: Test functional specs
-      #   run: npm run specs:verify
-      # - name: Stop containers
-      #   run: docker compose down
+      - name: Start containers
+        run: docker compose up -d
+      - name: Test functional specs
+        run: sh ./scripts/specs-verify.sh ${{ secrets.TEST_SETTINGS }}
+      - name: Stop containers
+        run: docker compose down
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2.1.0
         with:
