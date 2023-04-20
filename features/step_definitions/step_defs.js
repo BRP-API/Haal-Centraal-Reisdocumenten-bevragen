@@ -223,6 +223,15 @@ Then(/^heeft het object de volgende '(.*)' gegevens$/, function (gegevensgroep, 
     this.context.expected[gegevensgroep] = dataTable.hashes();
 });
 
+Then(/^heeft de response een '(\w*)' zonder gegevens$/, function (_) {
+    this.context.verifyResponse = true;
+    this.context.leaveEmptyObjects = true;
+
+    if(this.context.expected === undefined) {
+        this.context.expected = [ {} ];
+    }
+});
+
 After({tags: 'not @fout-case'}, function() {
 
     this.context.response.status.should.equal(200, `response body: ${JSON.stringify(this.context.response.data, null, '\t')}`);
