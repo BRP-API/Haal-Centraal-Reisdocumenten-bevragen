@@ -157,7 +157,7 @@ function insertIntoAutorisatieStatement(data) {
         statement.values.push(row[1]);
     });
 
-    statement.text += ') VALUES((SELECT MAX(autorisatie_id)+1 FROM public.lo3_autorisatie)';
+    statement.text += ') VALUES((SELECT COALESCE(MAX(autorisatie_id), 0)+1 FROM public.lo3_autorisatie)';
     statement.values.forEach(function(_value, index) {
         statement.text += `,$${index+1}`;
     });
@@ -177,7 +177,7 @@ function insertIntoAdresStatement(data) {
         statement.values.push(row[1]);
     });
 
-    statement.text += ') VALUES((SELECT MAX(adres_id)+1 FROM public.lo3_adres)';
+    statement.text += ') VALUES((SELECT COALESCE(MAX(adres_id), 0)+1 FROM public.lo3_adres)';
     statement.values.forEach(function(_value, index) {
         statement.text += `,$${index+1}`;
     });
@@ -197,7 +197,7 @@ function insertIntoPersoonlijstStatement(data) {
         statement.values.push(row[1]);
     });
 
-    statement.text += ') VALUES((SELECT MAX(pl_id)+1 FROM public.lo3_pl),current_timestamp';
+    statement.text += ') VALUES((SELECT COALESCE(MAX(pl_id), 0)+1 FROM public.lo3_pl),current_timestamp';
     statement.values.forEach(function(_value, index) {
         statement.text += `,$${index+1}`;
     });

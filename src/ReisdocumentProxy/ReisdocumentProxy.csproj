@@ -11,9 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Ocelot" Version="18.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Reisdocument.Infrastructure\Reisdocument.Infrastructure.csproj" />
+    <ProjectReference Include="..\Reisdocument.Validatie\Reisdocument.Validatie.csproj" />
   </ItemGroup>
 
 </Project>
