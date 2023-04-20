@@ -1,0 +1,36 @@
+﻿namespace Reisdocument.Validatie;
+
+public class ValidationResult
+{
+    public bool IsValid { get; }
+    public List<ValidationFailure> Errors { get; }
+
+    public static ValidationResult CreateFrom(FluentValidation.Results.ValidationResult result)
+    {
+        return new ValidationResult(result.IsValid, result.Errors);
+    }
+
+    private ValidationResult(bool isValid, List<FluentValidation.Results.ValidationFailure> errors)
+    {
+        IsValid = isValid;
+        Errors = (from error in errors
+                 select CreateFrom(error)).ToList();
+    }
+
+    private static ValidationFailure? CreateFrom(FluentValidation.Results.ValidationFailure validationFailure)
+    {
+        var messageParts = validationFailure.ErrorMessage.Split("||");
+        switch(messageParts.Length)
+        {
+            case 2:
+                return new ValidationFailure(
+                    messageParts[0],
+                    $"{char.ToLowerInvariant(validationFailure.PropertyName[0])}{validationFailure.PropertyName[1..]}",
+                    messageParts[1]);
+            case 3:
+                return new ValidationFailure(messageParts[0], messageParts[1], messageParts[2]);
+            default:
+                return null;
+        }
+    }
+}

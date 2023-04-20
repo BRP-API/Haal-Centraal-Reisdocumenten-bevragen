@@ -1,8 +1,8 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/haalcentraal/api/reisdocumenten",
-      "DownstreamPathTemplate": "/haalcentraal/api/reisdocumenten",
+      "UpstreamPathTemplate": "/haalcentraal/api/reisdocumenten/reisdocumenten",
+      "DownstreamPathTemplate": "/haalcentraal/api/reisdocumenten/reisdocumenten",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {

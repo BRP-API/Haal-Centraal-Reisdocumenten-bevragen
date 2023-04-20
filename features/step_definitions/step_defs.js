@@ -228,7 +228,7 @@ After({tags: 'not @fout-case'}, function() {
     this.context.response.status.should.equal(200, `response body: ${JSON.stringify(this.context.response.data, null, '\t')}`);
 
     const actual = this.context?.response?.data.reisdocumenten !== undefined
-        ? this.context.response.data.reisdocumenten
+        ? stringifyValues(this.context.response.data.reisdocumenten)
         : [];
     const expected = this.context.expected !== undefined
         ? this.context.expected
