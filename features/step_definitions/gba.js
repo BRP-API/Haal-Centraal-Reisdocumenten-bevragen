@@ -4,6 +4,7 @@ const tableNameMap = new Map([
     ['autorisatie', 'lo3_autorisatie'],
     ['inschrijving', 'lo3_pl'],
     ['persoon', 'lo3_pl_persoon' ],
+    ['protocollering', 'haalcentraal_vraag'],
     ['reisdocument', 'lo3_pl_reis_doc' ],
     ['verblijfplaats', 'lo3_pl_verblijfplaats'],
 ]);
