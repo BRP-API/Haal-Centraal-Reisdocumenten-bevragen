@@ -62,6 +62,9 @@ namespace HaalCentraal.ReisdocumentProxy.Generated.Gba
         [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Always)]
         public System.Collections.Generic.ICollection<string> Fields { get; set; } = new System.Collections.ObjectModel.Collection<string>();
 
+        [Newtonsoft.Json.JsonProperty("gemeenteVanInschrijving", Required = Newtonsoft.Json.Required.Always)]
+        public string GemeenteVanInschrijving { get; set; }
+
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
 
         [Newtonsoft.Json.JsonExtensionData]

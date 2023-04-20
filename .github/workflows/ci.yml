@@ -4,16 +4,18 @@ on:
   push:
     paths:
       - src/**
+      - .github/workflows/ci.yml
     branches:
       - develop
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
@@ -21,10 +23,10 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore Reisdocument.sln
       - name: Build
-        run: dotnet build Reisdocument.sln --no-restore
+        run: dotnet build Reisdocument.sln --configuration Release --no-restore
       - name: Test
-        run: dotnet test Reisdocument.sln --no-build --verbosity normal
-  containerize:
+        run: dotnet test Reisdocument.sln --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+  publish:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -42,9 +44,26 @@ jobs:
           key: local-docker-directory
       - name: Build container images
         run: docker compose build
+      - name: Login to P5 Container Registry
+        uses: docker/login-action@v2.1.0
+        with:
+          registry: haalcentraal.azurecr.io
+          username: ${{ secrets.P5_CR_USER }}
+          password: ${{ secrets.P5_CR_PWD }}
       - name: Start containers
-        run: docker compose up -d
+        run: docker compose -f .docker/db.yml -f .docker/reisdocumenten-api.yml -f docker-compose.yml up -d
       - name: Test functional specs
-        run: npm run specs:verify
+        run: sh ./scripts/specs-verify.sh '${{ secrets.TEST_SETTINGS }}'
       - name: Stop containers
-        run: docker compose down
+        run: docker compose -f .docker/db.yml -f .docker/reisdocumenten-api.yml -f docker-compose.yml down
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2.1.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: push container images
+        run: |
+          docker push ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:latest
+          docker push ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-mock:latest
+      

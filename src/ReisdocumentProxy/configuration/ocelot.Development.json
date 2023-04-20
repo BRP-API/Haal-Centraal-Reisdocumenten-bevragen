@@ -1,13 +1,13 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/haalcentraal/api/reisdocumenten",
-      "DownstreamPathTemplate": "/haalcentraal/api/reisdocumenten",
-      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/haalcentraal/api/reisdocumenten/reisdocumenten",
+      "DownstreamPathTemplate": "/haalcentraal/api/reisdocumenten/reisdocumenten",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5011"
+          "Port": "8001"
         }
       ]
     }
