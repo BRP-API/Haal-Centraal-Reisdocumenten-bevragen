@@ -13,7 +13,7 @@ Functionaliteit: Soort reisdocument
       En de persoon heeft de volgende 'verblijfplaats' gegevens
       | gemeente van inschrijving (09.10) |
       | 0800                              |
-      Als reisdocumenten wordt gezocht met de volgende parameters
+      Als gba reisdocumenten wordt gezocht met de volgende parameters
       | naam                    | waarde                         |
       | type                    | RaadpleegMetReisdocumentnummer |
       | reisdocumentnummer      | NE3663258                      |
