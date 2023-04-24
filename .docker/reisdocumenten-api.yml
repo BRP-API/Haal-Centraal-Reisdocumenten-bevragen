@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   haalcentraal_reisdocumenten_api:
+    container_name: haalcentraal_reisdocumenten_api
     image: haalcentraal.azurecr.io/gba-reisdocumenten-api:2.0.1
     networks:
       - reisdocumenten-api-network
