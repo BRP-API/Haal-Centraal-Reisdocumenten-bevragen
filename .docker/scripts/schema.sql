@@ -2460,5 +2460,3 @@ ALTER TABLE ONLY public.selectie_instelling
 --
 -- PostgreSQL database cluster dump complete
 --
-
-# 
