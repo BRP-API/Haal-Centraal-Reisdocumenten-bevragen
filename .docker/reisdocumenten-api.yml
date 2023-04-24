@@ -7,7 +7,7 @@ services:
     networks:
       - reisdocumenten-api-network
     environment:
-      - Database__ConnectionString=Host=host.docker.internal;port=5432;Username=root;Password=root;Database=rvig_haalcentraal_testdata
+      - Database__ConnectionString=Host=postgres;port=5432;Username=root;Password=root;Database=rvig_haalcentraal_testdata
       - HaalcentraalApi__MaxSearchResults=10
       - ASPNETCORE_URLS=http://+;
       # - AuthenticationTypes=Basic
