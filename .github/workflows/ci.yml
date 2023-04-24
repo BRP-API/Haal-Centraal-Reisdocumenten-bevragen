@@ -51,11 +51,28 @@ jobs:
           username: ${{ secrets.P5_CR_USER }}
           password: ${{ secrets.P5_CR_PWD }}
       - name: Start containers
-        run: docker compose -f .docker/db.yml -f .docker/reisdocumenten-api.yml -f docker-compose.yml up -d
-      - name: Test functional specs
-        run: sh ./scripts/specs-verify.sh '${{ secrets.TEST_SETTINGS }}'
+        run: docker compose -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f .docker/reisdocumenten-proxy.yml up -d
+      - name: Wait for DB restart
+        run: sleep 5s
+        shell: bash
+      - name: Validate api functional specs
+        run: |
+          npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen-gba.json \
+                          -f summary:docs/features/test-result-zoeken-en-raadplegen-gba-summary.txt \
+                          features/raadpleeg-met-reisdocumentnummer \
+                          --tags "not @skip-verify" --tags "@gba" \
+                          --world-parameters '${{ secrets.TEST_SETTINGS }}'
+      - name: Validate proxy functional specs
+        if: always()
+        run: |
+          npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen.json \
+                          -f summary:docs/features/test-result-zoeken-en-raadplegen-summary.txt \
+                          features/raadpleeg-met-reisdocumentnummer \
+                          --tags "not @skip-verify" --tags "not @gba" \
+                          --world-parameters '${{ secrets.TEST_SETTINGS }}'
       - name: Stop containers
-        run: docker compose -f .docker/db.yml -f .docker/reisdocumenten-api.yml -f docker-compose.yml down
+        if: always()
+        run: docker compose -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f reisdocumenten-proxy.yml down
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2.1.0
         with:
