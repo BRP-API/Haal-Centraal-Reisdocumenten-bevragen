@@ -117,6 +117,27 @@ Given(/^de persoon heeft de volgende '(\w*)' gegevens$/, async function (gegeven
     ];
 });
 
+Given(/^de afnemer met indicatie '(.*)' heeft de volgende '(.*)' gegevens$/, function (afnemerCode, tabelNaam, dataTable) {
+    if(this.context.sqlData === undefined) {
+        this.context.sqlData = [];
+    }
+    this.context.sqlData.push({});
+
+    let sqlData = this.context.sqlData.at(-1);
+
+    sqlData[tabelNaam] = [
+        [
+            [ 'afnemer_code', afnemerCode ],
+            ['geheimhouding_ind', 0],
+            ['verstrekkings_beperking', 0]
+        ].concat(createArrayFrom(dataTable, columnNameMap))];
+});
+
+Given(/^de geauthenticeerde consumer heeft de volgende '(.*)' gegevens$/, function (_, dataTable) {
+    const param = dataTable.hashes().find(param => param.naam === 'afnemerID');
+    this.context.afnemerId = param.waarde;
+});
+
 When(/^reisdocumenten wordt gezocht met de volgende parameters$/, async function (dataTable) {
     this.context.proxyAanroep = true;
     if(this.context.sqlData === undefined) {
@@ -206,7 +227,7 @@ Then(/^heeft het '(\w*)' de volgende '(\w*)' gegevens$/, function (objectName, g
     expected[gegevensgroep] = createObjectFrom(dataTable);
 });
 
-Then(/^heeft de response (\d*) reisdocumenten$/, function (aantal) {
+Then(/^heeft de response (\d*) (?:reisdocument|reisdocumenten)$/, function (aantal) {
     const actual = this.context?.response?.data?.reisdocumenten;
 
     should.exist(actual);
