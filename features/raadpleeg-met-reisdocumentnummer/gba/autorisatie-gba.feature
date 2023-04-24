@@ -126,7 +126,7 @@ Functionaliteit: autorisatie voor het gebruik van de API RaadpleegMetReisdocumen
       | status   | 400                                                         |
       | detail   | De foutieve parameter(s) zijn: gemeenteVanInschrijving.     |
       | code     | paramsValidation                                            |
-      | instance | /haalcentraal/api/reisdocumenten                            |
+      | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
       En heeft het object de volgende 'invalidParams' gegevens
       | code     | name                    | reason                  |
       | required | gemeenteVanInschrijving | Parameter is verplicht. |
