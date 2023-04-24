@@ -72,7 +72,7 @@ jobs:
                           --world-parameters '${{ secrets.TEST_SETTINGS }}'
       - name: Stop containers
         if: always()
-        run: docker compose -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f reisdocumenten-proxy.yml down
+        run: docker compose -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f .docker/reisdocumenten-proxy.yml down
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2.1.0
         with:
