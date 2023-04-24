@@ -12,7 +12,7 @@ class World {
             cleanup: true,
             poolConfig: {
                 user: "",
-                host: "localhost",
+                host: "",
                 database: "rvig_haalcentraal_testdata",
                 password: "",
                 port: 5432,
@@ -32,6 +32,7 @@ class World {
             ]
         }
         if(this.context.parameters?.poolConfig !== undefined) {
+            this.context.sql.poolConfig.host = this.context.parameters.poolConfig.host;
             this.context.sql.poolConfig.user = this.context.parameters.poolConfig.user;
             this.context.sql.poolConfig.password = this.context.parameters.poolConfig.password
         }
