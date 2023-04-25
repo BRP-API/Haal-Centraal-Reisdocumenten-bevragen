@@ -18,7 +18,7 @@ Rule: De burgerservicenummer parameter is een verplichte parameter
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: burgerservicenummer.         |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code     | name                | reason                  |
     | required | burgerservicenummer | Parameter is verplicht. |
@@ -41,7 +41,7 @@ Rule: Een burgerservicenummer is een string bestaande uit exact 9 cijfers
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: burgerservicenummer.         |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code    | name                | reason                                      |
     | pattern | burgerservicenummer | Waarde voldoet niet aan patroon ^[0-9]{9}$. |
@@ -69,7 +69,7 @@ Rule: De gemeenteVanInschrijving parameter is een verplichte parameter
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: gemeenteVanInschrijving.     |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code     | name                    | reason                  |
     | required | gemeenteVanInschrijving | Parameter is verplicht. |
@@ -91,7 +91,7 @@ Rule: Een gemeenteVanInschrijving is een string bestaande uit exact 4 cijfers
     | status   | 400                                                         |
     | detail   | De foutieve parameter(s) zijn: gemeenteVanInschrijving.     |
     | code     | paramsValidation                                            |
-    | instance | /haalcentraal/api/reisdocumenten                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
     En heeft het object de volgende 'invalidParams' gegevens
     | code    | name                    | reason                                      |
     | pattern | gemeenteVanInschrijving | Waarde voldoet niet aan patroon ^[0-9]{4}$. |
