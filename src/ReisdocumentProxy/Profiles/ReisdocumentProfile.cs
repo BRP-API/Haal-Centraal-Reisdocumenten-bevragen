@@ -19,6 +19,10 @@ public class ReisdocumentProfile : Profile
                 }
             })
             .ForMember(dest => dest.DatumEindeGeldigheid, opt => opt.MapFrom(src => src.DatumEindeGeldigheid.Map()))
+            .ForMember(dest => dest.Reisdocumentnummer, opt =>
+            {
+                opt.PreCondition(src => !string.IsNullOrEmpty(src.Reisdocumentnummer) && src.Reisdocumentnummer != ".........");
+            })
             .ForMember(dest => dest.Soort, opt =>
             {
                 opt.PreCondition(src => src.Soort?.Code != "..");

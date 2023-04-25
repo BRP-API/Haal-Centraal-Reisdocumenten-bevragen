@@ -21,6 +21,9 @@ public static class TransformHelper
             case Gba.RaadpleegMetReisdocumentnummerResponse r:
                 retval = mapper.Map<RaadpleegMetReisdocumentnummerResponse>(r).Filter(fieldsToReturn);
                 break;
+            case Gba.ZoekMetBurgerservicenummerResponse r:
+                retval = mapper.Map<ZoekMetBurgerservicenummerResponse>(r).Filter(fieldsToReturn);
+                break;
             default:
                 throw new NotSupportedException();
         }
@@ -31,6 +34,14 @@ public static class TransformHelper
     private static RaadpleegMetReisdocumentnummerResponse Filter(this RaadpleegMetReisdocumentnummerResponse src, IEnumerable<string> fields)
     {
         return new RaadpleegMetReisdocumentnummerResponse
+        {
+            Reisdocumenten = src.Reisdocumenten.FilterList(fields)?.ToList()
+        };
+    }
+
+    private static ZoekMetBurgerservicenummerResponse Filter(this ZoekMetBurgerservicenummerResponse src, IEnumerable<string> fields)
+    {
+        return new ZoekMetBurgerservicenummerResponse
         {
             Reisdocumenten = src.Reisdocumenten.FilterList(fields)?.ToList()
         };

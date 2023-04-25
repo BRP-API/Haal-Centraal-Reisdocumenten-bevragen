@@ -56,9 +56,13 @@ public class OverwriteResponseBodyMiddleware
 
             var body = await context.Response.ReadBodyAsync();
 
+            _logger.LogDebug("original response body: {response.body}", body);
+
             var modifiedBody = context.Response.StatusCode == StatusCodes.Status200OK
                 ? body.Transform(_mapper, reisdocumentenQuery.Fields)
                 : body;
+
+            _logger.LogDebug("transformed response body: {response.body}", modifiedBody);
 
             using var bodyStream = modifiedBody.ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
 

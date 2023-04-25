@@ -10,6 +10,7 @@ public static class ReisdocumentenQueryValidator
         var result = reisdocumentenQuery switch
         {
             RaadpleegMetReisdocumentnummer query => new RaadpleegMetReisdocumentnummerValidator().Validate(query),
+            ZoekMetBurgerservicenummer query => new ZoekMetBurgerservicenummerValidator().Validate(query),
             _ => null
         };
 
