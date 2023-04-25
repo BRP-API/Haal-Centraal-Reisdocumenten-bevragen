@@ -129,7 +129,7 @@ Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdo
     | naam               | waarde    |
     | reisdocumentnummer | NWE45TN71 |
 
-  Scenario: de persoon heeft eerdere reisdocumenten ingeleverd en heeft verschillende soorten reisdocumenten in bezit
+  Scenario: de persoon heeft reisdocumenten ingeleverd en vermist en heeft verschillende soorten reisdocumenten in bezit
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                                                    | waarde       |
     | soort reisdocument (35.10)                                              | PN           |
