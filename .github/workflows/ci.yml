@@ -71,6 +71,7 @@ jobs:
           npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen.json \
                           -f summary:docs/features/test-result-zoeken-en-raadplegen-summary.txt \
                           features/raadpleeg-met-reisdocumentnummer \
+                          features/zoek-met-burgerservicenummer \
                           --tags "not @skip-verify" --tags "not @gba" \
                           --world-parameters '${{ secrets.TEST_SETTINGS }}'
       - name: Stop containers
