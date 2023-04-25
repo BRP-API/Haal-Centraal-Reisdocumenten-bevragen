@@ -4,7 +4,7 @@ Functionaliteit: Zoek met burgerservicenummer
 
 Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicenummer worden opgegeven
 
-  Scenario: de persoon heeft één reisdocument
+  Scenario: de gezochte persoon heeft één reisdocument
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                        | waarde    |
     | soort reisdocument (35.10)                  | PN        |
@@ -23,7 +23,7 @@ Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicen
     | naam               | waarde    |
     | reisdocumentnummer | NE3663258 |
 
-  Scenario: de persoon heeft meerdere reisdocumenten
+  Scenario: de gezochte persoon heeft meerdere reisdocumenten
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                        | waarde    |
     | soort reisdocument (35.10)                  | PN        |
@@ -50,7 +50,7 @@ Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicen
     | naam               | waarde    |
     | reisdocumentnummer | ID82046A7 |
 
-  Scenario: de persoon heeft geen reisdocument
+  Scenario: de gezochte persoon heeft geen reisdocument
     Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
@@ -62,7 +62,7 @@ Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicen
     | fields                  | reisdocumentnummer,houder  |
     Dan heeft de response 0 reisdocumenten
 
-  Scenario: zoek op een niet bestaande persoon
+  Scenario: de gezochte persoon bestaat niet
     Als reisdocumenten wordt gezocht met de volgende parameters
     | naam                    | waarde                     |
     | type                    | ZoekMetBurgerservicenummer |
@@ -73,7 +73,7 @@ Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicen
 
 Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdocumenten geleverd die volgens de registratie nog in het bezit zijn van de persoon
 
-  Scenario: de persoon heeft het reisdocument ingeleverd
+  Scenario: de gezochte persoon heeft het reisdocument ingeleverd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                                                    | waarde       |
     | soort reisdocument (35.10)                                              | PN           |
@@ -93,7 +93,7 @@ Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdo
     | fields                  | reisdocumentnummer         |
     Dan heeft de response 0 reisdocumenten
 
-  Scenario: de persoon heeft meerdere reisdocumenten ingeleverd en heeft één reisdocument nog in bezit
+  Scenario: de gezochte persoon heeft meerdere reisdocumenten ingeleverd en heeft één reisdocument nog in bezit
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                                                    | waarde       |
     | soort reisdocument (35.10)                                              | PN           |
@@ -129,7 +129,7 @@ Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdo
     | naam               | waarde    |
     | reisdocumentnummer | NWE45TN71 |
 
-  Scenario: de persoon heeft reisdocumenten ingeleverd en vermist en heeft verschillende soorten reisdocumenten in bezit
+  Scenario: de gezochte persoon heeft reisdocumenten ingeleverd en vermist en heeft verschillende soorten reisdocumenten in bezit
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                                                    | waarde       |
     | soort reisdocument (35.10)                                              | PN           |
