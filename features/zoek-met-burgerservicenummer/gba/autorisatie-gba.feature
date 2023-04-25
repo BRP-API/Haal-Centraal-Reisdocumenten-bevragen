@@ -26,12 +26,12 @@ Functionaliteit: autorisatie voor het gebruik van de API ZoekMetBurgerservicenum
 
     Achtergrond:
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-      | naam                                                 | waarde    |
-      | soort reisdocument (35.10)                           | PN        |
-      | nummer reisdocument (35.20)                          | NE3663258 |
-      | datum einde geldigheid reisdocument (35.50)          | 20240506  |
-      | datum inhouding/vermissing reisdocument (35.60)      | 20230405  |
-      | aanduiding inhouding/vermissing reisdocument (35.70) | I         |
+      | naam                                                                    | waarde    |
+      | soort reisdocument (35.10)                                              | PN        |
+      | nummer reisdocument (35.20)                                             | NE3663258 |
+      | datum einde geldigheid reisdocument (35.50)                             | 20240506  |
+      | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405  |
+      | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I         |
       En de persoon heeft de volgende 'verblijfplaats' gegevens
       | gemeente van inschrijving (09.10) |
       | 0800                              |
@@ -115,10 +115,10 @@ Functionaliteit: autorisatie voor het gebruik van de API ZoekMetBurgerservicenum
       | afnemerID    | 000008 |
       | gemeenteCode | 0800   |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                                                                     |
-      | type                    | ZoekMetBurgerservicenummer                                                 |
-      | burgerservicenummer     | 000000152                                                                  |
-      | fields                  | reisdocumentnummer,soort,datumEindeGeldigheid,inhoudingOfVermissing,houder |
+      | naam                | waarde                                                                     |
+      | type                | ZoekMetBurgerservicenummer                                                 |
+      | burgerservicenummer | 000000152                                                                  |
+      | fields              | reisdocumentnummer,soort,datumEindeGeldigheid,inhoudingOfVermissing,houder |
       Dan heeft de response een object met de volgende gegevens
       | naam     | waarde                                                      |
       | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -126,7 +126,7 @@ Functionaliteit: autorisatie voor het gebruik van de API ZoekMetBurgerservicenum
       | status   | 400                                                         |
       | detail   | De foutieve parameter(s) zijn: gemeenteVanInschrijving.     |
       | code     | paramsValidation                                            |
-      | instance | /haalcentraal/api/reisdocumenten                            |
+      | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
       En heeft het object de volgende 'invalidParams' gegevens
       | code     | name                    | reason                  |
       | required | gemeenteVanInschrijving | Parameter is verplicht. |
