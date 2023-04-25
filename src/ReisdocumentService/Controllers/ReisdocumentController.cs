@@ -24,6 +24,7 @@ public class ReisdocumentController : Generated.ControllerBase
         var retval = body switch
         {
             RaadpleegMetReisdocumentnummer q => await Handle(q),
+            ZoekMetBurgerservicenummer q => await Handle(q),
             _ => new ReisdocumentenQueryResponse()
         };
 
@@ -35,6 +36,13 @@ public class ReisdocumentController : Generated.ControllerBase
     private async Task<ReisdocumentenQueryResponse> Handle(RaadpleegMetReisdocumentnummer query)
     {
         var retval = await _repository.Zoek<RaadpleegMetReisdocumentnummer>(query);
+
+        return retval;
+    }
+
+    private async Task<ReisdocumentenQueryResponse> Handle(ZoekMetBurgerservicenummer query)
+    {
+        var retval = await _repository.Zoek<ZoekMetBurgerservicenummer>(query);
 
         return retval;
     }

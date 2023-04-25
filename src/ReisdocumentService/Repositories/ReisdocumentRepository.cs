@@ -28,6 +28,11 @@ public class ReisdocumentRepository
                 Reisdocumenten = JsonConvert.DeserializeObject<List<GbaReisdocument>>(data)?
                     .AsQueryable().Where(f.ToSpecification().ToExpression()).ToList()
             },
+            ZoekMetBurgerservicenummer f => new ZoekMetBurgerservicenummerResponse
+            {
+                Reisdocumenten = JsonConvert.DeserializeObject<List<GbaReisdocument>>(data)?
+                    .AsQueryable().Where(f.ToSpecification().ToExpression()).ToList()
+            },
             _ => throw new NotSupportedException($"{query}")
         };
     }
