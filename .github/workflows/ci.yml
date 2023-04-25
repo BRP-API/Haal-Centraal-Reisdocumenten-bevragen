@@ -62,6 +62,7 @@ jobs:
           npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen-gba.json \
                           -f summary:docs/features/test-result-zoeken-en-raadplegen-gba-summary.txt \
                           features/raadpleeg-met-reisdocumentnummer \
+                          features/zoek-met-burgerservicenummer \
                           --tags "not @skip-verify" --tags "@gba" \
                           --world-parameters '${{ secrets.TEST_SETTINGS }}'
       - name: Validate proxy functional specs
