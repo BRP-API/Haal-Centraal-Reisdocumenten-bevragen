@@ -8,8 +8,6 @@ Functionaliteit: Reisdocument velden zoek op burgerservicenummer met fields
     | soort reisdocument (35.10)                                              | PN        |
     | nummer reisdocument (35.20)                                             | NE3663258 |
     | datum einde geldigheid reisdocument (35.50)                             | 20240506  |
-    | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405  |
-    | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I         |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
@@ -65,47 +63,6 @@ Functionaliteit: Reisdocument velden zoek op burgerservicenummer met fields
     | datumEindeGeldigheid.maand       |
     | datumEindeGeldigheid.onbekend    |
     | datumEindeGeldigheid.langFormaat |
-
-  Abstract Scenario: 'datum inhouding dan wel vermissing Nederlands reisdocument (35.60)' wordt gevraagd met field pad 'inhoudingOfVermissing.<field>'
-    Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                        |
-    | type                    | ZoekMetBurgerservicenummer    |
-    | burgerservicenummer     | 000000152                     |
-    | gemeenteVanInschrijving | 0800                          |
-    | fields                  | inhoudingOfVermissing.<field> |
-    Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
-    | naam              | waarde       |
-    | datum.type        | Datum        |
-    | datum.datum       | 2023-04-05   |
-    | datum.langFormaat | 5 april 2023 |
-
-    Voorbeelden:
-    | field             |
-    | datum             |
-    | datum.type        |
-    | datum.datum       |
-    | datum.jaar        |
-    | datum.maand       |
-    | datum.onbekend    |
-    | datum.langFormaat |
-
-  Abstract Scenario: 'aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70)' wordt gevraagd met field pad 'inhoudingOfVermissing.<field>'
-    Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                        |
-    | type                    | ZoekMetBurgerservicenummer    |
-    | burgerservicenummer     | 000000152                     |
-    | gemeenteVanInschrijving | 0800                          |
-    | fields                  | inhoudingOfVermissing.<field> |
-    Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
-    | naam                    | waarde                   |
-    | aanduiding.code         | I                        |
-    | aanduiding.omschrijving | ingehouden of ingeleverd |
-
-    Voorbeelden:
-    | field                   |
-    | aanduiding              |
-    | aanduiding.code         |
-    | aanduiding.omschrijving |
 
   Scenario: 'burgerservicenummer' van houder wordt gevraagd met field pad 'houder.burgerservicenummer'
     Als reisdocumenten wordt gezocht met de volgende parameters

@@ -121,7 +121,7 @@ Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdo
     Als reisdocumenten wordt gezocht met de volgende parameters
     | naam                    | waarde                     |
     | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 987654321                  |
+    | burgerservicenummer     | 000000152                  |
     | gemeenteVanInschrijving | 0800                       |
     | fields                  | reisdocumentnummer         |
     Dan heeft de response 1 reisdocumenten
@@ -162,7 +162,7 @@ Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdo
     Als reisdocumenten wordt gezocht met de volgende parameters
     | naam                    | waarde                     |
     | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 987654321                  |
+    | burgerservicenummer     | 000000152                  |
     | gemeenteVanInschrijving | 0800                       |
     | fields                  | reisdocumentnummer         |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
