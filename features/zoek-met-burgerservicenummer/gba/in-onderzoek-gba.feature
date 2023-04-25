@@ -131,7 +131,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | 123510                  | soort Nederlands reisdocument      | niet gevraagd veld van reisdocument resource  |
     | 123520                  | nummer Nederlands reisdocument     | niet gevraagd veld van reisdocument resource  |
 
-  Abstract Scenario: 'persoon' is in onderzoek en houder wordt niet gevraagd
+  Scenario: 'persoon' is in onderzoek en houder wordt niet gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende gegevens 
     | naam                            | waarde   |
     | aanduiding in onderzoek (83.10) | 010000   |
