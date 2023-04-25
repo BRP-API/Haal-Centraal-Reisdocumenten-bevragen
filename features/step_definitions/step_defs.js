@@ -117,6 +117,27 @@ Given(/^de persoon heeft de volgende '(\w*)' gegevens$/, async function (gegeven
     ];
 });
 
+Given(/^de afnemer met indicatie '(.*)' heeft de volgende '(.*)' gegevens$/, function (afnemerCode, tabelNaam, dataTable) {
+    if(this.context.sqlData === undefined) {
+        this.context.sqlData = [];
+    }
+    this.context.sqlData.push({});
+
+    let sqlData = this.context.sqlData.at(-1);
+
+    sqlData[tabelNaam] = [
+        [
+            [ 'afnemer_code', afnemerCode ],
+            ['geheimhouding_ind', 0],
+            ['verstrekkings_beperking', 0]
+        ].concat(createArrayFrom(dataTable, columnNameMap))];
+});
+
+Given(/^de geauthenticeerde consumer heeft de volgende '(.*)' gegevens$/, function (_, dataTable) {
+    const param = dataTable.hashes().find(param => param.naam === 'afnemerID');
+    this.context.afnemerId = param.waarde;
+});
+
 When(/^reisdocumenten wordt gezocht met de volgende parameters$/, async function (dataTable) {
     this.context.proxyAanroep = true;
     if(this.context.sqlData === undefined) {
@@ -206,7 +227,7 @@ Then(/^heeft het '(\w*)' de volgende '(\w*)' gegevens$/, function (objectName, g
     expected[gegevensgroep] = createObjectFrom(dataTable);
 });
 
-Then(/^heeft de response (\d*) reisdocumenten$/, function (aantal) {
+Then(/^heeft de response (\d*) (?:reisdocument|reisdocumenten)$/, function (aantal) {
     const actual = this.context?.response?.data?.reisdocumenten;
 
     should.exist(actual);
@@ -223,7 +244,61 @@ Then(/^heeft het object de volgende '(.*)' gegevens$/, function (gegevensgroep, 
     this.context.expected[gegevensgroep] = dataTable.hashes();
 });
 
+Then(/^heeft de response een '(\w*)' zonder gegevens$/, function (_) {
+    this.context.verifyResponse = true;
+    this.context.leaveEmptyObjects = true;
+
+    if(this.context.expected === undefined) {
+        this.context.expected = [ {} ];
+    }
+});
+
+Then(/^heeft de persoon met burgerservicenummer '(\d*)' de volgende '(\w*)' gegevens$/, async function (burgerservicenummer, tabelNaam, dataTable) {
+    this.context.verifyResponse = false;
+    const sqlData = dataTable.hashes()[0];
+
+    const persoonSqlData = this.context.sqlData.find(s => s.persoon[0].find(a => a[0] == 'burger_service_nr' && a[1] == burgerservicenummer));
+    should.exist(persoonSqlData);
+    const pl_id = persoonSqlData.ids.pl_id;
+    should.exist(pl_id);
+
+    if (sqlData !== undefined && pool !== undefined) {
+        let res;
+        let client;
+        try {
+            let tableName = tableNameMap.get(tabelNaam);
+            if(tableName === undefined) {
+                tableName = tabelNaam;
+            }
+            const sql = `SELECT * FROM public.${tableName} WHERE pl_id=${pl_id} ORDER BY request_datum DESC LIMIT 1`;
+
+            client = await pool.connect();
+            res = await client.query(sql);
+        }
+        catch(ex) {
+            console.log(ex);
+        }
+        finally {
+            if(client !== undefined){
+                client.release();
+            }
+        }
+
+        should.exist(res);
+        res.rows.length.should.equal(1, `Geen ${tabelNaam} gegevens gevonden voor persoon met burgerservicenummer ${burgerservicenummer}`);
+
+        const actual = res.rows[0];
+        Object.keys(sqlData).forEach(function(key) {
+            actual[key].split(' ').should.have.members(sqlData[key].split(' '), `${actual[key]} !== ${sqlData[key]}`);
+        });
+    }
+});
+
 After({tags: 'not @fout-case'}, function() {
+    if (this.context.verifyResponse === undefined ||
+        !this.context.verifyResponse) {
+        return;
+    }
 
     this.context.response.status.should.equal(200, `response body: ${JSON.stringify(this.context.response.data, null, '\t')}`);
 

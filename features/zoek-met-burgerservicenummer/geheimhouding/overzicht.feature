@@ -19,7 +19,7 @@ Functionaliteit: geheimhouding leveren bij ZoekMetBurgerservicenummer
   Rule: indicatie geheim waarde 0 wordt niet geleverd
 
     Scenario: reisdocument van een persoon die toestemming heeft gegeven voor het verstrekken van zijn gegevens aan derden, wordt geraadpleegd
-      Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende 'inschrijving' gegevens
+      Gegeven de persoon heeft de volgende 'inschrijving' gegevens
       | naam                     | waarde |
       | indicatie geheim (70.10) | 0      |
       Als reisdocumenten wordt gezocht met de volgende parameters
@@ -36,7 +36,7 @@ Functionaliteit: geheimhouding leveren bij ZoekMetBurgerservicenummer
   Rule: indicatie geheim met waarde hoger dan 0 wordt vertaald naar geheimhoudingPersoonsgegevens waarde true en ongevraagd meegeleverd
 
     Abstract Scenario: persoon met indicatie geheim <waarde>, wordt geraadpleegd met reisdocumentnummer
-      Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende 'inschrijving' gegevens
+      Gegeven de persoon heeft de volgende 'inschrijving' gegevens
       | naam                     | waarde   |
       | indicatie geheim (70.10) | <waarde> |
       Als reisdocumenten wordt gezocht met de volgende parameters
@@ -61,7 +61,7 @@ Functionaliteit: geheimhouding leveren bij ZoekMetBurgerservicenummer
       | 7      |
 
     Abstract Scenario: persoon met indicatie geheim en <fields> wordt gevraagd
-      Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende 'inschrijving' gegevens
+      Gegeven de persoon heeft de volgende 'inschrijving' gegevens
       | naam                     | waarde |
       | indicatie geheim (70.10) | 7      |
       Als reisdocumenten wordt gezocht met de volgende parameters

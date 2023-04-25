@@ -4,6 +4,7 @@ const tableNameMap = new Map([
     ['autorisatie', 'lo3_autorisatie'],
     ['inschrijving', 'lo3_pl'],
     ['persoon', 'lo3_pl_persoon' ],
+    ['protocollering', 'haalcentraal_vraag'],
     ['reisdocument', 'lo3_pl_reis_doc' ],
     ['verblijfplaats', 'lo3_pl_verblijfplaats'],
 ]);
@@ -26,8 +27,20 @@ const columnNameMap = new Map([
 
     ['indicatie geheim (70.10)', 'geheim_ind'],
 
+    ['gemeente document (82.10)', 'doc_gemeente_code' ],
+    ['datum document (82.20)', 'doc_datum' ],
+    ['beschrijving document (82.30)', 'doc_beschrijving' ],
+
     ['aanduiding in onderzoek (83.10)', 'onderzoek_gegevens_aand' ],
     ['datum ingang onderzoek (83.20)', 'onderzoek_start_datum' ],
+
+    ['ingangsdatum geldigheid (85.10)', 'geldigheid_start_datum' ],
+
+    ['datum van opneming (86.10)', 'opneming_datum' ],
+
+    ['Rubrieknummer ad hoc (35.95.60)', 'ad_hoc_rubrieken'],
+    ['Medium ad hoc (35.95.67)', 'ad_hoc_medium'],
+    ['Datum ingang (35.99.98)', 'tabel_regel_start_datum'],
 
 ]);
 

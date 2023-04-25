@@ -6,7 +6,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "gbareisdocumentmock",
+          "Host": "reisdocumentmock",
           "Port": "5010"
         }
       ]
