@@ -145,3 +145,31 @@ Rule: Een gemeenteVanInschrijving is een string bestaande uit exact 4 cijfers
     | 12345                   | De opgegeven gemeenteVanInschrijving is een string met meer dan vier cijfers   |
     | 123O                    | De opgegeven gemeenteVanInschrijving is een string met een letter              |
     | 12.4                    | De opgegeven gemeenteVanInschrijving bevat niet-cijfer                         |
+
+Rule: Alleen gespecificeerde parameters bij het opgegeven zoektype mogen worden gebruikt
+
+  @fout-case
+  Abstract Scenario: <titel>
+    Als reisdocumenten wordt gezocht met de volgende parameters
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | AB1234567                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | <parameter>             | <waarde>                       |
+    | fields                  | reisdocumentnummer             |
+    Dan heeft de response een object met de volgende gegevens
+    | naam     | waarde                                                      |
+    | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
+    | title    | Een of meerdere parameters zijn niet correct.               |
+    | status   | 400                                                         |
+    | detail   | De foutieve parameter(s) zijn: <parameter>.                 |
+    | code     | paramsValidation                                            |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
+    En heeft het object de volgende 'invalidParams' gegevens
+    | code         | name        | reason                      |
+    | unknownParam | <parameter> | Parameter is niet verwacht. |
+
+    Voorbeelden:
+    | titel                                     | parameter           | waarde    |
+    | zoeken met parameter uit ander zoektype   | burgerservicenummer | 123456789 |
+    | zoeken met niet gespecificeerde parameter | geslachtsnaam       | Jansen    |

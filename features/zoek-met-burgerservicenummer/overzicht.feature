@@ -2,7 +2,7 @@
 
 Functionaliteit: Zoek met burgerservicenummer
 
-Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicenummer worden opgegeven
+Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicenummer en de gemeenteVanInschrijving worden opgegeven
 
   Scenario: de gezochte persoon heeft één reisdocument
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens

@@ -2,7 +2,7 @@
 
 Functionaliteit: Raadpleeg met reisdocumentnummer
 
-Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer worden opgegeven
+Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer en de gemeenteVanInschrijving worden opgegeven
 
   Scenario: Raadpleeg een reisdocument
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
