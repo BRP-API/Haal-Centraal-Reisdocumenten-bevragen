@@ -2,6 +2,6 @@
 
 namespace HaalCentraal.ReisdocumentProxy.Generated;
 
-public partial class ZoekMetBurgerservicenummer : IZoekMetBurgerservicenummerQuery, IReisdocumentenQuery
+public partial class ZoekMetBurgerservicenummer : IZoekMetBurgerservicenummerQuery, IReisdocumentenQuery, IAdditionalProperties
 {
 }

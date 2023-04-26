@@ -28,7 +28,7 @@ public class ValidationResult
                     $"{char.ToLowerInvariant(validationFailure.PropertyName[0])}{validationFailure.PropertyName[1..]}",
                     messageParts[1]);
             case 3:
-                return new ValidationFailure(messageParts[0], messageParts[1], messageParts[2]);
+                return new ValidationFailure(messageParts[1], messageParts[0], messageParts[2]);
             default:
                 return null;
         }

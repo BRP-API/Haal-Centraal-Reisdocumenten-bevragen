@@ -9,5 +9,6 @@ public class RaadpleegMetReisdocumentnummerValidator : AbstractValidator<Raadple
     {
         Include(new Reisdocument.Validatie.Validators.RaadpleegMetReisdocumentnummerQueryValidator());
         Include(new Reisdocument.Validatie.Validators.ReisdocumentenQueryValidator());
+        Include(new Reisdocument.Validatie.Validators.AdditionalPropertiesValidator());
     }
 }

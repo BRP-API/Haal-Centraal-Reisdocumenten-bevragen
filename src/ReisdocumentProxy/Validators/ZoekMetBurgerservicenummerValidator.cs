@@ -9,5 +9,6 @@ public class ZoekMetBurgerservicenummerValidator : AbstractValidator<ZoekMetBurg
     {
         Include(new Reisdocument.Validatie.Validators.ZoekMetBurgerservicenummerQueryValidator());
         Include(new Reisdocument.Validatie.Validators.ReisdocumentenQueryValidator());
+        Include(new Reisdocument.Validatie.Validators.AdditionalPropertiesValidator());
     }
 }
