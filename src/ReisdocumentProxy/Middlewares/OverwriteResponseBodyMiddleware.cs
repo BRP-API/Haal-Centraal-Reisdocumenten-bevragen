@@ -42,7 +42,7 @@ public class OverwriteResponseBodyMiddleware
         //{
         //}
 
-            var validationResult = reisdocumentenQuery.Validate();
+            var validationResult = reisdocumentenQuery.Validate(requestBody);
             if(!validationResult.IsValid)
             {
                 await context.HandleValidationErrors(validationResult, orgBodyStream);

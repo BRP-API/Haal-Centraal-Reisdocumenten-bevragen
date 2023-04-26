@@ -2,6 +2,6 @@
 
 public interface IReisdocumentenQuery
 {
-    List<string> Fields { get; }
+    List<string>? Fields { get; }
     string? GemeenteVanInschrijving { get; }
 }
