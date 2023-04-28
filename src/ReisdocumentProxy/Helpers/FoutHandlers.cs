@@ -65,4 +65,82 @@ public static class FoutHandlers
 
         await bodyStream.CopyToAsync(orgResponseBodyStream);
     }
+
+    private static Foutbericht CreateNotAcceptableFoutbericht(this HttpContext context)
+    {
+        return new Foutbericht
+        {
+            Code = "notAcceptable",
+            Detail = "Ondersteunde content type: application/json; charset=utf-8.",
+            Status = StatusCodes.Status406NotAcceptable,
+            Instance = new Uri(context.Request.Path, UriKind.Relative),
+            Title = "Gevraagde content type wordt niet ondersteund.",
+            Type = new Uri(Constants.NotAcceptableIdentifier)
+        };
+    }
+
+    public static async Task<bool> AcceptIsAllowed(this HttpContext context, Stream orgResponseBodyStream)
+    {
+        foreach (var acceptValue in context.Request.Headers.Accept)
+        {
+            if (!string.IsNullOrWhiteSpace(acceptValue) &&
+                !new[]
+                {
+                    "*/*",
+                    "*/*;charset=utf-8",
+                    "application/json",
+                    "application/json;charset=utf-8"
+                }.Contains(acceptValue.ToLowerInvariant().RemoveAllWhitespace()))
+            {
+                var foutbericht = context.CreateNotAcceptableFoutbericht();
+
+                using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+
+                context.Response.SetProperties(foutbericht, bodyStream);
+
+                await bodyStream.CopyToAsync(orgResponseBodyStream);
+
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static Foutbericht CreateNotSupportedMediaTypeFoutbericht(this HttpContext context)
+    {
+        return new Foutbericht
+        {
+            Code = "unsupportedMediaType",
+            Detail = "Ondersteunde content type: application/json; charset=utf-8.",
+            Status = StatusCodes.Status415UnsupportedMediaType,
+            Instance = new Uri(context.Request.Path, UriKind.Relative),
+            Title = "Media Type wordt niet ondersteund.",
+            Type = new Uri(Constants.UnsupportedMediaTypeIdentifier)
+        };
+    }
+
+    public static async Task<bool> ContentTypeIsAllowed(this HttpContext context, Stream orgResponseBodyStream)
+    {
+        foreach(var contentType in context.Request.Headers.ContentType)
+        {
+            if (!string.IsNullOrWhiteSpace(contentType) &&
+                !new[]
+                {
+                    "application/json",
+                    "application/json;charset=utf-8"
+                }.Contains(contentType.ToLowerInvariant().RemoveAllWhitespace()))
+            {
+                var foutbericht = context.CreateNotSupportedMediaTypeFoutbericht();
+
+                using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+
+                context.Response.SetProperties(foutbericht, bodyStream);
+
+                await bodyStream.CopyToAsync(orgResponseBodyStream);
+
+                return false;
+            }
+        }
+        return true;
+    }
 }

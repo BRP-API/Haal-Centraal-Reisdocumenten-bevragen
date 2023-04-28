@@ -30,6 +30,16 @@ public class OverwriteResponseBodyMiddleware
         try
         {
             _logger.LogDebug("request headers: {@requestHeaders}", context.Request.Headers);
+            if(!await context.AcceptIsAllowed(orgBodyStream))
+            {
+                _logger.LogWarning("Not supported Accept value: {@request.header}", context.Request.Headers.Accept);
+                return;
+            }
+            if(!await context.ContentTypeIsAllowed(orgBodyStream))
+            {
+                _logger.LogWarning("Not supported Content-Type value: {@request.header}", context.Request.Headers.ContentType);
+                return;
+            }
 
             requestBody = await context.Request.ReadBodyAsync();
 
