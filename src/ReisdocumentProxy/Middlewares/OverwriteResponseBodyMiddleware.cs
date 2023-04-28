@@ -27,8 +27,8 @@ public class OverwriteResponseBodyMiddleware
 
         var orgBodyStream = context.Response.Body;
         string requestBody = string.Empty;
-        //try
-        //{
+        try
+        {
             _logger.LogDebug("request headers: {@requestHeaders}", context.Request.Headers);
 
             requestBody = await context.Request.ReadBodyAsync();
@@ -68,10 +68,11 @@ public class OverwriteResponseBodyMiddleware
 
             context.Response.ContentLength = bodyStream.Length;
             await bodyStream.CopyToAsync(orgBodyStream);
-        //}
-        //catch (Exception ex)
-        //{
-
-        //}
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "request body: {@request.body} headers: {@request.headers}", requestBody, context.Request.Headers);
+            await context.HandleUnhandledException(orgBodyStream);
+        }
     }
 }

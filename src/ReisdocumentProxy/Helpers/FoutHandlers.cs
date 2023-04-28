@@ -43,4 +43,26 @@ public static class FoutHandlers
 
         await bodyStream.CopyToAsync(orgResponseBodyStream);
     }
+
+    private static Foutbericht CreateInternalServerErrorFoutbericht(this HttpContext context)
+    {
+        return new Foutbericht
+        {
+            Status = StatusCodes.Status500InternalServerError,
+            Instance = new Uri(context.Request.Path, UriKind.Relative),
+            Title = "Internal Server error.",
+            Type = new Uri(Constants.InternalServerErrorIdentifier)
+        };
+    }
+
+    public static async Task HandleUnhandledException(this HttpContext context, Stream orgResponseBodyStream)
+    {
+        var message = context.CreateInternalServerErrorFoutbericht();
+
+        using var bodyStream = message.ToJson().ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+
+        context.Response.SetProperties(message, bodyStream);
+
+        await bodyStream.CopyToAsync(orgResponseBodyStream);
+    }
 }
