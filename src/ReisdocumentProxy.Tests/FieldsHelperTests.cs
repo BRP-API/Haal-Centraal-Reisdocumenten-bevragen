@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using ReisdocumentProxy.Helpers;
+﻿using ReisdocumentProxy.Helpers;
 
 namespace ReisdocumentProxy.Tests;
 

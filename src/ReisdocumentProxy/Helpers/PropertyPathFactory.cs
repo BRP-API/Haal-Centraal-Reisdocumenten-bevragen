@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using HaalCentraal.ReisdocumentProxy.Generated;
+using Newtonsoft.Json;
 using System.Reflection;
 
 namespace ReisdocumentProxy.Helpers;
@@ -9,6 +10,25 @@ public static class PropertyPathFactory
     {
         List<string> retval = new();
 
+        var attributes = type.GetCustomAttributes(false);
+        foreach (var attribute in attributes)
+        {
+            switch (attribute)
+            {
+                case JsonConverterAttribute a:
+                    var prop = a.ConverterParameters?[0] as string;
+                    if (!string.IsNullOrWhiteSpace(prop))
+                    {
+                        retval.Add(prop.ToFullPath(path));
+                    }
+                    break;
+                case JsonInheritanceAttribute a:
+                    retval.AddRange(a.Type.GetPropertyPaths(baseNamespace, path));
+                    break;
+                default:
+                    break;
+            }
+        }
         foreach (var property in type.GetProperties())
         {
             var name = property.JsonName();
