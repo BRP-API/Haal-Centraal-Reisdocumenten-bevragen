@@ -64,7 +64,9 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon met behulp
       | naam               | waarde    |
       | reisdocumentnummer | NWE45TN71 |
 
-  Rule: een verwijderd reisdocument wordt niet geleverd
+  Rule: een reisdocument wordt alleen geleverd wanneer er ten minste één gegeven uit groep 35 een waarde heeft
+    # Een standaardwaarde geldt hier als waarde
+    # Een reisdocument wordt niet geleverd wanneer alleen gegevens uit groep 36, 81, 82, 83, 85 en/of 86 een waarde hebben
 
     Scenario: de persoon heeft een reisdocument dat is verwijderd via de signalering opname op Register paspoortsignaleringen
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
