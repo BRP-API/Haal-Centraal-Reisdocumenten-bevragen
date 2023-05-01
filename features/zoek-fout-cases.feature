@@ -215,3 +215,26 @@ Rule: Voor de request body is application/json de default Content-Type waarde en
     | zoek type                      | naam parameter      | waarde parameter |
     | RaadpleegMetReisdocumentnummer | reisdocumentnummer  | NE3663258        |
     | ZoekMetBurgerservicenummer     | burgerservicenummer | 000000024        |
+
+Rule: Om privacy en security redenen moet een bevraging van reisdocumenten worden gedaan met behulp van de POST aanroep
+
+  @fout-case
+  Abstract Scenario: reisdocumenten wordt gezocht met een '<aanroep type>' aanroep
+    Als reisdocumenten wordt gezocht met een '<aanroep type>' aanroep
+    Dan heeft de response een object met de volgende gegevens
+    | naam     | waarde                                                      |
+    | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.5 |
+    | title    | Method not allowed.                                         |
+    | status   | 405                                                         |
+    | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
+
+    Voorbeelden:
+    | aanroep type |
+    | GET          |
+    | PUT          |
+    | PATCH        |
+    | DELETE       |
+    # | CONNECT      | een CONNECT aanroep wordt niet gebruikt om te bevragen
+    # | HEAD         | een HEAD response bevat geen body
+    | OPTIONS      |
+    | TRACE        |
