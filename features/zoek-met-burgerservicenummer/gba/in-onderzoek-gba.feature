@@ -3,33 +3,30 @@
 @gba
 Functionaliteit: Reisdocument velden zijn in onderzoek
 
-  Abstract Scenario: '<type>' is in onderzoek en één of meerdere reisdocument velden wordt gevraagd
+  Abstract Scenario: '<type>' is in onderzoek en de velden reisdocumentnummer en soort worden gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                                                    | waarde                    |
     | soort reisdocument (35.10)                                              | PN                        |
     | nummer reisdocument (35.20)                                             | NE3663258                 |
     | datum einde geldigheid reisdocument (35.50)                             | 20240506                  |
-    | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405                  |
-    | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
     | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)                                          | 20230506                  |
+    | datum ingang onderzoek (83.20)                                          | 20230201                  |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                                        |
-    | type                    | RaadpleegMetReisdocumentnummer                |
-    | reisdocumentnummer      | NE3663258                                     |
-    | gemeenteVanInschrijving | 0800                                          |
-    | fields                  | reisdocumentnummer,soort,datumEindeGeldigheid |
+    | naam                    | waarde                     |
+    | type                    | ZoekMetBurgerservicenummer |
+    | burgerservicenummer     | 000000152                  |
+    | gemeenteVanInschrijving | 0800                       |
+    | fields                  | reisdocumentnummer,soort   |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam                                      | waarde                    |
     | reisdocumentnummer                        | NE3663258                 |
     | soort.code                                | PN                        |
     | soort.omschrijving                        | Nationaal paspoort        |
-    | datumEindeGeldigheid                      | 20240506                  |
     | inOnderzoek.aanduidingGegevensInOnderzoek | <aanduiding in onderzoek> |
-    | inOnderzoek.datumIngangOnderzoek          | 20230506                  |
+    | inOnderzoek.datumIngangOnderzoek          | 20230201                  |
 
     Voorbeelden:
     | aanduiding in onderzoek | type                                                    |
@@ -57,11 +54,11 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | houder                         |
+    | naam                    | waarde                     |
+    | type                    | ZoekMetBurgerservicenummer |
+    | burgerservicenummer     | 000000152                  |
+    | gemeenteVanInschrijving | 0800                       |
+    | fields                  | houder                     |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                                      | waarde                    |
     | burgerservicenummer                       | 000000152                 |
@@ -69,18 +66,18 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | inOnderzoek.datumIngangOnderzoek          | 20230201                  |
 
     Voorbeelden:
-    | aanduiding in onderzoek | type                   |
-    | 010000                  | hele categorie persoon |
-    | 010100                  | hele groep persoon     |
-    | 010120                  | burgerservicenummer    |
-    | 010300                  | hele groep geboorte    |
-    | 010410                  | geslachtsaanduiding    |
+    | aanduiding in onderzoek | type                            |
+    | 010000                  | hele categorie persoon          |
+    | 010100                  | hele groep identificatienummers |
+    | 010120                  | burgerservicenummer             |
+    | 010300                  | hele groep geboorte             |
+    | 010410                  | geslachtsaanduiding             |
 
-  Abstract Scenario: '<type>' is in onderzoek en het burgerservicenummer veld van de houder wordt gevraagd
+  Abstract Scenario: 'persoon' is in onderzoek en de <fields> wordt gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft de volgende gegevens 
-    | naam                            | waarde                    |
-    | aanduiding in onderzoek (83.10) | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)  | 20230201                  |
+    | naam                            | waarde   |
+    | aanduiding in onderzoek (83.10) | 010000   |
+    | datum ingang onderzoek (83.20)  | 20230201 |
     En de persoon heeft een 'reisdocument' met de volgende gegevens
     | naam                                        | waarde    |
     | soort reisdocument (35.10)                  | PN        |
@@ -90,24 +87,21 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | houder.burgerservicenummer     |
+    | naam                    | waarde                     |
+    | type                    | ZoekMetBurgerservicenummer |
+    | burgerservicenummer     | 000000152                  |
+    | gemeenteVanInschrijving | 0800                       |
+    | fields                  | <fields>                   |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
-    | naam                                      | waarde                    |
-    | burgerservicenummer                       | 000000152                 |
-    | inOnderzoek.aanduidingGegevensInOnderzoek | <aanduiding in onderzoek> |
-    | inOnderzoek.datumIngangOnderzoek          | 20230201                  |
+    | naam                                      | waarde    |
+    | burgerservicenummer                       | 000000152 |
+    | inOnderzoek.aanduidingGegevensInOnderzoek | 010000    |
+    | inOnderzoek.datumIngangOnderzoek          | 20230201  |
 
     Voorbeelden:
-    | aanduiding in onderzoek | type                   |
-    | 010000                  | hele categorie persoon |
-    | 010100                  | hele groep persoon     |
-    | 010120                  | burgerservicenummer    |
-    | 010300                  | hele groep geboorte    |
-    | 010410                  | geslachtsaanduiding    |
+    | fields                     |
+    | houder                     |
+    | houder.burgerservicenummer |
 
   Abstract Scenario: '<type>' is in onderzoek en alleen de houder wordt gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
@@ -151,11 +145,11 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | reisdocumentnummer,soort       |
+    | naam                    | waarde                     |
+    | type                    | ZoekMetBurgerservicenummer |
+    | burgerservicenummer     | 000000152                  |
+    | gemeenteVanInschrijving | 0800                       |
+    | fields                  | reisdocumentnummer,soort   |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam               | waarde             |
     | reisdocumentnummer | NE3663258          |
