@@ -10,8 +10,8 @@ services:
       - Database__ConnectionString=Host=postgres;port=5432;Username=root;Password=root;Database=rvig_haalcentraal_testdata
       - HaalcentraalApi__MaxSearchResults=10
       - ASPNETCORE_URLS=http://+;
-      # - AuthenticationTypes=Basic
-      - AuthenticationTypes=jwtbearer
+      - AuthenticationTypes=Basic
+      # - AuthenticationTypes=jwtbearer
       - Serilog__LogLevel__Default=Information
     ports:
       - "8001:80"
