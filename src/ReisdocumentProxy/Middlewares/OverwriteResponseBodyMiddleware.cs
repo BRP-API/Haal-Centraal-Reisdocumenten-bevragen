@@ -47,15 +47,25 @@ public class OverwriteResponseBodyMiddleware
             }
 
             requestBody = await context.Request.ReadBodyAsync();
+            _logger.LogDebug("request body: {@request.body}", requestBody);
 
             ReisdocumentenQuery? reisdocumentenQuery = null;
-            //try
-            //{
+            try
+            {
                 reisdocumentenQuery = JsonConvert.DeserializeObject<ReisdocumentenQuery>(requestBody);
-        //}
-        //catch (Exception ex)
-        //{
-        //}
+            }
+            catch (JsonSerializationException ex)
+            {
+                _logger.LogWarning("JsonSerializationException. requestBody: {@request.body}, exception: {@exception}", requestBody, ex);
+                await context.HandleJsonException(ex, orgBodyStream);
+                return;
+            }
+            catch(JsonReaderException ex)
+            {
+                _logger.LogWarning("JsonReaderException. requestBody: {@request.body}, exception: {@exception}", requestBody, ex);
+                await context.HandleJsonException(ex, orgBodyStream);
+                return;
+            }
 
             var validationResult = reisdocumentenQuery.Validate(requestBody);
             if(!validationResult.IsValid)

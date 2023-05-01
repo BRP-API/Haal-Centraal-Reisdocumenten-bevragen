@@ -3,6 +3,7 @@ using Reisdocument.Infrastructure;
 using Reisdocument.Infrastructure.Json;
 using Reisdocument.Infrastructure.Stream;
 using Reisdocument.Validatie;
+using System.Text.RegularExpressions;
 
 namespace ReisdocumentProxy.Helpers;
 
@@ -170,5 +171,63 @@ public static class FoutHandlers
         await bodyStream.CopyToAsync(orgResponseBodyStream);
 
         return false;
+    }
+
+    private static readonly Regex UnexpectedCharacterEncounteredRegex = new(@"an unexpected character was encountered: (.*). Path '(?<name>.*)'");
+    private static readonly Regex ErrorConvertingToTypeRegex = new(@"Error converting value ""(.*)""(.*). Path '(?<name>.*)'");
+    private static readonly Regex NotValidClosingForArrayRegex = new(@"not valid for closing JsonType Array. Path '(?<name>.*)'");
+    private static (string name, string code, string reason) Parse(this Exception ex)
+    {
+        var match = UnexpectedCharacterEncounteredRegex.Match(ex.Message);
+        if (match.Success)
+        {
+            return (match.Groups["name"].Value, string.Empty, "waarde is niet valide");
+        }
+        match = ErrorConvertingToTypeRegex.Match(ex.Message);
+        if (match.Success)
+        {
+            return (match.Groups["name"].Value, string.Empty, "Parameter is geen array");
+        }
+        match = NotValidClosingForArrayRegex.Match(ex.Message);
+        if (match.Success)
+        {
+            return (match.Groups["name"].Value, string.Empty, "Parameter is geen array");
+        }
+
+        return (string.Empty, string.Empty, string.Empty);
+    }
+
+    private static BadRequestFoutbericht CreateJsonExceptionFoutbericht(this HttpContext context, Exception ex)
+    {
+        (string name, string code, string reason) = ex.Parse();
+        List<InvalidParams> invalidParams = new();
+        if (!string.IsNullOrEmpty(name) ||
+            !string.IsNullOrEmpty(code) ||
+            !string.IsNullOrEmpty(reason))
+        {
+            invalidParams.Add(new InvalidParams { Name = name, Code = code, Reason = reason });
+        }
+
+        return new BadRequestFoutbericht
+        {
+            Instance = new Uri(context.Request.Path, UriKind.Relative),
+            Status = StatusCodes.Status400BadRequest,
+            Title = "Een of meerdere parameters zijn niet correct.",
+            Type = new Uri(Constants.BadRequestIdentifier),
+            Code = "paramsValidation",
+            Detail = $"De foutieve parameter(s) zijn: {name}.",
+            InvalidParams = invalidParams
+        };
+    }
+
+    public static async Task HandleJsonException(this HttpContext context, Exception ex, Stream orgResponseBodyStream)
+    {
+        var foutbericht = context.CreateJsonExceptionFoutbericht(ex);
+
+        using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.UseGzip());
+
+        context.Response.SetProperties(foutbericht, bodyStream);
+
+        await bodyStream.CopyToAsync(orgResponseBodyStream);
     }
 }
