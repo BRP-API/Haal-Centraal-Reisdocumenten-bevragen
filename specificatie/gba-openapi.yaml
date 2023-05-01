@@ -1,0 +1,23 @@
+openapi: 3.0.3
+servers:
+  - description: |
+      Proef omgeving
+    url: https://proefomgeving.haalcentraal.nl/haalcentraal/api/reisdocumenten
+  - description: |
+      Lokaal
+    url: http://localhost:5010/haalcentraal/api/reisdocumenten
+info:
+  title: Haal Centraal Reisdocumenten bevragen
+  description: |
+    API voor het bevragen van gegevens van reisdocumenten.
+  version: 2.0.0
+  contact:
+    url: https://brp-api.github.io/Haal-Centraal-Reisdocumenten-bevragen
+  license:
+    name: European Union Public License, version 1.2 (EUPL-1.2)
+    url: https://eupl.eu/1.2/nl/
+tags:
+  - name: Reisdocumenten
+paths:
+  /reisdocumenten:
+    $ref: 'zoek-gba-reisdocumenten.yaml#/paths/~1reisdocumenten'

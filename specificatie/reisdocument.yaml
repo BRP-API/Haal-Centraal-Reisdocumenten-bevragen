@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: Reisdocument definities
+  version: 2.0.0
+  contact: {}
+paths: {}
+components:
+  schemas:
+    GbaInhoudingOfVermissing:
+      type: object
+      properties:
+        datum:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        aanduiding:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+    InhoudingOfVermissing:
+      type: object
+      properties:
+        datum:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+        aanduiding:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        inOnderzoek:
+          $ref: '#/components/schemas/InhoudingOfVermissingInOnderzoek'
+    InhoudingOfVermissingInOnderzoek:
+      type: object
+      properties:
+        datum:
+          type: boolean
+        aanduiding:
+          type: boolean
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+    ReisdocumenthouderBasis:
+      type: object
+      properties:
+        burgerservicenummer:
+          $ref: 'persoon.yaml#/components/schemas/Burgerservicenummer'
+    GbaReisdocumenthouder:
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumenthouderBasis'
+        - type: object
+          properties:
+            geheimhoudingPersoonsgegevens:
+              $ref: 'persoon.yaml#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
+            opschortingBijhouding:
+              $ref: 'opschorting-bijhouding.yaml#/components/schemas/GbaOpschortingBijhouding'
+            inOnderzoek:
+              $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
+    Reisdocumenthouder:
+      allOf:
+        - $ref: '#/components/schemas/ReisdocumenthouderBasis'
+        - type: object
+          properties:
+            geheimhoudingPersoonsgegevens:
+              $ref: 'persoon.yaml#/components/schemas/GeheimhoudingPersoonsgegevens'
+            opschortingBijhouding:
+              $ref: 'opschorting-bijhouding.yaml#/components/schemas/OpschortingBijhouding'
+            inOnderzoek:
+              $ref: '#/components/schemas/ReisdocumenthouderInOnderzoek'
+    ReisdocumenthouderInOnderzoek:
+      type: object
+      properties:
+        burgerservicenummer:
+          type: boolean
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+    Reisdocumentnummer:
+      type: string
+      pattern: ^[A-Z0-9]{9}$
+    GbaReisdocument:
+      type: object
+      properties:
+        reisdocumentnummer:
+          $ref: '#/components/schemas/Reisdocumentnummer'
+        soort:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        datumEindeGeldigheid:
+          $ref: 'datum.yaml#/components/schemas/GbaDatum'
+        inhoudingOfVermissing:
+          $ref: '#/components/schemas/GbaInhoudingOfVermissing'
+        houder:
+          $ref: '#/components/schemas/GbaReisdocumenthouder'
+        inOnderzoek:
+          $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
+    Reisdocument:
+      type: object
+      properties:
+        reisdocumentnummer:
+          $ref: '#/components/schemas/Reisdocumentnummer'
+        soort:
+          $ref: 'common.yaml#/components/schemas/Waardetabel'
+        datumEindeGeldigheid:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'
+        inhoudingOfVermissing:
+          $ref: '#/components/schemas/InhoudingOfVermissing'
+        houder:
+          $ref: '#/components/schemas/Reisdocumenthouder'
+        inOnderzoek:
+          $ref: '#/components/schemas/ReisdocumentInOnderzoek'
+    ReisdocumentInOnderzoek:
+      type: object
+      properties:
+        reisdocumentnummer:
+          type: boolean
+        soort:
+          type: boolean
+        datumEindeGeldigheid:
+          type: boolean
+        datumIngangOnderzoek:
+          $ref: 'datum.yaml#/components/schemas/AbstractDatum'

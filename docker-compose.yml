@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  reisdocumentproxy:
+    container_name: reisdocumentproxy
+    image: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:latest
+    build:
+      context: .
+      dockerfile: src/ReisdocumentProxy/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Release
+      - ASPNETCORE_URLS=http://+:5000
+    ports:
+      - "5002:5000"
+    networks:
+      - reisdocumenten-api-network
+
+  reisdocumentmock:
+    container_name: reisdocumentmock
+    image: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-mock:latest
+    build:
+      context: .
+      dockerfile: src/ReisdocumentService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Release
+      - ASPNETCORE_URLS=http://+:5010
+    ports:
+      - "5011:5010"
+    networks:
+      - reisdocumenten-api-network
+
+networks:
+  reisdocumenten-api-network:
+    name: reisdocumenten-api-network
