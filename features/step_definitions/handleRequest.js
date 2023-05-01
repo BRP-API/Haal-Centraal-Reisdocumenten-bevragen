@@ -4,16 +4,21 @@ const { createRequestBody } = require('./gba.js');
 function createHeaders(dataTable, extraHeaders) {
     let headers = {};
 
-    dataTable.hashes()
-        .filter(function(param) {
-            return param.naam.startsWith("header:");
-        })
-        .forEach(function(param) {
-            headers[param.naam.slice(8)] = param.waarde;
-        });
+    if(dataTable !== undefined) {
+        dataTable.hashes()
+            .filter(function(param) {
+                return param.naam.startsWith("header:");
+            })
+            .forEach(function(param) {
+                headers[param.naam.slice(8)] = param.waarde;
+            });
+    }
 
     if(headers.Accept === undefined) {
         headers.Accept = "application/json";
+    }
+    if(headers["Content-Type"] === undefined) {
+        headers["Content-Type"] = "application/json";
     }
     extraHeaders.forEach(function(header){
         headers[header.naam] = header.waarde;
@@ -57,11 +62,38 @@ async function handleOAuthRequest(accessToken, oAuth, afnemerId, endpointUrl, da
         accessToken = await getOAuthAccessToken(accessTokenUrl, oAuthSettings);
     }
 
-    let response = await postBevragenRequestWithOAuth(endpointUrl, accessToken, dataTable);
+    const requestBody = createRequestBody(dataTable);
+    let response = await postBevragenRequestWithOAuth(endpointUrl, accessToken, dataTable, 'post', requestBody);
     if(response.status === 401) {
         console.log("access denied. access token expired");
         accessToken = await getOAuthAccessToken(accessTokenUrl, oAuthSettings);
-        response = await postBevragenRequestWithOAuth(endpointUrl, accessToken, dataTable);
+        response = await postBevragenRequestWithOAuth(endpointUrl, accessToken, dataTable, 'post', requestBody);
+    }
+
+    return { response: response, accessToken: accessToken};
+}
+
+async function handleOAuthCustomRequest(accessToken, oAuth, afnemerId, endpointUrl, method, requestBody) {
+    const accessTokenUrl = oAuth.accessTokenUrl;
+    const oAuthSettings = afnemerId === undefined
+        ? oAuth.clients[0]
+        : oAuth.clients.find(client => client.afnemerID === afnemerId);
+
+    if(oAuthSettings === undefined) {
+        console.log(`geen oAuthSettings gevonden voor afnemerId '${afnemerId}'`);
+        return undefined;
+    }
+
+    if(accessToken === undefined) {
+        console.log("no access token. authenticate");
+        accessToken = await getOAuthAccessToken(accessTokenUrl, oAuthSettings);
+    }
+
+    let response = await postBevragenRequestWithOAuth(endpointUrl, accessToken, undefined, method, requestBody);
+    if(response.status === 401) {
+        console.log("access denied. access token expired");
+        accessToken = await getOAuthAccessToken(accessTokenUrl, oAuthSettings);
+        response = await postBevragenRequestWithOAuth(endpointUrl, accessToken, undefined, method, requestBody);
     }
 
     return { response: response, accessToken: accessToken};
@@ -89,12 +121,12 @@ async function getOAuthAccessToken(accessTokenUrl, oAuthSettings) {
     }
 }
 
-async function postBevragenRequestWithOAuth(baseUrl, access_token, dataTable) {
+async function postBevragenRequestWithOAuth(baseUrl, access_token, dataTable, method, body) {
     const config = {
-        method: 'post',
+        method: method,
         url: '/reisdocumenten',
         baseURL: baseUrl,
-        data: createRequestBody(dataTable),
+        data: body,
         headers: createHeaders(dataTable, [
             {
                 naam: 'Authorization',
@@ -113,4 +145,4 @@ async function postBevragenRequestWithOAuth(baseUrl, access_token, dataTable) {
     }
 }
 
-module.exports = { postBevragenRequestWithBasicAuth, handleOAuthRequest }
+module.exports = { postBevragenRequestWithBasicAuth, handleOAuthRequest, handleOAuthCustomRequest }

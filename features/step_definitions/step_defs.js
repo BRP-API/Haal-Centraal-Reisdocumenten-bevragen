@@ -2,7 +2,7 @@ const { World } = require('./world');
 const { createCollectieDataZonderVolgNrFromArray, createCollectieDataFromArray, createArrayFrom, createVoorkomenDataFromArray } = require('./dataTable2Array.js');
 const { createObjectFrom } = require('./dataTable2Object.js');
 const { stringifyValues } = require('./stringify.js');
-const { postBevragenRequestWithBasicAuth, handleOAuthRequest } = require('./handleRequest.js');
+const { postBevragenRequestWithBasicAuth, handleOAuthRequest, handleOAuthCustomRequest } = require('./handleRequest.js');
 const { Pool } = require('pg');
 const { noSqlData, executeSqlStatements, rollbackSqlStatements } = require('./postgressHelpers.js');
 const { Given, When, Then, setWorldConstructor, Before, After } = require('@cucumber/cucumber');
@@ -154,7 +154,7 @@ When(/^reisdocumenten wordt gezocht met de volgende parameters$/, async function
 
         await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
 
-        const result = await handleOAuthRequest(accessToken, this.context.oAuth, this.context.afnemerID, this.context.proxyUrl, dataTable);
+        const result = await handleOAuthRequest(accessToken, this.context.oAuth, this.context.afnemerId, this.context.proxyUrl, dataTable);
         this.context.response = result.response;
         accessToken = result.accessToken;
     }
@@ -189,6 +189,28 @@ When(/^gba reisdocumenten wordt gezocht met de volgende parameters$/, async func
         await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
 
         this.context.response = await postBevragenRequestWithBasicAuth(this.context.apiUrl, this.context.extraHeaders, dataTable);
+    }
+});
+
+When(/^reisdocumenten wordt gezocht met een '(.*)' aanroep$/, async function(verb){
+    this.context.proxyAanroep = true;
+    if(this.context.sqlData === undefined) {
+        this.context.sqlData = [{}];
+    }
+
+    if(this.context.oAuth.enable){
+        if(this.context.afnemerId === undefined) {
+            let sqlData = this.context.sqlData.at(-1);
+            const afnemerId = this.context.oAuth.clients[0].afnemerID;
+    
+            sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
+        }
+
+        await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
+
+        const result = await handleOAuthCustomRequest(accessToken, this.context.oAuth, this.context.afnemerId, this.context.proxyUrl, verb, '{}');
+        this.context.response = result.response;
+        accessToken = result.accessToken;
     }
 });
 
@@ -228,6 +250,8 @@ Then(/^heeft het '(\w*)' de volgende '(\w*)' gegevens$/, function (objectName, g
 });
 
 Then(/^heeft de response (\d*) (?:reisdocument|reisdocumenten)$/, function (aantal) {
+    this.context.response.status.should.equal(200, `response body: ${JSON.stringify(this.context.response.data, null, '\t')}`);
+
     const actual = this.context?.response?.data?.reisdocumenten;
 
     should.exist(actual);
@@ -313,11 +337,13 @@ After({tags: 'not @fout-case'}, function() {
 });
 
 After({tags: '@fout-case'}, async function() {
+    this.context.response.status.should.not.equal(200, `response body: ${JSON.stringify(this.context.response.data, null, '\t')}`);
+
     const headers = this.context?.response?.headers;
     should.exist(headers, 'no response headers found');
 
     const header = headers["content-type"];
-    should.exist(header, "no header found with name 'content-type'");
+    should.exist(header, `no header found with name 'content-type'. Response headers: ${headers}`);
     header.should.contain('application/problem+json', "no 'content-type' header found with value: 'application/problem+json'");
 
     const actual = this.context?.response?.data !== undefined
