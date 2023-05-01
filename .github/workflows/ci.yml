@@ -10,6 +10,9 @@ on:
     branches:
       - develop
       - master
+    tags:
+      - v*-proxy
+      - v*-mock
   workflow_dispatch:
 
 jobs:
@@ -77,14 +80,28 @@ jobs:
       - name: Stop containers
         if: always()
         run: docker compose -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f .docker/reisdocumenten-proxy.yml down
+      - uses: actions-ecosystem/action-regex-match@v2
+        if: always()
+        id: regex-match
+        with:
+          text: ${{ github.ref_name }}
+          regex: '^v(.*)-(.*)$'
       - name: Login to GitHub Container Registry
+        if: steps.regex-match.outputs.match != ''
         uses: docker/login-action@v2.1.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: push container images
+      - name: push proxy container images
+        if: steps.regex-match.outputs.group2 == 'proxy'
         run: |
+          docket tag ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:latest ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:${{ steps.regex-match.outputs.group1 }}
           docker push ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:latest
+          docker push ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:${{ steps.regex-match.outputs.group1 }}
+      - name: push mock container images
+        if: steps.regex-match.outputs.group2 == 'mock'
+        run: |
+          docker tag ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-mock:latest ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-mock:${{ steps.regex-match.outputs.group1 }}
           docker push ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-mock:latest
-      
+          docker push ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-mock:${{ steps.regex-match.outputs.group1 }}
