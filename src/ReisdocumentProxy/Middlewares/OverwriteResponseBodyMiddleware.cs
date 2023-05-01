@@ -30,6 +30,11 @@ public class OverwriteResponseBodyMiddleware
         try
         {
             _logger.LogDebug("request headers: {@requestHeaders}", context.Request.Headers);
+            if(!await context.MethodIsAllowed(orgBodyStream))
+            {
+                _logger.LogWarning("method not allowed: {@request.method}", context.Request.Method);
+                return;
+            }
             if(!await context.AcceptIsAllowed(orgBodyStream))
             {
                 _logger.LogWarning("Not supported Accept value: {@request.header}", context.Request.Headers.Accept);

@@ -15,6 +15,8 @@ public static class FoutHandlers
         response.ContentType = Constants.ProblemJsonContentType;
     }
 
+    private static bool UseGzip(this HttpResponse response) => response.Headers.ContentEncoding.Contains("gzip");
+
     public static BadRequestFoutbericht CreateBadRequestFoutbericht(this HttpContext context, string titel, string code, IEnumerable<InvalidParams> invalidParams)
     {
         return new BadRequestFoutbericht
@@ -37,7 +39,7 @@ public static class FoutHandlers
             from error in validationResult.Errors
             select new InvalidParams { Code = error.Code, Name = error.Name, Reason = error.Reason });
 
-        using var bodyStream = message.ToJson().ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+        using var bodyStream = message.ToJson().ToMemoryStream(context.Response.UseGzip());
 
         context.Response.SetProperties(message, bodyStream);
 
@@ -59,7 +61,7 @@ public static class FoutHandlers
     {
         var message = context.CreateInternalServerErrorFoutbericht();
 
-        using var bodyStream = message.ToJson().ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+        using var bodyStream = message.ToJson().ToMemoryStream(context.Response.UseGzip());
 
         context.Response.SetProperties(message, bodyStream);
 
@@ -94,7 +96,7 @@ public static class FoutHandlers
             {
                 var foutbericht = context.CreateNotAcceptableFoutbericht();
 
-                using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+                using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.UseGzip());
 
                 context.Response.SetProperties(foutbericht, bodyStream);
 
@@ -132,7 +134,7 @@ public static class FoutHandlers
             {
                 var foutbericht = context.CreateNotSupportedMediaTypeFoutbericht();
 
-                using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+                using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.UseGzip());
 
                 context.Response.SetProperties(foutbericht, bodyStream);
 
@@ -142,5 +144,31 @@ public static class FoutHandlers
             }
         }
         return true;
+    }
+
+    private static Foutbericht CreateMethodNotAllowedFoutbericht(this HttpContext context)
+    {
+        return new Foutbericht
+        {
+            Status = StatusCodes.Status405MethodNotAllowed,
+            Instance = new Uri(context.Request.Path, UriKind.Relative),
+            Title = "Method not allowed.",
+            Type = new Uri(Constants.MethodNotAllowedIdentifier)
+        };
+    }
+
+    public static async Task<bool> MethodIsAllowed(this HttpContext context, Stream orgResponseBodyStream)
+    {
+        if (context.Request.Method == HttpMethod.Post.Method) return true;
+
+        var foutbericht = context.CreateMethodNotAllowedFoutbericht();
+
+        using var bodyStream = foutbericht.ToJson().ToMemoryStream(context.Response.UseGzip());
+
+        context.Response.SetProperties(foutbericht, bodyStream);
+
+        await bodyStream.CopyToAsync(orgResponseBodyStream);
+
+        return false;
     }
 }
