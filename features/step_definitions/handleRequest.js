@@ -46,6 +46,25 @@ async function postBevragenRequestWithBasicAuth(baseUrl, extraHeaders, dataTable
     }
 }
 
+async function handleCustomBevragenRequest(baseUrl, method, dataTable, extraHeaders, requestBody) {
+    const config = {
+        method: method,
+        url: '/reisdocumenten',
+        baseURL: baseUrl,
+        data: requestBody,
+        headers: createHeaders(dataTable, extraHeaders)
+    };
+
+    try {
+        return await axios(config);
+    }
+    catch(e) {
+        e.code.should.not.equal('ECONNREFUSED', `${e.config.baseURL}${e.config.url} returns ${e.code}`);
+        e.code.should.not.equal('ECONNRESET', `${e.config.baseURL}${e.config.url} returns ${e.code}`);
+        return e.response;
+    }
+}
+
 async function handleOAuthRequest(accessToken, oAuth, afnemerId, endpointUrl, dataTable) {
     const accessTokenUrl = oAuth.accessTokenUrl;
     const oAuthSettings = afnemerId === undefined
@@ -145,4 +164,4 @@ async function postBevragenRequestWithOAuth(baseUrl, access_token, dataTable, me
     }
 }
 
-module.exports = { postBevragenRequestWithBasicAuth, handleOAuthRequest, handleOAuthCustomRequest }
+module.exports = { postBevragenRequestWithBasicAuth, handleOAuthRequest, handleOAuthCustomRequest, handleCustomBevragenRequest }

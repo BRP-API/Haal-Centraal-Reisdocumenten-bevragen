@@ -97,4 +97,10 @@ function createRequestBody(dataTable) {
     return requestBody;
 }
 
-module.exports = { tableNameMap, columnNameMap, createAutorisatieSettingsFor, createRequestBody }
+function createBasicAuthorizationHeader(afnemerId, gemeenteCode) {
+    return [
+        { "naam": "Authorization", "waarde": "Basic " + Buffer.from(`${afnemerId}|${gemeenteCode}:tempsolution!`).toString('base64') }
+    ]
+}
+
+module.exports = { tableNameMap, columnNameMap, createAutorisatieSettingsFor, createRequestBody, createBasicAuthorizationHeader }
