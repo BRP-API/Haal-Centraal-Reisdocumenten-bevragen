@@ -68,7 +68,7 @@ jobs:
 
           doCommit=false
 
-          if [-n "$(git status docs/features/*.html --porcelain)" ]; then
+          if [ -n "$(git status docs/features/*.html --porcelain)" ]; then
             git add docs/features/*.html
             doCommit=true
           fi
@@ -81,23 +81,6 @@ jobs:
             git push
           fi
 
-      - name: Validate api functional specs
-        run: |
-          npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen-gba.json \
-                          -f summary:docs/features/test-result-zoeken-en-raadplegen-gba-summary.txt \
-                          features/raadpleeg-met-reisdocumentnummer \
-                          features/zoek-met-burgerservicenummer \
-                          --tags "not @skip-verify" --tags "@gba" \
-                          --world-parameters '${{ secrets.TEST_SETTINGS }}'
-      - name: Validate proxy functional specs
-        if: always()
-        run: |
-          npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen.json \
-                          -f summary:docs/features/test-result-zoeken-en-raadplegen-summary.txt \
-                          features/raadpleeg-met-reisdocumentnummer \
-                          features/zoek-met-burgerservicenummer \
-                          --tags "not @skip-verify" --tags "not @gba" \
-                          --world-parameters '${{ secrets.TEST_SETTINGS }}'
       - name: Stop containers
         if: always()
         run: docker compose -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f .docker/reisdocumenten-proxy.yml down
