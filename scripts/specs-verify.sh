@@ -21,24 +21,25 @@ PARAMS="{ \
 mkdir -p docs/features
 
 npx cucumber-js -f json:docs/features/test-result-autorisatie-gba.json \
-            -f summary:docs/features/test-result-autorisatie-gba-summary.txt \
-            features \
-            --tags "not @skip-verify" --tags "@autorisatie" \
-            --world-parameters "$PARAMS"
+                -f summary:docs/features/test-result-autorisatie-gba-summary.txt \
+                features \
+                --tags "not @skip-verify" --tags "@autorisatie" \
+                --world-parameters "$PARAMS"
 
 npx cucumber-js -f json:docs/features/test-result-protocollering-gba.json \
-            -f summary:docs/features/test-result-protocollering-gba-summary.txt \
-            features \
-            --tags "not @skip-verify" --tags "@protocollering" \
-            --world-parameters "$PARAMS"
+                -f summary:docs/features/test-result-protocollering-gba-summary.txt \
+                features \
+                --tags "not @skip-verify" --tags "@protocollering" \
+                --world-parameters "$PARAMS"
 
 npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen-gba.json \
-            -f summary:docs/features/test-result-zoeken-en-raadplegen-gba-summary.txt \
-            features/ \
-            --tags "not @skip-verify" --tags "@gba" --tags "not @autorisatie" --tags "not @protocollering" \
-            --world-parameters "$PARAMS"
+                -f summary:docs/features/test-result-zoeken-en-raadplegen-gba-summary.txt \
+                features/ \
+                --tags "not @skip-verify" --tags "@gba" --tags "not @autorisatie" --tags "not @protocollering" \
+                --world-parameters "$PARAMS"
 
-# cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen.json \
-#             -f summary:docs/features/test-result-zoeken-en-raadplegen-summary.txt \
-#             features/raadpleeg-met-reisdocumentnummer \
-#             --tags "not @skip-verify" --tags "not @gba"
+npx cucumber-js -f json:docs/features/test-result-zoeken-en-raadplegen.json \
+                -f summary:docs/features/test-result-zoeken-en-raadplegen-summary.txt \
+                features/ \
+                --tags "not @skip-verify" --tags "not @gba" \
+                --world-parameters "$PARAMS"
