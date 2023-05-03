@@ -66,10 +66,17 @@ jobs:
 
           node ./scripts/generate-cucumber-report.js ${{ vars.API_VERSION }} $${{ vars.PROXY_VERSION }}
 
+          node ./scripts/parse-summary.js  ${{ vars.API_VERSION }} $${{ vars.PROXY_VERSION }}
+
           doCommit=false
 
           if [ -n "$(git status docs/features/*.html --porcelain)" ]; then
             git add docs/features/*.html
+            doCommit=true
+          fi
+
+          if [ -n "$(git status docs/features/index.md --porcelain)" ]; then
+            git add docs/features/index.md
             doCommit=true
           fi
 
