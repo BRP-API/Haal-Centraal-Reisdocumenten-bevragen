@@ -64,9 +64,9 @@ jobs:
         run: |
           ./scripts/specs-verify.sh ${{ secrets.DBHOST }} ${{ secrets.DBUSER }} ${{ secrets.DBPASSWORD }} ${{ secrets.CLIENTID }} ${{ secrets.CLIENTSECRET }}
 
-          node ./scripts/generate-cucumber-report.js ${{ vars.API_VERSION }} $${{ vars.PROXY_VERSION }}
+          node ./scripts/generate-cucumber-report.js ${{ vars.API_VERSION }} ${{ vars.PROXY_VERSION }}
 
-          node ./scripts/parse-summary.js  ${{ vars.API_VERSION }} $${{ vars.PROXY_VERSION }}
+          node ./scripts/parse-summary.js  ${{ vars.API_VERSION }} ${{ vars.PROXY_VERSION }}
 
           doCommit=false
 
