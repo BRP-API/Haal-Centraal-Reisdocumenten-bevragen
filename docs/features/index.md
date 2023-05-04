@@ -15,6 +15,6 @@ Totaal: 481 scenarios (2 failed, 479 passed)
     - features/zoek-met-burgerservicenummer/gba/protocollering-gba.feature:26
 
 
-## Proxy v.0.0
+## Proxy v2.0.0
 
 - [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen.html){:target="_blank" rel="noopener"}: 265 scenarios (265 passed)
