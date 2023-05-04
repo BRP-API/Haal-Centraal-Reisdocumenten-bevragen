@@ -1,6 +1,6 @@
 baseurl: "/Haal-Centraal-Reisdocumenten-bevragen"
-v2SpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/oas/reisdocumenten-v2/specificatie/genereervariant/openapi.yaml
-v2GbaSpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/oas/reisdocumenten-v2/specificatie/genereervariant/openapi.yaml
+v2SpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/genereervariant/openapi.yaml
+v2GbaSpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/gba-genereervariant/openapi.yaml
 
 apiname: "Reisdocumenten Bevragen"
 url: "http://localhost:4000"
