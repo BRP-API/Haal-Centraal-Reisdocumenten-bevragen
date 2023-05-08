@@ -4,4 +4,4 @@ title: redoc
 body_include: redoc-body.html
 ---
 Versie 2.0.0
-<redoc spec-url='{{ site.v2GbaSpecUrl}}'></redoc>
+<redoc spec-url='{{ site.v2RawGbaSpecUrl}}'></redoc>

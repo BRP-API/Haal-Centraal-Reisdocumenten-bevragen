@@ -1,6 +1,12 @@
 baseurl: "/Haal-Centraal-Reisdocumenten-bevragen"
-v2SpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/genereervariant/openapi.yaml
-v2GbaSpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/gba-genereervariant/openapi.yaml
+v2SpecUrl: https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/blob/master/specificatie/genereervariant/openapi.yaml
+v2GbaSpecUrl: https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/blob/master/specificatie/gba-genereervariant/openapi.yaml
+v2RawSpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/genereervariant/openapi.yaml
+v2RawGbaSpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/gba-genereervariant/openapi.yaml
+v2DockerComposeUrl: https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/blob/master/docker-compose.yml
+proefProxyUrl: https://proefomgeving.haalcentraal.nl
+
+PO-email: cathy.dingemanse@rvig.nl
 
 apiname: "Reisdocumenten Bevragen"
 url: "http://localhost:4000"
