@@ -21,7 +21,7 @@ De [functionele documentatie](./features-overzicht) van de '{{ site.apiname }}' 
 
 ## Probeer de API in de proef omgeving
 
-De functionaliteit van de '{{ site.apiname }}' Web API kan worden beproefd in de proef omgeving. De API is te vragen op de volgende endpoint: [{{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten/reisdocumenten]({{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten). Hiervoor heb je een apikey nodig.
+De functionaliteit van de '{{ site.apiname }}' Web API kan worden uitgeprobeerd in de proef omgeving. De API is te bevragen op de volgende endpoint: [{{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten/reisdocumenten]({{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten). Hiervoor heb je een apikey nodig.
 
 De proef omgeving ontsluit reisdocumenten die voorkomen in de [Testdataset Basisregistratie Personen](https://www.rvig.nl/brp/werken-met-de-basisregistratie-personen-brp/testdataset){:target="_blank" rel="noopener"}
 
@@ -54,7 +54,7 @@ Onderstaand figuur visualiseert de configuratie van bovenstaande aanroep in Post
 
 ## Probeer de Proxy lokaal
 
-Door wettelijke restricties kan de '{{ site.apiname }}' Web API bepaalde bewerkingen niet uitvoeren. Er wordt op dit moment aan gewerkt om deze restricties weg te halen. Totdat dit is gerealiseerd moet de '{{ site.apiname }}' Proxy worden gebruikt om de bewerkte gegevens te kunnen krijgen.
+Door wettelijke restricties kan de '{{ site.apiname }}' Web API bepaalde bewerkingen niet uitvoeren. Er wordt op dit moment gewerkt aan het Experimentbesluit Dataminimalisatie om deze restricties weg te halen. Totdat dit is vastgesteld moet de '{{ site.apiname }}' Proxy worden gebruikt om de bewerkte gegevens te kunnen krijgen.
 
 De '{{ site.apiname }}' Proxy is een containerized applicatie die in de omgeving van een consumer moet worden gehost. Bevragingen van de '{{ site.apiname }}' Web API moet naar de '{{ site.apiname }}' Proxy worden gestuurd, zodat deze de bevragingen kan routeren naar de GBA variant van de '{{ site.apiname }}' Web API. Responses van deze Web API worden getransformeerd naar responses conform de {{ site.apiname }} [OAS3 specificatie]({{ site.v2SpecUrl }}){:target="_blank" rel="noopener"} voordat deze worden gestuurd naar de bevrager.
 
