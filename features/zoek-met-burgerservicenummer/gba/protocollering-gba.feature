@@ -33,11 +33,11 @@ Functionaliteit: Protocolleren van RaadpleegMetReisdocumentnummer
       | gemeente van inschrijving (09.10) |
       | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                                    |
-      | type                    | ZoekMetBurgerservicenummer                |
-      | burgerservicenummer     | 000000012                                 |
-      | gemeenteVanInschrijving | 0800                                      |
-      | fields                  | reisdocumentnummer, inhoudingOfVermissing |
+      | naam                    | waarde                                   |
+      | type                    | ZoekMetBurgerservicenummer               |
+      | burgerservicenummer     | 000000012                                |
+      | gemeenteVanInschrijving | 0800                                     |
+      | fields                  | reisdocumentnummer,inhoudingOfVermissing |
       Dan heeft de persoon met burgerservicenummer '000000012' de volgende 'protocollering' gegevens
       | request_zoek_rubrieken |
       | 010120, 080910         |
