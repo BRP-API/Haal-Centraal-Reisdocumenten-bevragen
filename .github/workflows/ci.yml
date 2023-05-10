@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - src/**
-      - feature/**
+      - features/**
       - .github/workflows/ci.yml
       - .docker/reisdocumenten-api.yml
     branches:
