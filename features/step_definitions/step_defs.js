@@ -4,7 +4,7 @@ const { createObjectFrom } = require('./dataTable2Object.js');
 const { stringifyValues } = require('./stringify.js');
 const { postBevragenRequestWithBasicAuth, handleOAuthRequest, handleOAuthCustomRequest, handleCustomBevragenRequest } = require('./handleRequest.js');
 const { Pool } = require('pg');
-const { noSqlData, executeSqlStatements, rollbackSqlStatements } = require('./postgressHelpers.js');
+const { noSqlData, executeSqlStatements, rollbackSqlStatements } = require('./postgresqlHelpers.js');
 const { Given, When, Then, setWorldConstructor, Before, After } = require('@cucumber/cucumber');
 const deepEqualInAnyOrder = require('deep-equal-in-any-order');
 const should = require('chai').use(deepEqualInAnyOrder).should();
@@ -140,52 +140,43 @@ Given(/^de geauthenticeerde consumer heeft de volgende '(.*)' gegevens$/, functi
     this.context.gemeenteCode = gemeenteCode.waarde;
 });
 
-When(/^reisdocumenten wordt gezocht met de volgende parameters$/, async function (dataTable) {
-    this.context.proxyAanroep = true;
-    if(this.context.sqlData === undefined) {
-        this.context.sqlData = [{}];
+async function handleRequest(context, dataTable) {
+    if(context.sqlData === undefined) {
+        context.sqlData = [{}];
     }
 
-    const afnemerId = this.context.afnemerId ?? this.context.oAuth.clients[0].afnemerID;
-    const gemeenteCode = this.context.gemeenteCode ?? "800";
+    const afnemerId = context.afnemerId ?? context.oAuth.clients[0].afnemerID;
+    const gemeenteCode = context.gemeenteCode ?? "800";
+    const url = context.proxyAanroep ? context.proxyUrl : context.apiUrl;
 
-    let sqlData = this.context.sqlData.at(-1);
-    sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
+    const heeftAutorisatieSettings = context.sqlData.filter(s => s['autorisatie'] !== undefined).length > 0;
+    if(!heeftAutorisatieSettings){
+        let sqlData = context.sqlData.at(-1);
+        sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
+    }
 
-    await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
+    await executeSqlStatements(context.sqlData, pool, tableNameMap, logSqlStatements);
 
-    if(this.context.oAuth.enable){
-        const result = await handleOAuthRequest(accessToken, this.context.oAuth, afnemerId, this.context.proxyUrl, dataTable);
-        this.context.response = result.response;
+    if(context.oAuth.enable){
+        const result = await handleOAuthRequest(accessToken, context.oAuth, afnemerId, url, dataTable);
+        context.response = result.response;
         accessToken = result.accessToken;
     }
     else {
-        this.context.response = await postBevragenRequestWithBasicAuth(this.context.proxyUrl, createBasicAuthorizationHeader(afnemerId, gemeenteCode), dataTable);
+        context.response = await postBevragenRequestWithBasicAuth(url, createBasicAuthorizationHeader(afnemerId, gemeenteCode), dataTable);
     }
+}
+
+When(/^reisdocumenten wordt gezocht met de volgende parameters$/, async function (dataTable) {
+    this.context.proxyAanroep = true;
+
+    await handleRequest(this.context, dataTable);
 });
 
 When(/^gba reisdocumenten wordt gezocht met de volgende parameters$/, async function (dataTable) {
     this.context.proxyAanroep = false;
-    if(this.context.sqlData === undefined) {
-        this.context.sqlData = [{}];
-    }
 
-    const afnemerId = this.context.afnemerId ?? this.context.oAuth.clients[0].afnemerID;
-    const gemeenteCode = this.context.gemeenteCode ?? "800";
-
-    let sqlData = this.context.sqlData.at(-1);
-    sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
-
-    await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
-
-    if(this.context.oAuth.enable){
-        const result = await handleOAuthRequest(accessToken, this.context.oAuth, afnemerId, this.context.apiUrl, dataTable);
-        this.context.response = result.response;
-        accessToken = result.accessToken;
-    }
-    else {
-        this.context.response = await postBevragenRequestWithBasicAuth(this.context.apiUrl, createBasicAuthorizationHeader(afnemerId, gemeenteCode), dataTable);
-    }
+    await handleRequest(this.context, dataTable);
 });
 
 When(/^reisdocumenten wordt gezocht met een '(.*)' aanroep$/, async function(verb){
@@ -197,13 +188,16 @@ When(/^reisdocumenten wordt gezocht met een '(.*)' aanroep$/, async function(ver
     const afnemerId = this.context.afnemerId ?? this.context.oAuth.clients[0].afnemerID;
     const gemeenteCode = this.context.gemeenteCode ?? "800";
 
-    let sqlData = this.context.sqlData.at(-1);
-    sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
+    const heeftAutorisatieSettings = this.context.sqlData.filter(s => s['autorisatie'] !== undefined).length > 0;
+    if(!heeftAutorisatieSettings){
+        let sqlData = this.context.sqlData.at(-1);
+        sqlData['autorisatie'] = createAutorisatieSettingsFor(afnemerId);
+    }
 
     await executeSqlStatements(this.context.sqlData, pool, tableNameMap, logSqlStatements);
 
     if(this.context.oAuth.enable){
-        const result = await handleOAuthCustomRequest(accessToken, this.context.oAuth, this.context.afnemerId, this.context.proxyUrl, verb, '{}');
+        const result = await handleOAuthCustomRequest(accessToken, this.context.oAuth, afnemerId, this.context.proxyUrl, verb, '{}');
         this.context.response = result.response;
         accessToken = result.accessToken;
     }

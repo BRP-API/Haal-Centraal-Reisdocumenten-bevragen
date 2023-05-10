@@ -2,10 +2,11 @@ function noSqlData(sqlData) {
     return sqlData === undefined ||
            (sqlData.length === 1 && Object.keys(sqlData[0]).length === 0);
 }
+
 async function executeSqlStatements(sqlData, pool, tableNameMap, logSqlStatements) {
     if (pool === undefined || noSqlData(sqlData)) {
-            return;
-        }
+        return;
+    }
 
     const client = await pool.connect();
     try {
