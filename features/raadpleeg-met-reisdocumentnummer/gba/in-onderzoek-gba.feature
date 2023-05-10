@@ -121,11 +121,11 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als gba reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 000000152                  |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder                     |
+    | naam                    | waarde                         |
+    | type                    | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer      | NE3663258                      |
+    | gemeenteVanInschrijving | 0800                           |
+    | fields                  | houder                         |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |
