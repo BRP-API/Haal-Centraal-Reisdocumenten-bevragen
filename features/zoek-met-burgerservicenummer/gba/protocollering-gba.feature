@@ -1,7 +1,7 @@
 #language: nl
 
 @gba @protocollering
-Functionaliteit: Protocolleren van RaadpleegMetReisdocumentnummer
+Functionaliteit: Protocolleren van ZoekMetBurgerservicenummer
   Zoeken en raadplegen van gegevens van burgers worden "geprotocolleerd" (formeel gelogd).
 
   Protocollering moet gebeuren op twee niveau's:
