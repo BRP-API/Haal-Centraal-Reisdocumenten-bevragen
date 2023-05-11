@@ -91,8 +91,14 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon met behulp
     # Een standaardwaarde geldt hier als waarde
     # Een reisdocument wordt niet geleverd wanneer alleen gegevens uit groep 36, 81, 82, 83, 85 en/of 86 een waarde hebben
 
-    Scenario: de persoon heeft een reisdocument dat is verwijderd via de signalering opname op Register paspoortsignaleringen
+    Scenario: de persoon staat in het Register paspoortsignaleringen
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
+      | naam                                                                    | waarde       |
+      | soort reisdocument (35.10)                                              | PN           |
+      | nummer reisdocument (35.20)                                             | NE3663258    |
+      | datum uitgifte Nederlands reisdocument (35.30)                          | 20171106     |
+      | datum einde geldigheid reisdocument (35.50)                             | 20271106     |
+      En de persoon heeft een 'reisdocument' met de volgende gegevens 
       | naam                                                                                   | waarde           |
       | signalering met betrekking tot het verstrekken van een Nederlands reisdocument (36.10) | 1                |
       | gemeente document (82.10)                                                              | 0518             |
@@ -109,4 +115,4 @@ Functionaliteit: zoeken van de actuele reisdocumenten van een persoon met behulp
       | burgerservicenummer     | 000000152                  |
       | gemeenteVanInschrijving | 0800                       |
       | fields                  | reisdocumentnummer         |
-      Dan heeft de response 0 reisdocumenten
+      Dan heeft de response 1 reisdocumenten
