@@ -37,8 +37,8 @@ curl --request POST \
 --header 'X-API-KEY: <<APIKEY>>' \
 --data '{
   "type": "RaadpleegMetReisdocumentnummer",
-  "reisdocumentnummer": ["IX34JH673"],
-  "gemeenteVanInschrijving": "1810",
+  "reisdocumentnummer": ["IVJ892799"],
+  "gemeenteVanInschrijving": "0599",
   "fields": [
       "reisdocumentnummer",
       "soort",
@@ -49,6 +49,8 @@ curl --request POST \
 ```
 
 Onderstaand figuur visualiseert de configuratie van bovenstaande aanroep in Postman
+
+**Opmerking**. In de proefomgeving kunnen alleen reisdocumenten van test personen die staan ingeschreven in de gemeente Rotterdam (gemeenteVanInschrijving = 0599).
 
 ![Raadpleeg met reisdocumentnummer](../img/postman-voorbeeld-aanroep.png)
 
@@ -67,7 +69,7 @@ De '{{ site.apiname }}' Proxy kan lokaal worden uitgeprobeerd met behulp van [Do
 - [Docker Desktop](https://www.docker.com/products/docker-desktop){:target="_blank" rel="noopener"} op een Windows of Mac PC worden geïnstalleerd
 - op dezelfde Windows of Mac PC het [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"} worden gedownload
 
-Vervolgens moet een command prompt worden gestart in de map met het gedownloade [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"} en moet in de command prompt de volgende statement worden uitgevoerd om de '{{ site.apiname }}' Proxy op te starten:
+Start een command prompt in de map met het gedownloade [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"} en voer de volgende statement uit om de '{{ site.apiname }}' Proxy op te starten:
 
 ```sh
 
@@ -75,7 +77,7 @@ docker-compose up -d
 
 ```
 
-Behalve de '{{ site.apiname }}' Proxy wordt lokaal ook een mock van de GBA variant van de '{{ site.apiname }}' Web API opgestart. De mock maakt om lokaal zonder apikey de functionaliteit van de '{{ site.apiname }}' Web API uit te proberen.
+Behalve de '{{ site.apiname }}' Proxy wordt lokaal ook een mock van de GBA variant van de '{{ site.apiname }}' Web API opgestart. De mock maakt het mogelijk om lokaal zonder apikey de functionaliteit van de '{{ site.apiname }}' Web API uit te proberen.
 
 Met behulp van de volgende curl statement wordt op basis van een reisdocumentnummer gegevens van de bijbehorende reisdocument via de '{{ site.apiname }}' Proxy bij de mock opgehaald
 
@@ -86,8 +88,8 @@ curl --request POST \
 --header 'Content-Type: application/json' \
 --data '{
   "type": "RaadpleegMetReisdocumentnummer",
-  "reisdocumentnummer": ["IX34JH673"],
-  "gemeenteVanInschrijving": "1810",
+  "reisdocumentnummer": ["IVJ892799"],
+  "gemeenteVanInschrijving": "0599",
   "fields": [
       "reisdocumentnummer",
       "soort",
@@ -107,7 +109,9 @@ docker-compose down
 
 ## Routeer Proxy aanroepen naar de GBA variant van de Web API in de proef omgeving
 
-Stop de proxy container met behulp van de volgende statement:
+Hiervoor moeten environment variabelen worden toegevoegd aan de '{{ site.apiname }}' Proxy in het [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"}.
+
+Stop eerst de proxy container met behulp van de volgende statement:
 
 ```sh
 
@@ -162,8 +166,8 @@ curl --request POST \
 --header 'X-API-KEY: <<APIKEY>>' \
 --data '{
   "type": "RaadpleegMetReisdocumentnummer",
-  "reisdocumentnummer": ["IX34JH673"],
-  "gemeenteVanInschrijving": "1810",
+  "reisdocumentnummer": ["IVJ892799"],
+  "gemeenteVanInschrijving": "0599",
   "fields": [
       "reisdocumentnummer",
       "soort",
