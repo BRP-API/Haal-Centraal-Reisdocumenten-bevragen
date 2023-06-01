@@ -20,7 +20,7 @@ builder.Host.UseSerilog((context, config) =>
         .Enrich.With<ActivityEnricher>()
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
                          theme: AnsiConsoleTheme.Code)
-        .WriteTo.Seq(context.Configuration["Seq:ServerUrl"]);
+        .WriteTo.Seq(context.Configuration["Seq:ServerUrl"]!);
 });
 
 // Add services to the container.
