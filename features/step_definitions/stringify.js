@@ -3,10 +3,11 @@ function stringifyValues(o) {
 
     Object.keys(o).forEach(k => {
         if (typeof o[k] === 'object') {
-        return stringifyValues(o[k]);
+            o[k] = stringifyValues(o[k]);
         }
-
-        o[k] = '' + o[k];
+        else {
+            o[k] = '' + o[k];
+        }
     });
 
     return o;

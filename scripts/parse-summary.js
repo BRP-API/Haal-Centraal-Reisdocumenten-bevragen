@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { readdirSync, readFileSync, createWriteStream } = require('fs');
 
 const gbaFeatures = [
     'Zoeken en raadplegen',
@@ -13,12 +13,12 @@ const proxyFeatures = [
 function getSummaryFiles(src) {
     let files = [];
 
-    const items = fs.readdirSync(src, {withFileTypes: true});
+    const items = readdirSync(src, {withFileTypes: true});
     for(const item of items) {
         if(item.isDirectory()) {
             files = [...files, ...getSummaryFiles(`${src}/${item.name}`)];
         }
-        else if(item.name.match(/.*\-summary.txt/)) {
+        else if(RegExp(/.*-summary.txt/).exec(item.name)) {
             files.push(`${src}/${item.name}`);
         }
     }
@@ -27,8 +27,8 @@ function getSummaryFiles(src) {
 }
 
 function getSummaryLine(file) {
-    const lines = fs.readFileSync(file, 'utf-8').split(/\r?\n/);
-    return lines.find(line => line.match(/^\d+ scenarios (\(\d+ passed\)|\(\d+ failed, \d+ passed\)|\(\d+ failed\))$/));
+    const lines = readFileSync(file, { encoding: 'utf8' }).split(/\r?\n/);
+    return lines.find(line => RegExp(/^\d+ scenarios (\(\d+ passed\)|\(\d+ failed, \d+ passed\)|\(\d+ failed\))$/).exec(line));
 }
 
 function parseSummaries(source) {
@@ -43,24 +43,24 @@ function parseSummaries(source) {
     summaryFiles.forEach(file => {
         const line = getSummaryLine(file);
 
-        let match = line.match(/^(?<total>\d+) scenarios \((?<passed>\d+) passed\)$/);
+        let match = RegExp(/^(?<total>\d+) scenarios \((?<passed>\d+) passed\)$/).exec(line);
         if(match) {
             scenarioSummary.total += Number(match.groups['total']);
             scenarioSummary.passed += Number(match.groups['passed']);
         }
-        match = line.match(/^(?<total>\d+) scenarios \((?<failed>\d+) failed, (?<passed>\d+) passed\)$/);
+        match = RegExp(/^(?<total>\d+) scenarios \((?<failed>\d+) failed, (?<passed>\d+) passed\)$/).exec(line);
         if(match) {
             scenarioSummary.total += Number(match.groups['total']);
             scenarioSummary.failed += Number(match.groups['failed']);
             scenarioSummary.passed += Number(match.groups['passed']);
         }
-        match = line.match(/^(?<total>\d+) scenarios \((?<failed>\d+) failed\)$/);
+        match = RegExp(/^(?<total>\d+) scenarios \((?<failed>\d+) failed\)$/).exec(line);
         if(match) {
             scenarioSummary.total += Number(match.groups['total']);
             scenarioSummary.failed += Number(match.groups['failed']);
         }
 
-        match = file.match(/.*\/test-result-(?<report>[\w\-]+)-summary.txt/);
+        match = file.match(/.*\/test-result-(?<report>[\w-]+)-summary.txt/);
         if(match) {
             const report = match.groups['report'];
             if(report.includes('-gba')) {
@@ -114,26 +114,31 @@ function writeFeatureSummary(features, type, summary, file) {
 
 function writeSummaryToMarkdown(source, target, gbaVersion, proxyVersion) {
     const summary = parseSummaries(source);
-    const file = fs.createWriteStream(target, 'utf-8');
+    const file = createWriteStream(target, { encoding: 'utf8' });
 
-    file.write('---\n');
-    file.write('layout: page-with-side-nav\n');
-    file.write('title: Features test overzicht\n');
-    file.write('---\n');
-    file.write(`# Features test overzicht\n\n`);
-    file.write(`Totaal: ${summary.total} scenarios (${summary.failed} failed, ${summary.passed} passed)\n\n`);
-
-    file.write(`## GBA v${gbaVersion}\n\n`);
-    writeFeatureSummary(gbaFeatures, 'gba', summary, file);
-
-    file.write('\n\n');
-
-    file.write(`## Proxy v${proxyVersion}\n\n`);
-    writeFeatureSummary(proxyFeatures, 'proxy', summary, file);
+    try {
+        file.write('---\n');
+        file.write('layout: page-with-side-nav\n');
+        file.write('title: Features test overzicht\n');
+        file.write('---\n');
+        file.write(`# Features test overzicht\n\n`);
+        file.write(`Totaal: ${summary.total} scenarios (${summary.failed} failed, ${summary.passed} passed)\n\n`);
+    
+        file.write(`## GBA v${gbaVersion}\n\n`);
+        writeFeatureSummary(gbaFeatures, 'gba', summary, file);
+    
+        file.write('\n\n');
+    
+        file.write(`## Proxy v${proxyVersion}\n\n`);
+        writeFeatureSummary(proxyFeatures, 'proxy', summary, file);
+    }
+    finally {
+        file.close();
+    }
 }
 
 function parseFailedScenariosFromSummaryFile(file) {
-    const lines = fs.readFileSync(file, 'utf-8').split(/\r?\n/);
+    const lines = readFileSync(file, { encoding: 'utf8' }).split(/\r?\n/);
     let retval = [];
     lines.forEach(function(line) {
         if(line.match(/^\d*\) /)) {
