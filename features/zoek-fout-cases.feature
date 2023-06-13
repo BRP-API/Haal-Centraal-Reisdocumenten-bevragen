@@ -167,7 +167,6 @@ Rule: Voor de request body wordt als content type en charset respectievelijk all
     | naam                    | waarde                     |
     | type                    | <zoek type>                |
     | <naam parameter>        | <waarde parameter>         |
-    | gemeenteVanInschrijving | 0800                       |
     | fields                  | houder.burgerservicenummer |
     | header: Content-Type    | <media type>               |
     Dan heeft de response 0 reisdocumenten
@@ -227,7 +226,7 @@ Rule: Om privacy en security redenen moet een bevraging van reisdocumenten worde
     | PUT          |
     | PATCH        |
     | DELETE       |
-    # | CONNECT      | een CONNECT aanroep wordt niet gebruikt om te bevragen
-    # | HEAD         | een HEAD response bevat geen body
-    | OPTIONS |
-    | TRACE   |
+  # | CONNECT      | een CONNECT aanroep wordt niet gebruikt om te bevragen
+  # | HEAD         | een HEAD response bevat geen body
+    | OPTIONS      |
+    | TRACE        |
