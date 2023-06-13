@@ -37,9 +37,6 @@ Functionaliteit: autorisatie voor het gebruik van de API RaadpleegMetReisdocumen
 
 
   Rule: Een gemeente als afnemer is geautoriseerd voor alle zoekvragen en alle gegevens voor haar eigen inwoners
-    Wanneer de afnemer parameter gemeenteVanInschrijving gebruikt 
-    en die is gelijk aan de waarde van gemeenteCode in de 'claim', 
-    dan wordt niet gekeken naar de autorisatie van de afnemer
 
     Scenario: Gemeente raadpleegt een reisdocument van een eigen inwoner. 'gemeentecode' claim komt overeen met 'gemeente van inschrijving' van houder
       Gegeven de afnemer met indicatie '000008' heeft de volgende 'autorisatie' gegevens

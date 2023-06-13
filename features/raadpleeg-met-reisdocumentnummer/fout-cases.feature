@@ -100,7 +100,6 @@ Rule: Alleen gespecificeerde parameters bij het opgegeven zoektype mogen worden 
     | naam                    | waarde                         |
     | type                    | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer      | AB1234567                      |
-    | gemeenteVanInschrijving | 0800                           |
     | <parameter>             | <waarde>                       |
     | fields                  | reisdocumentnummer             |
     Dan heeft de response een object met de volgende gegevens

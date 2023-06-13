@@ -39,7 +39,7 @@ Functionaliteit: Protocolleren van RaadpleegMetReisdocumentnummer
       | fields             | inhoudingOfVermissing,houder   |
       Dan heeft de persoon met burgerservicenummer '000000012' de volgende 'protocollering' gegevens
       | request_zoek_rubrieken |
-      | 080910, 123520         |
+      | 123520                 |
 
   Rule: Gevraagde velden in fields worden vertaald naar rubrieknummers, oplopend gesorteerd en gescheiden door komma en spatie
 
