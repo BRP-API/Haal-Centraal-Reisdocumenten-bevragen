@@ -13,11 +13,10 @@ Functionaliteit: Aanduiding inhouding/vermissing van reisdocument vragen geeft o
       | gemeente van inschrijving (09.10) |
       | 0800                              |
       Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                           |
-      | type                    | RaadpleegMetReisdocumentnummer   |
-      | reisdocumentnummer      | NE3663258                        |
-      | gemeenteVanInschrijving | 0800                             |
-      | fields                  | inhoudingOfVermissing.aanduiding |
+      | naam               | waarde                           |
+      | type               | RaadpleegMetReisdocumentnummer   |
+      | reisdocumentnummer | NE3663258                        |
+      | fields             | inhoudingOfVermissing.aanduiding |
       Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
       | naam                    | waarde         |
       | aanduiding.code         | <aanduiding>   |

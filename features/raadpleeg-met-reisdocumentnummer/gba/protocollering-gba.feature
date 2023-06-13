@@ -33,11 +33,10 @@ Functionaliteit: Protocolleren van RaadpleegMetReisdocumentnummer
       | gemeente van inschrijving (09.10) |
       | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                         |
-      | type                    | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer      | NE3663258                      |
-      | gemeenteVanInschrijving | 0800                           |
-      | fields                  | inhoudingOfVermissing,houder   |
+      | naam               | waarde                         |
+      | type               | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer | NE3663258                      |
+      | fields             | inhoudingOfVermissing,houder   |
       Dan heeft de persoon met burgerservicenummer '000000012' de volgende 'protocollering' gegevens
       | request_zoek_rubrieken |
       | 080910, 123520         |
@@ -54,11 +53,10 @@ Functionaliteit: Protocolleren van RaadpleegMetReisdocumentnummer
       | gemeente van inschrijving (09.10) |
       | 0800                              |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                         |
-      | type                    | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer      | NE3663258                      |
-      | gemeenteVanInschrijving | 0800                           |
-      | fields                  | <fields>                       |
+      | naam               | waarde                         |
+      | type               | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer | NE3663258                      |
+      | fields             | <fields>                       |
       Dan heeft de persoon met burgerservicenummer '000000012' de volgende 'protocollering' gegevens
       | request_gevraagde_rubrieken |
       | <gevraagde rubrieken>       |

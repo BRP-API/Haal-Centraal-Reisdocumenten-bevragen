@@ -13,11 +13,10 @@ Functionaliteit: Soort reisdocument
       | gemeente van inschrijving (09.10) |
       | 0800                              |
       Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                     |
-      | type                    | ZoekMetBurgerservicenummer |
-      | burgerservicenummer     | 000000024                  |
-      | gemeenteVanInschrijving | 0800                       |
-      | fields                  | soort                      |
+      | naam                | waarde                     |
+      | type                | ZoekMetBurgerservicenummer |
+      | burgerservicenummer | 000000024                  |
+      | fields              | soort                      |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam               | waarde         |
       | soort.code         | <code>         |
@@ -40,10 +39,9 @@ Functionaliteit: Soort reisdocument
       | gemeente van inschrijving (09.10) |
       | 0800                              |
       Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                     |
-      | type                    | ZoekMetBurgerservicenummer |
-      | burgerservicenummer     | 000000024                  |
-      | gemeenteVanInschrijving | 0800                       |
-      | fields                  | soort                      |
+      | naam                | waarde                     |
+      | type                | ZoekMetBurgerservicenummer |
+      | burgerservicenummer | 000000024                  |
+      | fields              | soort                      |
       Dan heeft de response een 'reisdocument' zonder gegevens
     

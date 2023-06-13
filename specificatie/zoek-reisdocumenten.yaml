@@ -62,7 +62,6 @@ components:
       required:
         - type
         - fields
-        - gemeenteVanInschrijving
       discriminator:
         propertyName: type
         mapping:
@@ -77,8 +76,6 @@ components:
           minItems: 1
           items:
             $ref: 'filter.yaml#/components/schemas/Field'
-        gemeenteVanInschrijving:
-          $ref: 'persoon.yaml#/components/schemas/GemeenteVanInschrijving'
     RaadpleegMetReisdocumentnummer:
       required:
         - reisdocumentnummer

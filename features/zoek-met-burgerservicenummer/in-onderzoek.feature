@@ -4,21 +4,20 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
 
   Abstract Scenario: '<type>' is in onderzoek en de velden reisdocumentnummer, soort en datumEindeGeldigheid worden gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-    | naam                                                                    | waarde                    |
-    | soort reisdocument (35.10)                                              | PN                        |
-    | nummer reisdocument (35.20)                                             | NE3663258                 |
-    | datum einde geldigheid reisdocument (35.50)                             | 20240506                  |
-    | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)                                          | 20230506                  |
+    | naam                                        | waarde                    |
+    | soort reisdocument (35.10)                  | PN                        |
+    | nummer reisdocument (35.20)                 | NE3663258                 |
+    | datum einde geldigheid reisdocument (35.50) | 20240506                  |
+    | aanduiding in onderzoek (83.10)             | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)              | 20230506                  |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                                        |
-    | type                    | ZoekMetBurgerservicenummer                    |
-    | burgerservicenummer     | 000000152                                     |
-    | gemeenteVanInschrijving | 0800                                          |
-    | fields                  | reisdocumentnummer,soort,datumEindeGeldigheid |
+    | naam                | waarde                                        |
+    | type                | ZoekMetBurgerservicenummer                    |
+    | burgerservicenummer | 000000152                                     |
+    | fields              | reisdocumentnummer,soort,datumEindeGeldigheid |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam                                         | waarde                      |
     | reisdocumentnummer                           | NE3663258                   |
@@ -44,21 +43,20 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
 
   Abstract Scenario: '<type>' is in onderzoek en de velden reisdocumentnummer, soort en datumEindeGeldigheid worden gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-    | naam                                                                    | waarde                    |
-    | soort reisdocument (35.10)                                              | PN                        |
-    | nummer reisdocument (35.20)                                             | NE3663258                 |
-    | datum einde geldigheid reisdocument (35.50)                             | 20240506                  |
-    | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
-    | datum ingang onderzoek (83.20)                                          | 20230506                  |
+    | naam                                        | waarde                    |
+    | soort reisdocument (35.10)                  | PN                        |
+    | nummer reisdocument (35.20)                 | NE3663258                 |
+    | datum einde geldigheid reisdocument (35.50) | 20240506                  |
+    | aanduiding in onderzoek (83.10)             | <aanduiding in onderzoek> |
+    | datum ingang onderzoek (83.20)              | 20230506                  |
     En de persoon heeft de volgende 'verblijfplaats' gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                                        |
-    | type                    | ZoekMetBurgerservicenummer                    |
-    | burgerservicenummer     | 000000152                                     |
-    | gemeenteVanInschrijving | 0800                                          |
-    | fields                  | reisdocumentnummer,soort,datumEindeGeldigheid |
+    | naam                | waarde                                        |
+    | type                | ZoekMetBurgerservicenummer                    |
+    | burgerservicenummer | 000000152                                     |
+    | fields              | reisdocumentnummer,soort,datumEindeGeldigheid |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam                             | waarde             |
     | reisdocumentnummer               | NE3663258          |
@@ -89,11 +87,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 000000152                  |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder                     |
+    | naam                | waarde                     |
+    | type                | ZoekMetBurgerservicenummer |
+    | burgerservicenummer | 000000152                  |
+    | fields              | houder                     |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                                         | waarde          |
     | burgerservicenummer                          | 000000152       |
@@ -122,11 +119,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 000000152                  |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | <fields>                   |
+    | naam                | waarde                     |
+    | type                | ZoekMetBurgerservicenummer |
+    | burgerservicenummer | 000000152                  |
+    | fields              | <fields>                   |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                                         | waarde          |
     | burgerservicenummer                          | 000000152       |
@@ -154,11 +150,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 000000152                  |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder                     |
+    | naam                | waarde                     |
+    | type                | ZoekMetBurgerservicenummer |
+    | burgerservicenummer | 000000152                  |
+    | fields              | houder                     |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |
@@ -180,11 +175,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 000000152                  |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder                     |
+    | naam                | waarde                     |
+    | type                | ZoekMetBurgerservicenummer |
+    | burgerservicenummer | 000000152                  |
+    | fields              | houder                     |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |

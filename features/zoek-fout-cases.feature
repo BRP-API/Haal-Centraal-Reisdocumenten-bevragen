@@ -65,12 +65,11 @@ Rule: Voor de response body wordt als content type en charset respectievelijk al
   @fout-case
   Abstract Scenario: 'application/xml' is opgegeven als Accept content type
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde             |
-    | type                    | <zoek type>        |
-    | <naam parameter>        | <waarde parameter> |
-    | gemeenteVanInschrijving | 0800               |
-    | fields                  | reisdocumentnummer |
-    | header: Accept          | application/xml    |
+    | naam             | waarde             |
+    | type             | <zoek type>        |
+    | <naam parameter> | <waarde parameter> |
+    | fields           | reisdocumentnummer |
+    | header: Accept   | application/xml    |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.6 |
@@ -87,12 +86,11 @@ Rule: Voor de response body wordt als content type en charset respectievelijk al
 
   Abstract Scenario: '<accept media type>' wordt opgegeven als Accept content type
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | ZoekMetBurgerservicenummer |
-    | burgerservicenummer     | 000000024                  |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder.burgerservicenummer |
-    | header: Accept          | <accept media type>        |
+    | naam                | waarde                     |
+    | type                | ZoekMetBurgerservicenummer |
+    | burgerservicenummer | 000000024                  |
+    | fields              | houder.burgerservicenummer |
+    | header: Accept      | <accept media type>        |
     Dan heeft de response 0 reisdocumenten
 
     Voorbeelden:
@@ -111,11 +109,10 @@ Rule: Voor de response body is application/json de default Accept waarde en is u
 
   Abstract Scenario: Er is geen Accept header met waarde opgegeven
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | <zoek type>                |
-    | <naam parameter>        | <waarde parameter>         |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder.burgerservicenummer |
+    | naam             | waarde                     |
+    | type             | <zoek type>                |
+    | <naam parameter> | <waarde parameter>         |
+    | fields           | houder.burgerservicenummer |
     Dan heeft de response 0 reisdocumenten
 
     Voorbeelden:
@@ -125,12 +122,11 @@ Rule: Voor de response body is application/json de default Accept waarde en is u
 
   Abstract Scenario: Er is een lege waarde opgegeven voor de Accept header
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | <zoek type>                |
-    | <naam parameter>        | <waarde parameter>         |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder.burgerservicenummer |
-    | header: Accept          |                            |
+    | naam             | waarde                     |
+    | type             | <zoek type>                |
+    | <naam parameter> | <waarde parameter>         |
+    | fields           | houder.burgerservicenummer |
+    | header: Accept   |                            |
     Dan heeft de response 0 reisdocumenten
 
     Voorbeelden:
@@ -143,12 +139,11 @@ Rule: Voor de request body wordt als content type en charset respectievelijk all
   @fout-case
   Abstract Scenario: '<media type>' is opgegeven als Content-Type waarde
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde             |
-    | type                    | <zoek type>        |
-    | <naam parameter>        | <waarde parameter> |
-    | gemeenteVanInschrijving | 0800               |
-    | fields                  | reisdocumentnummer |
-    | header: Content-Type    | <media type>       |
+    | naam                 | waarde             |
+    | type                 | <zoek type>        |
+    | <naam parameter>     | <waarde parameter> |
+    | fields               | reisdocumentnummer |
+    | header: Content-Type | <media type>       |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                       |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.13 |
@@ -189,11 +184,10 @@ Rule: Voor de request body is application/json de default Content-Type waarde en
 
   Abstract Scenario: Er is geen Content-Type header met waarde opgegeven
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | <zoek type>                |
-    | <naam parameter>        | <waarde parameter>         |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder.burgerservicenummer |
+    | naam             | waarde                     |
+    | type             | <zoek type>                |
+    | <naam parameter> | <waarde parameter>         |
+    | fields           | houder.burgerservicenummer |
     Dan heeft de response 0 reisdocumenten
 
     Voorbeelden:
@@ -203,12 +197,11 @@ Rule: Voor de request body is application/json de default Content-Type waarde en
 
   Abstract Scenario: Er is een lege waarde opgegeven voor de Content-Type header
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                     |
-    | type                    | <zoek type>                |
-    | <naam parameter>        | <waarde parameter>         |
-    | gemeenteVanInschrijving | 0800                       |
-    | fields                  | houder.burgerservicenummer |
-    | header: Content-Type    |                            |
+    | naam                 | waarde                     |
+    | type                 | <zoek type>                |
+    | <naam parameter>     | <waarde parameter>         |
+    | fields               | houder.burgerservicenummer |
+    | header: Content-Type |                            |
     Dan heeft de response 0 reisdocumenten
 
     Voorbeelden:
@@ -236,5 +229,5 @@ Rule: Om privacy en security redenen moet een bevraging van reisdocumenten worde
     | DELETE       |
     # | CONNECT      | een CONNECT aanroep wordt niet gebruikt om te bevragen
     # | HEAD         | een HEAD response bevat geen body
-    | OPTIONS      |
-    | TRACE        |
+    | OPTIONS |
+    | TRACE   |
