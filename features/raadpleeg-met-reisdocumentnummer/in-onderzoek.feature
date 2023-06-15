@@ -16,11 +16,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                                        |
-    | type                    | RaadpleegMetReisdocumentnummer                |
-    | reisdocumentnummer      | NE3663258                                     |
-    | gemeenteVanInschrijving | 0800                                          |
-    | fields                  | reisdocumentnummer,soort,datumEindeGeldigheid |
+    | naam               | waarde                                        |
+    | type               | RaadpleegMetReisdocumentnummer                |
+    | reisdocumentnummer | NE3663258                                     |
+    | fields             | reisdocumentnummer,soort,datumEindeGeldigheid |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam                                         | waarde                      |
     | reisdocumentnummer                           | NE3663258                   |
@@ -58,11 +57,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                                        |
-    | type                    | RaadpleegMetReisdocumentnummer                |
-    | reisdocumentnummer      | NE3663258                                     |
-    | gemeenteVanInschrijving | 0800                                          |
-    | fields                  | reisdocumentnummer,soort,datumEindeGeldigheid |
+    | naam               | waarde                                        |
+    | type               | RaadpleegMetReisdocumentnummer                |
+    | reisdocumentnummer | NE3663258                                     |
+    | fields             | reisdocumentnummer,soort,datumEindeGeldigheid |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam                             | waarde             |
     | reisdocumentnummer               | NE3663258          |
@@ -93,11 +91,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | inhoudingOfVermissing          |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | inhoudingOfVermissing          |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
     | naam                                         | waarde                               |
     | datum.type                                   | Datum                                |
@@ -132,11 +129,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | inhoudingOfVermissing          |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | inhoudingOfVermissing          |
     Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
     | naam                    | waarde                   |
     | datum.type              | Datum                    |
@@ -167,11 +163,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | houder                         |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | houder                         |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                                         | waarde          |
     | burgerservicenummer                          | 000000152       |
@@ -200,11 +195,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | houder                         |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | houder                         |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |
@@ -226,11 +220,10 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | houder                         |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | houder                         |
     Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |

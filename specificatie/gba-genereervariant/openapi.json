@@ -275,7 +275,7 @@
         } ]
       },
       "ReisdocumentenQuery" : {
-        "required" : [ "fields", "gemeenteVanInschrijving", "type" ],
+        "required" : [ "fields", "type" ],
         "type" : "object",
         "properties" : {
           "type" : {
@@ -288,9 +288,6 @@
             "items" : {
               "$ref" : "#/components/schemas/Field"
             }
-          },
-          "gemeenteVanInschrijving" : {
-            "$ref" : "#/components/schemas/GemeenteVanInschrijving"
           }
         },
         "discriminator" : {
@@ -484,12 +481,6 @@
         "pattern" : "^[a-zA-Z0-9\\._]{1,200}$",
         "type" : "string",
         "description" : "Het pad naar een gewenst veld in punt-gescheiden formaat. Bijvoorbeeld \"burgerservicenummer\", \"geboorte.datum\", \"partners.naam.voornamen\".\n"
-      },
-      "GemeenteVanInschrijving" : {
-        "pattern" : "^[0-9]{4}$",
-        "type" : "string",
-        "description" : "Een code die aangeeft in welke gemeente de persoon woont, of de laatste gemeente waar de persoon heeft gewoond, of de gemeente waar de persoon voor het eerst is ingeschreven.\n",
-        "example" : "0518"
       },
       "Burgerservicenummer" : {
         "pattern" : "^[0-9]{9}$",

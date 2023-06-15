@@ -8,10 +8,10 @@ Functionaliteit: gba geheimhouding leveren bij ZoekMetBurgerservicenummer
 
   Achtergrond:
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-      | naam                                            | waarde    |
-      | soort reisdocument (35.10)                      | PN        |
-      | nummer reisdocument (35.20)                     | NE3663258 |
-      | datum einde geldigheid reisdocument (35.50)     | 20330506  |
+      | naam                                        | waarde    |
+      | soort reisdocument (35.10)                  | PN        |
+      | nummer reisdocument (35.20)                 | NE3663258 |
+      | datum einde geldigheid reisdocument (35.50) | 20330506  |
       En de persoon heeft de volgende 'verblijfplaats' gegevens
       | gemeente van inschrijving (09.10) |
       | 0800                              |
@@ -24,11 +24,10 @@ Functionaliteit: gba geheimhouding leveren bij ZoekMetBurgerservicenummer
       | naam                     | waarde |
       | indicatie geheim (70.10) | 0      |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                     |
-      | type                    | ZoekMetBurgerservicenummer |
-      | burgerservicenummer     | 000000152                  |
-      | gemeenteVanInschrijving | 0800                       |
-      | fields                  | reisdocumentnummer         |
+      | naam                | waarde                     |
+      | type                | ZoekMetBurgerservicenummer |
+      | burgerservicenummer | 000000152                  |
+      | fields              | reisdocumentnummer         |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam               | waarde    |
       | reisdocumentnummer | NE3663258 |
@@ -41,11 +40,10 @@ Functionaliteit: gba geheimhouding leveren bij ZoekMetBurgerservicenummer
       | naam                     | waarde   |
       | indicatie geheim (70.10) | <waarde> |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                     |
-      | type                    | ZoekMetBurgerservicenummer |
-      | burgerservicenummer     | 000000152                  |
-      | gemeenteVanInschrijving | 0800                       |
-      | fields                  | reisdocumentnummer         |
+      | naam                | waarde                     |
+      | type                | ZoekMetBurgerservicenummer |
+      | burgerservicenummer | 000000152                  |
+      | fields              | reisdocumentnummer         |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam                                 | waarde    |
       | reisdocumentnummer                   | NE3663258 |
@@ -66,11 +64,10 @@ Functionaliteit: gba geheimhouding leveren bij ZoekMetBurgerservicenummer
       | naam                     | waarde |
       | indicatie geheim (70.10) | 7      |
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                     |
-      | type                    | ZoekMetBurgerservicenummer |
-      | burgerservicenummer     | 000000152                  |
-      | gemeenteVanInschrijving | 0800                       |
-      | fields                  | <fields>                   |
+      | naam                | waarde                     |
+      | type                | ZoekMetBurgerservicenummer |
+      | burgerservicenummer | 000000152                  |
+      | fields              | <fields>                   |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam                                 | waarde     |
       | <veld 1>                             | <waarde 1> |
@@ -93,11 +90,10 @@ Functionaliteit: gba geheimhouding leveren bij ZoekMetBurgerservicenummer
     @fout-case
     Abstract Scenario: veld geheimhoudingPersoonsgegevens mag niet worden gevraagd, omdat het automatisch wordt geleverd
       Als gba reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                     |
-      | type                    | ZoekMetBurgerservicenummer |
-      | burgerservicenummer     | 000000152                  |
-      | gemeenteVanInschrijving | 0800                       |
-      | fields                  | <fields>                   |
+      | naam                | waarde                     |
+      | type                | ZoekMetBurgerservicenummer |
+      | burgerservicenummer | 000000152                  |
+      | fields              | <fields>                   |
       Dan heeft de response een object met de volgende gegevens
       | naam     | waarde                                                      |
       | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -111,7 +107,7 @@ Functionaliteit: gba geheimhouding leveren bij ZoekMetBurgerservicenummer
       | fields | fields[<index>] | Parameter bevat een niet toegestane veldnaam. |
 
       Voorbeelden:
-      | fields                                                                                   | index |
-      | houder.geheimhoudingPersoonsgegevens                                                     | 0     |
-      | reisdocumentnummer,houder.geheimhoudingPersoonsgegevens,houder.burgerservicenummer       | 1     |
-      | soort,inhoudingOfVermissing.datum,houder.geheimhoudingPersoonsgegevens                   | 2     |
+      | fields                                                                             | index |
+      | houder.geheimhoudingPersoonsgegevens                                               | 0     |
+      | reisdocumentnummer,houder.geheimhoudingPersoonsgegevens,houder.burgerservicenummer | 1     |
+      | soort,inhoudingOfVermissing.datum,houder.geheimhoudingPersoonsgegevens             | 2     |

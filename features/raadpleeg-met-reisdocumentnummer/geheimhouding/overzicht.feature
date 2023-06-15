@@ -7,10 +7,10 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
 
   Achtergrond:
       Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
-      | naam                                            | waarde    |
-      | soort reisdocument (35.10)                      | PN        |
-      | nummer reisdocument (35.20)                     | NE3663258 |
-      | datum einde geldigheid reisdocument (35.50)     | 20330506  |
+      | naam                                        | waarde    |
+      | soort reisdocument (35.10)                  | PN        |
+      | nummer reisdocument (35.20)                 | NE3663258 |
+      | datum einde geldigheid reisdocument (35.50) | 20330506  |
       En de persoon heeft de volgende 'verblijfplaats' gegevens
       | gemeente van inschrijving (09.10) |
       | 0800                              |
@@ -23,11 +23,10 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | naam                     | waarde |
       | indicatie geheim (70.10) | 0      |
       Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                         |
-      | type                    | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer      | NE3663258                      |
-      | gemeenteVanInschrijving | 0800                           |
-      | fields                  | reisdocumentnummer             |
+      | naam               | waarde                         |
+      | type               | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer | NE3663258                      |
+      | fields             | reisdocumentnummer             |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam               | waarde    |
       | reisdocumentnummer | NE3663258 |
@@ -40,11 +39,10 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | naam                     | waarde   |
       | indicatie geheim (70.10) | <waarde> |
       Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                         |
-      | type                    | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer      | NE3663258                      |
-      | gemeenteVanInschrijving | 0800                           |
-      | fields                  | reisdocumentnummer             |
+      | naam               | waarde                         |
+      | type               | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer | NE3663258                      |
+      | fields             | reisdocumentnummer             |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam                                 | waarde    |
       | reisdocumentnummer                   | NE3663258 |
@@ -65,11 +63,10 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | naam                     | waarde |
       | indicatie geheim (70.10) | 7      |
       Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                         |
-      | type                    | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer      | NE3663258                      |
-      | gemeenteVanInschrijving | 0800                           |
-      | fields                  | <fields>                       |
+      | naam               | waarde                         |
+      | type               | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer | NE3663258                      |
+      | fields             | <fields>                       |
       Dan heeft de response een 'reisdocument' met de volgende gegevens
       | naam                                 | waarde     |
       | <veld 1>                             | <waarde 1> |
@@ -94,11 +91,10 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
     @fout-case
     Abstract Scenario: veld geheimhoudingPersoonsgegevens mag niet worden gevraagd, omdat het automatisch wordt geleverd
       Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam                    | waarde                         |
-      | type                    | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer      | NE3663258                      |
-      | gemeenteVanInschrijving | 0800                           |
-      | fields                  | <fields>                       |
+      | naam               | waarde                         |
+      | type               | RaadpleegMetReisdocumentnummer |
+      | reisdocumentnummer | NE3663258                      |
+      | fields             | <fields>                       |
       Dan heeft de response een object met de volgende gegevens
       | naam     | waarde                                                      |
       | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -112,7 +108,7 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | fields | fields[<index>] | Parameter bevat een niet toegestane veldnaam. |
 
       Voorbeelden:
-      | fields                                                                                   | index |
-      | houder.geheimhoudingPersoonsgegevens                                                     | 0     |
-      | reisdocumentnummer,houder.geheimhoudingPersoonsgegevens,houder.burgerservicenummer       | 1     |
-      | soort,inhoudingOfVermissing.datum,houder.geheimhoudingPersoonsgegevens                   | 2     |
+      | fields                                                                             | index |
+      | houder.geheimhoudingPersoonsgegevens                                               | 0     |
+      | reisdocumentnummer,houder.geheimhoudingPersoonsgegevens,houder.burgerservicenummer | 1     |
+      | soort,inhoudingOfVermissing.datum,houder.geheimhoudingPersoonsgegevens             | 2     |

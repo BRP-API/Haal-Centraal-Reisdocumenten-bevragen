@@ -7,10 +7,9 @@ Rule: De fields parameter is een verplichte parameter
   @fout-case
   Abstract Scenario: De fields parameter ontbreekt
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde             |
-    | type                    | <zoek type>        |
-    | <parameter naam>        | <parameter waarde> |
-    | gemeenteVanInschrijving | 0800               |
+    | naam             | waarde             |
+    | type             | <zoek type>        |
+    | <parameter naam> | <parameter waarde> |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -33,11 +32,10 @@ Rule: De fields parameter bevat een lijst met minimaal één veld pad
   @fout-case
   Abstract Scenario: De fields parameter bevat een lege lijst
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde             |
-    | type                    | <zoek type>        |
-    | <parameter naam>        | <parameter waarde> |
-    | gemeenteVanInschrijving | 0800               |
-    | fields                  |                    |
+    | naam             | waarde             |
+    | type             | <zoek type>        |
+    | <parameter naam> | <parameter waarde> |
+    | fields           |                    |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -60,11 +58,10 @@ Rule: De fields parameter bevat een lijst met maximaal 25 veld paden
   @fout-case
   Scenario: De fields parameter bevat meer dan 25 veld paden
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-    | type                    | <zoek type>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-    | <parameter naam>        | <parameter waarde>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-    | gemeenteVanInschrijving | 0800                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-    | fields                  | reisdocumentnummer,soort,soort.code,soort.omschrijving,datumEindeGeldigheid,datumEindeGeldigheid.type,datumEindeGeldigheid.datum,houder,houder.burgerservicenummer,inhoudingOfVermissing,inhoudingOfVermissing.aanduiding,inhoudingOfVermissing.datum,reisdocumentnummer,soort,soort.code,soort.omschrijving,datumEindeGeldigheid,datumEindeGeldigheid.type,datumEindeGeldigheid.datum,houder,houder.burgerservicenummer,inhoudingOfVermissing,inhoudingOfVermissing.aanduiding,inhoudingOfVermissing.datum,reisdocumentnummer,reisdocumentnummer |
+    | naam             | waarde                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+    | type             | <zoek type>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+    | <parameter naam> | <parameter waarde>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+    | fields           | reisdocumentnummer,soort,soort.code,soort.omschrijving,datumEindeGeldigheid,datumEindeGeldigheid.type,datumEindeGeldigheid.datum,houder,houder.burgerservicenummer,inhoudingOfVermissing,inhoudingOfVermissing.aanduiding,inhoudingOfVermissing.datum,reisdocumentnummer,soort,soort.code,soort.omschrijving,datumEindeGeldigheid,datumEindeGeldigheid.type,datumEindeGeldigheid.datum,houder,houder.burgerservicenummer,inhoudingOfVermissing,inhoudingOfVermissing.aanduiding,inhoudingOfVermissing.datum,reisdocumentnummer,reisdocumentnummer |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -91,11 +88,10 @@ Rule: De fields parameter bevat veld paden die verwijzen naar een bestaand veld.
   @fout-case
   Abstract Scenario: De fields parameter bevat één of meerdere veld paden met ongeldige karakters
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde             |
-    | type                    | <zoek type>        |
-    | <parameter naam>        | <parameter waarde> |
-    | gemeenteVanInschrijving | 0800               |
-    | fields                  | <fields>           |
+    | naam             | waarde             |
+    | type             | <zoek type>        |
+    | <parameter naam> | <parameter waarde> |
+    | fields           | <fields>           |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -120,11 +116,10 @@ Rule: De fields parameter bevat veld paden die verwijzen naar een bestaand veld.
   @fout-case
   Abstract Scenario: De fields parameter bevat één of meerdere niet bestaande (onjuiste case) veld paden
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde             |
-    | type                    | <zoek type>        |
-    | <parameter naam>        | <parameter waarde> |
-    | gemeenteVanInschrijving | 0800               |
-    | fields                  | <fields>           |
+    | naam             | waarde             |
+    | type             | <zoek type>        |
+    | <parameter naam> | <parameter waarde> |
+    | fields           | <fields>           |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
@@ -149,11 +144,10 @@ Rule: Automatisch geleverde velden mogen niet worden gevraagd
   @fout-case
   Abstract Scenario: De fields parameter bevat één of meerdere paden van automatisch geleverde velden
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde             |
-    | type                    | <zoek type>        |
-    | <parameter naam>        | <parameter waarde> |
-    | gemeenteVanInschrijving | 0800               |
-    | fields                  | <fields>           |
+    | naam             | waarde             |
+    | type             | <zoek type>        |
+    | <parameter naam> | <parameter waarde> |
+    | fields           | <fields>           |
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |

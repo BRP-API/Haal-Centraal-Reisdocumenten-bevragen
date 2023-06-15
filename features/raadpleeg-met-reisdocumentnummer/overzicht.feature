@@ -2,7 +2,7 @@
 
 Functionaliteit: Raadpleeg met reisdocumentnummer
 
-Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer en de gemeenteVanInschrijving worden opgegeven
+Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer worden opgegeven
 
   Scenario: Raadpleeg een reisdocument
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
@@ -14,11 +14,10 @@ Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer en de
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | reisdocumentnummer,houder      |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | reisdocumentnummer,houder      |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam               | waarde    |
     | reisdocumentnummer | NE3663258 |
@@ -36,11 +35,10 @@ Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer en de
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663259                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | reisdocumentnummer,houder      |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663259                      |
+    | fields             | reisdocumentnummer,houder      |
     Dan heeft de response 0 reisdocumenten
 
 Rule: als een gevraagde veld in onderzoek is, dan wordt het bijbehorend inOnderzoek veld en datumIngangOnderzoek ook geleverd
@@ -57,11 +55,10 @@ Rule: als een gevraagde veld in onderzoek is, dan wordt het bijbehorend inOnderz
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | reisdocumentnummer,soort       |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | reisdocumentnummer,soort       |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam                                         | waarde             |
     | reisdocumentnummer                           | NE3663258          |
@@ -84,12 +81,10 @@ Rule: als een gevraagde veld in onderzoek is, dan wordt het bijbehorend inOnderz
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
-    | naam                    | waarde                         |
-    | type                    | RaadpleegMetReisdocumentnummer |
-    | reisdocumentnummer      | NE3663258                      |
-    | gemeenteVanInschrijving | 0800                           |
-    | fields                  | reisdocumentnummer             |
+    | naam               | waarde                         |
+    | type               | RaadpleegMetReisdocumentnummer |
+    | reisdocumentnummer | NE3663258                      |
+    | fields             | reisdocumentnummer             |
     Dan heeft de response een 'reisdocument' met de volgende gegevens
     | naam               | waarde    |
     | reisdocumentnummer | NE3663258 |
-
