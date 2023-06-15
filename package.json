@@ -16,7 +16,7 @@
     "oas:generate-python-client": "npm run oas:generate-client -- -o ./code/python -g python --additional-properties=optionalProjectFile=false,optionalAssemblyInfo=false",
     "oas:lint": "bash scripts/lint-oas.sh",
     "oas:lint-genereervariant": "bash scripts/lint-oas-genereervariant.sh",
-    "preoas:resolve": "mvn-dl io.swagger.codegen.v3:swagger-codegen-cli:3.0.41 -f swagger-codegen-cli.jar",
+    "preoas:resolve": "mvn-dl io.swagger.codegen.v3:swagger-codegen-cli:3.0.45 -f swagger-codegen-cli.jar",
     "oas:resolve": "bash scripts/resolve-oas.sh",
     "postoas:resolve": "rm swagger-codegen-cli.jar",
     "unstage-generated": "git reset HEAD ./specificatie/genereervariant/openapi.* ./specificatie/gba-genereervariant/openapi.*",
