@@ -134,10 +134,13 @@ Given(/^de afnemer met indicatie '(.*)' heeft de volgende '(.*)' gegevens$/, fun
 });
 
 Given(/^de geauthenticeerde consumer heeft de volgende '(.*)' gegevens$/, function (_, dataTable) {
-    const afnemerId = dataTable.hashes().find(param => param.naam === 'afnemerID');
-    this.context.afnemerId = afnemerId.waarde;
-    const gemeenteCode = dataTable.hashes().find(param => param.naam === 'gemeenteCode');
-    this.context.gemeenteCode = gemeenteCode.waarde;
+    this.context.afnemerId = dataTable.hashes()[0].naam !== undefined
+        ? dataTable.hashes().find(param => param.naam === 'afnemerID').waarde
+        : dataTable.hashes()[0].afnemerID;
+
+    this.context.gemeenteCode = dataTable.hashes()[0].naam !== undefined
+        ? dataTable.hashes().find(param => param.naam === 'gemeenteCode').waarde
+        : dataTable.hashes()[0].gemeenteCode;
 });
 
 async function handleRequest(context, dataTable) {
