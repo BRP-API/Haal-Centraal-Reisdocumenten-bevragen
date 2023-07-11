@@ -4,9 +4,6 @@ services:
   reisdocumentproxy:
     container_name: reisdocumentproxy
     image: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:latest
-    build:
-      context: .
-      dockerfile: src/ReisdocumentProxy/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Release
       - ASPNETCORE_URLS=http://+:5000
