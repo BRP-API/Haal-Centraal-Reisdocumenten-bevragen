@@ -17,34 +17,6 @@ public class ReisdocumentenQueryValidatorTests
     }
 
     [Fact]
-    public void GemeenteVanInschrijvingMagNietNullZijn()
-    {
-        string? gemeenteVanInschrijving = null;
-        input.Setup(i => i.GemeenteVanInschrijving).Returns(gemeenteVanInschrijving!);
-
-        var result = sut.TestValidate(input.Object);
-
-        result.ShouldHaveValidationErrorFor(m => m.GemeenteVanInschrijving)
-            .WithErrorMessage("required||Parameter is verplicht.");
-    }
-
-    [InlineData("")]
-    [InlineData("0")]
-    [InlineData("01234")]
-    [InlineData("O518")]
-    [InlineData("05l8")]
-    [Theory]
-    public void GemeenteVanInschrijvingVoldoetNietAanPattern(string gemeenteVanInschrijving)
-    {
-        input.Setup(i => i.GemeenteVanInschrijving).Returns(gemeenteVanInschrijving!);
-
-        var result = sut.TestValidate(input.Object);
-
-        result.ShouldHaveValidationErrorFor(m => m.GemeenteVanInschrijving)
-            .WithErrorMessage("pattern||Waarde voldoet niet aan patroon ^[0-9]{4}$.");
-    }
-
-    [Fact]
     public void FieldsMagNietNullZijn()
     {
         List<string>? fields = null;

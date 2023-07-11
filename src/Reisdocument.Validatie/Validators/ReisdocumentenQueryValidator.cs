@@ -85,8 +85,6 @@ public class ReisdocumentenQueryValidator : AbstractValidator<IReisdocumentenQue
     };
 
     const string RequiredErrorMessage = "required||Parameter is verplicht.";
-    const string GemeenteVanInschrijvingPattern = @"^[0-9]{4}$";
-    const string GemeenteVanInschrijvingPatternErrorMessage = $"pattern||Waarde voldoet niet aan patroon {GemeenteVanInschrijvingPattern}.";
     const string MinItemsErrorMessage = "minItems||Array bevat minder dan {0} items.";
     const string MaxItemsErrorMessage = "maxItems||Array bevat meer dan {0} items.";
     const string FieldPattern = @"^[a-zA-Z0-9\._]{1,200}$";
@@ -96,11 +94,6 @@ public class ReisdocumentenQueryValidator : AbstractValidator<IReisdocumentenQue
 
     public ReisdocumentenQueryValidator()
     {
-        RuleFor(x => x.GemeenteVanInschrijving)
-            .Cascade(CascadeMode.Stop)
-            .NotNull().WithMessage(RequiredErrorMessage)
-            .Matches(GemeenteVanInschrijvingPattern).WithMessage(GemeenteVanInschrijvingPatternErrorMessage);
-
         RuleFor(x => x.Fields)
             .Cascade(CascadeMode.Stop)
             .NotNull().WithMessage(RequiredErrorMessage)

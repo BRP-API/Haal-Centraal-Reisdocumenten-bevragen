@@ -9,9 +9,6 @@ public partial class ReisdocumentenQuery
     [Newtonsoft.Json.JsonProperty("fields", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
     public System.Collections.Generic.List<string>? Fields { get; set; } = default!;
 
-    [Newtonsoft.Json.JsonProperty("gemeenteVanInschrijving", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-    public string? GemeenteVanInschrijving { get; set; }
-
     private System.Collections.Generic.IDictionary<string, object> _additionalProperties = default!;
 
     [Newtonsoft.Json.JsonExtensionData]
