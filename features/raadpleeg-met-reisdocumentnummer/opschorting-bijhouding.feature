@@ -26,8 +26,8 @@ Functionaliteit: RaadpleegMetReisdocumentnummer van persoonslijst met opschortin
       | opschortingBijhouding.reden.code         | <opschorting>    |
       | opschortingBijhouding.reden.omschrijving | <omschrijving>   |
       | opschortingBijhouding.datum.type         | Datum            |
-      | opschortingBijhouding.datum .datum       | 2022-08-29       |
-      | opschortingBijhouding.langFormaat        | 29 augustus 2022 |
+      | opschortingBijhouding.datum.datum        | 2022-08-29       |
+      | opschortingBijhouding.datum.langFormaat  | 29 augustus 2022 |
 
       Voorbeelden:
       | opschorting | omschrijving              |
@@ -66,8 +66,8 @@ Functionaliteit: RaadpleegMetReisdocumentnummer van persoonslijst met opschortin
       | opschortingBijhouding.reden.code         | O            |
       | opschortingBijhouding.reden.omschrijving | overlijden   |
       | opschortingBijhouding.datum.type         | Datum        |
-      | opschortingBijhouding.datum .datum       | 2023-04-02   |
-      | opschortingBijhouding.langFormaat        | 2 april 2023 |
+      | opschortingBijhouding.datum.datum        | 2023-04-02   |
+      | opschortingBijhouding.datum.langFormaat  | 2 april 2023 |
 
       Voorbeelden:
       | fields                           | veld 1                                | waarde 1  | veld 2                                        | waarde 2                 |
