@@ -1,9 +1,8 @@
 class World {
     constructor(parameters) {
         this.context = parameters;
-        this.context.proxyUrl = "http://localhost:5003/haalcentraal/api/reisdocumenten";
+        this.context.proxyUrl = "http://localhost:5002/haalcentraal/api/reisdocumenten";
         this.context.apiUrl = "http://localhost:8001/haalcentraal/api/reisdocumenten";
-        //this.context.apiUrl = "https://5cba8c70-68c2-4d9b-94e8-3ea8e047e7f8.mock.pstmn.io";
         this.context.extraHeaders = [
             { "naam": "Authorization", "waarde": "" }
         ];
@@ -12,11 +11,11 @@ class World {
             logStatements: false,
             cleanup: true,
             poolConfig: {
-                user: "root",
-                host: "host.docker.internal",
+                user: "",
+                host: "",
                 database: "rvig_haalcentraal_testdata",
-                password: "root",
-                port: 5440,
+                password: "",
+                port: 5432,
                 allowExitOnIdle: true
             }
         };
