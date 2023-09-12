@@ -216,8 +216,9 @@ Rule: Om privacy en security redenen moet een bevraging van reisdocumenten worde
     Dan heeft de response een object met de volgende gegevens
     | naam     | waarde                                                      |
     | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.5 |
-    | title    | Method not allowed.                                         |
+    | title    | Gebruikte bevragingsmethode is niet toegestaan.             |
     | status   | 405                                                         |
+    | code     | methodNotAllowed                                            |
     | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
 
     Voorbeelden:
