@@ -1,45 +1,47 @@
-using Elastic.Apm.SerilogEnricher;
-using Elastic.CommonSchema.Serilog;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using ReisdocumentProxy.DelegatingHandlers;
+using Reisdocument.Infrastructure.Logging;
+using Reisdocument.Infrastructure.mTls;
 using ReisdocumentProxy.Middlewares;
 using Serilog;
-using Serilog.Enrichers.Span;
-using Serilog.Exceptions;
-using Serilog.Sinks.SystemConsole.Themes;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
 
-builder.Logging.ClearProviders();
-builder.Host.UseSerilog((context, config) =>
+try
 {
-    config
-        .ReadFrom.Configuration(context.Configuration)
-        .Enrich.WithElasticApmCorrelationInfo()
-        .Enrich.WithExceptionDetails()
-        .Enrich.FromLogContext()
-        .Enrich.With<ActivityEnricher>()
-        .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
-                         theme: AnsiConsoleTheme.Code)
-        .WriteTo.File(new EcsTextFormatter(), context.Configuration["Ecs:Path"]!)
-        .WriteTo.Seq(context.Configuration["Seq:ServerUrl"]!);
-});
+    Log.Information("Starting Reisdocument Proxy");
 
-builder.Configuration.AddJsonFile(Path.Combine("configuration", "ocelot.json"))
-                     .AddJsonFile(Path.Combine("configuration", $"ocelot.{builder.Environment.EnvironmentName}.json"), true)
-                     .AddEnvironmentVariables();
+    var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddOcelot()
-                .AddDelegatingHandler<X509Handler>(global: true);
+    builder.Logging.ClearProviders();
+    builder.Host.UseSerilog(SerilogHelpers.Configure(Log.Logger));
 
-var app = builder.Build();
+    builder.Configuration.AddJsonFile(Path.Combine("configuration", "ocelot.json"))
+                         .AddJsonFile(Path.Combine("configuration", $"ocelot.{builder.Environment.EnvironmentName}.json"), true)
+                         .AddEnvironmentVariables();
 
-// Configure the HTTP request pipeline.
+    // Add services to the container.
+    builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+    builder.Services.AddOcelot()
+                    .AddDelegatingHandler<X509Handler>(global: true);
 
-app.UseMiddleware<OverwriteResponseBodyMiddleware>();
-app.UseOcelot().Wait();
+    var app = builder.Build();
 
-app.Run();
+    // Configure the HTTP request pipeline.
+    app.UseSerilogRequestLogging();
+
+    app.UseMiddleware<OverwriteResponseBodyMiddleware>();
+    app.UseOcelot().Wait();
+
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Reisdocument Proxy terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

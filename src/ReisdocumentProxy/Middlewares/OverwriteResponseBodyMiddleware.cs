@@ -2,9 +2,11 @@
 using HaalCentraal.ReisdocumentProxy.Generated;
 using Newtonsoft.Json;
 using Reisdocument.Infrastructure.Http;
+using Reisdocument.Infrastructure.ProblemJson;
 using Reisdocument.Infrastructure.Stream;
 using ReisdocumentProxy.Helpers;
 using ReisdocumentProxy.Validators;
+using Serilog;
 
 namespace ReisdocumentProxy.Middlewares;
 
@@ -13,12 +15,72 @@ public class OverwriteResponseBodyMiddleware
     private readonly RequestDelegate _next;
     private readonly ILogger<OverwriteResponseBodyMiddleware> _logger;
     private readonly IMapper _mapper;
+    private readonly IDiagnosticContext _diagnosticContext;
 
-    public OverwriteResponseBodyMiddleware(RequestDelegate next, ILogger<OverwriteResponseBodyMiddleware> logger, IMapper mapper)
+    public OverwriteResponseBodyMiddleware(RequestDelegate next, ILogger<OverwriteResponseBodyMiddleware> logger, IMapper mapper, IDiagnosticContext diagnosticContext)
     {
         _next = next;
         _logger = logger;
         _mapper = mapper;
+        _diagnosticContext = diagnosticContext;
+    }
+
+    private async Task<(bool, List<string>?)> RequestIsValid(HttpContext context, string requestBody, Stream orgBodyStream)
+    {
+        var problemJson = await context.MethodIsAllowed(orgBodyStream);
+        if (problemJson != null)
+        {
+            _diagnosticContext.Set("response.body", problemJson, true);
+
+            return (false, null);
+        }
+        problemJson = await context.AcceptIsAllowed(orgBodyStream);
+        if (problemJson != null)
+        {
+            _diagnosticContext.Set("response.body", problemJson, true);
+
+            return (false, null);
+        }
+        problemJson = await context.ContentTypeIsAllowed(orgBodyStream);
+        if (problemJson != null)
+        {
+            _diagnosticContext.Set("response.body", problemJson, true);
+
+            return (false, null);
+        }
+
+        ReisdocumentenQuery? reisdocumentenQuery;
+        try
+        {
+            reisdocumentenQuery = JsonConvert.DeserializeObject<ReisdocumentenQuery>(requestBody);
+        }
+        catch (JsonSerializationException ex)
+        {
+            problemJson = await context.HandleJsonDeserializeException(ex, orgBodyStream);
+            _diagnosticContext.SetException(ex);
+            _diagnosticContext.Set("response.body", problemJson, true);
+
+            return (false, null);
+        }
+        catch (JsonReaderException ex)
+        {
+            problemJson = await context.HandleJsonDeserializeException(ex, orgBodyStream);
+            _diagnosticContext.SetException(ex);
+            _diagnosticContext.Set("response.body", problemJson, true);
+
+            return (false, null);
+        }
+
+        var validationResult = reisdocumentenQuery.Validate(requestBody);
+        if (!validationResult.IsValid)
+        {
+            problemJson = await context.HandleValidationErrors(validationResult, orgBodyStream);
+            _diagnosticContext.Set("response.body", problemJson, true);
+
+            return (false, null);
+        }
+
+        return (true, reisdocumentenQuery!.Fields);
     }
 
     public async Task Invoke(HttpContext context)
@@ -26,51 +88,16 @@ public class OverwriteResponseBodyMiddleware
         _logger.LogDebug("TimeZone: {@localTimeZone}. Now: {@now}", TimeZoneInfo.Local.StandardName, DateTime.Now);
 
         var orgBodyStream = context.Response.Body;
-        string requestBody = string.Empty;
+
         try
         {
-            _logger.LogDebug("request headers: {@requestHeaders}", context.Request.Headers);
-            if(!await context.MethodIsAllowed(orgBodyStream))
-            {
-                _logger.LogWarning("method not allowed: {@request.method}", context.Request.Method);
-                return;
-            }
-            if(!await context.AcceptIsAllowed(orgBodyStream))
-            {
-                _logger.LogWarning("Not supported Accept value: {@request.header}", context.Request.Headers.Accept);
-                return;
-            }
-            if(!await context.ContentTypeIsAllowed(orgBodyStream))
-            {
-                _logger.LogWarning("Not supported Content-Type value: {@request.header}", context.Request.Headers.ContentType);
-                return;
-            }
+            var requestBody = await context.Request.ReadBodyAsync();
+            _diagnosticContext.Set("request.body", requestBody);
+            _diagnosticContext.Set("request.headers", context.Request.Headers);
 
-            requestBody = await context.Request.ReadBodyAsync();
-            _logger.LogDebug("request body: {@request.body}", requestBody);
-
-            ReisdocumentenQuery? reisdocumentenQuery = null;
-            try
+            (var isRequestValid, var fields) = await RequestIsValid(context, requestBody, orgBodyStream);
+            if (!isRequestValid)
             {
-                reisdocumentenQuery = JsonConvert.DeserializeObject<ReisdocumentenQuery>(requestBody);
-            }
-            catch (JsonSerializationException ex)
-            {
-                _logger.LogWarning("JsonSerializationException. requestBody: {@request.body}, exception: {@exception}", requestBody, ex);
-                await context.HandleJsonException(ex, orgBodyStream);
-                return;
-            }
-            catch(JsonReaderException ex)
-            {
-                _logger.LogWarning("JsonReaderException. requestBody: {@request.body}, exception: {@exception}", requestBody, ex);
-                await context.HandleJsonException(ex, orgBodyStream);
-                return;
-            }
-
-            var validationResult = reisdocumentenQuery.Validate(requestBody);
-            if(!validationResult.IsValid)
-            {
-                await context.HandleValidationErrors(validationResult, orgBodyStream);
                 return;
             }
 
@@ -81,23 +108,26 @@ public class OverwriteResponseBodyMiddleware
 
             var body = await context.Response.ReadBodyAsync();
 
-            _logger.LogDebug("original response body: {response.body}", body);
+            _diagnosticContext.Set("api response.body", body);
 
             var modifiedBody = context.Response.StatusCode == StatusCodes.Status200OK
-                ? body.Transform(_mapper, reisdocumentenQuery!.Fields!)
+                ? body.Transform(_mapper, fields!)
                 : body;
 
-            _logger.LogDebug("transformed response body: {response.body}", modifiedBody);
+            _diagnosticContext.Set("response.body", modifiedBody);
 
-            using var bodyStream = modifiedBody.ToMemoryStream(context.Response.Headers.ContentEncoding.Contains("gzip"));
+            using var bodyStream = modifiedBody.ToMemoryStream(context.Response.UseGzip());
 
             context.Response.ContentLength = bodyStream.Length;
             await bodyStream.CopyToAsync(orgBodyStream);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "request body: {@request.body} headers: {@request.headers}", requestBody, context.Request.Headers);
-            await context.HandleUnhandledException(orgBodyStream);
+            var problemJson = await context.HandleUnhandledException(orgBodyStream);
+            _diagnosticContext.SetException(ex);
+            _diagnosticContext.Set("response.body", problemJson, true);
+
+            return;
         }
     }
 }
