@@ -4,15 +4,15 @@ title: Features test overzicht
 ---
 # Features test overzicht
 
-Totaal: 466 scenarios (0 failed, 466 passed)
+Totaal: 492 scenarios (0 failed, 492 passed)
 
 ## GBA v2.0.6
 
-- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen-gba.html){:target="_blank" rel="noopener"}: 148 scenarios (148 passed)
+- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen-gba.html){:target="_blank" rel="noopener"}: 163 scenarios (163 passed)
 - [Autorisatie](./test-report-autorisatie-gba.html){:target="_blank" rel="noopener"}: 4 scenarios (4 passed)
 - [Protocollering](./test-report-protocollering-gba.html){:target="_blank" rel="noopener"}: 50 scenarios (50 passed)
 
 
 ## Proxy v2.0.1
 
-- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen.html){:target="_blank" rel="noopener"}: 264 scenarios (264 passed)
+- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen.html){:target="_blank" rel="noopener"}: 275 scenarios (275 passed)
