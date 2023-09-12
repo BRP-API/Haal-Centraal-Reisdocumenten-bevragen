@@ -1,25 +1,26 @@
 ﻿using HaalCentraal.ReisdocumentService.Generated;
 using HaalCentraal.ReisdocumentService.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace HaalCentraal.ReisdocumentService.Controllers;
 
 [ApiController]
 public class ReisdocumentController : Generated.ControllerBase
 {
-    private readonly ILogger<ReisdocumentController> _logger;
+    private readonly IDiagnosticContext _diagnosticContext;
     private readonly ReisdocumentRepository _repository;
 
-    public ReisdocumentController(ILogger<ReisdocumentController> logger, ReisdocumentRepository repository)
+    public ReisdocumentController(IDiagnosticContext diagnosticContext, ReisdocumentRepository repository)
     {
-        _logger = logger;
+        _diagnosticContext = diagnosticContext;
         _repository = repository;
     }
 
     public override async Task<ActionResult<ReisdocumentenQueryResponse>> Reisdocumenten([FromBody] ReisdocumentenQuery body)
     {
-        _logger.LogDebug("Request headers: {@headers}", HttpContext.Request.Headers);
-        _logger.LogDebug("Request body: {@body}", body);
+        _diagnosticContext.Set("request.body", body, true);
+        _diagnosticContext.Set("request.headers", HttpContext.Request.Headers);
 
         var retval = body switch
         {
@@ -28,7 +29,7 @@ public class ReisdocumentController : Generated.ControllerBase
             _ => new ReisdocumentenQueryResponse()
         };
 
-        _logger.LogDebug("Response body: {@responsebody}", retval);
+        _diagnosticContext.Set("response.body", retval, true);
 
         return Ok(retval);
     }

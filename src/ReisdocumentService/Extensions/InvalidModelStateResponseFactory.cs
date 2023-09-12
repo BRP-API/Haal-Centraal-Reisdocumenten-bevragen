@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Reisdocument.Infrastructure;
 using Reisdocument.Infrastructure.Http;
+using Reisdocument.Infrastructure.Json;
 
 namespace HaalCentraal.ReisdocumentService.Extensions;
 
@@ -44,7 +45,7 @@ public static class InvalidModelStateResponseFactory
         var requestBody = context.HttpContext.Request.ReadBodyAsync().Result;
 
         var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
-        logger.LogWarning("Bad request. request body: {@requestBody} response body: {@responseBody}", requestBody, foutbericht);
+        logger.LogWarning("Bad request. request body: {requestBody} response body: {@responseBody}", requestBody.Sanitize(), foutbericht);
 
         return new BadRequestObjectResult(foutbericht)
         {

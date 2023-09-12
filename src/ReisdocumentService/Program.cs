@@ -3,42 +3,48 @@ using FluentValidation.AspNetCore;
 using HaalCentraal.ReisdocumentService.Extensions;
 using HaalCentraal.ReisdocumentService.Repositories;
 using HaalCentraal.ReisdocumentService.Validators;
+using Reisdocument.Infrastructure.Logging;
 using Serilog;
-using Serilog.Enrichers.Span;
-using Serilog.Exceptions;
-using Serilog.Sinks.SystemConsole.Themes;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
 
-builder.Logging.ClearProviders();
-builder.Host.UseSerilog((context, config) =>
+try
 {
-    config
-        .ReadFrom.Configuration(context.Configuration)
-        .Enrich.WithExceptionDetails()
-        .Enrich.FromLogContext()
-        .Enrich.With<ActivityEnricher>()
-        .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
-                         theme: AnsiConsoleTheme.Code)
-        .WriteTo.Seq(context.Configuration["Seq:ServerUrl"]!);
-});
+    Log.Information("Starting Reisdocument Mock");
 
-// Add services to the container.
+    var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers()
-                .ConfigureInvalidModelStateHandling()
-                .AddNewtonsoftJson();
-builder.Services.AddFluentValidationAutoValidation(options => options.DisableDataAnnotationsValidation = true)
-                .AddValidatorsFromAssemblyContaining<RaadpleegMetReisdocumentnummerValidator>();
+    builder.Logging.ClearProviders();
+    builder.Host.UseSerilog(SerilogHelpers.Configure(Log.Logger));
 
-builder.Services.AddScoped<ReisdocumentRepository>();
+    // Add services to the container.
 
-var app = builder.Build();
+    builder.Services.AddControllers()
+                    .ConfigureInvalidModelStateHandling()
+                    .AddNewtonsoftJson();
+    builder.Services.AddFluentValidationAutoValidation(options => options.DisableDataAnnotationsValidation = true)
+                    .AddValidatorsFromAssemblyContaining<RaadpleegMetReisdocumentnummerValidator>();
 
-// Configure the HTTP request pipeline.
+    builder.Services.AddScoped<ReisdocumentRepository>();
 
-app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+    var app = builder.Build();
 
-app.MapControllers();
+    // Configure the HTTP request pipeline.
+    app.UseSerilogRequestLogging();
 
-app.Run();
+    app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+
+    app.MapControllers();
+
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Reisdocument Mock terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
