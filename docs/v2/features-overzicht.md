@@ -40,7 +40,7 @@ Je vraagt een veld op door het volledige pad van het betreffende veld op te geve
 
 - houder.burgerservicenummer (volledig pad van het burgerservicenummer veld van de houder van een reisdocument)
 
-Zie de raadpleeg met reisdocumentnummer [fields](../features/raadpleeg-met-reisdocumentnummer/fields.feature), de zoek met burgerservicenummer [fields](../features/zoek-met-burgerservicenummer/fields.feature) en de [fields fout cases](../features/fields-fout-cases.feature) feature bestanden voor meer informatie en voorbeelden over het gebruik van veld paden en de fields parameter.
+Zie de raadpleeg met reisdocumentnummer [fields](../features/raadpleeg-met-reisdocumentnummer/fields.feature), de zoek met burgerservicenummer [fields](../features/zoek-met-burgerservicenummer/fields.feature) en de [fields fout cases](../features/fields-fout-cases.feature) feature bestanden voor meer informatie en voorbeelden over het gebruik van veldpaden en de fields parameter.
 
 ### Filteren van datum velden
 
