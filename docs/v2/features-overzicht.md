@@ -72,7 +72,7 @@ Automatisch geleverde velden mogen niet worden gevraagd met de fields parameter.
 Om de payload van een response klein te houden, is er voor gekozen om velden met de volgende waarden niet te leveren in de response:
 
 - niet gevraagde velden. Deze velden hebben _null_ als waarde.
-- gevraagde velden die het gevraagde reisdocument niet heeft. Deze velden hebben _null_ als waarde. Voorbeeld: inhoudingOfVermissing.datum veld wordt gevraagd voor een reisdocument die niet is ingehouden of als vermist is opgegeven.
+- gevraagde velden die het gevraagde reisdocument niet heeft. Deze velden hebben _null_ als waarde. Voorbeeld: inhoudingOfVermissing.datum veld wordt gevraagd voor een reisdocument dat niet is ingehouden of als vermist is opgegeven.
 - gevraagde of automatisch geleverde velden hebben de _false_ waarde. Voorbeeld: geheimhoudingPersoonsgegevens velden wordt niet geleverd als de houder niet om geheimhouding heeft verzocht.
-- gevraagde velden is een groep velden die de persoon niet heeft. Voorbeeld: inhoudingOfVermissing velden wordt gevraagd voor een reisdocument die niet is ingehouden of als vermist is opgegeven.
+- gevraagde velden betreft een groep velden die de persoon niet heeft. Voorbeeld: inhoudingOfVermissing velden wordt gevraagd voor een reisdocument dat niet is ingehouden of als vermist is opgegeven.
 - gevraagde velden hebben geen aanduiding in onderzoek.
