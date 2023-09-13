@@ -8,7 +8,7 @@ title: Zoek met burgerservicenummer
 # Functionaliteit: Zoek met burgerservicenummer
 
 
-## Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicenummer en de gemeenteVanInschrijving worden opgegeven
+## Rule: voor het zoeken van reisdocumenten van een persoon moet het burgerservicenummer worden opgegeven
 
 
 ### Scenario: de gezochte persoon heeft één reisdocument
@@ -27,12 +27,11 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 000000152                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer         |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 000000152                  |
+  | fields              | reisdocumentnummer         |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam               | waarde    |
@@ -62,12 +61,11 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 000000152                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer         |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 000000152                  |
+  | fields              | reisdocumentnummer         |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam               | waarde    |
@@ -88,24 +86,22 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 987654321                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer,houder  |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 987654321                  |
+  | fields              | reisdocumentnummer,houder  |
 * __Dan__ heeft de response 0 reisdocumenten
 
 ### Scenario: de gezochte persoon bestaat niet
 
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 987654321                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer,houder  |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 987654321                  |
+  | fields              | reisdocumentnummer,houder  |
 * __Dan__ heeft de response 0 reisdocumenten
 
 ## Rule: bij zoeken van reisdocumenten met burgerservicenummer worden alleen reisdocumenten geleverd die volgens de registratie nog in het bezit zijn van de persoon
@@ -115,14 +111,14 @@ title: Zoek met burgerservicenummer
 
 * __Gegeven__ de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
 
-  | naam                                                                    | waarde       |
-  |-------------------------------------------------------------------------|--------------|
-  | soort reisdocument (35.10)                                              | PN           |
-  | nummer reisdocument (35.20)                                             | NE3663258    |
-  | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106     |
-  | datum einde geldigheid reisdocument (35.50)                             | 20231106     |
-  | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
-  | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I            |
+  | naam                                                                    | waarde    |
+  |-------------------------------------------------------------------------|-----------|
+  | soort reisdocument (35.10)                                              | PN        |
+  | nummer reisdocument (35.20)                                             | NE3663258 |
+  | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106  |
+  | datum einde geldigheid reisdocument (35.50)                             | 20231106  |
+  | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229  |
+  | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I         |
 * __En__ de persoon heeft de volgende 'verblijfplaats' gegevens
 
   | gemeente van inschrijving (09.10) |
@@ -130,26 +126,25 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 987654321                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer         |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 987654321                  |
+  | fields              | reisdocumentnummer         |
 * __Dan__ heeft de response 0 reisdocumenten
 
 ### Scenario: de gezochte persoon heeft meerdere reisdocumenten ingeleverd en heeft één reisdocument nog in bezit
 
 * __Gegeven__ de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
 
-  | naam                                                                    | waarde       |
-  |-------------------------------------------------------------------------|--------------|
-  | soort reisdocument (35.10)                                              | PN           |
-  | nummer reisdocument (35.20)                                             | NE3663258    |
-  | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106     |
-  | datum einde geldigheid reisdocument (35.50)                             | 20231106     |
-  | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
-  | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I            |
+  | naam                                                                    | waarde    |
+  |-------------------------------------------------------------------------|-----------|
+  | soort reisdocument (35.10)                                              | PN        |
+  | nummer reisdocument (35.20)                                             | NE3663258 |
+  | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106  |
+  | datum einde geldigheid reisdocument (35.50)                             | 20231106  |
+  | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229  |
+  | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I         |
 * __En__ de persoon heeft een 'reisdocument' met de volgende gegevens
 
   | naam                                           | waarde    |
@@ -174,12 +169,11 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 000000152                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer         |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 000000152                  |
+  | fields              | reisdocumentnummer         |
 * __Dan__ heeft de response 1 reisdocumenten
 * __En__ heeft de response een 'reisdocument' met de volgende gegevens
 
@@ -191,14 +185,14 @@ title: Zoek met burgerservicenummer
 
 * __Gegeven__ de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
 
-  | naam                                                                    | waarde       |
-  |-------------------------------------------------------------------------|--------------|
-  | soort reisdocument (35.10)                                              | PN           |
-  | nummer reisdocument (35.20)                                             | NE3663258    |
-  | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106     |
-  | datum einde geldigheid reisdocument (35.50)                             | 20231106     |
-  | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229     |
-  | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I            |
+  | naam                                                                    | waarde    |
+  |-------------------------------------------------------------------------|-----------|
+  | soort reisdocument (35.10)                                              | PN        |
+  | nummer reisdocument (35.20)                                             | NE3663258 |
+  | datum uitgifte Nederlands reisdocument (35.30)                          | 20131106  |
+  | datum einde geldigheid reisdocument (35.50)                             | 20231106  |
+  | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20221229  |
+  | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I         |
 * __En__ de persoon heeft een 'reisdocument' met de volgende gegevens
 
   | naam                                           | waarde    |
@@ -218,11 +212,11 @@ title: Zoek met burgerservicenummer
   | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | V         |
 * __En__ de persoon heeft een 'reisdocument' met de volgende gegevens
 
-  | naam                                                                    | waarde    |
-  |-------------------------------------------------------------------------|-----------|
-  | soort reisdocument (35.10)                                              | NI        |
-  | nummer reisdocument (35.20)                                             | ID23NW456 |
-  | datum einde geldigheid reisdocument (35.50)                             | 20330221  |
+  | naam                                        | waarde    |
+  |---------------------------------------------|-----------|
+  | soort reisdocument (35.10)                  | NI        |
+  | nummer reisdocument (35.20)                 | ID23NW456 |
+  | datum einde geldigheid reisdocument (35.50) | 20330221  |
 * __En__ de persoon heeft de volgende 'verblijfplaats' gegevens
 
   | gemeente van inschrijving (09.10) |
@@ -230,12 +224,11 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 000000152                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer         |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 000000152                  |
+  | fields              | reisdocumentnummer         |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam               | waarde    |
@@ -268,12 +261,11 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 000000152                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer,soort   |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 000000152                  |
+  | fields              | reisdocumentnummer,soort   |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam                                         | waarde             |
@@ -304,12 +296,11 @@ title: Zoek met burgerservicenummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                     |
-  |-------------------------|----------------------------|
-  | type                    | ZoekMetBurgerservicenummer |
-  | burgerservicenummer     | 000000152                  |
-  | gemeenteVanInschrijving | 0800                       |
-  | fields                  | reisdocumentnummer         |
+  | naam                | waarde                     |
+  |---------------------|----------------------------|
+  | type                | ZoekMetBurgerservicenummer |
+  | burgerservicenummer | 000000152                  |
+  | fields              | reisdocumentnummer         |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam               | waarde    |

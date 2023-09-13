@@ -34,7 +34,7 @@ Het resultaat van deze operatie is een Reisdocument collectie/lijst.
 ## Filteren van de velden van de gevonden reisdocumenten
 
 Gebruik bij elke bevraging (verplicht) de fields parameter om aan te geven welke velden van de gevonden reisdocument(en) geleverd moeten worden. Om de privacy van de houder van de gevraagde reisdocumenten te beschermen mogen alleen velden worden gevraagd waarvoor jouw organisatie doelbinding heeft. Met de fields parameter beperk je de op te vragen velden tot wat nodig is voor de uit te voeren taak.
-Bijkomend voordeel van deze data minimalisatie is dat je bijdraagt aan verduurzaming. Hoe minder velden je gevraagt, hoe minder de server en het netwerk worden belast.
+Bijkomend voordeel van deze data minimalisatie is dat je bijdraagt aan verduurzaming. Hoe minder velden je vraagt, hoe minder de server en het netwerk worden belast.
 
 Je vraagt een veld op door het volledige pad van het betreffende veld op te geven in de fields parameter. Het volledige pad van een veld is de samenvoeging van de naam van het veld en de namen van zijn 'ouder' velden met een '.' karakter tussen de veldnamen. Voorbeelden van volledige paden zijn:
 

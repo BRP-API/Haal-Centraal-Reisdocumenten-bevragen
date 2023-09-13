@@ -27,7 +27,7 @@ De proef omgeving ontsluit reisdocumenten die voorkomen in de [Testdataset Basis
 
 Vraag een apikey aan bij de [product owner](mailto:{{ site.PO-email }}) of gebruik de apikey die is uitgereikt op de API Labs.
 
-Met behulp van de volgende curl statement worden op basis van een reisdocumentnummer gegevens van de bijbehorende reisdocument opgehaald
+Met behulp van het volgende curl statement worden op basis van een reisdocumentnummer gegevens van de bijbehorende reisdocument opgehaald
 
 ```sh
 
@@ -58,7 +58,7 @@ Onderstaand figuur visualiseert de configuratie van bovenstaande aanroep in Post
 
 Door wettelijke restricties kan de '{{ site.apiname }}' Web API bepaalde bewerkingen niet uitvoeren. Er wordt op dit moment gewerkt aan het Experimentbesluit Dataminimalisatie om deze restricties weg te halen. Totdat het experimentbesluit van kracht is moet de '{{ site.apiname }}' Proxy worden gebruikt om de bewerkte gegevens te kunnen krijgen.
 
-De '{{ site.apiname }}' Proxy is een containerized applicatie die in de omgeving van een consumer moet worden gehost. Bevragingen van de '{{ site.apiname }}' Web API moet naar de '{{ site.apiname }}' Proxy worden gestuurd, zodat deze de bevragingen kan routeren naar de GBA variant van de '{{ site.apiname }}' Web API. Responses van deze Web API worden getransformeerd naar responses conform de {{ site.apiname }} [OAS3 specificatie]({{ site.v2SpecUrl }}){:target="_blank" rel="noopener"} voordat deze naar de bevrager worden gestuurd .
+De '{{ site.apiname }}' Proxy is een containerized applicatie die in de omgeving van een consumer moet worden gehost. Bevragingen van de '{{ site.apiname }}' Web API moet naar de '{{ site.apiname }}' Proxy worden gestuurd, zodat deze de bevragingen kan routeren naar de GBA variant van de '{{ site.apiname }}' Web API. Responses van deze Web API worden getransformeerd naar responses conform de {{ site.apiname }} [OAS3 specificatie]({{ site.v2SpecUrl }}){:target="_blank" rel="noopener"} voordat deze naar de bevrager worden gestuurd.
 
 Onderstaand figuur is een globale illustratie van de communicatie tussen een consumer applicatie en een Haal Centraal Web API.
 
@@ -69,7 +69,7 @@ De '{{ site.apiname }}' Proxy kan lokaal worden uitgeprobeerd met behulp van [Do
 - [Docker Desktop](https://www.docker.com/products/docker-desktop){:target="_blank" rel="noopener"} op een Windows of Mac PC worden geïnstalleerd
 - op dezelfde Windows of Mac PC het [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"} worden gedownload
 
-Start een command prompt in de map met het gedownloade [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"} en voer de volgende statement uit om de '{{ site.apiname }}' Proxy op te starten:
+Start een command prompt in de map met het gedownloade [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"} en voer het volgende statement uit om de '{{ site.apiname }}' Proxy op te starten:
 
 ```sh
 
@@ -79,7 +79,7 @@ docker-compose up -d
 
 Behalve de '{{ site.apiname }}' Proxy wordt lokaal ook een mock van de GBA variant van de '{{ site.apiname }}' Web API opgestart. De mock maakt het mogelijk om lokaal zonder apikey de functionaliteit van de '{{ site.apiname }}' Web API uit te proberen.
 
-Met behulp van de volgende curl statement worden op basis van een reisdocumentnummer gegevens van het bijbehorende reisdocument via de '{{ site.apiname }}' Proxy bij de mock opgehaald
+Met behulp van het volgende curl statement worden op basis van een reisdocumentnummer gegevens van het bijbehorende reisdocument via de '{{ site.apiname }}' Proxy bij de mock opgehaald
 
 ```sh
 
@@ -111,7 +111,7 @@ docker-compose down
 
 Hiervoor moeten environment variabelen worden toegevoegd aan de '{{ site.apiname }}' Proxy in het [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"}.
 
-Stop eerst de proxy container met behulp van de volgende statement:
+Stop eerst de proxy container met behulp van het volgende statement:
 
 ```sh
 
