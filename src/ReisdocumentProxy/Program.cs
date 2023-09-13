@@ -30,7 +30,10 @@ try
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
-    app.UseSerilogRequestLogging();
+    app.UseSerilogRequestLogging(options =>
+    {
+        options.GetLevel = CustomRequestLoggingOptions.GetLevel;
+    });
 
     app.UseMiddleware<OverwriteResponseBodyMiddleware>();
     app.UseOcelot().Wait();
