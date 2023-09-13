@@ -33,10 +33,10 @@ Het resultaat van deze operatie is een Reisdocument collectie/lijst.
 
 ## Filteren van de velden van de gevonden reisdocumenten
 
-Bij elke bevraging moet de fields parameter verplicht worden gebruikt om aan te geven welke velden van de gevonden reisdocument(en) geleverd moet worden. Om de privacy van de houder van de gevraagde reisdocumenten te beschermen mag een afnemer alleen de velden vragen waarvoor hij doelbinding heeft en moet de gevraagde velden worden beperkt tot wat nodig is voor de uit te voeren taak.
-Bijkomend voordeel van deze data minimalisatie is dat er ook wordt bijgedragen aan verduurzaming. Hoe minder velden er worden gevraagd, hoe minder de server en het netwerk worden belast.
+Gebruik bij elke bevraging (verplicht) de fields parameter om aan te geven welke velden van de gevonden reisdocument(en) geleverd moeten worden. Om de privacy van de houder van de gevraagde reisdocumenten te beschermen mogen alleen velden worden gevraagd waarvoor jouw organisatie doelbinding heeft. Met de fields parameter beperk je de op te vragen velden tot wat nodig is voor de uit te voeren taak.
+Bijkomend voordeel van deze data minimalisatie is dat je bijdraagt aan verduurzaming. Hoe minder velden je gevraagt, hoe minder de server en het netwerk worden belast.
 
-Een veld wordt gevraagd door het volledig pad van het betreffende veld op te geven in de fields parameter. Het volledig pad van een veld is de samenvoeging van de naam van het veld en de namen van zijn 'ouder' velden met een '.' karakter tussen de veld namen. Voorbeelden van volledige paden:
+Je vraagt een veld op door het volledige pad van het betreffende veld op te geven in de fields parameter. Het volledige pad van een veld is de samenvoeging van de naam van het veld en de namen van zijn 'ouder' velden met een '.' karakter tussen de veldnamen. Voorbeelden van volledige paden zijn:
 
 - houder.burgerservicenummer (volledig pad van het burgerservicenummer veld van de houder van een reisdocument)
 
@@ -51,15 +51,15 @@ De {{ site.apiname }} Web API kent de volgende datum types:
 - JaarDatum
 - JaarMaandDatum
 
-en de volgende waardetabel type:
+en het volgende waardetabel type:
 
 - Waardetabel (soort reisdocument, aanduiding inhouding of vermissing)
 
-Bij het vragen van één of meerdere velden van deze types wordt altijd alle velden van het gevraagde type geleverd. In de raadpleeg met reisdocumentnummer [fields](../features/raadpleeg-met-reisdocumentnummer/fields.feature) en de zoek met burgerservicenummer [fields](../features/zoek-met-burgerservicenummer/fields.feature) feature bestanden zijn voorbeelden hiervan opgenomen.
+Bij het vragen van één of meerdere velden van deze types worden altijd alle velden van het gevraagde type geleverd. In de raadpleeg met reisdocumentnummer [fields](../features/raadpleeg-met-reisdocumentnummer/fields.feature) en de zoek met burgerservicenummer [fields](../features/zoek-met-burgerservicenummer/fields.feature) feature bestanden zijn voorbeelden hiervan opgenomen.
 
 ### Standaard geleverde velden
 
-De volgende velden worden automatisch geleverd, als de bijbehorende situatie van toepassing is:
+De volgende velden worden automatisch geleverd als zij van toepassing zijn:
 
 - geheimhoudingPersoonsgegevens
 - inOnderzoek
