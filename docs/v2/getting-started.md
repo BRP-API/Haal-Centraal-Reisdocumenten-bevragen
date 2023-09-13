@@ -2,7 +2,7 @@
 layout: page-with-side-nav
 title: Getting Started
 ---
-# Aan de slag met de Haal Centraal {{ site.apinaame }} Web API
+# Getting Started
 
 De '{{ site.apiname }}' Web API biedt functionaliteit om gegevens van reisdocumenten te bevragen.
 
@@ -21,7 +21,7 @@ De [functionele documentatie](./features-overzicht) van de '{{ site.apiname }}' 
 
 ## Probeer de API in de proef omgeving
 
-De functionaliteit van de '{{ site.apiname }}' Web API kan worden uitgeprobeerd in de proef omgeving. De API is te bevragen op de volgende endpoint: [{{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten/reisdocumenten]({{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten). Hiervoor heb je een apikey nodig.
+De functionaliteit van de '{{ site.apiname }}' Web API kan worden uitgeprobeerd in de proef omgeving. De API is te bevragen op de volgende endpoint: [{{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten/reisdocumenten]({{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten/reisdocumenten). Hiervoor heb je een apikey nodig.
 
 De proef omgeving ontsluit reisdocumenten die voorkomen in de [Testdataset Basisregistratie Personen](https://www.rvig.nl/brp/werken-met-de-basisregistratie-personen-brp/testdataset){:target="_blank" rel="noopener"}
 
