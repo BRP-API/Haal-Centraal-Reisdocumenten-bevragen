@@ -65,7 +65,7 @@ De volgende velden worden automatisch geleverd als zij van toepassing zijn:
 - inOnderzoek
 - opschortingBijhouding
 
-Automatisch geleverde velden mogen niet worden gevraagd met de fields parameter. In de [fields](../features/fields-fout-cases.feature) feature bestand is onder [Rule: Automatisch geleverde velden mogen niet worden gevraagd](../features/fields-fout-cases.feature#rule-automatisch-geleverde-velden-mogen-niet-worden-gevraagd) voorbeelden hiervan opgenomen.
+Automatisch geleverde velden mogen niet worden gevraagd met de fields parameter. In het [fields](../features/fields-fout-cases.feature) feature bestand zijn onder [Rule: Automatisch geleverde velden mogen niet worden gevraagd](../features/fields-fout-cases.feature#rule-automatisch-geleverde-velden-mogen-niet-worden-gevraagd) voorbeelden hiervan opgenomen.
 
 ## Geen/null/false waarde en leeg object waarde
 
