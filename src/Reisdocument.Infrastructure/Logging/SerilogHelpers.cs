@@ -5,6 +5,7 @@ using Serilog;
 using Serilog.Enrichers.Span;
 using Serilog.Exceptions;
 using Serilog.Sinks.SystemConsole.Themes;
+using System.Text;
 
 namespace Reisdocument.Infrastructure.Logging;
 
@@ -25,9 +26,22 @@ public static class SerilogHelpers
                 .Enrich.FromLogContext()
                 .Enrich.With<ActivityEnricher>();
 
-            if (context.HostingEnvironment.IsDevelopment())
+            var serilogLogLevel = context.Configuration["Serilog:MinimumLevel:Override:Serilog"];
+            var serilogLogLevelIsDebug = !string.IsNullOrWhiteSpace(serilogLogLevel) && serilogLogLevel == "Debug";
+            if (context.HostingEnvironment.IsDevelopment() || serilogLogLevelIsDebug)
             {
-                logger.Information("Development hosting environment. Enable console logging");
+                StringBuilder sb = new();
+                if (context.HostingEnvironment.IsDevelopment())
+                {
+                    sb.Append("Hosting Environment: Development");
+                }
+                if (serilogLogLevelIsDebug)
+                {
+                    if(sb.Length > 0) { sb.Append(", "); }
+                    sb.Append("Log level: Debug");
+                }
+
+                logger.Information($"{sb}. Enable console logging");
                 config.WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
                                  theme: AnsiConsoleTheme.Code);
 
