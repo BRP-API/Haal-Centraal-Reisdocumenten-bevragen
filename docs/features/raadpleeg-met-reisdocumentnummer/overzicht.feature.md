@@ -8,7 +8,7 @@ title: Raadpleeg met reisdocumentnummer
 # Functionaliteit: Raadpleeg met reisdocumentnummer
 
 
-## Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer en de gemeenteVanInschrijving worden opgegeven
+## Rule: voor het raadplegen van een reisdocument moet het reisdocumentnummer worden opgegeven
 
 
 ### Scenario: Raadpleeg een reisdocument
@@ -27,12 +27,11 @@ title: Raadpleeg met reisdocumentnummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                         |
-  |-------------------------|--------------------------------|
-  | type                    | RaadpleegMetReisdocumentnummer |
-  | reisdocumentnummer      | NE3663258                      |
-  | gemeenteVanInschrijving | 0800                           |
-  | fields                  | reisdocumentnummer,houder      |
+  | naam               | waarde                         |
+  |--------------------|--------------------------------|
+  | type               | RaadpleegMetReisdocumentnummer |
+  | reisdocumentnummer | NE3663258                      |
+  | fields             | reisdocumentnummer,houder      |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam               | waarde    |
@@ -60,12 +59,11 @@ title: Raadpleeg met reisdocumentnummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                         |
-  |-------------------------|--------------------------------|
-  | type                    | RaadpleegMetReisdocumentnummer |
-  | reisdocumentnummer      | NE3663259                      |
-  | gemeenteVanInschrijving | 0800                           |
-  | fields                  | reisdocumentnummer,houder      |
+  | naam               | waarde                         |
+  |--------------------|--------------------------------|
+  | type               | RaadpleegMetReisdocumentnummer |
+  | reisdocumentnummer | NE3663259                      |
+  | fields             | reisdocumentnummer,houder      |
 * __Dan__ heeft de response 0 reisdocumenten
 
 ## Rule: als een gevraagde veld in onderzoek is, dan wordt het bijbehorend inOnderzoek veld en datumIngangOnderzoek ook geleverd
@@ -89,12 +87,11 @@ title: Raadpleeg met reisdocumentnummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                         |
-  |-------------------------|--------------------------------|
-  | type                    | RaadpleegMetReisdocumentnummer |
-  | reisdocumentnummer      | NE3663258                      |
-  | gemeenteVanInschrijving | 0800                           |
-  | fields                  | reisdocumentnummer,soort       |
+  | naam               | waarde                         |
+  |--------------------|--------------------------------|
+  | type               | RaadpleegMetReisdocumentnummer |
+  | reisdocumentnummer | NE3663258                      |
+  | fields             | reisdocumentnummer,soort       |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam                                         | waarde             |
@@ -125,16 +122,14 @@ title: Raadpleeg met reisdocumentnummer
   | 0800                              |
 * __Als__ reisdocumenten wordt gezocht met de volgende parameters
 
-  | naam                    | waarde                         |
-  |-------------------------|--------------------------------|
-  | type                    | RaadpleegMetReisdocumentnummer |
-  | reisdocumentnummer      | NE3663258                      |
-  | gemeenteVanInschrijving | 0800                           |
-  | fields                  | reisdocumentnummer             |
+  | naam               | waarde                         |
+  |--------------------|--------------------------------|
+  | type               | RaadpleegMetReisdocumentnummer |
+  | reisdocumentnummer | NE3663258                      |
+  | fields             | reisdocumentnummer             |
 * __Dan__ heeft de response een 'reisdocument' met de volgende gegevens
 
   | naam               | waarde    |
   |--------------------|-----------|
   | reisdocumentnummer | NE3663258 |
-
 

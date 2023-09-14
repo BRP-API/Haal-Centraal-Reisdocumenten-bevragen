@@ -4,9 +4,12 @@ v2GbaSpecUrl: https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/b
 v2RawSpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/genereervariant/openapi.yaml
 v2RawGbaSpecUrl: https://raw.githubusercontent.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/master/specificatie/gba-genereervariant/openapi.yaml
 v2DockerComposeUrl: https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/blob/master/docker-compose.yml
+onboardingUrl: https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/blob/master/docs/230615%20deelname%20experiment%20BRP%20API's%20v1.8.ppsx
 proefProxyUrl: https://proefomgeving.haalcentraal.nl
 
 PO-email: cathy.dingemanse@rvig.nl
+CZ-email: melvin.lee@rvig.nl
+Tester-email: frank.samwel@rvig.nl
 
 apiname: "Reisdocumenten Bevragen"
 url: "http://localhost:4000"
@@ -27,28 +30,24 @@ nav:
         path: /
       - title: Goals canvas
         path: /goals-canvas
-  - title: Specificaties v. 1.0
+  - title: Specificaties v. 2
     subnav:
+      - title: Releasenotes
+        path: releasenotes
       - title: Getting started
-        path: /getting-started
+        path: /v2/getting-started
       - title: User stories
-        path: /user-stories
-      - title: Bevragen API (swagger-ui)
-        path: /swagger-ui
-      - title: Bevragen API (redoc)
-        path: /redoc
-      - title: Features
-        path: /features
-  - title: Specificaties v. 2.0
-    subnav:
-      - title: User stories
-        path: /user-stories-dev
+        path: /user-stories-prod
       - title: Bevragen API (redoc)
         path: /v2/redoc
       - title: Bevragen API, GBA variant (redoc)
         path: /v2/redoc-gba
+      - title: Features overzicht
+        path: /v2/features-overzicht
       - title: Features test overzicht
         path: /features/index
+      - title: proxy configuratie
+        path: /v2/proxy-configuratie
 plugins:
   - jekyll-redirect-from
   - jekyll-remote-theme
