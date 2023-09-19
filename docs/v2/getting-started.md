@@ -8,8 +8,10 @@ De '{{ site.apiname }}' Web API biedt functionaliteit om gegevens van reisdocume
 
 1. Bekijk de [API specificatie en functionele documentatie](#api-specificatie-en-functionele-documentatie)
 2. Probeer de API in de [proef omgeving](#probeer-de-api-in-de-proef-omgeving)
-3. Probeer de Proxy [lokaal](#probeer-de-proxy-lokaal)
-4. Routeer Proxy aanroepen naar de [GBA variant van de '{{ site.apiname }}' in de proef omgeving](#routeer-proxy-aanroepen-naar-de-gba-variant-van-de-web-api-in-de-proef-omgeving)
+3. Probeer de Proxy [lokaal](#probeer-de-proxy-lokaal-met-docker-desktop) met Docker Desktop
+4. Probeer de Proxy [lokaal](#probeer-de-proxy-lokaal-met-kubernetes) met Kubernetes
+5. Routeer Proxy aanroepen naar de [GBA variant van de '{{ site.apiname }}' in de proef omgeving](#routeer-proxy-aanroepen-naar-de-gba-variant-van-de-web-api-in-de-proef-omgeving)
+6. [Download]({{ site.onboardingUrl }}){:target="_blank" rel="noopener"} en lees het onboardingproces
 
 ## API specificatie en functionele documentatie
 
@@ -23,7 +25,7 @@ De [functionele documentatie](./features-overzicht) van de '{{ site.apiname }}' 
 
 Je kunt de '{{ site.apiname }}' Web API uitproberen in de proef omgeving. De API is te bevragen op de volgende endpoint: [{{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten/reisdocumenten]({{ site.proefProxyUrl }}/haalcentraal/api/reisdocumenten/reisdocumenten). Hiervoor heb je een apikey nodig.
 
-De proef omgeving ontsluit reisdocumenten die voorkomen in de [Testdataset Basisregistratie Personen](https://www.rvig.nl/brp/werken-met-de-basisregistratie-personen-brp/testdataset){:target="_blank" rel="noopener"}
+De proef omgeving ontsluit reisdocumenten die voorkomen in de [Testdataset Basisregistratie Personen](https://www.rvig.nl/Testdataset-persoonslijsten-proefomgevingen-GBA-V.ods){:target="_blank" rel="noopener"}
 
 Vraag een apikey aan bij de [product owner](mailto:{{ site.PO-email }}) of gebruik de apikey die is uitgereikt op de API Labs.
 
@@ -38,7 +40,6 @@ curl --request POST \
 --data '{
   "type": "RaadpleegMetReisdocumentnummer",
   "reisdocumentnummer": ["IVJ892799"],
-  "gemeenteVanInschrijving": "0599",
   "fields": [
       "reisdocumentnummer",
       "soort",
@@ -54,7 +55,7 @@ Onderstaand figuur visualiseert de configuratie van bovenstaande aanroep in Post
 
 ![Raadpleeg met reisdocumentnummer](../img/postman-voorbeeld-aanroep.png)
 
-## Probeer de Proxy lokaal
+## Probeer de Proxy lokaal met Docker Desktop
 
 Door wettelijke restricties kan de '{{ site.apiname }}' Web API bepaalde bewerkingen niet uitvoeren. Er wordt op dit moment gewerkt aan het Experimentbesluit Dataminimalisatie om deze restricties weg te halen. Totdat het experimentbesluit van kracht is moet de '{{ site.apiname }}' Proxy worden gebruikt om de bewerkte gegevens te kunnen krijgen.
 
@@ -89,7 +90,6 @@ curl --request POST \
 --data '{
   "type": "RaadpleegMetReisdocumentnummer",
   "reisdocumentnummer": ["IVJ892799"],
-  "gemeenteVanInschrijving": "0599",
   "fields": [
       "reisdocumentnummer",
       "soort",
@@ -104,6 +104,57 @@ Om de Proxy en de mock containers te stoppen moet het volgende statement worden 
 ```sh
 
 docker-compose down
+
+```
+
+## Probeer de Proxy lokaal met Kubernetes
+
+De '{{ site.apiname }}' Proxy kan lokaal ook worden uitgeprobeerd met behulp van Kubernetes. Hiervoor moet:
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop){:target="_blank" rel="noopener"} op een Windows of Mac PC worden geïnstalleerd
+- in Docker Desktop de Kubernetes ondersteuning worden aangezet in de Settings/Kubernetes configuratie scherm ![Enable Kubernetes](../img/docker-desktop-enable-k8s.png)
+- op dezelfde Windows of Mac PC de [Kubernetes manifest bestanden]({{ site.mainBranchUrl }}/.k8s){:target="_blank" rel="noopener"} worden gedownload
+
+Start een command prompt in de map met de gedownloade [Kubernetes manifest bestanden]{{ site.mainBranchUrl }}/.k8s){:target="_blank" rel="noopener"} en voer het volgende statement uit om de '{{ site.apiname }}' Proxy op te starten:
+
+```sh
+
+kubectl apply -f .k8s/proxy-deployment.yaml \
+              -f .k8s/proxy-service.yaml \
+              -f .k8s/mock-deployment.yaml \
+              -f .k8s/mock-service.yaml 
+
+```
+
+Behalve de '{{ site.apiname }}' Proxy wordt lokaal ook een mock van de GBA variant van de '{{ site.apiname }}' Web API opgestart. De mock maakt het mogelijk om lokaal zonder apikey de functionaliteit van de '{{ site.apiname }}' Web API uit te proberen.
+
+Met behulp van het volgende curl statement worden op basis van een reisdocumentnummer gegevens van het bijbehorende reisdocument via de '{{ site.apiname }}' Proxy bij de mock opgehaald
+
+```sh
+
+curl --request POST \
+--url 'http://localhost:5002/haalcentraal/api/reisdocumenten/reisdocumenten' \
+--header 'Content-Type: application/json' \
+--data '{
+  "type": "RaadpleegMetReisdocumentnummer",
+  "reisdocumentnummer": ["IVJ892799"],
+  "fields": [
+      "reisdocumentnummer",
+      "soort",
+      "houder"
+  ]
+}'
+
+```
+
+Om de Proxy en de mock containers te stoppen moet het volgende statement worden uitgevoerd:
+
+```sh
+
+kubectl delete -f .k8s/proxy-deployment.yaml \
+                -f .k8s/proxy-service.yaml \
+                -f .k8s/mock-deployment.yaml \
+                -f .k8s/mock-service.yaml 
 
 ```
 
@@ -125,7 +176,7 @@ Voeg de volgende environment variabelen toe aan de configuratie van de '{{ site.
 - Routes__0__DownstreamHostAndPorts__0__Host. De host naam van de aan te roepen {{ site.apiname }} Web API GBA variant
 - Routes__0__DownstreamHostAndPorts__0__Port. Het port nummer van de aan te roepen  {{ site.apiname }} Web API GBA variant
 
-De configuratie van de '{{ site.apiname }}' Proxy ziet er dan als volgt uit:
+De configuratie van de '{{ site.apiname }}' Proxy ziet in het [docker compose bestand]({{ site.v2DockerComposeUrl }}){:target="_blank" rel="noopener"} er dan als volgt uit:
 
 ```yaml
 
@@ -167,7 +218,6 @@ curl --request POST \
 --data '{
   "type": "RaadpleegMetReisdocumentnummer",
   "reisdocumentnummer": ["IVJ892799"],
-  "gemeenteVanInschrijving": "0599",
   "fields": [
       "reisdocumentnummer",
       "soort",
@@ -176,3 +226,5 @@ curl --request POST \
 }'
 
 ```
+
+Raadpleeg de [Proxy configuratie](./proxy-configuratie) documentatie voor een overzicht van de configuratie settings.
