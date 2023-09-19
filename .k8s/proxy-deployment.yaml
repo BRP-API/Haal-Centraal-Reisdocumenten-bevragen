@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reisdocumentproxy
+  labels:
+    app: haal-centraal-reisdocument-bevragen-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: reisdocumentproxy
+  template:
+    metadata:
+      labels:
+        name: reisdocumentproxy
+    spec:
+      containers:
+        - name: reisdocumentproxy
+          image: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:latest
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Release
+            - name: ASPNETCORE_URLS
+              value: http://+:5000
+          ports:
+            - name: http
+              containerPort: 5000

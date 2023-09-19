@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reisdocumentmock
+  labels:
+    app: haal-centraal-reisdocument-bevragen-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: reisdocumentmock
+  template:
+    metadata:
+      labels:
+        name: reisdocumentmock
+    spec:
+      containers:
+        - name: reisdocumentmock
+          image: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-mock:latest
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Release
+            - name: ASPNETCORE_URLS
+              value: http://+:5010
+          ports:
+            - name: http
+              containerPort: 5010
