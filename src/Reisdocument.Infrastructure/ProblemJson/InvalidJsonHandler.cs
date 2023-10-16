@@ -48,7 +48,7 @@ public static class InvalidJsonHandler
             Instance = new Uri(context.Request.Path, UriKind.Relative),
             Status = StatusCodes.Status400BadRequest,
             Title = "Een of meerdere parameters zijn niet correct.",
-            Type = new Uri(Constants.BadRequestIdentifier),
+            Type = new Uri(StatusCodeIdentifiers.BadRequestIdentifier),
             Code = "paramsValidation",
             Detail = $"De foutieve parameter(s) zijn: {name}.",
             InvalidParams = invalidParams

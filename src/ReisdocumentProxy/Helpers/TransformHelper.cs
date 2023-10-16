@@ -10,23 +10,16 @@ public static class TransformHelper
 {
     public static string Transform(this string payload, IMapper mapper, List<string> fields)
     {
-        ReisdocumentenQueryResponse retval;
-
         var response = JsonConvert.DeserializeObject<Gba.ReisdocumentenQueryResponse>(payload);
 
         var fieldsToReturn = fields.AddExtraReisdocumentFields();
 
-        switch (response)
+        ReisdocumentenQueryResponse retval = response switch
         {
-            case Gba.RaadpleegMetReisdocumentnummerResponse r:
-                retval = mapper.Map<RaadpleegMetReisdocumentnummerResponse>(r).Filter(fieldsToReturn);
-                break;
-            case Gba.ZoekMetBurgerservicenummerResponse r:
-                retval = mapper.Map<ZoekMetBurgerservicenummerResponse>(r).Filter(fieldsToReturn);
-                break;
-            default:
-                throw new NotSupportedException();
-        }
+            Gba.RaadpleegMetReisdocumentnummerResponse r => mapper.Map<RaadpleegMetReisdocumentnummerResponse>(r).Filter(fieldsToReturn),
+            Gba.ZoekMetBurgerservicenummerResponse r => mapper.Map<ZoekMetBurgerservicenummerResponse>(r).Filter(fieldsToReturn),
+            _ => throw new NotSupportedException(),
+        };
 
         return retval.ToJsonWithoutNullAndDefaultValues();
     }

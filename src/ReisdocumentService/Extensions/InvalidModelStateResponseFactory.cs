@@ -36,7 +36,7 @@ public static class InvalidModelStateResponseFactory
             Instance = new Uri(context.HttpContext.Request.Path, UriKind.Relative),
             Status = StatusCodes.Status400BadRequest,
             Title = titel,
-            Type = new Uri(Constants.BadRequestIdentifier),
+            Type = new Uri(StatusCodeIdentifiers.BadRequestIdentifier),
             Code = code,
             InvalidParams = invalidParams,
             Detail = $"De foutieve parameter(s) zijn: {string.Join(", ", invalidParams.Select(x => x.Name))}."
@@ -49,7 +49,7 @@ public static class InvalidModelStateResponseFactory
 
         return new BadRequestObjectResult(foutbericht)
         {
-            ContentTypes = { Constants.ProblemJsonContentType }
+            ContentTypes = { ContentTypes.ProblemJson }
         };
     }
 }

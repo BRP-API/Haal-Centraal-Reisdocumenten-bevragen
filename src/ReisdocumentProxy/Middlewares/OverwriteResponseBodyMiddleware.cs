@@ -127,7 +127,6 @@ public class OverwriteResponseBodyMiddleware
             _diagnosticContext.SetException(ex);
             _diagnosticContext.Set("response.body", problemJson, true);
 
-            return;
         }
     }
 }

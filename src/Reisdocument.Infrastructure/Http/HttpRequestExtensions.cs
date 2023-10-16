@@ -5,6 +5,8 @@ namespace Reisdocument.Infrastructure.Http;
 
 public static class HttpRequestExtensions
 {
+    public static bool UseGzip(this HttpRequest request) => request.Headers.ContentEncoding.Contains("gzip");
+
     public static async Task<string> ReadBodyAsync(this HttpRequest request)
     {
         if (!request.Body.CanSeek)
@@ -14,7 +16,7 @@ public static class HttpRequestExtensions
 
         try
         {
-            if (request.Headers.ContentEncoding.Contains("gzip"))
+            if (request.UseGzip())
             {
                 return await ReadCompressedBodyAsync(request);
             }

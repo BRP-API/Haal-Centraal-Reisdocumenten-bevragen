@@ -11,7 +11,7 @@ public static class HttpResponseExtensions
     {
         try
         {
-            if (response.Headers.ContentEncoding.Contains("gzip"))
+            if (response.UseGzip())
             {
                 return await ReadCompressedBodyAsync(response);
             }

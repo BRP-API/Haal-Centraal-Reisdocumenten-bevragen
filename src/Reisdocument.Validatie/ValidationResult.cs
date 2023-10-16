@@ -20,17 +20,15 @@ public class ValidationResult
     private static ValidationFailure? CreateFrom(FluentValidation.Results.ValidationFailure validationFailure)
     {
         var messageParts = validationFailure.ErrorMessage.Split("||");
-        switch(messageParts.Length)
+
+        return messageParts.Length switch
         {
-            case 2:
-                return new ValidationFailure(
+            2 => new ValidationFailure(
                     messageParts[0],
                     $"{char.ToLowerInvariant(validationFailure.PropertyName[0])}{validationFailure.PropertyName[1..]}",
-                    messageParts[1]);
-            case 3:
-                return new ValidationFailure(messageParts[1], messageParts[0], messageParts[2]);
-            default:
-                return null;
-        }
+                    messageParts[1]),
+            3 => new ValidationFailure(messageParts[1], messageParts[0], messageParts[2]),
+            _ => null,
+        };
     }
 }
