@@ -8,7 +8,15 @@ title: Haal Centraal Reisdocumenten bevragen
 ![lint oas](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/lint-oas/badge.svg)
 ![generate postman collection](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/generate-postman-collection/badge.svg)
 
-API voor het raadplegen van een reisdocument met een reisdocumentnummer. De API wordt nog niet door RvIG aangeboden. Om de migratie naar API’s te versnellen besluiten sommige gemeenten de API zelf aan te bieden.
+API voor het zoeken van een reisdocument met een burgerservicenummer en het raadplegen van een reisdocument met een reisdocumentnummer. 
+
+## Planning en Roadmap
+De BRP Reisdocumenten API is live sinds september 2023. 
+
+## Aansluiten en voorwaarden
+De BRP Reisdocumenten API kan voorlopig alleen worden gebruikt door gemeenten die deelnemen aan het [Experiment Dataminimalisatie](https://www.rijksoverheid.nl/documenten/besluiten/2023/08/28/experimentbesluit-brp-dataminimalisatie-amvb-nvt-versie-voorhang). Hiervoor wordt een convenant met RvIG gesloten waarin de afspraken voor deelname zijn vastgelegd. Voor de technische aansluiting is een API Gateway nodig. Aansluiten kan via Diginetwerk met gebruik van een TLS verbinding (PKIO certificaat) en een OAuth 2.0 token (OAuth 2.0 client credentials flow).
+
+Stuur een mail naar info@RvIG voor een kennismakingmakingsgesprek en onboarding.
 
 ## Direct uitproberen?
 * Bekijk de specificaties met [Swagger UI](swagger-ui) of [Redoc](redoc)
