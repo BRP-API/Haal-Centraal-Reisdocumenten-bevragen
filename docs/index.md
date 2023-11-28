@@ -1,6 +1,6 @@
 ---
 layout: page-with-side-nav
-title: BRP Reisdocumenten bevragen
+title: BRP Reisdocumenten
 ---
 
 # BRP Reisdocumenten bevragen
