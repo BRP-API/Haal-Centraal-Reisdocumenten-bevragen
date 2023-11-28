@@ -1,6 +1,6 @@
 ---
 layout: page-with-side-nav
-title: Haal Centraal Reisdocumenten bevragen
+title: BRP Reisdocumenten bevragen
 ---
 
 # BRP Reisdocumenten bevragen
