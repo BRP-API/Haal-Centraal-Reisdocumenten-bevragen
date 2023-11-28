@@ -16,7 +16,7 @@ De BRP Reisdocumenten API is live sinds september 2023.
 ## Aansluiten en voorwaarden
 De BRP Reisdocumenten API kan voorlopig alleen worden gebruikt door gemeenten die deelnemen aan het [Experiment Dataminimalisatie](https://www.rijksoverheid.nl/documenten/besluiten/2023/08/28/experimentbesluit-brp-dataminimalisatie-amvb-nvt-versie-voorhang). Hiervoor wordt een convenant met RvIG gesloten waarin de afspraken voor deelname zijn vastgelegd. Voor de technische aansluiting is een API Gateway nodig. Aansluiten kan via Diginetwerk met gebruik van een TLS verbinding (PKIO certificaat) en een OAuth 2.0 token (OAuth 2.0 client credentials flow).
 
-Stuur een mail naar info@RvIG voor een kennismakingmakingsgesprek en onboarding.
+Stuur een mail naar info@RvIG voor een kennismakingmakingsgesprek en onboarding. [Download]({{ site.onboardingUrl }}){:target="_blank" rel="noopener"} en lees het onboardingproces.
 
 ## Direct uitproberen?
 * Bekijk de specificaties met [Swagger UI](swagger-ui) of [Redoc](redoc)
@@ -26,10 +26,9 @@ Stuur een mail naar info@RvIG voor een kennismakingmakingsgesprek en onboarding.
 ## Heb je meer nodig? 
 Gebruik de Reisdocumenten bevragen API in combinatie met (een van de) andere BRP API’s:
 
-* [Actuele BRP-gegevens bevragen](https://BRP-API.github.io/Haal-Centraal-BRP-bevragen){:target="_blank" rel="noopener"}
-* [Historische BRP-gegevens bevragen](https://BRP-API.github.io/Haal-Centraal-BRP-historie-bevragen){:target="_blank" rel="noopener"}
-* [Bewoning en medebewoners bevragen](https://BRP-API.github.io/Haal-Centraal-BRP-bewoning){:target="_blank" rel="noopener"}
-* [Landelijke tabellen bevragen](https://BRP-API.github.io/Haal-Centraal-BRP-tabellen-bevragen){:target="_blank" rel="noopener"}
+* [BRP Personen](https://BRP-API.github.io/Haal-Centraal-BRP-bevragen){:target="_blank" rel="noopener"}
+* [BRP Historie](https://BRP-API.github.io/Haal-Centraal-BRP-historie-bevragen){:target="_blank" rel="noopener"}
+* [BRP Bewoning](https://BRP-API.github.io/Haal-Centraal-BRP-bewoning){:target="_blank" rel="noopener"}
 
 ## Bronnen
 
@@ -44,11 +43,9 @@ Gebruik de Reisdocumenten bevragen API in combinatie met (een van de) andere BRP
 * Verbeteringen doorgeven
   [Maak een verbeter issue aan >>](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/issues/new?assignees=&labels=enhancement&template=enhancement.md&title=)
 
-* Product Owner: Cathy Dingemanse, [c.dingemanse@comites.nl](mailto:c.dingemanse@comites.nl)
-* Designer: Johan Boer, [johan.boer@vng.nl](mailto:johan.boer@vng.nl)
-* Designer: Robert Melskens, [robert.melskens@vng.nl](mailto:robert.melskens@vng.nl)
-* Customer zero: Melvin Lee, [melvin.lee@iswish.nl](mailto:melvin.lee@iswish.nl)
-* Tester: Frank Samwel, [frank.samwel@denhaag.nl](mailto:frank.samwel@rvig.nl)
+* Product Owner: Cathy Dingemanse, [{{ site.PO-email }}](mailto:{{ site.PO-email }})
+* Customer zero: Melvin Lee, [{{ site.CZ-email }}](mailto:{{ site.CZ-email }})
+* Tester: Frank Samwel, [{{ site.Tester-email }}](mailto:{{ site.Tester-email }})
 
 ## Licentie
 
