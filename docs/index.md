@@ -23,7 +23,7 @@ Stuur een mail naar info@RvIG voor een kennismakingmakingsgesprek en onboarding.
 * Lees de [Getting started](getting-started)
 * Download de [technische specificaties](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/blob/master/specificatie/genereervariant/openapi.yaml){:target="_blank" rel="noopener"}
 
-## Heb je meer nodig? 
+## Meer nodig? 
 Gebruik de Reisdocumenten bevragen API in combinatie met (een van de) andere BRP API’s:
 
 * [BRP Personen](https://BRP-API.github.io/Haal-Centraal-BRP-bevragen){:target="_blank" rel="noopener"}
