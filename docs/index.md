@@ -3,7 +3,7 @@ layout: page-with-side-nav
 title: Haal Centraal Reisdocumenten bevragen
 ---
 
-# Haal Centraal Reisdocumenten bevragen
+# BRP Reisdocumenten bevragen
 
 ![lint oas](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/lint-oas/badge.svg)
 ![generate postman collection](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/generate-postman-collection/badge.svg)
