@@ -10,18 +10,26 @@ public static class TransformHelper
 {
     public static string Transform(this string payload, IMapper mapper, List<string> fields)
     {
-        var response = JsonConvert.DeserializeObject<Gba.ReisdocumentenQueryResponse>(payload);
-
-        var fieldsToReturn = fields.AddExtraReisdocumentFields();
-
-        ReisdocumentenQueryResponse retval = response switch
+        try
         {
-            Gba.RaadpleegMetReisdocumentnummerResponse r => mapper.Map<RaadpleegMetReisdocumentnummerResponse>(r).Filter(fieldsToReturn),
-            Gba.ZoekMetBurgerservicenummerResponse r => mapper.Map<ZoekMetBurgerservicenummerResponse>(r).Filter(fieldsToReturn),
-            _ => throw new NotSupportedException(),
-        };
+            var response = JsonConvert.DeserializeObject<Gba.ReisdocumentenQueryResponse>(payload);
 
-        return retval.ToJsonWithoutNullAndDefaultValues();
+            var fieldsToReturn = fields.AddExtraReisdocumentFields();
+
+            ReisdocumentenQueryResponse retval = response switch
+            {
+                Gba.RaadpleegMetReisdocumentnummerResponse r => mapper.Map<RaadpleegMetReisdocumentnummerResponse>(r).Filter(fieldsToReturn),
+                Gba.ZoekMetBurgerservicenummerResponse r => mapper.Map<ZoekMetBurgerservicenummerResponse>(r).Filter(fieldsToReturn),
+                _ => throw new NotSupportedException(),
+            };
+
+            return retval.ToJsonWithoutNullAndDefaultValues();
+        }
+        catch(JsonReaderException)
+        {
+            // payload komt van de reisdocumenten API. As-is doorzetten
+            return payload;
+        }
     }
 
     private static RaadpleegMetReisdocumentnummerResponse Filter(this RaadpleegMetReisdocumentnummerResponse src, IEnumerable<string> fields)

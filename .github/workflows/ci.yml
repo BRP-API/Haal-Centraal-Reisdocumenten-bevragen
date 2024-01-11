@@ -20,7 +20,7 @@ env:
   DOTNET_SOLUTION: Reisdocument.sln
   NODE_VERSION: '18'
   CONTAINER_NAME: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen
-  COMPOSE_FILE_ARGUMENT: -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f .docker/reisdocumenten-proxy.yml
+  COMPOSE_FILE_ARGUMENT: -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f .docker/reisdocumenten-proxy.yml -f .docker/reisdocumenten-proxy-2-proxy.yml
     
 jobs:
   build:
