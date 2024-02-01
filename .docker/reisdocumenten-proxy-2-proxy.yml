@@ -4,14 +4,12 @@ services:
   reisdocumentproxy-2:
     container_name: reisdocumentproxy-2
     image: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen-proxy:latest
-    # image: haalcentraal.azurecr.io/haal-centraal-reisdocument-bevragen-proxy:2.0.2
     environment:
       - ASPNETCORE_ENVIRONMENT=Release
       - ASPNETCORE_URLS=http://+:5000
       - Routes__0__DownstreamScheme=http
       - Routes__0__DownstreamHostAndPorts__0__Host=reisdocumentproxy
       - Routes__0__DownstreamHostAndPorts__0__Port=5000
-      - Serilog__MinimumLevel__Override__Serilog=Debug
     ports:
       - "5003:5000"
     networks:

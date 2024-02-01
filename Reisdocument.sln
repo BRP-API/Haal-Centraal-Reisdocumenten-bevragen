@@ -17,7 +17,7 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reisdocument.Infrastructure", "src\Reisdocument.Infrastructure\Reisdocument.Infrastructure.csproj", "{9DD1E5CE-7E1F-4A71-A52F-AC856B6B8152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReisdocumentProxy.Tests", "src\ReisdocumentProxy.Tests\ReisdocumentProxy.Tests.csproj", "{4423588A-0797-4F7B-8674-1D9FB996CFFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReisdocumentProxy.Tests", "src\ReisdocumentProxy.Tests\ReisdocumentProxy.Tests.csproj", "{4423588A-0797-4F7B-8674-1D9FB996CFFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

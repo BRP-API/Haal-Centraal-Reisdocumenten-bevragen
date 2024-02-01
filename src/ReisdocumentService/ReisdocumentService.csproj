@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>c6ecf8af-ce97-4a18-9122-fe20d020bb23</UserSecretsId>
@@ -10,18 +9,15 @@
     <AssemblyName>HaalCentraal.ReisdocumentService</AssemblyName>
     <RootNamespace>HaalCentraal.ReisdocumentService</RootNamespace>
     <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <Version>2.0.2+$([System.DateTime]::UtcNow.ToString(yyyyMMddHH))</Version>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.21" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Reisdocument.Infrastructure\Reisdocument.Infrastructure.csproj" />
     <ProjectReference Include="..\Reisdocument.Validatie\Reisdocument.Validatie.csproj" />
   </ItemGroup>
-
 </Project>
