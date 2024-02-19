@@ -21,7 +21,8 @@ env:
   NODE_VERSION: '18'
   CONTAINER_NAME: ghcr.io/brp-api/haal-centraal-reisdocument-bevragen
   COMPOSE_FILE_ARGUMENT: -f .docker/db-ci.yml -f .docker/reisdocumenten-api.yml -f .docker/reisdocumenten-proxy.yml -f .docker/reisdocumenten-proxy-2-proxy.yml
-    
+  DOCKER_API_FILE_PATH: .docker/reisdocumenten-api.yml
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -74,9 +75,11 @@ jobs:
       - name: Generate functional test reports
         if: always()
         run: |
-          node ./scripts/generate-cucumber-report.js ${{ vars.API_VERSION }} ${{ vars.PROXY_VERSION }}
+          api_version="$(sed -n 's/image:.*:\(.*\)/\1/p' ${{ env.DOCKER_API_FILE_PATH}})"
 
-          node ./scripts/parse-summary.js  ${{ vars.API_VERSION }} ${{ vars.PROXY_VERSION }}
+          node ./scripts/generate-cucumber-report.js "$api_version" ${{ vars.PROXY_VERSION }}
+
+          node ./scripts/parse-summary.js  "$api_version" ${{ vars.PROXY_VERSION }}
 
           doCommit=false
 
