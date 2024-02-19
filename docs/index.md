@@ -6,7 +6,7 @@ title: BRP Reisdocumenten
 # BRP Reisdocumenten
 
 ![lint oas](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/lint-oas/badge.svg)
-![generate postman collection](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/generate-postman-collection/badge.svg)
+![ci](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/ci/badge.svg)
 
 API voor het zoeken van een reisdocument met een burgerservicenummer en het raadplegen van een reisdocument met een reisdocumentnummer. 
 
