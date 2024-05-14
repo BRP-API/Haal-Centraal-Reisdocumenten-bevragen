@@ -1,22 +1,26 @@
 # language: nl
 
+@proxy
 Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
 
   Wanneer een consumer van de Reisdocumenten API gegevens bevraagt van een persoon die geen toestemming heeft gegeven voor het verstrekken van zijn gegevens aan derden
   Dan wil de consumer hiervan worden geattendeerd middels een indicatie bij de gevraagde gegevens
 
   Achtergrond:
-      Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
+      Gegeven adres 'A1' heeft de volgende gegevens
+      | gemeentecode (92.10) |
+      | 0800                 |
+      En de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
       | naam                                        | waarde    |
       | soort reisdocument (35.10)                  | PN        |
       | nummer reisdocument (35.20)                 | NE3663258 |
       | datum einde geldigheid reisdocument (35.50) | 20330506  |
-      En de persoon heeft de volgende 'verblijfplaats' gegevens
+      En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
       | gemeente van inschrijving (09.10) |
       | 0800                              |
 
 
-  Rule: indicatie geheim waarde 0 wordt niet geleverd
+  Regel: indicatie geheim waarde 0 wordt niet geleverd
 
     Scenario: reisdocument van een persoon die toestemming heeft gegeven voor het verstrekken van zijn gegevens aan derden, wordt geraadpleegd
       Gegeven de persoon heeft de volgende 'inschrijving' gegevens
@@ -27,12 +31,12 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | type               | RaadpleegMetReisdocumentnummer |
       | reisdocumentnummer | NE3663258                      |
       | fields             | reisdocumentnummer             |
-      Dan heeft de response een 'reisdocument' met de volgende gegevens
+      Dan heeft de response een reisdocument met de volgende gegevens
       | naam               | waarde    |
       | reisdocumentnummer | NE3663258 |
 
 
-  Rule: indicatie geheim met waarde hoger dan 0 wordt vertaald naar geheimhoudingPersoonsgegevens waarde true en ongevraagd meegeleverd
+  Regel: indicatie geheim met waarde hoger dan 0 wordt vertaald naar geheimhoudingPersoonsgegevens waarde true en ongevraagd meegeleverd
 
     Abstract Scenario: persoon met indicatie geheim <waarde>, wordt geraadpleegd met reisdocumentnummer
       Gegeven de persoon heeft de volgende 'inschrijving' gegevens
@@ -43,7 +47,7 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | type               | RaadpleegMetReisdocumentnummer |
       | reisdocumentnummer | NE3663258                      |
       | fields             | reisdocumentnummer             |
-      Dan heeft de response een 'reisdocument' met de volgende gegevens
+      Dan heeft de response een reisdocument met de volgende gegevens
       | naam                                 | waarde    |
       | reisdocumentnummer                   | NE3663258 |
       | houder.geheimhoudingPersoonsgegevens | true      |
@@ -67,7 +71,7 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | type               | RaadpleegMetReisdocumentnummer |
       | reisdocumentnummer | NE3663258                      |
       | fields             | <fields>                       |
-      Dan heeft de response een 'reisdocument' met de volgende gegevens
+      Dan heeft de response een reisdocument met de volgende gegevens
       | naam                                 | waarde     |
       | <veld 1>                             | <waarde 1> |
       | <veld 2>                             | <waarde 2> |
@@ -86,7 +90,7 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | houder.burgerservicenummer       | houder.burgerservicenummer | 000000152 |                            |                    |                                  |                    |
 
 
-  Rule: geheimhoudingPersoonsgegevens mag niet worden gevraagd, omdat het automatisch wordt geleverd
+  Regel: geheimhoudingPersoonsgegevens mag niet worden gevraagd, omdat het automatisch wordt geleverd
 
     @fout-case
     Abstract Scenario: veld geheimhoudingPersoonsgegevens mag niet worden gevraagd, omdat het automatisch wordt geleverd
@@ -95,7 +99,7 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | type               | RaadpleegMetReisdocumentnummer |
       | reisdocumentnummer | NE3663258                      |
       | fields             | <fields>                       |
-      Dan heeft de response een object met de volgende gegevens
+      Dan heeft de response de volgende gegevens
       | naam     | waarde                                                      |
       | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
       | title    | Een of meerdere parameters zijn niet correct.               |
@@ -103,7 +107,7 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | detail   | De foutieve parameter(s) zijn: fields[<index>].             |
       | code     | paramsValidation                                            |
       | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
-      En heeft het object de volgende 'invalidParams' gegevens
+      En heeft de response invalidParams met de volgende gegevens
       | code   | name            | reason                                        |
       | fields | fields[<index>] | Parameter bevat een niet toegestane veldnaam. |
 

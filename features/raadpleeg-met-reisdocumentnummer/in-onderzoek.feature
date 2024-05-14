@@ -1,6 +1,12 @@
 #language: nl
 
+@proxy
 Functionaliteit: Reisdocument velden zijn in onderzoek
+
+  Achtergrond:
+    Gegeven adres 'A1' heeft de volgende gegevens
+    | gemeentecode (92.10) |
+    | 0800                 |
 
   Abstract Scenario: '<type>' is in onderzoek en de velden reisdocumentnummer, soort en datumEindeGeldigheid worden gevraagd
     Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
@@ -12,7 +18,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
     | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
     | datum ingang onderzoek (83.20)                                          | 20230506                  |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -20,7 +26,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | type               | RaadpleegMetReisdocumentnummer                |
     | reisdocumentnummer | NE3663258                                     |
     | fields             | reisdocumentnummer,soort,datumEindeGeldigheid |
-    Dan heeft de response een 'reisdocument' met de volgende gegevens
+    Dan heeft de response een reisdocument met de volgende gegevens
     | naam                                         | waarde                      |
     | reisdocumentnummer                           | NE3663258                   |
     | soort.code                                   | PN                          |
@@ -53,7 +59,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
     | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
     | datum ingang onderzoek (83.20)                                          | 20230506                  |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -61,7 +67,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | type               | RaadpleegMetReisdocumentnummer                |
     | reisdocumentnummer | NE3663258                                     |
     | fields             | reisdocumentnummer,soort,datumEindeGeldigheid |
-    Dan heeft de response een 'reisdocument' met de volgende gegevens
+    Dan heeft de response een reisdocument met de volgende gegevens
     | naam                             | waarde             |
     | reisdocumentnummer               | NE3663258          |
     | soort.code                       | PN                 |
@@ -87,7 +93,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
     | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
     | datum ingang onderzoek (83.20)                                          | 20230506                  |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -95,7 +101,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | inhoudingOfVermissing          |
-    Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
+    Dan heeft de response een reisdocument met de volgende 'inhoudingOfVermissing' gegevens
     | naam                                         | waarde                               |
     | datum.type                                   | Datum                                |
     | datum.datum                                  | 2023-04-05                           |
@@ -125,7 +131,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I                         |
     | aanduiding in onderzoek (83.10)                                         | <aanduiding in onderzoek> |
     | datum ingang onderzoek (83.20)                                          | 20230506                  |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -133,7 +139,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | inhoudingOfVermissing          |
-    Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
+    Dan heeft de response een reisdocument met de volgende 'inhoudingOfVermissing' gegevens
     | naam                    | waarde                   |
     | datum.type              | Datum                    |
     | datum.datum             | 2023-04-05               |
@@ -159,7 +165,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | soort reisdocument (35.10)                  | PN        |
     | nummer reisdocument (35.20)                 | NE3663258 |
     | datum einde geldigheid reisdocument (35.50) | 20240506  |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -167,7 +173,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | houder                         |
-    Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
+    Dan heeft de response een reisdocument met de volgende 'houder' gegevens
     | naam                                         | waarde          |
     | burgerservicenummer                          | 000000152       |
     | inOnderzoek.burgerservicenummer              | true            |
@@ -191,7 +197,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | soort reisdocument (35.10)                  | PN        |
     | nummer reisdocument (35.20)                 | NE3663258 |
     | datum einde geldigheid reisdocument (35.50) | 20240506  |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -199,7 +205,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | houder                         |
-    Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
+    Dan heeft de response een reisdocument met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |
 
@@ -216,7 +222,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | datum einde geldigheid reisdocument (35.50) | 20240506                  |
     | aanduiding in onderzoek (83.10)             | <aanduiding in onderzoek> |
     | datum ingang onderzoek (83.20)              | 20230201                  |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+    En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
     Als reisdocumenten wordt gezocht met de volgende parameters
@@ -224,7 +230,7 @@ Functionaliteit: Reisdocument velden zijn in onderzoek
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | houder                         |
-    Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
+    Dan heeft de response een reisdocument met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |
 
