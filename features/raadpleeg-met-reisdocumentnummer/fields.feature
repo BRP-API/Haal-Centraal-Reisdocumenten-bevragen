@@ -1,16 +1,20 @@
 #language: nl
 
+@proxy
 Functionaliteit: Reisdocument velden vragen met fields
 
   Achtergrond:
-    Gegeven de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
+    Gegeven adres 'A1' heeft de volgende gegevens
+    | gemeentecode (92.10) |
+    | 0800                 |
+    En de persoon met burgerservicenummer '000000152' heeft een 'reisdocument' met de volgende gegevens
     | naam                                                                    | waarde    |
     | soort reisdocument (35.10)                                              | PN        |
     | nummer reisdocument (35.20)                                             | NE3663258 |
     | datum einde geldigheid reisdocument (35.50)                             | 20240506  |
     | datum inhouding dan wel vermissing Nederlands reisdocument (35.60)      | 20230405  |
     | aanduiding inhouding dan wel vermissing Nederlands reisdocument (35.70) | I         |
-    En de persoon heeft de volgende 'verblijfplaats' gegevens
+      En de persoon is ingeschreven op adres 'A1' met de volgende gegevens
     | gemeente van inschrijving (09.10) |
     | 0800                              |
 
@@ -20,7 +24,7 @@ Functionaliteit: Reisdocument velden vragen met fields
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | reisdocumentnummer             |
-    Dan heeft de response een 'reisdocument' met de volgende gegevens
+    Dan heeft de response een reisdocument met de volgende gegevens
     | naam               | waarde    |
     | reisdocumentnummer | NE3663258 |
 
@@ -30,7 +34,7 @@ Functionaliteit: Reisdocument velden vragen met fields
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | <field>                        |
-    Dan heeft de response een 'reisdocument' met de volgende gegevens
+    Dan heeft de response een reisdocument met de volgende gegevens
     | naam               | waarde             |
     | soort.code         | PN                 |
     | soort.omschrijving | Nationaal paspoort |
@@ -47,7 +51,7 @@ Functionaliteit: Reisdocument velden vragen met fields
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | <field>                        |
-    Dan heeft de response een 'reisdocument' met de volgende gegevens
+    Dan heeft de response een reisdocument met de volgende gegevens
     | naam                             | waarde     |
     | datumEindeGeldigheid.type        | Datum      |
     | datumEindeGeldigheid.datum       | 2024-05-06 |
@@ -69,7 +73,7 @@ Functionaliteit: Reisdocument velden vragen met fields
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | inhoudingOfVermissing.<field>  |
-    Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
+    Dan heeft de response een reisdocument met de volgende 'inhoudingOfVermissing' gegevens
     | naam              | waarde       |
     | datum.type        | Datum        |
     | datum.datum       | 2023-04-05   |
@@ -91,7 +95,7 @@ Functionaliteit: Reisdocument velden vragen met fields
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | inhoudingOfVermissing.<field>  |
-    Dan heeft de response een 'reisdocument' met de volgende 'inhoudingOfVermissing' gegevens
+    Dan heeft de response een reisdocument met de volgende 'inhoudingOfVermissing' gegevens
     | naam                    | waarde                   |
     | aanduiding.code         | I                        |
     | aanduiding.omschrijving | ingehouden of ingeleverd |
@@ -108,6 +112,6 @@ Functionaliteit: Reisdocument velden vragen met fields
     | type               | RaadpleegMetReisdocumentnummer |
     | reisdocumentnummer | NE3663258                      |
     | fields             | houder.burgerservicenummer     |
-    Dan heeft de response een 'reisdocument' met de volgende 'houder' gegevens
+    Dan heeft de response een reisdocument met de volgende 'houder' gegevens
     | naam                | waarde    |
     | burgerservicenummer | 000000152 |
