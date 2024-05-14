@@ -1,37 +1,68 @@
+const { createLogger, format, transports } = require('winston');
+
 class World {
     constructor(parameters) {
         this.context = parameters;
-        this.context.proxyUrl = "http://localhost:5003/haalcentraal/api/reisdocumenten";
-        this.context.apiUrl = "http://localhost:8001/haalcentraal/api/reisdocumenten";
-        this.context.extraHeaders = [
-            { "naam": "Authorization", "waarde": "" }
-        ];
+
+        this.context.autzUrl = 'http://localhost:8080/haalcentraal/api'
+        this.context.apiUrl = 'http://localhost:8000/haalcentraal/api'
+        this.context.proxyUrl = 'http://localhost:5002/haalcentraal/api'
+
+        this.context.gezagDataPath = './test-data/GezagMock/test-data.json';
+        this.context.logFileToAssert = './test-data/logs/brp-autorisatie-protocollering.json';
+        this.context.downstreamApiDataPath = './test-data/DownstreamApi';
+
         this.context.sql = {
             useDb: true,
-            logStatements: false,
             cleanup: true,
             deleteIndividualRecords: true,
             poolConfig: {
-                user: "",
-                host: "",
-                database: "rvig_haalcentraal_testdata",
-                password: "",
+                user: 'root',
+                host: 'localhost',
+                database: 'rvig_haalcentraal_testdata',
+                password: 'root',
                 port: 5432,
                 allowExitOnIdle: true
             }
         };
+
         this.context.oAuth = {
-            enable: false,
-            accessTokenUrl: "https://login.dev.idsecure.nl/nidp/oauth/nam/token",
+            enable: true,
+            accessTokenUrl: 'http://identityserver:6000/connect/token',
             clients:[
                 {
-                    afnemerID: "000008",
-                    clientId: "",
-                    clientSecret: "",
-                    scopes: ["000000099000000080000"]
+                    afnemerID: '000008',
+                    gemeenteCode: '0800',
+                    clientId: 'client met gemeentecode (eigen gemeente)',
+                    clientSecret: 'secret',
+                    scopes: [ '000000099000000080000' ],
+                    resourceServer: 'ResourceServer02'
+                },
+                {
+                    afnemerID: '000008',
+                    gemeenteCode: '0599',
+                    clientId: 'client met gemeentecode (ander gemeente)',
+                    clientSecret: 'secret',
+                    scopes: [ '000000099000000080000' ],
+                    resourceServer: 'ResourceServer02'
+                },
+                {
+                    afnemerID: '000008',
+                    clientId: 'client zonder gemeentecode',
+                    clientSecret: 'secret',
+                    scopes: [ '000000099000000080000' ],
+                    resourceServer: 'ResourceServer02'
                 }
             ]
         }
+
+        this.context.logger = createLogger({
+            level: 'warn',
+            transports: [
+                new transports.Console({ format: format.prettyPrint() })
+            ]
+        });
+
         if(this.context.parameters?.poolConfig !== undefined) {
             this.context.sql.poolConfig.host = this.context.parameters.poolConfig.host;
             this.context.sql.poolConfig.user = this.context.parameters.poolConfig.user;
@@ -48,3 +79,4 @@ class World {
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 module.exports = { World }
+
