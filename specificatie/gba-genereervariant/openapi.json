@@ -452,6 +452,7 @@
         }
       },
       "GbaReisdocumenthouder" : {
+        "required" : [ "gemeenteVanInschrijving" ],
         "allOf" : [ {
           "$ref" : "#/components/schemas/ReisdocumenthouderBasis"
         }, {
@@ -462,6 +463,9 @@
             },
             "opschortingBijhouding" : {
               "$ref" : "#/components/schemas/GbaOpschortingBijhouding"
+            },
+            "gemeenteVanInschrijving" : {
+              "$ref" : "#/components/schemas/Waardetabel"
             },
             "inOnderzoek" : {
               "$ref" : "#/components/schemas/GbaInOnderzoek"
