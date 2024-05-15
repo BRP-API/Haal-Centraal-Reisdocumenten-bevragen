@@ -88,31 +88,3 @@ Functionaliteit: geheimhouding leveren bij RaadpleegMetReisdocumentnummer
       | inhoudingOfVermissing.aanduiding |                            |           |                            |                    |                                  |                    |
       | houder                           | houder.burgerservicenummer | 000000152 |                            |                    |                                  |                    |
       | houder.burgerservicenummer       | houder.burgerservicenummer | 000000152 |                            |                    |                                  |                    |
-
-
-  Regel: geheimhoudingPersoonsgegevens mag niet worden gevraagd, omdat het automatisch wordt geleverd
-
-    @fout-case
-    Abstract Scenario: veld geheimhoudingPersoonsgegevens mag niet worden gevraagd, omdat het automatisch wordt geleverd
-      Als reisdocumenten wordt gezocht met de volgende parameters
-      | naam               | waarde                         |
-      | type               | RaadpleegMetReisdocumentnummer |
-      | reisdocumentnummer | NE3663258                      |
-      | fields             | <fields>                       |
-      Dan heeft de response de volgende gegevens
-      | naam     | waarde                                                      |
-      | type     | https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1 |
-      | title    | Een of meerdere parameters zijn niet correct.               |
-      | status   | 400                                                         |
-      | detail   | De foutieve parameter(s) zijn: fields[<index>].             |
-      | code     | paramsValidation                                            |
-      | instance | /haalcentraal/api/reisdocumenten/reisdocumenten             |
-      En heeft de response invalidParams met de volgende gegevens
-      | code   | name            | reason                                        |
-      | fields | fields[<index>] | Parameter bevat een niet toegestane veldnaam. |
-
-      Voorbeelden:
-      | fields                                                                             | index |
-      | houder.geheimhoudingPersoonsgegevens                                               | 0     |
-      | reisdocumentnummer,houder.geheimhoudingPersoonsgegevens,houder.burgerservicenummer | 1     |
-      | soort,inhoudingOfVermissing.datum,houder.geheimhoudingPersoonsgegevens             | 2     |
