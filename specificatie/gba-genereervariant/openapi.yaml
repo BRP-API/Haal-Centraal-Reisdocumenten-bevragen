@@ -351,8 +351,6 @@ components:
             $ref: '#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
           opschortingBijhouding:
             $ref: '#/components/schemas/GbaOpschortingBijhouding'
-          gemeenteVanInschrijving:
-            $ref: '#/components/schemas/Waardetabel'
           inOnderzoek:
             $ref: '#/components/schemas/GbaInOnderzoek'
     ReisdocumenthouderBasis:
