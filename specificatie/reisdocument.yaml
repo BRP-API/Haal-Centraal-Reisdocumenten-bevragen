@@ -47,9 +47,6 @@ components:
               $ref: 'persoon.yaml#/components/schemas/GbaGeheimhoudingPersoonsgegevens'
             opschortingBijhouding:
               $ref: 'opschorting-bijhouding.yaml#/components/schemas/GbaOpschortingBijhouding'
-            gemeenteVanInschrijving:
-              description: wordt gebruikt om de afnemer te autoriseren voor het bevragen van het reisdocument
-              $ref: 'common.yaml#/components/schemas/Waardetabel'
             inOnderzoek:
               $ref: 'gba-inonderzoek.yaml#/components/schemas/GbaInOnderzoek'
     Reisdocumenthouder:
