@@ -9,7 +9,7 @@ class World {
         this.context.proxyUrl = 'http://localhost:5002/haalcentraal/api'
 
         this.context.gezagDataPath = './test-data/GezagMock/test-data.json';
-        this.context.logFileToAssert = './test-data/logs/reisdocumenten-proxy.json';
+        this.context.logFileToAssert = './test-data/logs/brp-autorisatie-protocollering.json';
         this.context.downstreamApiDataPath = './test-data/DownstreamApi';
 
         this.context.sql = {
@@ -27,7 +27,7 @@ class World {
         };
 
         this.context.oAuth = {
-            enable: false,
+            enable: true,
             accessTokenUrl: 'http://identityserver:6000/connect/token',
             clients:[
                 {
