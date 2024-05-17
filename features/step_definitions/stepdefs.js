@@ -92,6 +92,9 @@ After(async function({ pickle }) {
     if(this.context.downstreamApiResponseHeaders !== undefined){
         fs.writeFileSync(this.context.downstreamApiDataPath + '/response-headers.json', JSON.stringify({}, null, '\t'));
     }
+    if(this.context.downstreamApiResponseBody !== undefined){
+        fs.rmSync(this.context.downstreamApiDataPath + '/response-body.json');
+    }
 
     if(this.context.logFileToAssert !== undefined && fs.existsSync(this.context.logFileToAssert)) {
         const array = fs.readFileSync(this.context.logFileToAssert).toString().split("\n");

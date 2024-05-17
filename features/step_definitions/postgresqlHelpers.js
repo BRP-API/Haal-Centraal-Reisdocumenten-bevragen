@@ -102,22 +102,10 @@ async function deleteAllRowsInAllTables(client) {
         }
 
         await ExecuteAndLogDeleteStatement(client, key);
-        // const sqlStatement = deleteStatement(key);
-
-        // logIf(sqlStatement, logSqlStatements);
-
-        // const result = await client.query(sqlStatement);
-        // logIfNoRowsAffected(result, sqlStatement);
     }
 
     for(const key of aggregateRoots) {
         await ExecuteAndLogDeleteStatement(client, key)
-        // const sqlStatement = deleteStatement(key);
-
-        // logIf(sqlStatement, logSqlStatements);
-
-        // const result = await client.query(sqlStatement);
-        // logIfNoRowsAffected(result, sqlStatement);
     }
 }
 
@@ -149,6 +137,9 @@ async function deleteInsertedRows(client, sqlData) {
 
 async function rollbackSqlStatements(sqlContext, sqlData, pool) {
     if(sqlData === undefined) {
+        return;
+    }
+    if(!sqlContext.cleanup) {
         return;
     }
 
@@ -295,11 +286,6 @@ async function insertGemeenten(client, sqlData) {
 
     for(const key of Object.keys(gemeenteData)) {
         await ExecuteAndLogStatement(client, insertIntoGemeenteStatement(gemeenteData[key].data));
-        // const sqlStatement = insertIntoGemeenteStatement(gemeenteData[key].data);
-
-        // logIf(sqlStatement, logSqlStatements);
-
-        // await client.query(sqlStatement);
     }
 }
 
