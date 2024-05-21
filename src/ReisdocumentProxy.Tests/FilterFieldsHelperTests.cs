@@ -1,5 +1,5 @@
-﻿using HaalCentraal.ReisdocumentProxy.Generated;
-using Reisdocument.Infrastructure.Json;
+﻿using Brp.Shared.Infrastructure.Json;
+using HaalCentraal.ReisdocumentProxy.Generated;
 using ReisdocumentProxy.Helpers;
 
 namespace ReisdocumentProxy.Tests;
