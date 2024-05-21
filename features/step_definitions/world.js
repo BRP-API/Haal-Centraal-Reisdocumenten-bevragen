@@ -27,7 +27,7 @@ class World {
         };
 
         this.context.oAuth = {
-            enable: true,
+            enable: false,
             accessTokenUrl: 'http://identityserver:6000/connect/token',
             clients:[
                 {

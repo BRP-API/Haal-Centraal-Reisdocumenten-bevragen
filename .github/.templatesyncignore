@@ -3,4 +3,5 @@
 :!src/Brp.Shared.Infrastructure/**/*.*
 :!src/Brp.Shared.Infrastructure/*.*
 :!src/Serilog.Sinks.PersistentFile/*.*
+features/step_definitions/world.js
 *
