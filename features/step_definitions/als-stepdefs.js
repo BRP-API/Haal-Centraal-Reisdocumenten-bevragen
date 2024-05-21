@@ -13,7 +13,6 @@ const apiEndpointPrefixMap = new Map([
 When(/^([a-zA-Z-]*) wordt gezocht met de volgende parameters$/, async function (endpoint, dataTable) {
     if(this.context.afnemerID === undefined) {
         this.context.afnemerID = this.context.oAuth.clients[0].afnemerID;
-        this.context.gemeenteCode = this.context.oAuth.clients[0].gemeenteCode;
     }
 
     if(this.context.gezag !== undefined) {
@@ -22,6 +21,10 @@ When(/^([a-zA-Z-]*) wordt gezocht met de volgende parameters$/, async function (
     if(this.context.downstreamApiResponseHeaders !== undefined) {
         fs.writeFileSync(this.context.downstreamApiDataPath + '/response-headers.json',
                          JSON.stringify(this.context.downstreamApiResponseHeaders[0], null, '\t'));
+    }
+    if(this.context.downstreamApiResponseBody !== undefined) {
+        fs.writeFileSync(this.context.downstreamApiDataPath + '/response-body.json',
+                         this.context.downstreamApiResponseBody);
     }
 
     if(this.context.sqlData === undefined) {
