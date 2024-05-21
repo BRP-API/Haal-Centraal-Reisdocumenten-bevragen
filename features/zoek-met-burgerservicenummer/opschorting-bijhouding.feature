@@ -41,7 +41,6 @@ Regel: opschortingBijhouding wordt automatisch geleverd indien van toepassing
       | E           | emigratie                 |
       | M           | ministerieel besluit      |
       | R           | pl is aangelegd in de rni |
-      | F           | fout                      |
       | .           | onbekend                  |
 
     Abstract Scenario: Opschorting bijhouding wordt geleverd wanneer met fields is gevraagd om '<fields>'
