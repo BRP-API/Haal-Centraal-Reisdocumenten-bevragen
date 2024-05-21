@@ -2,7 +2,7 @@
 using HaalCentraal.ReisdocumentProxy.Generated;
 using Gba = HaalCentraal.ReisdocumentProxy.Generated.Gba;
 using Newtonsoft.Json;
-using Reisdocument.Infrastructure.Json;
+using Brp.Shared.Infrastructure.Json;
 
 namespace ReisdocumentProxy.Helpers;
 
@@ -37,7 +37,7 @@ public static class TransformHelper
             _ => throw new NotSupportedException(),
         };
 
-        return retval.ToJsonWithoutNullAndDefaultValues();
+        return retval.ToJsonCompact();
     }
 
     private static RaadpleegMetReisdocumentnummerResponse Filter(this RaadpleegMetReisdocumentnummerResponse src, IEnumerable<string> fields)
