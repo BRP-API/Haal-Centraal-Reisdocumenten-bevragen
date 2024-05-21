@@ -4,9 +4,9 @@ title: Features test overzicht
 ---
 # Features test overzicht
 
-Totaal: 319 scenarios (0 failed, 319 passed)
+Totaal: 319 scenarios (2 failed, 317 passed)
 
-## GBA v    2.0.8
+## GBA v    2.0.10-2024052101
 
 - [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen-gba.html){:target="_blank" rel="noopener"}: undefined
 - [Autorisatie](./test-report-autorisatie-gba.html){:target="_blank" rel="noopener"}: undefined
@@ -15,4 +15,6 @@ Totaal: 319 scenarios (0 failed, 319 passed)
 
 ## Proxy v2.0.3
 
-- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen.html){:target="_blank" rel="noopener"}: 319 scenarios (319 passed)
+- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen.html){:target="_blank" rel="noopener"}: 319 scenarios (2 failed, 317 passed)
+    - features/raadpleeg-met-reisdocumentnummer/opschorting-bijhouding.feature:44
+    - features/zoek-met-burgerservicenummer/opschorting-bijhouding.feature:44
