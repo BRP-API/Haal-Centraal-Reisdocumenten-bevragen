@@ -3,7 +3,7 @@ version: '3.7'
 services:
   haalcentraal_reisdocumenten_api:
     container_name: haalcentraal_reisdocumenten_api
-    image: haalcentraal.azurecr.io/gba-reisdocumenten-api:2.0.10-2024052101
+    image: haalcentraal.azurecr.io/gba-reisdocumenten-api:2.0.11-2024052402
     environment:
       - Database__Host=postgres
       - Database__Username=root
