@@ -7,7 +7,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
     <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
-    <Version>2.0.3+$([System.DateTime]::UtcNow.ToString(yyyyMMddHH))</Version>
+    <Version>2.0.4+$([System.DateTime]::UtcNow.ToString(yyyyMMddHH))</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
