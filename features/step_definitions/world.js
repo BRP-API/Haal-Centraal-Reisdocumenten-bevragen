@@ -9,7 +9,7 @@ class World {
         this.context.proxyUrl = 'http://localhost:5002/haalcentraal/api'
 
         this.context.gezagDataPath = './test-data/GezagMock/test-data.json';
-        this.context.logFileToAssert = './test-data/logs/brp-autorisatie-protocollering.json';
+        this.context.logFileToAssert = './test-data/logs/brp-proxy.json';
         this.context.downstreamApiDataPath = './test-data/DownstreamApi';
 
         this.context.sql = {
@@ -27,7 +27,7 @@ class World {
         };
 
         this.context.oAuth = {
-            enable: false,
+            enable: true,
             accessTokenUrl: 'http://identityserver:6000/connect/token',
             clients:[
                 {
@@ -71,6 +71,9 @@ class World {
         if(this.context.parameters?.client !== undefined) {
             this.context.oAuth.clients[0].clientId = this.context.parameters.client.clientId; 
             this.context.oAuth.clients[0].clientSecret = this.context.parameters.client.clientSecret; 
+        }
+        if(this.context.parameters?.enableOAuth !== undefined) {
+            this.context.oAuth.enable = this.context.parameters.enableOAuth === 'true';
         }
     }
 }

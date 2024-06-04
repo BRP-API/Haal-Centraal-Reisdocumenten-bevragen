@@ -13,6 +13,7 @@ const apiEndpointPrefixMap = new Map([
 When(/^([a-zA-Z-]*) wordt gezocht met de volgende parameters$/, async function (endpoint, dataTable) {
     if(this.context.afnemerID === undefined) {
         this.context.afnemerID = this.context.oAuth.clients[0].afnemerID;
+        this.context.gemeenteCode = this.context.oAuth.clients[0].gemeenteCode;
     }
 
     if(this.context.gezag !== undefined) {
