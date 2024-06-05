@@ -1,5 +1,79 @@
 const { createLogger, format, transports } = require('winston');
 
+function setContextProperties(parameters, context) {
+    for(const key in parameters) {
+        if(!parameters.hasOwnProperty(key)) continue;
+        if(key === "__proto__" || key === "constructor") continue;
+
+        if(typeof(parameters[key]) === 'object') {
+            if(context[key] === undefined) {
+                context[key] = {};
+            }
+            setContextProperties(parameters[key], context[key]);
+        }
+        else {
+            context[key] = parameters[key];
+        }
+    }
+}
+
+function configureSqlSettings(context) {
+    context.sql = {
+        useDb: true,
+        cleanup: true,
+        deleteIndividualRecords: true,
+        poolConfig: {
+            user: 'root',
+            host: 'localhost',
+            database: 'rvig_haalcentraal_testdata',
+            password: 'root',
+            port: 5432,
+            allowExitOnIdle: true
+        }
+    };
+}
+
+function configureOAuthSettings(context) {
+    context.oAuth = {
+        enable: true,
+        accessTokenUrl: 'http://identityserver:6000/connect/token',
+        clients:[
+            {
+                afnemerID: '000008',
+                gemeenteCode: '0800',
+                clientId: 'client met gemeentecode (eigen gemeente)',
+                clientSecret: 'secret',
+                scopes: [ '000000099000000080000' ],
+                resourceServer: 'ResourceServer02'
+            },
+            {
+                afnemerID: '000008',
+                gemeenteCode: '0599',
+                clientId: 'client met gemeentecode (ander gemeente)',
+                clientSecret: 'secret',
+                scopes: [ '000000099000000080000' ],
+                resourceServer: 'ResourceServer02'
+            },
+            {
+                afnemerID: '000008',
+                clientId: 'client zonder gemeentecode',
+                clientSecret: 'secret',
+                scopes: [ '000000099000000080000' ],
+                resourceServer: 'ResourceServer02'
+            }
+        ]
+    }
+}
+
+function configureLogger(context) {
+    context.logger = createLogger({
+        level: 'warn',
+        transports: [
+            new transports.Console({ format: format.prettyPrint() })
+        ]
+    });
+}
+
 class World {
     constructor(parameters) {
         this.context = parameters;
@@ -9,69 +83,14 @@ class World {
         this.context.proxyUrl = 'http://localhost:5002/haalcentraal/api'
 
         this.context.gezagDataPath = './test-data/GezagMock/test-data.json';
-        this.context.logFileToAssert = './test-data/logs/brp-autorisatie-protocollering.json';
+        this.context.logFileToAssert = './test-data/logs/brp-proxy.json';
         this.context.downstreamApiDataPath = './test-data/DownstreamApi';
 
-        this.context.sql = {
-            useDb: true,
-            cleanup: true,
-            deleteIndividualRecords: true,
-            poolConfig: {
-                user: 'root',
-                host: 'localhost',
-                database: 'rvig_haalcentraal_testdata',
-                password: 'root',
-                port: 5432,
-                allowExitOnIdle: true
-            }
-        };
+        configureSqlSettings(this.context);
+        configureOAuthSettings(this.context);
+        configureLogger(this.context);
 
-        this.context.oAuth = {
-            enable: false,
-            accessTokenUrl: 'http://identityserver:6000/connect/token',
-            clients:[
-                {
-                    afnemerID: '000008',
-                    gemeenteCode: '0800',
-                    clientId: 'client met gemeentecode (eigen gemeente)',
-                    clientSecret: 'secret',
-                    scopes: [ '000000099000000080000' ],
-                    resourceServer: 'ResourceServer02'
-                },
-                {
-                    afnemerID: '000008',
-                    gemeenteCode: '0599',
-                    clientId: 'client met gemeentecode (ander gemeente)',
-                    clientSecret: 'secret',
-                    scopes: [ '000000099000000080000' ],
-                    resourceServer: 'ResourceServer02'
-                },
-                {
-                    afnemerID: '000008',
-                    clientId: 'client zonder gemeentecode',
-                    clientSecret: 'secret',
-                    scopes: [ '000000099000000080000' ],
-                    resourceServer: 'ResourceServer02'
-                }
-            ]
-        }
-
-        this.context.logger = createLogger({
-            level: 'warn',
-            transports: [
-                new transports.Console({ format: format.prettyPrint() })
-            ]
-        });
-
-        if(this.context.parameters?.poolConfig !== undefined) {
-            this.context.sql.poolConfig.host = this.context.parameters.poolConfig.host;
-            this.context.sql.poolConfig.user = this.context.parameters.poolConfig.user;
-            this.context.sql.poolConfig.password = this.context.parameters.poolConfig.password
-        }
-        if(this.context.parameters?.client !== undefined) {
-            this.context.oAuth.clients[0].clientId = this.context.parameters.client.clientId; 
-            this.context.oAuth.clients[0].clientSecret = this.context.parameters.client.clientSecret; 
-        }
+        setContextProperties(parameters.parameters, this.context);
     }
 }
 
