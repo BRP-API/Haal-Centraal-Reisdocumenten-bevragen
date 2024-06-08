@@ -57,18 +57,21 @@ function createRequestBody(dataTable) {
                 return !param.naam.startsWith("header:");
             })
             .forEach(function(param) {
-                if (isArrayParameter(type, param)) {
+                if (param.naam === '' && param.waarde === '') {
+                    // do nothing
+                }
+                else if (isArrayParameter(type, param)) {
                         requestBody[param.naam] = param.waarde === '' 
                             ? []
                             : param.waarde.split(',');
                 }
-                else if(param.naam === 'burgerservicenummer (als string)') {
+                else if (param.naam === 'burgerservicenummer (als string)') {
                     requestBody['burgerservicenummer'] = param.waarde;
                 }
-                else if(param.naam === 'fields (als string)') {
+                else if (param.naam === 'fields (als string)') {
                     requestBody['fields'] = param.waarde;
                 }
-                else if(param.waarde === '(131 maal aNummer)') {
+                else if (param.waarde === '(131 maal aNummer)') {
                     requestBody[param.naam] = [];
                     for(let count=0; count<=131; count++) {
                         requestBody[param.naam].push('aNummer');

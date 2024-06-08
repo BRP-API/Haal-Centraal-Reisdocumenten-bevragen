@@ -9,7 +9,10 @@ const apiEndpointPrefixMap = new Map([
     ['personen', 'brp'],
     ['reisdocumenten', 'reisdocumenten'],
     ['verblijfplaatshistorie', 'brphistorie'],
-    ['bestaat-niet', 'brp']
+    // niet bestaande endpoints
+    ['ingezetenen', 'brp'],
+    ['paspoorten', 'reisdocumenten'],
+    ['verblijfhistorie', 'brphistorie']
 ]);
 
 When(/^([a-zA-Z-]*) wordt gezocht met de volgende parameters$/, async function (endpoint, dataTable) {
