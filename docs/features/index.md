@@ -4,7 +4,7 @@ title: Features test overzicht
 ---
 # Features test overzicht
 
-Totaal: 319 scenarios (153 failed, 166 passed)
+Totaal: 324 scenarios (153 failed, 171 passed)
 
 ## GBA v    2.0.11-2024052402
 
@@ -15,7 +15,7 @@ Totaal: 319 scenarios (153 failed, 166 passed)
 
 ## Proxy v2.0.3
 
-- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen.html){:target="_blank" rel="noopener"}: 319 scenarios (153 failed, 166 passed)
+- [Zoeken en raadplegen](./test-report-zoeken-en-raadplegen.html){:target="_blank" rel="noopener"}: 324 scenarios (153 failed, 171 passed)
     - features/raadpleeg-met-reisdocumentnummer/fields.feature:21
     - features/raadpleeg-met-reisdocumentnummer/fields.feature:44
     - features/raadpleeg-met-reisdocumentnummer/fields.feature:45
