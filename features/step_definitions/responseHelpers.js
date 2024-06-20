@@ -34,7 +34,7 @@ function verifyAantal(context) {
     });
 }
 
-function vergelijkActualMetExpected(context) {
+function vergelijkActualMetExpected(context, inAnyOrder = true) {
     const actual = stringifyValues(context.response.data);
 
     const expected = context.expected !== undefined
@@ -45,10 +45,17 @@ function vergelijkActualMetExpected(context) {
         expected.type = actual.type;
     }
 
-    actual.should.deep.equalInAnyOrder(expected, `actual: ${JSON.stringify(actual, undefined, '\t')}\nexpected: ${JSON.stringify(expected, undefined, '\t')}`);
+    if(inAnyOrder) {
+        global.logger.debug("willekeurig collectie volgorde validatie");
+        actual.should.deep.equalInAnyOrder(expected, `actual: ${JSON.stringify(actual, undefined, '\t')}\nexpected: ${JSON.stringify(expected, undefined, '\t')}`);
+    }
+    else {
+        global.logger.debug("vaste collectie volgorde validatie");
+        actual.should.deep.equal(expected, `actual: ${JSON.stringify(actual, undefined, '\t')}\nexpected: ${JSON.stringify(expected, undefined, '\t')}`);
+    }
 }
 
-function valideer200Response(context) {
+function valideer200Response(context, inAnyOrder = true) {
     if (!verifyResponse(context)) {
         return;
     }
@@ -64,7 +71,7 @@ function valideer200Response(context) {
         return;
     }
 
-    vergelijkActualMetExpected(context);
+    vergelijkActualMetExpected(context, inAnyOrder);
 }
 
 function valideerProblemDetailsResponse(context) {

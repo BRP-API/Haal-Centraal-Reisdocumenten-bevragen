@@ -10,8 +10,8 @@ setWorldConstructor(World);
 // https://github.com/cucumber/cucumber-js/blob/main/docs/support_files/timeouts.md
 setDefaultTimeout(30000);
 
-After({tags: 'not @fout-case'}, function() {
-    valideer200Response(this.context);
+After({tags: 'not @fout-case'}, function({ pickle }) {
+    valideer200Response(this.context, !pickle.tags.map((t) => t.name).includes('@valideer-volgorde'));
 });
 
 After({tags: '@fout-case'}, function() {
