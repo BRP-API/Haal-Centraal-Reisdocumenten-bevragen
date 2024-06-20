@@ -63,3 +63,45 @@ Functionaliteit: Verblijfplaatsen/verblijfplaats voorkomens dan stap definities
     |           |                              | Luttestraat | 0800010000000002                 |                             | 20200415                 |                                  |                             |                                     | 0800                         | Hoogeloon, Hapert en Casteren        |
     | 6014      | Verenigde Staten van Amerika |             |                                  |                             |                          | 20200415                         | 20181201                    |                                     |                              |                                      |
     |           |                              |             |                                  | Woonboot bij de Grote Sloot | 20160526                 |                                  |                             | 20181201                            | 0800                         | Hoogeloon, Hapert en Casteren        |
+  Scenario: Dan heeft de response een verblijfplaats voorkomen met de volgende gegevens
+    Gegeven de response body is gelijk aan
+    """
+    {
+      "verblijfplaatsen": [
+        {
+          "adresseerbaarObjectIdentificatie": "0800010000000001",
+          "straat": "Laan",
+          "datumAanvangAdreshouding": "20100818",
+          "gemeenteVanInschrijving": {
+            "code": "0800",
+            "omschrijving": "Hoogeloon, Hapert en Casteren"
+          }
+        }
+      ]
+    }
+    """
+    Dan heeft de response een verblijfplaats voorkomen met de volgende gegevens
+    | adresseerbaarObjectIdentificatie | straat | datumAanvangAdreshouding | gemeenteVanInschrijving.code | gemeenteVanInschrijving.omschrijving |
+    | 0800010000000001                 | Laan   | 20100818                 | 0800                         | Hoogeloon, Hapert en Casteren        |
+
+  Scenario: Dan heeft het verblijfplaats voorkomen de volgende 'verblijfadres' gegevens
+    Gegeven de response body is gelijk aan
+    """
+    {
+      "verblijfplaatsen": [
+        {
+          "type": "Adres",
+          "adresseerbaarObjectIdentificatie": "0800010000000001",
+          "verblijfadres": {
+            "korteStraatnaam": "Laan"
+          }
+        }
+      ]
+    }
+    """
+    Dan heeft de response een verblijfplaats voorkomen met de volgende gegevens
+    | type  | adresseerbaarObjectIdentificatie |
+    | Adres | 0800010000000001                 |
+    En heeft het verblijfplaats voorkomen de volgende 'verblijfadres' gegevens
+    | korteStraatnaam |
+    | Laan            |
