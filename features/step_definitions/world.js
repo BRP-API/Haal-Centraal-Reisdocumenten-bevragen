@@ -35,7 +35,7 @@ function configureSqlSettings(context) {
 
 function configureOAuthSettings(context) {
     context.oAuth = {
-        enable: true,
+        enable: false,
         accessTokenUrl: 'http://identityserver:6000/connect/token',
         clients:[
             {
