@@ -15,7 +15,7 @@ function noSqlData(sqlData) {
 }
 
 function mustLog(result) {
-    return (result.rowCount === null || result.rowCount === 0) && !global.scenario.tags.some(t => ['@geen-protocollering', '@fout-case'].includes(t));
+    return (result.rowCount === null || result.rowCount === 0) && global.scenario.tags.some(t => ['@protocollering'].includes(t));
 }
 
 async function ExecuteAndLogStatement(client, sqlStatement) {

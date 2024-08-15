@@ -97,9 +97,18 @@ After(async function({ pickle }) {
     }
 
     if(this.context.logFileToAssert !== undefined && fs.existsSync(this.context.logFileToAssert)) {
-        const array = fs.readFileSync(this.context.logFileToAssert).toString().split("\n");
-        if(this.context.nrOfLogLines + 1 !== array.length) {
-            global.logger.warn(`${global.scenario.name}. nr of loglines ${array.length} should be ${this.context.nrOfLogLines + 1}`);
+        let array = fs.readFileSync(this.context.logFileToAssert).toString().split("\n");
+        if(this.context.nrOfLogLines + 1 != array.length) {
+            // wacht 50 ms en check vervolgens nog een keer of er een log regel is toegevoegd
+            await sleep(50);
+            array = fs.readFileSync(this.context.logFileToAssert).toString().split("\n");
+            if(this.context.nrOfLogLines + 1 !== array.length) {
+                global.logger.warn(`${global.scenario.name}. nr of loglines ${array.length} should be ${this.context.nrOfLogLines + 1}`);
+            }
         }
     }
 });
+
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
