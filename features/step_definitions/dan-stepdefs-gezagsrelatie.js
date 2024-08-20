@@ -2,6 +2,7 @@ const { Then } = require('@cucumber/cucumber');
 const { createCollectieObjectMetSubCollectieObject,
         createCollectieObjectMetSubCollectieObjecten,
         createSubCollectieObjectInLastCollectieObject,
+        createSubCollectieObjectenInLastCollectieObject,
         createSubSubCollectieObjectInLastSubCollectieObjectInLastCollectieObject,
         createSubSubCollectieObjectenInLastSubCollectieObjectInLastCollectieObject } = require('./dataTable2ObjectFactory');
 
@@ -23,6 +24,10 @@ Then(/^heeft de response een persoon zonder gezag$/, function () {
     this.context.verifyResponse = true;
 
     createCollectieObjectMetSubCollectieObjecten(this.context, 'persoon', 'gezag');
+});
+
+Then(/^heeft de persoon geen gezag$/, function () {
+    createSubCollectieObjectenInLastCollectieObject(this.context, 'persoon', 'gezag');
 });
 
 Then(/^heeft ?(?:het)? 'gezag' geen derden$/, function () {

@@ -141,6 +141,23 @@ Functionaliteit: Gezagsrelatie dan stap definities
     """
     Dan heeft de response een persoon zonder gezag
 
+  Scenario: Dan heeft de persoon geen gezag
+    Gegeven de response body is gelijk aan
+    """
+    {
+      "personen": [
+        {
+          "burgerservicenummer": "000000061",
+          "gezag": []
+        }
+      ]
+    }
+    """
+    Dan heeft de response een persoon met de volgende gegevens
+    | burgerservicenummer|
+    | 000000061 |
+    En heeft de persoon geen gezag
+
   Scenario: Dan heeft (het) 'gezag' geen derden
     Gegeven de response body is gelijk aan
     """
