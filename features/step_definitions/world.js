@@ -78,9 +78,21 @@ class World {
     constructor(parameters) {
         this.context = parameters;
 
-        this.context.autzUrl = 'http://localhost:8080/haalcentraal/api'
-        this.context.apiUrl = 'http://localhost:8000/haalcentraal/api'
-        this.context.proxyUrl = 'http://localhost:5002/haalcentraal/api'
+        this.context.apiUrl = 'http://localhost:8080/haalcentraal/api'
+
+        // wanneer een endpoint prefix mapping voorkomt, wordt bij de constructie van de endpoint url de prefix voor de resource naam gezet
+        // bijv. voor de personen resource wordt de endpoint url <apiUrl>/brp/personen
+        // als er geen endpoint prefix mapping voorkomt, wordt de apiUrl gebruikt als endpoint url
+        this.context.apiEndpointPrefixMap = new Map([
+            ['bewoningen', 'bewoning'],
+            ['personen', 'brp'],
+            ['reisdocumenten', 'reisdocumenten'],
+            ['verblijfplaatshistorie', 'brphistorie'],
+            // niet bestaande endpoints
+            ['ingezetenen', 'brp'],
+            ['paspoorten', 'reisdocumenten'],
+            ['verblijfhistorie', 'brphistorie']
+        ]);
 
         this.context.gezagDataPath = './test-data/GezagMock/test-data.json';
         this.context.logFileToAssert = './test-data/logs/brp-proxy.json';
