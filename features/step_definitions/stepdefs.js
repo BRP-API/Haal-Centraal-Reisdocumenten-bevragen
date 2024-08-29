@@ -48,36 +48,8 @@ Before(function({ pickle }) {
         const array = fs.readFileSync(this.context.logFileToAssert).toString().split("\n");
         this.context.nrOfLogLines = array.length;
     }
-});
 
-Before({tags: '@api'}, function() {
-    global.logger.debug('api scope. set baseUrl to apiUrl');
     this.context.baseUrl = this.context.apiUrl;
-});
-
-Before({tags: '@proxy'}, function() {
-    global.logger.debug('proxy scope. set baseUrl to proxyUrl');
-    this.context.baseUrl = this.context.proxyUrl;
-});
-
-Before({tags: '@mock'}, function() {
-    global.logger.debug('mock scope. set baseUrl to mockUrl');
-    this.context.baseUrl = this.context.mockUrl;
-});
-
-Before({tags: '@input-validatie'}, function() {
-    global.logger.debug('input-validatie scope. set baseUrl to autzUrl');
-    this.context.baseUrl = this.context.autzUrl;
-});
-
-Before({tags: '@autorisatie'}, function() {
-    global.logger.debug('autorisatie scope. set baseUrl to autzUrl');
-    this.context.baseUrl = this.context.autzUrl;
-});
-
-Before({tags: '@protocollering'}, function() {
-    global.logger.debug('protocollering scope. set baseUrl to autzUrl');
-    this.context.baseUrl = this.context.autzUrl;
 });
 
 After(async function({ pickle }) {
