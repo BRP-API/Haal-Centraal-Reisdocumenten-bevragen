@@ -1,6 +1,8 @@
 function stringifyValues(o) {
     if(o === undefined) return o;
 
+    if(o === null) return 'null';
+    
     Object.keys(o).forEach(k => {
         if (typeof o[k] === 'object') {
             o[k] = stringifyValues(o[k]);
