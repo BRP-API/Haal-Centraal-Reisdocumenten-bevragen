@@ -1,6 +1,9 @@
 const { When } = require('@cucumber/cucumber');
 const fs = require('fs');
 const { executeSqlStatements } = require('./postgresqlHelpers');
+const { execute } = require('./postgresqlHelpers-2');
+const { generateSqlStatementsFrom } = require('./sqlStatementsFactory');
+
 const { addDefaultAutorisatieSettings,
         handleRequest } = require('./requestHelpers');
 
@@ -27,7 +30,12 @@ When(/^([a-zA-Z-]*) wordt gezocht met de volgende parameters$/, async function (
     }
     addDefaultAutorisatieSettings(this.context, this.context.afnemerID);
 
-    await executeSqlStatements(this.context.sql, this.context.sqlData, global.pool);
+    if(this.context.data) {
+        await execute(generateSqlStatementsFrom(this.context.data));
+    }
+    else {
+        await executeSqlStatements(this.context.sql, this.context.sqlData, global.pool);
+    }
 
     const relativeUrl = this.context.apiEndpointPrefixMap.has(endpoint)
         ? `${this.context.apiEndpointPrefixMap.get(endpoint)}/${endpoint}`
