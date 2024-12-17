@@ -8,11 +8,11 @@ title: BRP Reisdocumenten
 ![lint oas](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/lint-oas/badge.svg)
 ![ci](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/ci/badge.svg)
 
-## Er worden geen nieuwe gemeenten aangesloten op de BRP Reisdocumenten API. Afnemers moeten binnen de met hen afsproken periode migreren naar een API van het reisdocumentenstelsel.
+## Er worden geen nieuwe gemeenten aangesloten op de BRP Reisdocumenten API. 
 API voor het zoeken van een reisdocument met een burgerservicenummer en het raadplegen van een reisdocument met een reisdocumentnummer door gemeenten. 
 
 ## Planning en Roadmap
-De BRP Reisdocumenten API is live sinds september 2023.
+De BRP Reisdocumenten API is live sinds september 2023. Afnemers moeten binnen de met hen afsproken periode migreren naar een API van het reisdocumentenstelsel.
 
 ## Documentatie
 * Bekijk de specificaties met [Swagger UI](swagger-ui) of [Redoc](redoc)
