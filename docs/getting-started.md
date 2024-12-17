@@ -4,19 +4,17 @@ title: Getting Started
 ---
 # Getting Started
 
+##  Let op: Er worden geen nieuwe gemeenten aangesloten op de BRP Reisdocumenten API. Afnemers moeten binnen de met hen afsproken periode migreren naar een API van het reisdocumentenstelsel.
+
+# Documentatie voor bestaande afnemers
 De 'Bevraging reisdocumenten' Web API is gespecificeerd in [OpenAPI specifications (OAS)](https://swagger.io/specification/).
-
-Wil je de API gebruiken? Dit kun je doen:
-
 1. Bekijk de [functionaliteit en specificaties](#functionaliteit-en-specificaties)
 2. [Implementeer de API Client](#implementeer-de-api-client)
 3. [Probeer en test de API](#probeer-en-test-de-api)
  
 ## Functionaliteit en specificaties
 Met deze API kun je gegevens over een reisdocument ophalen met het reisdocumentnummer.
-
 Je kunt een visuele representatie van de specificatie bekijken met [Swagger UI](redoc).
-
 Je kunt de [functionele documentatie](features) vinden in de [features](features).
 
 ## Implementeer de API client
