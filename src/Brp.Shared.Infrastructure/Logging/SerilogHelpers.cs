@@ -318,6 +318,7 @@ public static class SerilogHelpers
 
             config
                 .WriteTo.Logger(lc => lc
+                    .Enrich.WithProperty("log_type", "insecure")
                     .Enrich.WithSensitiveDataMasking(options =>
                     {
                         options.MaskingOperators.Clear();
@@ -332,6 +333,7 @@ public static class SerilogHelpers
                         preserveLogFilename: true,
                         shared: true
                     )
+                    .WriteTo.Console(config.ConfigureLoggingWithEcsTextFormatter(serviceProvider))
                 );
         }
         if (!string.IsNullOrWhiteSpace(ecsSecuredPath))
@@ -340,6 +342,7 @@ public static class SerilogHelpers
 
             config
                 .WriteTo.Logger(lc => lc
+                    .Enrich.WithProperty("log_type", "secure")
                     .WriteTo.PersistentFile(
                         formatter: config.ConfigureSecuredLoggingWithEcsTextFormatter(serviceProvider),
                         path: ecsSecuredPath,
@@ -349,6 +352,7 @@ public static class SerilogHelpers
                         preserveLogFilename: true,
                         shared: true
                     )
+                    .WriteTo.Console(config.ConfigureLoggingWithEcsTextFormatter(serviceProvider))
                 );
         }
     }
