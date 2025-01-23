@@ -65,4 +65,11 @@ public static class HttpRequestExtensions
             request.Body.Seek(0, SeekOrigin.Begin);
         }
     }
+
+    public static string GetRequestedResource(this HttpRequest request)
+    {
+        var endpoint = request.Path.ToString();
+        var index = endpoint.LastIndexOf('/') + 1;
+        return endpoint[index..];
+    }
 }
