@@ -4,7 +4,7 @@ title: Getting Started
 ---
 # Getting Started
 
-##  Let op: Er worden geen nieuwe gemeenten aangesloten op de BRP Reisdocumenten API. Afnemers moeten binnen de met hen afsproken periode migreren naar een API van het reisdocumentenstelsel.
+##  Let op: Er worden geen nieuwe gemeenten aangesloten op de BRP Reisdocumenten API. Afnemers moeten binnen de met hen afsproken periode migreren naar een API van het reisdocumentenstelsel of de BV BSN.
 
 # Documentatie voor bestaande afnemers
 De 'Bevraging reisdocumenten' Web API is gespecificeerd in [OpenAPI specifications (OAS)](https://swagger.io/specification/).
