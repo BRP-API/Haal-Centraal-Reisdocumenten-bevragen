@@ -12,7 +12,7 @@ title: BRP Reisdocumenten
 API voor het zoeken van een reisdocument met een burgerservicenummer en het raadplegen van een reisdocument met een reisdocumentnummer door gemeenten. 
 
 ## Planning en Roadmap
-De BRP Reisdocumenten API is live sinds september 2023. Afnemers moeten binnen de met hen afsproken periode migreren naar een API van het reisdocumentenstelsel.
+De BRP Reisdocumenten API is live sinds september 2023. Afnemers moeten binnen de met hen afsproken periode migreren naar een API van het reisdocumentenstelsel of de BV BSN.
 
 ## Documentatie
 * Bekijk de specificaties met [Swagger UI](swagger-ui) of [Redoc](redoc)
