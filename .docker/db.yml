@@ -3,18 +3,20 @@ version: '3.7'
 services:
   postgres:
     container_name: db
-    image: postgres:11.21-alpine
+    image: postgres:14.11-alpine
     restart: always
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - 5432:5432
     volumes:
-      # - ../src/config/Database:/var/lib/postgresql/data
-      - ./scripts/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./scripts/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    security_opt:
+      - no-new-privileges:true
     networks:
-      - reisdocumenten-api-network
+      - brp-api-network
   
   pgadmin:
     container_name: pgadmin
@@ -25,9 +27,11 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - 5433:80
+    security_opt:
+      - no-new-privileges:true
     networks:
-      - reisdocumenten-api-network
+      - brp-api-network
 
 networks:
-  reisdocumenten-api-network:
-   name: reisdocumenten-api-network
+  brp-api-network:
+   name: brp-api-network
