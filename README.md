@@ -1,7 +1,7 @@
 # Haal Centraal Reisdocumenten bevragen
 
 ![lint oas](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/lint-oas/badge.svg)
-![ci](https://github.com/BRP-API/Haal-Centraal-Reisdocumenten-bevragen/workflows/ci/badge.svg)
+![ci](https://github.com/BRP-API/reisdocumenten-informatie-service/actions/workflows/ci.yml/badge.svg?branch=main)
 
 API voor het raadplegen van een reisdocument met een reisdocumentnummer. De API wordt nog niet door RvIG aangeboden. Om de migratie naar API’s te versnellen besluiten sommige gemeenten de API zelf aan te bieden.
 
