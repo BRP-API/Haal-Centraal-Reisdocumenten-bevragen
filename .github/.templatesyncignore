@@ -4,4 +4,8 @@
 :!src/Brp.Shared.Infrastructure/*.*
 :!src/Serilog.Sinks.PersistentFile/*.*
 features/step_definitions/world.js
+:!.docker/scripts/*.*
+:!.docker/db.yml
+:!.docker/db-ci.yml
+:!.docker/Dockerfile
 *
