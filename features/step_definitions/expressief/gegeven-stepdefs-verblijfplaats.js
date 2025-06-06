@@ -1,14 +1,34 @@
 const { Given } = require('@cucumber/cucumber');
-const { createVerblijfplaats, wijzigVerblijfplaats } = require('../persoon-2');
+const { createVerblijfplaats, wijzigVerblijfplaats, aanvullenInschrijving } = require('../persoon-2');
 const { getPersoon } = require('../contextHelpers');
 const { arrayOfArraysToDataTable } = require('../dataTableFactory');
 const { toDateOrString, toBRPDate } = require('../brpDatum');
 const { selectFirstOrDefault } = require('../postgresqlHelpers-2');
 
-function gegevenPersoonIsIngeschrevenInGemeente(context, aanduiding, dataTable) {
+function gegevenDePersoonIsIngeschrevenInGemeente(context, aanduiding, dataTable) {
     createVerblijfplaats(
         getPersoon(context, aanduiding),
         dataTable
+    );
+}
+
+function gegevenDePersoonIsIngeschrevenInDeBrp(context, aanduiding) {
+    gegevenDePersoonIsIngeschrevenInGemeente(
+        context,
+        aanduiding,
+        arrayOfArraysToDataTable([
+            ['gemeente van inschrijving (09.10)', '0518']
+        ])
+    );
+}
+
+function gegevenDePersoonIsIngeschrevenInDeRni(context, aanduiding) {
+    gegevenDePersoonIsIngeschrevenInGemeente(
+        context,
+        aanduiding,
+        arrayOfArraysToDataTable([
+            ['gemeente van inschrijving (09.10)', '1999']
+        ])
     );
 }
 
@@ -156,22 +176,14 @@ Given(/^(?:de persoon(?: '(.*)')? )?is op (\d*)-(\d*)-(\d*) geïmmigreerd?$/, fu
 });
 
 Given(/^is ingeschreven in een Nederlandse gemeente$/, function () {
-    const codeVanGemeente = '0518';
-
-    gegevenPersoonIsIngeschrevenInGemeente(
-        this.context,
-        undefined,
-        arrayOfArraysToDataTable([
-            ['gemeente van inschrijving (09.10)', codeVanGemeente]
-        ])
-    );
+    gegevenDePersoonIsIngeschrevenInDeBrp(this.context, undefined);
 });
 
 Given(/^is ingeschreven als niet-ingezetene met een verblijfplaats in België$/, function () {
     const codeVanGemeente = '1999';
     const codeVanLand = '5010';
 
-    gegevenPersoonIsIngeschrevenInGemeente(
+    gegevenDePersoonIsIngeschrevenInGemeente(
         this.context,
         undefined,
         arrayOfArraysToDataTable([
@@ -185,7 +197,7 @@ Given(/^is ingeschreven als niet-ingezetene met een volledig onbekende verblijfp
     const codeVanGemeente = '1999';
     const codeVanLand = '0000';
 
-    gegevenPersoonIsIngeschrevenInGemeente(
+    gegevenDePersoonIsIngeschrevenInGemeente(
         this.context,
         undefined,
         arrayOfArraysToDataTable([
@@ -196,46 +208,26 @@ Given(/^is ingeschreven als niet-ingezetene met een volledig onbekende verblijfp
 });
 
 Given(/^is ingeschreven in de BRP$/, function () {
-    gegevenPersoonIsIngeschrevenInGemeente(
-        this.context,
-        undefined,
-        arrayOfArraysToDataTable([
-            ['gemeente van inschrijving (09.10)', '0518']
-        ])
-    );
-    global.logger.info(`gegeven persoon is ingeschreven in de BRP`, getPersoon(this.context, undefined));
+    gegevenDePersoonIsIngeschrevenInDeBrp(this.context, undefined);
 });
 
 Given(/^is niet ingeschreven in de BRP$/, function () {
-    gegevenPersoonIsIngeschrevenInGemeente(
-        this.context,
-        undefined,
-        arrayOfArraysToDataTable([
-            ['gemeente van inschrijving (09.10)', '1999']
-        ])
-    );
-    global.logger.info(`gegeven persoon niet is ingeschreven in de BRP`, getPersoon(this.context, undefined));
+    gegevenDePersoonIsIngeschrevenInDeRni(this.context, undefined);
 });
 
-Given(/^is ingeschreven in de BRP met de volgende gegevens$/, function (dataTable) {
-    gegevenPersoonIsIngeschrevenInGemeente(this.context, undefined, dataTable);
+Given('is ingeschreven in de BRP/RNI met de volgende gegevens', function (dataTable) {
+    gegevenDePersoonIsIngeschrevenInGemeente(this.context, undefined, dataTable);
 });
 
 Given(/^is ingeschreven in de RNI$/, function () {
-    gegevenPersoonIsIngeschrevenInGemeente(
-        this.context,
-        undefined,
-        arrayOfArraysToDataTable([
-            ['gemeente van inschrijving (09.10)', '1999']
-        ])
-    );
+    gegevenDePersoonIsIngeschrevenInDeRni(this.context, undefined);
 });
 
 Given(/^is ingeschreven in de RNI met een verblijfplaats in België$/, function () {
     const codeVanGemeente = '1999';
     const codeVanLand = '5010';
 
-    gegevenPersoonIsIngeschrevenInGemeente(
+    gegevenDePersoonIsIngeschrevenInGemeente(
         this.context,
         undefined,
         arrayOfArraysToDataTable([
@@ -245,7 +237,38 @@ Given(/^is ingeschreven in de RNI met een verblijfplaats in België$/, function 
     );
 });
 
+module.exports = {
+    gegevenDePersoonIsIngeschrevenInGemeente,
+    gegevenDePersoonIsIngeschrevenInDeBrp
+}
 
-Given(/^is ingeschreven in de RNI met de volgende gegevens$/, function (dataTable) {
-    gegevenPersoonIsIngeschrevenInGemeente(this.context, undefined, dataTable);
+Given('is ingeschreven met een tijdelijke verblijfplaats in Nederland', function () {
+    // Later desgewenst invullen, wanneer we iets doen met tijdelijke verblijfplaats
+});
+
+Given('{vandaag, gisteren of morgen x jaar geleden} is geconstateerd dat {aanduiding} behoort tot de categorie NAVO-militair', function(relatieveDatum, aanduidingPersoon) {
+    const redenOpschorting = 'M';
+
+    const verblijfplaats = arrayOfArraysToDataTable([
+        ['gemeente van inschrijving (09.10)', '0518'],
+        ['land adres buitenland (13.10)', '0000'],
+        ['datum aanvang adres buitenland (13.20)', relatieveDatum],
+        ['aangifte adreshouding (72.10)', 'B']
+    ]);
+
+    const persoon = getPersoon(this.context, aanduidingPersoon)
+
+    if (!persoon.verblijfplaats || persoon.verblijfplaats==[]) {
+        createVerblijfplaats(persoon, verblijfplaats);
+    } else {
+        wijzigVerblijfplaats(persoon, verblijfplaats, false);
+    }
+
+    aanvullenInschrijving(
+        persoon,
+        arrayOfArraysToDataTable([
+            ['datum opschorting bijhouding (67.10)', relatieveDatum],
+            ['reden opschorting bijhouding (67.20)', redenOpschorting]
+        ])
+    );
 });
