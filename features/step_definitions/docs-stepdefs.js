@@ -166,7 +166,8 @@ function mapRowToSqlStatement(list, row) {
 function dataTableToSqlStatements(dataTable) {
     let retval = {
         personen: [],
-        adressen: []
+        adressen: [],
+        autorisaties: []
     }
 
     dataTable.hashes().forEach(row => {
@@ -248,4 +249,11 @@ When(/^de gegenereerde sql statements zijn uitgevoerd$/, async function () {
     await executeSqlStatements(this.context.sql,
                                this.context.sqlData,
                                global.pool);
+});
+
+Then('is de gezag response body gelijk aan', function (docString) {
+    const expected = JSON.parse(docString);
+    this.context.gezag.should.deep.equalInAnyOrder(expected,
+        `expected: ${JSON.stringify(expected, null, '\t')}\nactual: ${JSON.stringify(this.context.gezag, null, '\t')}`
+    );
 });
