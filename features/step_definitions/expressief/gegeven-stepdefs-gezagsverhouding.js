@@ -1,6 +1,6 @@
 const { Given } = require('@cucumber/cucumber');
 const { getPersoon } = require('../contextHelpers');
-const { createGezagsverhouding, aanvullenGezagsverhouding } = require('../persoon-2');
+const { createGezagsverhouding, aanvullenGezagsverhouding, wijzigGezagsverhouding } = require('../persoon-2');
 const { arrayOfArraysToDataTable } = require('../dataTableFactory');
 
 Given(/^voor '(.*)' is een gerechtelijke uitspraak over het gezag gedaan met de volgende gegevens$/, function (aanduiding, dataTable) {
@@ -86,6 +86,18 @@ function uitspraakGezagBeideOudersOpDatum(relatieveDatum) {
 Given('{dd-mm-yyyy datum} is in een gerechtelijke uitspraak het gezag toegewezen aan beide ouders', uitspraakGezagBeideOudersOpDatum);
 Given('{vandaag, gisteren of morgen x jaar geleden} is in een gerechtelijke uitspraak het gezag toegewezen aan beide ouders', uitspraakGezagBeideOudersOpDatum);
 
+Given('{vandaag, gisteren of morgen x jaar geleden} is in een nieuwe gerechtelijke uitspraak het gezag toegewezen aan beide ouders', function (relatieveDatum) {
+    let indicatieGezag = IndicatieGezag.BeideOuders;
+
+    wijzigGezagsverhouding(
+        getPersoon(this.context, undefined),
+        arrayOfArraysToDataTable([
+            ['indicatie gezag minderjarige (32.10)', indicatieGezag],
+            ['datum ingang geldigheid (85.10)', relatieveDatum],
+        ])
+    )
+});
+
 Given('in een gerechtelijke uitspraak is een {word} tot voogd benoemd', function (gezaghebbende) {
     createGerechtelijkeUitspraak(this.context, undefined, getIndicatieGezagVoorInstellingOfDerde(gezaghebbende));
 });
@@ -126,4 +138,23 @@ function getIndicatieGezagVoorInstellingOfDerde(gezaghebbende) {
     return (gezaghebbende == 'voogdijinstelling')
         ? IndicatieGezag.VoogdijInstelling
         : IndicatieGezag.Derde;
+}
+
+Given('{dd-mm-yyyy datum} is in een gerechtelijke uitspraak de toewijzing van gezag beëindigd', uitspraakGezagBeeindigdOpDatum);
+Given('{dd-mm-yyyy datum} is in een gerechtelijke uitspraak de voogdij beëindigd', uitspraakGezagBeeindigdOpDatum);
+Given('{vandaag, gisteren of morgen x jaar geleden} is in een gerechtelijke uitspraak de toewijzing van gezag beëindigd', uitspraakGezagBeeindigdOpDatum);
+Given('{vandaag, gisteren of morgen x jaar geleden} is in een gerechtelijke uitspraak de voogdij beëindigd', uitspraakGezagBeeindigdOpDatum);
+Given('{vandaag, gisteren of morgen - x jaar} is in een gerechtelijke uitspraak de toewijzing van gezag beëindigd', uitspraakGezagBeeindigdOpDatum);
+Given('{vandaag, gisteren of morgen - x jaar} is in een gerechtelijke uitspraak de voogdij beëindigd', uitspraakGezagBeeindigdOpDatum);
+Given('{relatieve datum} is in een gerechtelijke uitspraak de toewijzing van gezag beëindigd', uitspraakGezagBeeindigdOpDatum);
+Given('{relatieve datum} is in een gerechtelijke uitspraak de voogdij beëindigd', uitspraakGezagBeeindigdOpDatum);
+
+function uitspraakGezagBeeindigdOpDatum(relatieveDatum) {
+    wijzigGezagsverhouding(
+        getPersoon(this.context, undefined),
+        arrayOfArraysToDataTable([
+            ['datum ingang geldigheid (85.10)', relatieveDatum]
+        ]),
+        false
+    );
 }
