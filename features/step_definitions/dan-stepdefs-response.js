@@ -15,6 +15,7 @@ Then('bevat de request naar de gezag API de header {string} met waarde {string}'
 
     const header = headers[headerNaam];
     should.exist(header);
+    header.should.equal(headerWaarde);
 });
 
 Then('bevat de request naar de gezag API geen {string} header', function (headerNaam) {
