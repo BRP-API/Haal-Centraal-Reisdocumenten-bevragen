@@ -82,19 +82,32 @@ public static class SerilogHelpers
     /// <returns></returns>
     private static LogEventLevel GetLogEventLevel(HttpContext httpContext, double _, Exception? exception)
     {
-        var isHealthCheckRequest = httpContext.Request.Headers.ContainsKey("x-healthcheck");
-        return exception != null
-            ? LogEventLevel.Error
-            : httpContext.Response switch
+        if (exception != null)
+        {
+            // Always log exceptions as Error
+            return LogEventLevel.Error;
+        }
+
+        var statusCode = httpContext.Response.StatusCode;
+
+        return statusCode switch
             {
-                { StatusCode: var status } when status >= 500 => LogEventLevel.Error,
-                { StatusCode: var status } when status >= 400 && status < 500 && !isHealthCheckRequest => LogEventLevel.Warning,
-                { StatusCode: var status } when status >= 400 && status < 500 && isHealthCheckRequest => LogEventLevel.Verbose,
-                _ => httpContext.LogEventLevelIfHealthCheckEndpoint()
+                >= 500 => LogEventLevel.Error,
+                >= 400 => httpContext.ClientErrorLogEventLevel(),
+                _ => httpContext.SuccessfulResponseLogEventLevel()
             };
     }
 
-    private static LogEventLevel LogEventLevelIfHealthCheckEndpoint(this HttpContext httpContext) =>
+    private static LogEventLevel ClientErrorLogEventLevel(this HttpContext httpContext)
+    {
+        var isHealthCheckRequest = httpContext.Request.Headers.ContainsKey("x-healthcheck");
+
+        return isHealthCheckRequest
+            ? LogEventLevel.Verbose
+            : LogEventLevel.Warning;
+    }
+
+    private static LogEventLevel SuccessfulResponseLogEventLevel(this HttpContext httpContext) =>
         httpContext.IsHealthCheckEndpoint()
             ? LogEventLevel.Verbose
             : LogEventLevel.Information;
