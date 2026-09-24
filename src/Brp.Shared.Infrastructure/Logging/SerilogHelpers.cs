@@ -207,6 +207,7 @@ public static class SerilogHelpers
             MapCustom = (ecs, logEvent) =>
             {
                 httpContextAccessor?.HttpContext?.MapHttpContextItemToEcsHttpProperty(MapToEcsKeys.EcsRequestContentType, ecs);
+                httpContextAccessor?.HttpContext?.MapHttpContextItemToEcsTraceId(ecs);
 
                 return ecs;
             }
@@ -225,6 +226,7 @@ public static class SerilogHelpers
             MapCustom = (ecs, logEvent) =>
             {
                 httpContextAccessor?.HttpContext?.MapHttpContextItemToEcsHttpProperty(MapToEcsKeys.EcsRequestContentType, ecs);
+                httpContextAccessor?.HttpContext?.MapHttpContextItemToEcsTraceId(ecs);
                 // Secured logging -> log request en response body tbv naspelen
                 httpContextAccessor?.HttpContext?.MapHttpContextItemToEcsHttpProperty(MapToEcsKeys.EcsRequestBody, ecs);
                 httpContextAccessor?.HttpContext?.MapHttpContextItemToEcsHttpProperty(MapToEcsKeys.EcsResponseBody, ecs);
@@ -258,6 +260,14 @@ public static class SerilogHelpers
             default:
                 break;
 
+        }
+    }
+
+    private static void MapHttpContextItemToEcsTraceId(this HttpContext httpContext, EcsDocument ecs)
+    {
+        if (httpContext.Items[MapToEcsKeys.EcsTraceId] is string traceId && !string.IsNullOrWhiteSpace(traceId))
+        {
+            ecs.TraceId = traceId;
         }
     }
 
