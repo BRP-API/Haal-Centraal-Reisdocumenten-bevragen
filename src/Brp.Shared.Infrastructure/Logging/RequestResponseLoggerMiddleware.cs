@@ -37,30 +37,28 @@ internal class RequestResponseLoggerMiddleware
         context.Response.Body = newBodyStream;
 
         var correlationId = GetCorrelationId(context);
+        context.Items.Add(MapToEcsKeys.EcsTraceId, correlationId);
 
-        using(LogContext.PushProperty("CorrelationId", correlationId))
+        try
         {
-            try
+            await _next(context);
+        }
+        catch(Exception ex)
+        {
+            if (ex.GetType().Name == "AutoMapperMappingException")
             {
-                await _next(context);
+                _diagnosticContext.SetException(new NotImplementedException(ex.ToString()));
             }
-            catch(Exception ex)
+            else
             {
-                if (ex.GetType().Name == "AutoMapperMappingException")
-                {
-                    _diagnosticContext.SetException(new NotImplementedException(ex.ToString()));
-                }
-                else
-                {
-                    _diagnosticContext.SetException(ex);
-                }
-
-                context.Response.Body = newBodyStream;
-
-                context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-
-                await context.HandleInternalServerError();
+                _diagnosticContext.SetException(ex);
             }
+
+            context.Response.Body = newBodyStream;
+
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+
+            await context.HandleInternalServerError();
         }
 
         var responseBody = context.Response.Body.CanRead

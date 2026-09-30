@@ -6,6 +6,7 @@ internal static class MapToEcsKeys
     public const string EcsRequestContentType = "ecs.request.content-type";
     public const string EcsResponseBody = "ecs.response.body";
     public const string EcsResponseContentType = "ContentType"; // wordt automatisch gemapt naar ecs.response.content-type als deze naam wordt gebruikt
+    public const string EcsTraceId = "ecs.trace.id";
 }
 
 public static class LogConstants
