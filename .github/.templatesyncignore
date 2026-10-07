@@ -1,8 +1,5 @@
 :!features/docs/*.*
 :!features/step_definitions/*.*
-:!src/Brp.Shared.Infrastructure/**/*.*
-:!src/Brp.Shared.Infrastructure/*.*
-:!src/Serilog.Sinks.PersistentFile/*.*
 features/step_definitions/world.js
 :!.docker/scripts/*.*
 :!.docker/db.yml
